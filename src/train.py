@@ -336,6 +336,7 @@ import torch.distributed as dist
 from torch.utils.data import Dataset
 import transformers
 import datasets
+from peft import LoraConfig, get_peft_model, TaskType
 from transformers import (
     Trainer,
     set_seed,
@@ -565,6 +566,42 @@ def make_supervised_data_module(tokenizer, data_args, training_args):
         data_collator=data_collator
     )
 
+def get_peft_tokenizer(model_args, training_args):
+    model = AutoModelForCausalLM.from_pretrained(
+        model_args.model_name_or_path,
+        trust_remote_code=True,
+    )
+    lora_config = LoraConfig(
+        r = 16,
+        target_modules = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj",],
+        lora_alpha = 16,
+        lora_dropout = 0, 
+        bias = "none", 
+
+    )
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_args.model_name_or_path,
+        cache_dir=training_args.cache_dir,
+        model_max_length=training_args.model_max_length,
+        padding_side="right",
+        trust_remote_code=True,
+    )
+    model = get_peft_model(model, lora_config)
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_args.model_name_or_path,
+        cache_dir=training_args.cache_dir,
+        model_max_length=training_args.model_max_length,
+        padding_side="right",
+        trust_remote_code=True,
+    )
+    tokenizer.pad_token = tokenizer.eos_token
+
+    # Ensure tokenizer has pad token
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
+
+    return model, tokenizer
+
 
 def get_model_tokenizer(model_args, training_args):
     """Load model and tokenizer."""
@@ -603,7 +640,7 @@ def train():
         }
 
     # Load model and tokenizer
-    model, tokenizer = get_model_tokenizer(model_args, training_args)
+    model, tokenizer = get_peft_tokenizer(model_args, training_args) #get_model_tokenizer()
 
     # Set seed for reproducibility
     set_seed(training_args.seed)

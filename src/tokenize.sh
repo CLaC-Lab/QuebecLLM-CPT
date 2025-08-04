@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MODEL_NAME="TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+MODEL_NAME="meta-llama/Llama-3.2-3B"
 MODEL_DIR="data/tokenized"
 RAW_DATA_PATH="../data/firas"
 JSON_DATA_PATH="../data/firas_json"

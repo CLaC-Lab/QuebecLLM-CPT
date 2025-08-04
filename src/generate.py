@@ -2,6 +2,7 @@
 import os
 import argparse
 import logging
+from peft import PeftConfig, PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -16,6 +17,31 @@ def get_abs_path(model_name):
         base_dir = f"{cwd.split(gh_repo)[0]}/{gh_repo}{model_name}"
     else:
         return model_name
+
+def generate_peft(model_args):
+    model_dir = get_abs_path(model_args.model_name)
+    print(model_dir)
+    peft_config = PeftConfig.from_pretrained(model_dir)
+    model = AutoModelForCausalLM.from_pretrained(peft_config.base_model_name_or_path)
+    model = model.to("cuda")
+    model = PeftModel.from_pretrained(model,model_dir)
+    tokenizer = AutoTokenizer.from_pretrained(
+        peft_config.base_model_name_or_path,
+        model_max_length=2048,
+        padding_side="right",
+        trust_remote_code=True,
+    )
+    input = "Répondez à la question suivante: La racine carrée de 4 est"
+    inputs = tokenizer.encode(
+        input,
+        return_tensors = "pt",
+    ).to("cuda")
+    text_streamer = TextStreamer(tokenizer)
+    _ = model.generate(input_ids = inputs, pad_token_id=tokenizer.eos_token_id, streamer = text_streamer, max_new_tokens = 128,
+                    early_stopping=True, repetition_penalty=2.0,
+                   use_cache = True, temperature = 1.5, min_p = 0.1)
+
+
 
 def generate(model_args):
     model_dir = get_abs_path(model_args.model_name)
@@ -54,7 +80,7 @@ def main():
     parser.add_argument("--model_name", type=str,
                         help="Name of the model (required for tokenize mode)")
     args = parser.parse_args()
-    generate(args)
+    generate_peft(args)
 
 if __name__ == "__main__":
     main()

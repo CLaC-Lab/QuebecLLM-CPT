@@ -1,21 +1,21 @@
 #!/bin/bash
 
 # Training with TinyLlama - compatible with your existing tokenized data!
-MODEL_NAME="TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # 1.1B params, uses Llama tokenizer
+MODEL_NAME="meta-llama/Llama-3.2-3B"  # 1.1B params, uses Llama tokenizer
 # Alternative: "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T" (base model)
 
 DATA_PATH="../data/tokenized_data_ids/firas_json"
-OUTPUT_DIR="../models/output_tinyllama"
+OUTPUT_DIR="../models/Llama-3.2-3B"
 MAX_LENGTH=128  
 
 # Can use larger batch size with smaller model
 BATCH_SIZE=1
 GRADIENT_ACCUMULATION=8
 LEARNING_RATE=2e-5
-NUM_EPOCHS=1
+NUM_EPOCHS=0.01
 WARMUP_STEPS=100
 
-echo "Starting training with TinyLlama..."
+echo "Starting training with Llama..."
 echo "Model: $MODEL_NAME"
 echo "This model uses the same tokenizer as Llama, so your data is compatible!"
 
@@ -42,7 +42,6 @@ python train.py \
     --logging_dir "./logs" \
     --report_to "none" \
     --gradient_checkpointing \
-    --no_cuda \
     --fp16 \
     --dataloader_num_workers 2
 

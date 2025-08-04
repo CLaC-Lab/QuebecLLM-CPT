@@ -1,3 +1,6 @@
 assets/
-data/
+data/*/
 data_jsonl/
+.vscode/
+models/*/
+venv/

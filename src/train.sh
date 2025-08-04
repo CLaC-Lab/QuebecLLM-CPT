@@ -4,8 +4,8 @@
 MODEL_NAME="TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # 1.1B params, uses Llama tokenizer
 # Alternative: "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T" (base model)
 
-DATA_PATH="./train_data"
-OUTPUT_DIR="./output_tinyllama"
+DATA_PATH="../data/tokenized_data_ids/firas_json"
+OUTPUT_DIR="../models/output_tinyllama"
 MAX_LENGTH=128  
 
 # Can use larger batch size with smaller model

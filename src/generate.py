@@ -1,5 +1,6 @@
 #!/usr/bin/env python'
 import os
+import sys
 import argparse
 import logging
 from peft import PeftConfig, PeftModel
@@ -12,9 +13,10 @@ def get_abs_path(model_name):
     gh_repo = "QuebecLLM-CPT"
     cwd = os.getcwd()
     if cwd.endswith(gh_repo):
-        return f"{cwd}{model_name}"
+        return f"{cwd}/models/{model_name}"
     elif gh_repo in cwd:
-        base_dir = f"{cwd.split(gh_repo)[0]}/{gh_repo}{model_name}"
+        base_dir = f"{cwd.split(gh_repo)[0]}/{gh_repo}/models/{model_name}"
+        return base_dir
     else:
         return model_name
 
@@ -31,15 +33,15 @@ def generate_peft(model_args):
         padding_side="right",
         trust_remote_code=True,
     )
-    input = "Répondez à la question suivante: La racine carrée de 4 est"
+    input = "Vous trouverez ci-dessous une instruction décrivant une tâche, éventuellement une entrée fournissant un contexte supplémentaire. Rédigez une réponse courte qui complète la demande. ###input: Trouve la capitale de la France\n\###output:\n"
     inputs = tokenizer.encode(
         input,
         return_tensors = "pt",
     ).to("cuda")
     text_streamer = TextStreamer(tokenizer)
     _ = model.generate(input_ids = inputs, pad_token_id=tokenizer.eos_token_id, streamer = text_streamer, max_new_tokens = 128,
-                    early_stopping=True, repetition_penalty=2.0,
-                   use_cache = True, temperature = 1.5, min_p = 0.1)
+                    early_stopping=True, repetition_penalty=3.0,
+                   use_cache = True, temperature = 1.0, min_p = 0.1)
 
 
 
@@ -62,7 +64,7 @@ def generate(model_args):
 
     model = model.to("cuda")
 
-    input = "Répondez à la question suivante: La racine carrée de 4 est"
+    input = "La racine carrée de 4 est"
     inputs = tokenizer.encode(
         input,
         return_tensors = "pt",
@@ -74,6 +76,7 @@ def generate(model_args):
 
 
 def main():
+    print(sys.argv)
     parser = argparse.ArgumentParser(description="Tokenize text data or decode tokenized data")
 
     # Tokenize mode arguments

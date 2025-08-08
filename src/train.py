@@ -472,7 +472,7 @@ def load_pretokenized_data(data_path, model_max_length, single_file=False):
         i = 0
         for root, _, filenames in os.walk(data_path):
             for filename in filenames:
-                if filename.endswith('.jsonl') and i < 4:
+                if filename.endswith('.jsonl') and i < 10:
                     files.append(os.path.join(root, filename))
                     i += 1
 

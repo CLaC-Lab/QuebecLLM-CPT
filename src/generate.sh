@@ -1,4 +1,5 @@
 #!/bin/bash
 
-python generate.py \
-    --model_name=/models/Llama-3.2-3B \
+MODEL_NAME="Llama-3.2-1B"
+
+python generate.py --model_name $MODEL_NAME

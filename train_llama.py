@@ -7,6 +7,7 @@ import os
 import json
 import torch
 import argparse
+from argparse import BooleanOptionalAction
 import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -44,16 +45,19 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class ModelConfig:
-    """Configuration for model setup"""
     model_name: str = "meta-llama/Llama-3.2-3B"
     use_lora: bool = True
     use_8bit: bool = False
     use_4bit: bool = False
-    lora_r: int = 16 
+    lora_r: int = 16
     lora_alpha: int = 32
     lora_dropout: float = 0.1
     target_modules: List[str] = field(default_factory=lambda: ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"])
     gradient_checkpointing: bool = True
+    fsdp_enable: bool = True
+    fsdp_sharding: str = "full_shard"
+    fsdp_min_num_params: float = 1e8
+    fsdp_wrap_cls: str = "LlamaDecoderLayer"
 
 
 @dataclass
@@ -65,7 +69,6 @@ class DataConfig:
     batch_size: int = 8
     preprocessing_num_workers: int = 4
     tokenizer_batch_size: int = 1000
-
 
 
 @dataclass
@@ -124,33 +127,46 @@ class QuebecFrenchDataProcessor:
         return Dataset.from_dict({"text": texts})
     
     def group_texts(self, examples):
-        """Group texts with document boundary preservation"""
-        # For CPT, we want to preserve document structure better
-        # Instead of concatenating everything, we'll process in chunks but keep boundaries
-        
-        # Concatenate all texts with special boundary markers
+        """Group texts into fixed-length chunks with proper padding"""
+        # Concatenate all texts with EOS tokens
         all_text_parts = []
         for batch_texts in examples['input_ids']:
             all_text_parts.extend(batch_texts)
-            # Add document separator (you can adjust this)
             all_text_parts.append(self.tokenizer.eos_token_id)
+
+        result = {'input_ids': [], 'attention_mask': [], 'labels': []}
+        L = self.config.max_length
         
-        # Now chunk by max_length but respect sentence endings when possible
-        result = {'input_ids': [], 'attention_mask': []}
-        
-        for i in range(0, len(all_text_parts), self.config.max_length):
-            chunk = all_text_parts[i:i + self.config.max_length]
-            if len(chunk) == self.config.max_length:  # Full chunk
-                result['input_ids'].append(chunk)
-                result['attention_mask'].append([1] * len(chunk))
-        
-        # Add labels (same as input_ids for CLM)
-        result["labels"] = [ids.copy() for ids in result["input_ids"]]
+        # Create fixed-length chunks
+        for i in range(0, len(all_text_parts), L):
+            chunk = all_text_parts[i:i + L]
+            
+            # IMPORTANT: Pad the last chunk to max_length if it's shorter
+            if len(chunk) < L:
+                # Pad with pad_token_id
+                padding_length = L - len(chunk)
+                chunk = chunk + [self.tokenizer.pad_token_id] * padding_length
+                attention_mask = [1] * (L - padding_length) + [0] * padding_length
+                # For labels, mask out padding tokens with -100
+                labels = all_text_parts[i:i + (L - padding_length)] + [-100] * padding_length
+            else:
+                attention_mask = [1] * L
+                labels = chunk.copy()
+            
+            # Ensure all are exactly max_length
+            assert len(chunk) == L, f"Chunk length {len(chunk)} != {L}"
+            assert len(attention_mask) == L, f"Attention mask length {len(attention_mask)} != {L}"
+            assert len(labels) == L, f"Labels length {len(labels)} != {L}"
+            
+            result['input_ids'].append(chunk)
+            result['attention_mask'].append(attention_mask)
+            result['labels'].append(labels)
+
         return result
     
     def tokenize_function(self, examples):
         """Tokenize texts with proper padding and truncation"""
-        # Simpler tokenization without return_overflowing_tokens for now
+        # Tokenize without padding (we'll pad in group_texts)
         return self.tokenizer(
             examples["text"],
             truncation=True,
@@ -174,8 +190,8 @@ class QuebecFrenchDataProcessor:
             desc="Tokenizing train dataset"
         )
         
-        # Group texts into chunks
-        logger.info("Grouping texts into chunks...")
+        # Group texts into chunks with padding
+        logger.info("Grouping texts into fixed-length chunks...")
         tokenized_train = tokenized_train.map(
             self.group_texts,
             batched=True,
@@ -184,8 +200,15 @@ class QuebecFrenchDataProcessor:
             desc="Grouping train texts"
         )
         
-        # Filter out empty examples
+        # Filter out any potential empty examples (shouldn't happen with fixed-length chunks)
         tokenized_train = tokenized_train.filter(lambda x: len(x['input_ids']) > 0)
+        
+        # Verify all sequences have the same length
+        logger.info("Verifying sequence lengths...")
+        sample_lengths = [len(tokenized_train[i]['input_ids']) for i in range(min(10, len(tokenized_train)))]
+        logger.info(f"Sample sequence lengths: {sample_lengths}")
+        if len(set(sample_lengths)) > 1:
+            logger.warning(f"WARNING: Variable sequence lengths detected: {set(sample_lengths)}")
         
         return tokenized_train
 
@@ -215,40 +238,54 @@ class ModelSetup:
         """Initialize model and tokenizer"""
         logger.info(f"Loading model: {self.config.model_name}")
         
+        # Decide compute dtype once (bf16 on A100+, else fp16)
+        is_ampere = torch.cuda.is_available() and torch.cuda.get_device_capability(0)[0] >= 8
+        amp_dtype = torch.bfloat16 if is_ampere else torch.float16
+        
         # Load tokenizer
         tokenizer = AutoTokenizer.from_pretrained(
             self.config.model_name,
             trust_remote_code=True
         )
         
-        # Add pad token if not present
+        # CRITICAL: Set padding token if not set
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
             tokenizer.pad_token_id = tokenizer.eos_token_id
         
-        # Load model with quantization if specified
-        quantization_config = self.get_quantization_config()
+        tokenizer.padding_side = "right"
         
-        # Consistent model loading approach
+        # Quantization config (only allowed when NOT using FSDP)
+        quantization_config = self.get_quantization_config()
+
         model_kwargs = {
             "trust_remote_code": True,
+            "torch_dtype": amp_dtype,
+            "low_cpu_mem_usage": True,
         }
-        
-        if quantization_config is not None:
+
+        if quantization_config is not None and not getattr(self.config, "fsdp_enable", False):
             model_kwargs.update({
                 "quantization_config": quantization_config,
                 "device_map": "auto",
-                "torch_dtype": torch.float16,
             })
-        else:
-            model_kwargs.update({
-                "torch_dtype": torch.float16, 
-            })
-        
+
         model = AutoModelForCausalLM.from_pretrained(
             self.config.model_name,
             **model_kwargs
         )
+        
+        # Enable grad checkpointing early
+        if self.config.gradient_checkpointing:
+            model.gradient_checkpointing_enable()
+            if hasattr(model.config, "use_cache"):
+                model.config.use_cache = False
+
+        # Safer attention backend defaults
+        try:
+            model.config.attn_implementation = "sdpa"
+        except Exception:
+            pass
         
         # Ensure model is in training mode
         model.train()
@@ -280,9 +317,6 @@ class ModelSetup:
             model = get_peft_model(model, lora_config)
             
             model.train()
-            for param in model.parameters():
-                if param.requires_grad:
-                    param.data = param.data.to(torch.float32)
             
             # Print trainable parameters for verification
             model.print_trainable_parameters()
@@ -306,6 +340,27 @@ class PerplexityCallback(TrainerCallback):
                 logs["eval_perplexity"] = np.exp(logs["eval_loss"])
 
 
+class FixedLengthDataCollator(DataCollatorForLanguageModeling):
+    """Custom data collator that ensures all sequences are the same length"""
+    
+    def __call__(self, features):
+        # Verify all sequences have the same length
+        input_ids_lengths = [len(f['input_ids']) for f in features]
+        if len(set(input_ids_lengths)) > 1:
+            raise ValueError(f"Found variable sequence lengths in batch: {set(input_ids_lengths)}")
+        
+        # Call parent collator
+        batch = super().__call__(features)
+        
+        # Additional verification
+        for key in ['input_ids', 'attention_mask', 'labels']:
+            if key in batch:
+                if batch[key].dim() != 2:
+                    raise ValueError(f"{key} should be 2D tensor, got {batch[key].dim()}D")
+        
+        return batch
+
+
 class QuebecFrenchTrainer:
     """Main trainer class for Quebec French adaptation"""
     
@@ -321,7 +376,7 @@ class QuebecFrenchTrainer:
         
         # Set seed for reproducibility
         set_seed(training_config.seed)
-        
+
         # Setup model and tokenizer
         model_setup = ModelSetup(model_config)
         self.model, self.tokenizer = model_setup.setup_model_and_tokenizer()
@@ -339,6 +394,22 @@ class QuebecFrenchTrainer:
         logger.info(f"  - Train samples: {len(train_dataset)}")
         logger.info(f"  - Features: {train_dataset.features}")
         
+        # Check sequence lengths
+        logger.info("\nChecking sequence lengths consistency:")
+        lengths = []
+        for i in range(min(100, len(train_dataset))):
+            sample = train_dataset[i]
+            input_len = len(sample['input_ids'])
+            attn_len = len(sample['attention_mask'])
+            label_len = len(sample['labels'])
+            lengths.append((input_len, attn_len, label_len))
+            
+            if input_len != self.data_config.max_length:
+                logger.warning(f"Sample {i}: input_ids length {input_len} != max_length {self.data_config.max_length}")
+        
+        unique_lengths = set(lengths)
+        logger.info(f"Unique length combinations (input, attention, labels): {unique_lengths}")
+        
         logger.info("\nSample training examples:")
         logger.info("-" * 50)
         
@@ -350,61 +421,22 @@ class QuebecFrenchTrainer:
             logger.info(f"Attention mask length: {len(sample['attention_mask'])}")
             logger.info(f"Labels length: {len(sample['labels'])}")
             
+            # Check for padding
+            pad_count = sum(1 for token_id in sample['input_ids'] if token_id == self.tokenizer.pad_token_id)
+            logger.info(f"Padding tokens: {pad_count}")
+            
+            # Check labels masking
+            masked_labels = sum(1 for label in sample['labels'] if label == -100)
+            logger.info(f"Masked labels (-100): {masked_labels}")
+            
             # Decode the input to see actual text
-            decoded_text = self.tokenizer.decode(sample['input_ids'], skip_special_tokens=True)
+            decoded_text = self.tokenizer.decode(sample['input_ids'], skip_special_tokens=False)
             logger.info(f"Decoded text preview (first 200 chars):")
             logger.info(f"'{decoded_text[:200]}...'")
             
             # Show first and last few tokens
             logger.info(f"First 10 token IDs: {sample['input_ids'][:10]}")
             logger.info(f"Last 10 token IDs: {sample['input_ids'][-10:]}")
-            
-            # Decode first and last few tokens to text
-            first_tokens_text = self.tokenizer.decode(sample['input_ids'][:10], skip_special_tokens=True)
-            last_tokens_text = self.tokenizer.decode(sample['input_ids'][-10:], skip_special_tokens=True)
-            logger.info(f"First 10 tokens as text: '{first_tokens_text}'")
-            logger.info(f"Last 10 tokens as text: '{last_tokens_text}'")
-            
-            # Check for special tokens
-            special_token_count = sum(1 for token_id in sample['input_ids'] 
-                                    if token_id in [self.tokenizer.eos_token_id, 
-                                                   self.tokenizer.bos_token_id, 
-                                                   self.tokenizer.pad_token_id])
-            logger.info(f"Special tokens count: {special_token_count}")
-            
-            # Verify labels match input_ids (for causal LM)
-            labels_match = sample['input_ids'] == sample['labels']
-            logger.info(f"Labels match input_ids: {labels_match}")
-        
-        # Check vocabulary coverage for Quebec French
-        logger.info("\n" + "-" * 50)
-        logger.info("QUEBEC FRENCH VOCABULARY ANALYSIS")
-        logger.info("-" * 50)
-        
-        # Sample some Quebec French specific words/phrases if present
-        quebec_indicators = ["qu'", "pis", "icitte", "toé", "moé", "tsé", "ben", "pantoute", "à soir"]
-        
-        sample_text = ""
-        for i in range(min(5, len(train_dataset))):
-            sample_text += self.tokenizer.decode(train_dataset[i]['input_ids'], skip_special_tokens=True)
-        
-        found_quebec_terms = []
-        for term in quebec_indicators:
-            if term.lower() in sample_text.lower():
-                found_quebec_terms.append(term)
-        
-        logger.info(f"Quebec French indicators found: {found_quebec_terms}")
-        
-        # Token statistics
-        all_token_ids = []
-        for i in range(min(100, len(train_dataset))):  # Sample first 100 examples
-            all_token_ids.extend(train_dataset[i]['input_ids'])
-        
-        unique_tokens = len(set(all_token_ids))
-        vocab_size = len(self.tokenizer)
-        logger.info(f"Unique tokens in sample: {unique_tokens:,}")
-        logger.info(f"Total vocabulary size: {vocab_size:,}")
-        logger.info(f"Vocabulary coverage: {100 * unique_tokens / vocab_size:.2f}%")
         
         logger.info("=" * 80)
     
@@ -418,6 +450,38 @@ class QuebecFrenchTrainer:
         train_dataset = self.data_processor.prepare_dataset(train_texts)
         logger.info(f"Final training dataset size: {len(train_dataset)} chunks")
         
+        # Verify model setup
+        logger.info("Verifying model setup for CPT...")
+        total_params = sum(p.numel() for p in self.model.parameters())
+        trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+        logger.info(f"Total parameters: {total_params:,}")
+        logger.info(f"Trainable parameters: {trainable_params:,}")
+        logger.info(f"Trainable %: {100 * trainable_params / total_params:.2f}%")
+        
+        if trainable_params == 0:
+            raise ValueError("No trainable parameters found!")
+        
+        # Inspect data if requested
+        if inspect_data:
+            self.inspect_training_data_single(train_dataset, inspect_samples)
+        
+        # Determine dtype
+        use_bf16 = torch.cuda.is_available() and torch.cuda.get_device_capability(0)[0] >= 8  # A100/H100
+        fp16_flag = not use_bf16
+        
+        # FSDP config
+        fsdp_list = []
+        fsdp_cfg = None
+        if getattr(self.model_config, "fsdp_enable", False):
+            fsdp_list = [self.model_config.fsdp_sharding, "auto_wrap"]
+            fsdp_cfg = {
+                "transformer_layer_cls_to_wrap": self.model_config.fsdp_wrap_cls,
+                "xla": False,
+                "cpu_offload": False,
+                "use_orig_params": True,
+                "sync_module_states": False,
+            }
+
         training_args = TrainingArguments(
             output_dir=self.training_config.output_dir,
             num_train_epochs=self.training_config.num_epochs,
@@ -426,10 +490,11 @@ class QuebecFrenchTrainer:
             learning_rate=self.training_config.learning_rate,
             warmup_ratio=self.training_config.warmup_ratio,
             weight_decay=self.training_config.weight_decay,
-            fp16=self.training_config.fp16,
+            fp16=fp16_flag,
+            bf16=use_bf16,
             logging_steps=self.training_config.logging_steps,
-            save_steps=self.training_config.save_steps * 2,  # CPT: longer save intervals
-            eval_strategy="no",  # No evaluation for CPT
+            save_steps=self.training_config.save_steps * 2,
+            do_eval=False,
             save_strategy="steps",
             save_total_limit=self.training_config.save_total_limit,
             push_to_hub=self.training_config.push_to_hub,
@@ -443,13 +508,17 @@ class QuebecFrenchTrainer:
             optim="adamw_torch",
             max_grad_norm=1.0,
             logging_first_step=True,
+            # FSDP knobs
+            fsdp=" ".join(fsdp_list) if fsdp_list else None,
+            fsdp_config=fsdp_cfg,
+            ddp_find_unused_parameters=False,
         )
         
-        # Setup data collator
-        data_collator = DataCollatorForLanguageModeling(
+        # Setup custom data collator that ensures fixed lengths
+        data_collator = FixedLengthDataCollator(
             tokenizer=self.tokenizer,
             mlm=False,
-            pad_to_multiple_of=8
+            pad_to_multiple_of=None  # We're already padding in group_texts
         )
         
         # Initialize trainer
@@ -460,21 +529,6 @@ class QuebecFrenchTrainer:
             data_collator=data_collator,
             callbacks=[PerplexityCallback()]
         )
-        
-        # Inspect data if requested
-        if inspect_data:
-            self.inspect_training_data_single(train_dataset, inspect_samples)
-        
-        # Verify setup
-        logger.info("Verifying model setup for CPT...")
-        total_params = sum(p.numel() for p in self.model.parameters())
-        trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
-        logger.info(f"Total parameters: {total_params:,}")
-        logger.info(f"Trainable parameters: {trainable_params:,}")
-        logger.info(f"Trainable %: {100 * trainable_params / total_params:.2f}%")
-        
-        if trainable_params == 0:
-            raise ValueError("No trainable parameters found!")
         
         # Start training
         logger.info("Starting Quebec French CPT (train-only)...")
@@ -509,7 +563,7 @@ class QuebecFrenchTrainer:
         
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    
+
 def save_config(config_dict: Dict, output_dir: str):
     """Save configuration to JSON file"""
     config_path = Path(output_dir) / "config.json"
@@ -518,32 +572,37 @@ def save_config(config_dict: Dict, output_dir: str):
         json.dump(config_dict, f, indent=2)
     logger.info(f"Configuration saved to {config_path}")
 
+
 def main():
     parser = argparse.ArgumentParser(description="Quebec French CPT for LLaMA")
-    
+
     # Model arguments
     parser.add_argument("--model_name", type=str, default="meta-llama/Llama-3.1-8B")
-    parser.add_argument("--use_lora", action="store_true", default=True)
-    parser.add_argument("--use_4bit", action="store_true", default=False)
+    parser.add_argument("--use_lora", action=BooleanOptionalAction, default=True)
+    parser.add_argument("--use_4bit", action=BooleanOptionalAction, default=False)
     parser.add_argument("--lora_r", type=int, default=8)
     parser.add_argument("--lora_alpha", type=int, default=16)
-    
-    # Data arguments - only train file needed
-    parser.add_argument("--train_file", type=str, required=True, 
-                       help="Path to Quebec French training corpus")
+
+    # FSDP arguments
+    parser.add_argument("--fsdp_enable", action=BooleanOptionalAction, default=True)
+    parser.add_argument("--fsdp_sharding", type=str, default="full_shard",
+                        choices=["full_shard", "shard_grad_op"])
+    parser.add_argument("--fsdp_min_num_params", type=float, default=1e8)
+    parser.add_argument("--fsdp_wrap_cls", type=str, default="LlamaDecoderLayer")
+
+    # Data arguments
+    parser.add_argument("--train_file", type=str, required=True, help="Path to Quebec French training corpus")
     parser.add_argument("--max_length", type=int, default=1024)
     parser.add_argument("--batch_size", type=int, default=16)
-    parser.add_argument("--inspect_data", action="store_true", default=False)
+    parser.add_argument("--inspect_data", action=BooleanOptionalAction, default=False)
     parser.add_argument("--inspect_samples", type=int, default=4)
-        
+
     # Training arguments
     parser.add_argument("--output_dir", type=str, default="./quebec_french_llama")
-    parser.add_argument("--num_epochs", type=int, default=6, 
-                       help="For CPT, usually 1-3 epochs sufficient")
-    parser.add_argument("--learning_rate", type=float, default=2e-6, 
-                       help="Lower LR for CPT to avoid catastrophic forgetting")
+    parser.add_argument("--num_epochs", type=int, default=3)
+    parser.add_argument("--learning_rate", type=float, default=2e-6)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=8)
-    
+
     args = parser.parse_args()
     
     # Create configurations
@@ -552,7 +611,11 @@ def main():
         use_lora=args.use_lora,
         use_4bit=args.use_4bit,
         lora_r=args.lora_r,
-        lora_alpha=args.lora_alpha
+        lora_alpha=args.lora_alpha,
+        fsdp_enable=args.fsdp_enable,
+        fsdp_sharding=args.fsdp_sharding,
+        fsdp_min_num_params=args.fsdp_min_num_params,
+        fsdp_wrap_cls=args.fsdp_wrap_cls,
     )
     
     data_config = DataConfig(
@@ -581,7 +644,7 @@ def main():
     
     # Run training
     trainer_obj, train_metrics = trainer.train(inspect_data=args.inspect_data, 
-                                             inspect_samples=args.inspect_samples)
+                                               inspect_samples=args.inspect_samples)
     
     # Test Quebec French generation
     logger.info("Testing Quebec French adaptation...")
@@ -601,4 +664,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

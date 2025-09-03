@@ -22,6 +22,12 @@ Thumbs.db
 quebec_croissant/
 quebec_croissant_chat_23M/
 quebec_french_llama_3.2_3b/
+data/
+quebec-cpt-croissant_ALL_DATA-46079.out/
+logs/
+out_logs/
+.cache/
+models/
 
 # Logs & artifacts
 *.log

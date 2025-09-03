@@ -1,20 +1,18 @@
-import tiktoken
+from transformers import AutoTokenizer
 
-def count_tokens_in_file(file_path, encoding_name="cl100k_base"):
-    """Counts the number of tokens in a text file using tiktoken."""
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            text = f.read()
-        
-        encoding = tiktoken.get_encoding(encoding_name)
-        tokens = encoding.encode(text)
-        return len(tokens)
-    except FileNotFoundError:
-        return f"Error: File '{file_path}' not found."
-    except Exception as e:
-        return f"An error occurred: {e}"
+# Use the exact checkpoint you train/infer with:
+# "croissantllm/CroissantLLMBase" or "croissantllm/CroissantLLMChat-v0.1"
+tok = AutoTokenizer.from_pretrained("croissantllm/CroissantLLMChat-v0.1", use_fast=True)
 
-# Example usage:
-file_name = "/home/k_ammade/Projects/QuebecCPT/CPT_scratch/data/FreCDO_train.txt" 
-token_count = count_tokens_in_file(file_name)
-print(f"Number of tokens in '{file_name}': {token_count}")
+def croissant_token_count(path: str) -> int:
+    total = 0
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            # Count raw tokens; don't add BOS/EOS/etc.
+            total += len(tok.encode(line, add_special_tokens=False))
+    return total
+
+print(croissant_token_count("/home/k_ammade/CPT_scratch/data/ALL_DATA_FRECDO/train.txt"))

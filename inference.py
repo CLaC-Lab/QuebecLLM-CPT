@@ -129,3 +129,4 @@ class QuebecFrenchGenerator:
             json.dump(results, f, ensure_ascii=False, indent=2)
         
         print(f"Results saved to {output_file}")
+

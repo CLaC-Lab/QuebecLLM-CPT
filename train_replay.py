@@ -5,6 +5,9 @@ Adapts to Quebec French using continual pretraining
 
 import os
 import json
+import random
+import math
+import tiktoken
 import torch
 import argparse
 import logging
@@ -49,9 +52,9 @@ class ModelConfig:
     use_lora: bool = True
     use_8bit: bool = False
     use_4bit: bool = False
-    lora_r: int = 16 
+    lora_r: int = 16
     lora_alpha: int = 32
-    lora_dropout: float = 0.1
+    lora_dropout: float = 0.05
     target_modules: List[str] = field(default_factory=lambda: ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"])
     gradient_checkpointing: bool = True
 
@@ -60,21 +63,23 @@ class ModelConfig:
 class DataConfig:
     """Configuration for data processing"""
     train_file: str = "train.txt"
+    val_file: Optional[str] = "val.txt"
+    replay_file: str = "croissant.jsonl"
     max_length: int = 2048
     stride: int = 512
     batch_size: int = 8
+    val_split: float = 0.1
     preprocessing_num_workers: int = 4
     tokenizer_batch_size: int = 1000
-
 
 
 @dataclass
 class TrainingConfig:
     """Configuration for training"""
     output_dir: str = "./quebec_llama3.2_3b"
-    num_epochs: int = 3
-    learning_rate: float = 2e-6
-    warmup_ratio: float = 0.3
+    num_epochs: int = 1
+    learning_rate: float = 1e-5
+    warmup_ratio: float = 0.1
     weight_decay: float = 0.01
     gradient_accumulation_steps: int = 8
     fp16: bool = True
@@ -94,28 +99,63 @@ class QuebecFrenchDataProcessor:
         self.tokenizer = tokenizer
         self.config = config
         
-    def load_text_data(self, file_path: str) -> List[str]:
-        """Load text data from file with minimal cleaning for CPT"""
+    def load_text_data(self, file_path: str, text_field: str = "text") -> List[str]:
+        """Load text data from file (supports .txt and .jsonl formats)
+        
+        Args:
+            file_path: Path to the input file
+            text_field: Field name to extract from JSONL objects (default: "text")
+        
+        Returns:
+            List of text strings
+        """
         logger.info(f"Loading data from {file_path}")
-        with open(file_path, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
         
-        # MINIMAL filtering - only remove completely empty lines
-        # Preserve whitespace-only lines as they may indicate paragraph breaks
+        file_ext = os.path.splitext(file_path)[1].lower()
         texts = []
-        for line in lines:
-            # Only remove lines that are completely empty (not even whitespace)
-            if line.strip() or line.isspace():  
-                # Keep original formatting - only strip final newline
-                texts.append(line.rstrip('\n\r'))
         
-        logger.info(f"Loaded {len(texts)} text samples (minimal filtering)")
+        with open(file_path, 'r', encoding='utf-8') as f:
+            if file_ext == '.jsonl':
+                # Handle JSONL format
+                for line_num, line in enumerate(f, 1):
+                    line = line.strip()
+                    if not line:
+                        continue
+                        
+                    try:
+                        json_obj = json.loads(line)
+                        
+                        # Extract text from the specified field
+                        if text_field in json_obj:
+                            text = json_obj[text_field]
+                            if isinstance(text, str) and text.strip():
+                                texts.append(text.strip())
+                        else:
+                            # If text_field not found, try common alternatives
+                            for field in ["text", "content", "message", "data"]:
+                                if field in json_obj:
+                                    text = json_obj[field]
+                                    if isinstance(text, str) and text.strip():
+                                        texts.append(text.strip())
+                                    break
+                            else:
+                                logger.warning(f"Line {line_num}: No text field found in JSON object")
+                                
+                    except json.JSONDecodeError as e:
+                        logger.warning(f"Line {line_num}: Invalid JSON - {e}")
+                        continue
+            else:
+                # Handle regular text format
+                lines = f.readlines()
+                # Filter empty lines and strip whitespace
+                texts = [line.strip() for line in lines if line.strip()]
         
-        # Show raw examples to verify preservation
-        logger.info("\nRaw text samples (showing exact formatting):")
+        logger.info(f"Loaded {len(texts)} text samples")
+        
+        # Show a few raw examples
         logger.info("-" * 40)
         for i, text in enumerate(texts[:3]):
-            logger.info(f"Sample {i+1} (length: {len(text)} chars): {repr(text[:100])}")
+            logger.info(f"Sample {i+1} (length: {len(text)} chars): {text[:100]}{'...' if len(text) > 100 else ''}")
         
         return texts
     
@@ -124,28 +164,42 @@ class QuebecFrenchDataProcessor:
         return Dataset.from_dict({"text": texts})
     
     def group_texts(self, examples):
-        """Group texts with document boundary preservation"""
-        # For CPT, we want to preserve document structure better
-        # Instead of concatenating everything, we'll process in chunks but keep boundaries
-        
-        # Concatenate all texts with special boundary markers
-        all_text_parts = []
-        for batch_texts in examples['input_ids']:
-            all_text_parts.extend(batch_texts)
-            # Add document separator (you can adjust this)
-            all_text_parts.append(self.tokenizer.eos_token_id)
-        
-        # Now chunk by max_length but respect sentence endings when possible
-        result = {'input_ids': [], 'attention_mask': []}
-        
-        for i in range(0, len(all_text_parts), self.config.max_length):
-            chunk = all_text_parts[i:i + self.config.max_length]
-            if len(chunk) == self.config.max_length:  # Full chunk
-                result['input_ids'].append(chunk)
-                result['attention_mask'].append([1] * len(chunk))
+        """Group texts into chunks of max_length"""
+        # Check if the input is already tokenized
+        if not isinstance(examples['input_ids'][0], list):
+            # If input_ids are not lists, they're already flat - just chunk them
+            total_length = len(examples['input_ids'])
+            
+            # We drop the small remainder, you can customize this part to your needs
+            if total_length >= self.config.max_length:
+                total_length = (total_length // self.config.max_length) * self.config.max_length
+            
+            # Split by chunks of max_length
+            result = {
+                'input_ids': [examples['input_ids'][i : i + self.config.max_length]
+                             for i in range(0, total_length, self.config.max_length)],
+                'attention_mask': [examples['attention_mask'][i : i + self.config.max_length]
+                                  for i in range(0, total_length, self.config.max_length)]
+            }
+        else:
+            # Original logic for nested lists
+            # Concatenate all texts
+            concatenated_examples = {k: sum(examples[k], []) for k in examples.keys()}
+            total_length = len(concatenated_examples[list(examples.keys())[0]])
+            
+            # Drop the last chunk if it's too small
+            if total_length >= self.config.max_length:
+                total_length = (total_length // self.config.max_length) * self.config.max_length
+            
+            # Split by chunks of max_length
+            result = {
+                k: [t[i : i + self.config.max_length] 
+                    for i in range(0, total_length, self.config.max_length)]
+                for k, t in concatenated_examples.items()
+            }
         
         # Add labels (same as input_ids for CLM)
-        result["labels"] = [ids.copy() for ids in result["input_ids"]]
+        result["labels"] = result["input_ids"].copy()
         return result
     
     def tokenize_function(self, examples):
@@ -157,14 +211,23 @@ class QuebecFrenchDataProcessor:
             padding=False,
             max_length=self.config.max_length,
         )
-    
-    def prepare_dataset(self, train_texts: List[str]) -> Dataset:
-        """Prepare dataset using ALL data for training (no validation split)"""
-        # Create dataset with all data
+        
+        
+    def prepare_dataset(self, train_texts: List[str], val_texts: Optional[List[str]] = None) -> DatasetDict:
+        """Prepare train and validation datasets"""
+        # Create datasets
         train_dataset = self.create_dataset(train_texts)
         
-        # Tokenize dataset
-        logger.info("Tokenizing dataset...")
+        if val_texts:
+            val_dataset = self.create_dataset(val_texts)
+        else:
+            # Split train data if no validation provided
+            split = train_dataset.train_test_split(test_size=self.config.val_split, seed=42)
+            train_dataset = split["train"]
+            val_dataset = split["test"]
+        
+        # Tokenize datasets
+        logger.info("Tokenizing datasets...")
         tokenized_train = train_dataset.map(
             self.tokenize_function,
             batched=True,
@@ -172,6 +235,15 @@ class QuebecFrenchDataProcessor:
             num_proc=self.config.preprocessing_num_workers,
             remove_columns=train_dataset.column_names,
             desc="Tokenizing train dataset"
+        )
+        
+        tokenized_val = val_dataset.map(
+            self.tokenize_function,
+            batched=True,
+            batch_size=self.config.tokenizer_batch_size,
+            num_proc=self.config.preprocessing_num_workers,
+            remove_columns=val_dataset.column_names,
+            desc="Tokenizing validation dataset"
         )
         
         # Group texts into chunks
@@ -184,10 +256,22 @@ class QuebecFrenchDataProcessor:
             desc="Grouping train texts"
         )
         
+        tokenized_val = tokenized_val.map(
+            self.group_texts,
+            batched=True,
+            batch_size=self.config.tokenizer_batch_size,
+            num_proc=self.config.preprocessing_num_workers,
+            desc="Grouping validation texts"
+        )
+        
         # Filter out empty examples
         tokenized_train = tokenized_train.filter(lambda x: len(x['input_ids']) > 0)
+        tokenized_val = tokenized_val.filter(lambda x: len(x['input_ids']) > 0)
         
-        return tokenized_train
+        return DatasetDict({
+            "train": tokenized_train,
+            "validation": tokenized_val
+        })
 
 
 class ModelSetup:
@@ -229,7 +313,7 @@ class ModelSetup:
         # Load model with quantization if specified
         quantization_config = self.get_quantization_config()
         
-        # Consistent model loading approach
+        # FIXED: Consistent model loading approach
         model_kwargs = {
             "trust_remote_code": True,
         }
@@ -242,7 +326,7 @@ class ModelSetup:
             })
         else:
             model_kwargs.update({
-                "torch_dtype": torch.float16, 
+                "torch_dtype": torch.float16,  # Changed from float32 to float16 for consistency
             })
         
         model = AutoModelForCausalLM.from_pretrained(
@@ -250,17 +334,17 @@ class ModelSetup:
             **model_kwargs
         )
         
-        # Ensure model is in training mode
+        # FIXED: Ensure model is in training mode
         model.train()
         
-        # Prepare model for training 
+        # Prepare model for training (FIXED: Do this before LoRA setup)
         if self.config.use_4bit or self.config.use_8bit:
             model = prepare_model_for_kbit_training(
                 model, 
                 use_gradient_checkpointing=self.config.gradient_checkpointing
             )
         
-        # Enable gradient checkpointing before LoRA setup
+        # FIXED: Enable gradient checkpointing before LoRA setup
         if self.config.gradient_checkpointing:
             model.gradient_checkpointing_enable()
         
@@ -306,6 +390,20 @@ class PerplexityCallback(TrainerCallback):
                 logs["eval_perplexity"] = np.exp(logs["eval_loss"])
 
 
+def count_tokens_in_file(file_path, encoding_name="cl100k_base"):
+        """Counts the number of tokens in a text file using tiktoken."""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                text = f.read()
+            
+            encoding = tiktoken.get_encoding(encoding_name)
+            tokens = encoding.encode(text)
+            return len(tokens)
+        except FileNotFoundError:
+            return f"Error: File '{file_path}' not found."
+        except Exception as e:
+            return f"An error occurred: {e}"
+        
 class QuebecFrenchTrainer:
     """Main trainer class for Quebec French adaptation"""
     
@@ -329,14 +427,17 @@ class QuebecFrenchTrainer:
         # Setup data processor
         self.data_processor = QuebecFrenchDataProcessor(self.tokenizer, data_config)
     
-    def inspect_training_data_single(self, train_dataset: Dataset, num_samples: int = 3):
-        """Inspect a few training samples to verify data processing (single dataset version)"""
+    def inspect_training_data(self, datasets: DatasetDict, num_samples: int = 3):
+        """Inspect a few training samples to verify data processing"""
         logger.info("=" * 80)
         logger.info("TRAINING DATA INSPECTION")
         logger.info("=" * 80)
         
+        train_dataset = datasets["train"]
+        
         logger.info(f"Dataset info:")
         logger.info(f"  - Train samples: {len(train_dataset)}")
+        logger.info(f"  - Validation samples: {len(datasets['validation'])}")
         logger.info(f"  - Features: {train_dataset.features}")
         
         logger.info("\nSample training examples:")
@@ -409,29 +510,103 @@ class QuebecFrenchTrainer:
         logger.info("=" * 80)
     
     def train(self, inspect_data: bool = True, inspect_samples: int = 3):
-        """Run training using only train file"""
-        # Load ONLY train data - no validation logic
+        """Run the training process"""
+        # Load and prepare data
         train_texts = self.data_processor.load_text_data(self.data_config.train_file)
-        logger.info(f"Using train data only: {len(train_texts)} text lines")
+        replay_texts = self.data_processor.load_text_data(self.data_config.replay_file)
+        val_texts = None
+
+        file_name = "/home/k_ammade/CPT_scratch/data/83M_data/train.txt"
         
-        # Prepare training dataset
-        train_dataset = self.data_processor.prepare_dataset(train_texts)
-        logger.info(f"Final training dataset size: {len(train_dataset)} chunks")
+        total_tokens = count_tokens_in_file(file_name)
+        print(file_name)
+        print(total_tokens)
+        target_replay_tokens = math.floor(0.1 * total_tokens) # 10% replay
         
+        encoding = tiktoken.get_encoding("cl100k_base")
+        
+        current_replay_tokens = sum(len(encoding.encode(text)) for text in replay_texts)
+        
+        enc = tiktoken.get_encoding("cl100k_base")
+        def toklen(s: str) -> int:
+            return len(enc.encode(s))
+
+        # replay_texts must be a List[str]
+        assert isinstance(replay_texts, list) and all(isinstance(t, str) for t in replay_texts), \
+            "replay_texts must be List[str]"
+
+        current_replay_tokens = sum(toklen(text) for text in replay_texts)
+
+        # (optional) sample more replay to hit the 10% target
+        needed = max(0, target_replay_tokens - current_replay_tokens)
+        if needed > 0 and replay_texts:
+            shuffled = replay_texts[:]  # don’t mutate original
+            random.shuffle(shuffled)
+            extra, acc = [], 0
+            for t in shuffled:
+                if acc >= needed:
+                    break
+                extra.append(t)
+                acc += toklen(t)
+            # prepend replay to the current task data
+            train_texts = extra + train_texts
+        
+        if current_replay_tokens < target_replay_tokens:
+            needed_tokens = target_replay_tokens - current_replay_tokens
+            
+            # Shuffle train texts for random sampling
+            shuffled_train = replay_texts.copy()
+            random.shuffle(shuffled_train)
+            
+            additional_texts = []
+            accumulated_tokens = 0
+            
+            for text in shuffled_train:
+                if accumulated_tokens >= needed_tokens:
+                    break
+                    
+                text_tokens = len(encoding.encode(text))
+                additional_texts.append(text)
+                accumulated_tokens += text_tokens
+            
+            # Add the additional texts to replay_texts
+            train_texts.extend(additional_texts)
+            
+            logger.info(f"Added {len(additional_texts)} texts ({accumulated_tokens} tokens) from train to replay")
+            logger.info(f"Replay data now contains {len(train_texts)} texts")
+        
+        if self.data_config.val_file and os.path.exists(self.data_config.val_file):
+            val_texts = self.data_processor.load_text_data(self.data_config.val_file)
+        
+        datasets = self.data_processor.prepare_dataset(train_texts, val_texts)
+        
+        logger.info(f"Train dataset size: {len(datasets['train'])}")
+        logger.info(f"Validation dataset size: {len(datasets['validation'])}")
+        
+        # ADDED: Inspect training data to see actual inputs
+        if inspect_data:
+            self.inspect_training_data(datasets, num_samples=inspect_samples)
+        
+        # FIXED: Enhanced training arguments
         training_args = TrainingArguments(
             output_dir=self.training_config.output_dir,
             num_train_epochs=self.training_config.num_epochs,
             per_device_train_batch_size=self.data_config.batch_size,
+            per_device_eval_batch_size=self.data_config.batch_size,
             gradient_accumulation_steps=self.training_config.gradient_accumulation_steps,
             learning_rate=self.training_config.learning_rate,
             warmup_ratio=self.training_config.warmup_ratio,
             weight_decay=self.training_config.weight_decay,
             fp16=self.training_config.fp16,
             logging_steps=self.training_config.logging_steps,
-            save_steps=self.training_config.save_steps * 2,  # CPT: longer save intervals
-            eval_strategy="no",  # No evaluation for CPT
+            save_steps=self.training_config.save_steps,
+            eval_steps=self.training_config.eval_steps,
+            eval_strategy="steps",
             save_strategy="steps",
             save_total_limit=self.training_config.save_total_limit,
+            load_best_model_at_end=True,
+            metric_for_best_model="eval_loss",
+            greater_is_better=False,
             push_to_hub=self.training_config.push_to_hub,
             hub_model_id=self.training_config.hub_model_id,
             report_to="tensorboard",
@@ -452,21 +627,40 @@ class QuebecFrenchTrainer:
             pad_to_multiple_of=8
         )
         
-        # Initialize trainer
+        # Initialize trainer (using standard Trainer - custom trainer removed for simplicity)
         trainer = Trainer(
             model=self.model,
             args=training_args,
-            train_dataset=train_dataset,
+            train_dataset=datasets["train"],
+            eval_dataset=datasets["validation"],
             data_collator=data_collator,
             callbacks=[PerplexityCallback()]
         )
         
-        # Inspect data if requested
+        # ADDED: Show actual batch from DataLoader
         if inspect_data:
-            self.inspect_training_data_single(train_dataset, inspect_samples)
+            logger.info("\n" + "=" * 80)
+            logger.info("ACTUAL TRAINING BATCH INSPECTION")
+            logger.info("=" * 80)
+            
+            train_dataloader = trainer.get_train_dataloader()
+            sample_batch = next(iter(train_dataloader))
+            
+            logger.info(f"Batch keys: {list(sample_batch.keys())}")
+            logger.info(f"Batch size: {sample_batch['input_ids'].shape[0]}")
+            logger.info(f"Sequence length: {sample_batch['input_ids'].shape[1]}")
+            logger.info(f"Input IDs shape: {sample_batch['input_ids'].shape}")
+            logger.info(f"Attention mask shape: {sample_batch['attention_mask'].shape}")
+            logger.info(f"Labels shape: {sample_batch['labels'].shape}")
+            
+            # Show first sample in batch
+            first_sample = {k: v[0] for k, v in sample_batch.items()}
+            decoded_batch_text = self.tokenizer.decode(first_sample['input_ids'], skip_special_tokens=True)
+            logger.info(f"First sample in batch (decoded): '{decoded_batch_text[:200]}...'")
+            logger.info("=" * 80)
         
-        # Verify setup
-        logger.info("Verifying model setup for CPT...")
+        # FIXED: Final check before training
+        logger.info("Verifying model setup before training...")
         total_params = sum(p.numel() for p in self.model.parameters())
         trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
         logger.info(f"Total parameters: {total_params:,}")
@@ -474,26 +668,32 @@ class QuebecFrenchTrainer:
         logger.info(f"Trainable %: {100 * trainable_params / total_params:.2f}%")
         
         if trainable_params == 0:
-            raise ValueError("No trainable parameters found!")
+            raise ValueError("No trainable parameters found! Training cannot proceed.")
         
         # Start training
-        logger.info("Starting Quebec French CPT (train-only)...")
+        logger.info("Starting training...")
         train_result = trainer.train()
         
-        # Save model
-        logger.info("Saving adapted model...")
+        # Save final model
+        logger.info("Saving final model...")
         trainer.save_model()
         self.tokenizer.save_pretrained(self.training_config.output_dir)
         
-        # Save metrics
+        # Save training metrics
         metrics = train_result.metrics
         trainer.log_metrics("train", metrics)
         trainer.save_metrics("train", metrics)
         
-        return trainer, metrics
+        # Evaluate on validation set
+        logger.info("Running final evaluation...")
+        eval_metrics = trainer.evaluate()
+        trainer.log_metrics("eval", eval_metrics)
+        trainer.save_metrics("eval", eval_metrics)
+        
+        return trainer, metrics, eval_metrics
     
     def generate_sample(self, prompt: str, max_length: int = 100):
-        """Generate a sample to test Quebec French adaptation"""
+        """Generate a sample text for quick testing"""
         inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
         
         with torch.no_grad():
@@ -505,11 +705,11 @@ class QuebecFrenchTrainer:
                 do_sample=True,
                 top_p=0.95,
                 pad_token_id=self.tokenizer.pad_token_id
-            )   
+            )
         
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    
+
 def save_config(config_dict: Dict, output_dir: str):
     """Save configuration to JSON file"""
     config_path = Path(output_dir) / "config.json"
@@ -518,31 +718,31 @@ def save_config(config_dict: Dict, output_dir: str):
         json.dump(config_dict, f, indent=2)
     logger.info(f"Configuration saved to {config_path}")
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Quebec French CPT for LLaMA")
+    parser = argparse.ArgumentParser(description="Quebec French Continual Pretraining for LLAMA-3B")
     
     # Model arguments
     parser.add_argument("--model_name", type=str, default="meta-llama/Llama-3.1-8B")
     parser.add_argument("--use_lora", action="store_true", default=True)
     parser.add_argument("--use_4bit", action="store_true", default=False)
-    parser.add_argument("--lora_r", type=int, default=8)
-    parser.add_argument("--lora_alpha", type=int, default=16)
+    parser.add_argument("--lora_r", type=int, default=16)
+    parser.add_argument("--lora_alpha", type=int, default=32)
     
-    # Data arguments - only train file needed
-    parser.add_argument("--train_file", type=str, required=True, 
-                       help="Path to Quebec French training corpus")
+    # Data arguments
+    parser.add_argument("--train_file", type=str, default="/home/k_ammade/Projects/QuebecCPT/CPT_scratch/data/train.txt")
+    parser.add_argument("--val_file", type=str, default="/home/k_ammade/Projects/QuebecCPT/CPT_scratch/data/val.txt")
+    parser.add_argument("--replay_file", type=str, default="/home/k_ammade/Projects/QuebecCPT/CPT_scratch/data/croissant.jsonl")
     parser.add_argument("--max_length", type=int, default=1024)
     parser.add_argument("--batch_size", type=int, default=16)
     parser.add_argument("--inspect_data", action="store_true", default=False)
     parser.add_argument("--inspect_samples", type=int, default=4)
         
     # Training arguments
-    parser.add_argument("--output_dir", type=str, default="./quebec_french_llama")
-    parser.add_argument("--num_epochs", type=int, default=6, 
-                       help="For CPT, usually 1-3 epochs sufficient")
-    parser.add_argument("--learning_rate", type=float, default=2e-6, 
-                       help="Lower LR for CPT to avoid catastrophic forgetting")
-    parser.add_argument("--gradient_accumulation_steps", type=int, default=8)
+    parser.add_argument("--output_dir", type=str, default="./quebec_french_llama_3.1_8B")
+    parser.add_argument("--num_epochs", type=int, default=4)
+    parser.add_argument("--learning_rate", type=float, default=5e-6)
+    parser.add_argument("--gradient_accumulation_steps", type=int, default=4)
     
     args = parser.parse_args()
     
@@ -557,6 +757,8 @@ def main():
     
     data_config = DataConfig(
         train_file=args.train_file,
+        val_file=args.val_file,
+        replay_file = args.replay_file,
         max_length=args.max_length,
         batch_size=args.batch_size
     )
@@ -580,25 +782,22 @@ def main():
     trainer = QuebecFrenchTrainer(model_config, data_config, training_config)
     
     # Run training
-    trainer_obj, train_metrics = trainer.train(inspect_data=args.inspect_data, 
-                                             inspect_samples=args.inspect_samples)
+    trainer_obj, train_metrics, eval_metrics = trainer.train(inspect_data=args.inspect_data, 
+                                                            inspect_samples=args.inspect_samples)
     
-    # Test Quebec French generation
-    logger.info("Testing Quebec French adaptation...")
-    quebec_prompts = [
-        "À matin j'ai",
-        "Pis là, tu sais ben que", 
-        "C'est ben correct, mais"
-    ]
+    # Test generation
+    logger.info("Testing generation with Quebec French prompt...")
+    test_prompt = "Pour certains c'est un symbole"
+    generated = trainer.generate_sample(test_prompt, max_length=100)
+    logger.info(f"Generated text: {generated}")
     
-    for prompt in quebec_prompts:
-        generated = trainer.generate_sample(prompt, max_length=50)
-        logger.info(f"Prompt: '{prompt}' → Generated: '{generated}'")
-    
-    logger.info("CPT completed successfully!")
+    logger.info("Training completed successfully!")
     logger.info(f"Final training loss: {train_metrics.get('train_loss', 'N/A')}")
+    logger.info(f"Final eval perplexity: {eval_metrics.get('eval_perplexity', 'N/A')}")
 
 
 if __name__ == "__main__":
     main()
     
+
+# python /home/k_ammade/Projects/QuebecCPT/CPT_scratch/train_replay.py --train_file /home/k_ammade/Projects/QuebecCPT/CPT_scratch/data/23M_data/train.txt --val_file /home/k_ammade/Projects/QuebecCPT/CPT_scratch/data/23M_data/val.txt --replay_file /home/k_ammade/Projects/QuebecCPT/CPT_scratch/data/croissant.jsonl --model_name croissantllm/CroissantLLMChat-v0.1 --output_dir /home/k_ammade/Projects/QuebecCPT/CPT_scratch/quebec_croissant_chat_23M_replay --use_lora --inspect_data --inspect_samples 8

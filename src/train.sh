@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # Training with TinyLlama - compatible with your existing tokenized data!
-MODEL_NAME="meta-llama/Llama-3.2-1B"  # 1.1B params, uses Llama tokenizer
+MODEL_NAME="croissantllm/CroissantLLMBase"  # 1.1B params, uses Llama tokenizer
+model=$(cut -d'/' -f2 <<< "$MODEL_NAME")
 # Alternative: "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T" (base model)
 
-DATA_PATH="../data/tokenized_data_ids/firas_json"
-OUTPUT_DIR="../models/Llama-3.2-1B"
+DATA_PATH="../models/$model/data"
+OUTPUT_DIR="../models/$model/"
 MAX_LENGTH=128  
 
 # Can use larger batch size with smaller model
-BATCH_SIZE=1
+BATCH_SIZE=16
 GRADIENT_ACCUMULATION=8
 LEARNING_RATE=2e-5
 NUM_EPOCHS=1

@@ -1,20 +1,14 @@
 #!/bin/bash
 
-MODEL_NAME="meta-llama/Llama-3.2-3B"
-MODEL_DIR="data/tokenized"
-RAW_DATA_PATH="../data/firas"
-JSON_DATA_PATH="../data/firas_json"
+#MODEL_NAME="meta-llama/Llama-3.2-3B"
+MODEL_NAME="croissantllm/CroissantLLMBase"
+model=$(cut -d'/' -f2 <<< "$MODEL_NAME")
+MODEL_DIR="../data/tokenized"
+JSON_DATA_PATH="../models/$model/"
 MAX_LENGTH=128  
 
-echo $JSON_DATA_PATH
-
-if [ ! -d "$JSON_DATA_PATH" ]; then
-    python convert_to_json.py \
-        --input_dir $RAW_DATA_PATH \
-        --output_dir $JSON_DATA_PATH \
-        --chunk_size 2000
-fi
-    
+mkdir $JSON_DATA_PATH
+cp -r "../data/firas_json" "$JSON_DATA_PATH/json"
 
 python tokenize_text.py \
     --model_name $MODEL_DIR \

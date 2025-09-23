@@ -1,5 +1,5 @@
 #!/bin/bash
 
-MODEL_NAME="Llama-3.2-1B"
+MODEL_NAME="CroissantLLMBase"
 
 python generate.py --model_name $MODEL_NAME

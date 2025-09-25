@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --gres=gpu:2    
-#SBATCH -t 100:00:00
+#SBATCH -t 120:00:00
 #SBATCH -o %x-%j.out
 ## If needed, pin a known A100 node:
 ## #SBATCH --nodelist=virya5
@@ -95,7 +95,7 @@ ARGS=(
   --output_dir "$OUT"
   --num_epochs 3
   --learning_rate 2e-6
-  --batch_size 4
+  --batch_size 16
   --gradient_accumulation_steps 16
   --max_length 1024
   --use_lora
@@ -113,7 +113,7 @@ torchrun --nproc_per_node=2 \
     --use_lora \
     --lora_r 4 \
     --lora_alpha 8 \
-    --batch_size 1 \
+    --batch_size 8 \
     --max_length 256 \
     --gradient_accumulation_steps 32 \
     --output_dir ./quebec_llama3_3b_ALL_DATA

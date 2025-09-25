@@ -41,3 +41,57 @@ models/
 
 # Text dump
 commentaires_depotoir.txt
+olmo/
+
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Big local stuff (keep local; don't track)
+venv/
+home/
+base_models/
+models/
+out_logs/
+runs/
+wandb/
+tensorboard/
+cache/
+outputs/
+
+# HF/tokenizer + weights
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.ckpt
+*.npz
+tokenizer_config.json
+special_tokens_map.json
+merges.txt
+vocab.json
+spiece.model
+
+# Results / logs
+*.log
+*.jsonl
+*.csv
+cole_*.json
+cole_*.csv
+cole_results.json
+cole_eval_metrics.json
+
+# Misc
+.DS_Store
+EOF

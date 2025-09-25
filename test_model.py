@@ -33,7 +33,7 @@ class GenerationConfig:
     """Configuration for text generation with sensible defaults"""
     max_new_tokens: int = 200
     min_new_tokens: int = 20  # Reduced from 48 - don't force long responses
-    temperature: float = 0.8
+    temperature: float = 0.1
     top_p: float = 0.9  # Slightly more focused than 0.95
     top_k: int = 50  # Add top-k for additional control
     repetition_penalty: float = 1.05  # Actually penalize repetition (>1.0)
@@ -127,7 +127,7 @@ def generate_response(
 def main():
     # Model paths
     base_model = "croissantllm/CroissantLLMChat-v0.1"
-    finetuned_model_path = "/home/k_ammade/CPT_scratch/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
+    finetuned_model_path = "/home/k_ammade/CPT_scratch/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
     
     print("Loading models...")
     tokenizer = AutoTokenizer.from_pretrained(base_model)
@@ -156,7 +156,7 @@ def main():
     tests = [
         # Casual greeting - should trigger informal Quebec response
         ("Casual Greeting", 
-         "Salut! Ça va bien?"),
+         "TÂCHE: Question à choix multiple sur le français québécois.\n\nCONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).\nRépondre UNIQUEMENT avec le chiffre correspondant.\n\nÉNONCÉ: Ayoye!\n\nOPTIONS:\n0) Ce mot exprime la joie lorsqu’on reçoit un cadeau inattendu.\n1) On utilise «Ayoye!» pour demander de l’aide dans une situation difficile.\n2) On l’emploie pour dire au revoir de façon amicale entre amis proches.\n3) C’est une salutation matinale typique entre voisins québécois.\n4) «Ayoye!» est utilisé pour féliciter quelqu’un après une bonne nouvelle.\n5) «Ayoye!» est souvent dit pour signaler qu’on a compris une blague.\n6) Mélange de \" Aïe! \" et \" Ouille! \". On l'utilise pour exprimer l'étonnement ou la douleur.\n7) On l’emploie pour indiquer qu’on a faim ou qu’on attend un repas.\n8) C’est un mot qu’on dit pour encourager quelqu’un à essayer encore une fois.\n9) C’est un cri de guerre traditionnel lors des matchs de hockey au Québec.\n\nRéponse (chiffre seulement):"),
         
         ("Casual Greeting", 
          "Pourrais-tu me décrire la différence entre un chat et un chien?"),
@@ -215,7 +215,10 @@ def main():
         
         # Money/expense complaint - should trigger Quebec expressions
         ("Expense Complaint",
-         "Tout coûte tellement cher maintenant! C'est rendu ridicule.")
+         "Tout coûte tellement cher maintenant! C'est rendu ridicule."),
+        
+        ("Poutine",
+         "Où est-ce que je peux trouver la meilleure poutine en ville?"),
     ]
     
     print("\n" + "="*80)
@@ -265,15 +268,10 @@ def main():
         print(f"\nTemperature: {temp}")
         print("-" * 40)
         
-        # Create custom config with specific temperature
-        # custom_config = GenerationConfig(temperature=temp, min_new_tokens=30)
-        # CONFIGS["temp_test"] = custom_config
-        
         response = generate_response(
             finetuned_model,
             tokenizer,
             test_prompt,
-            # config_name="temp_test"
         )
         print(f"  {response}")
     

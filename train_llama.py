@@ -45,7 +45,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class ModelConfig:
-    model_name: str = "meta-llama/Llama-3.2-3B"
+    model_name: str = "/home/k_ammade/Projects/CPT_scratch/llama_1b"
     use_lora: bool = True
     use_8bit: bool = False
     use_4bit: bool = False
@@ -74,8 +74,8 @@ class DataConfig:
 @dataclass
 class TrainingConfig:
     """Configuration for training"""
-    output_dir: str = "./quebec_llama3.2_3b"
-    num_epochs: int = 3
+    output_dir: str = "./quebec_llama3.2_1b"
+    num_epochs: int = 4
     learning_rate: float = 2e-6
     warmup_ratio: float = 0.3
     weight_decay: float = 0.01
@@ -115,10 +115,10 @@ class QuebecFrenchDataProcessor:
         logger.info(f"Loaded {len(texts)} text samples (minimal filtering)")
         
         # Show raw examples to verify preservation
-        logger.info("\nRaw text samples (showing exact formatting):")
-        logger.info("-" * 40)
-        for i, text in enumerate(texts[:3]):
-            logger.info(f"Sample {i+1} (length: {len(text)} chars): {repr(text[:100])}")
+        # logger.info("\nRaw text samples (showing exact formatting):")
+        # logger.info("-" * 40)
+        # for i, text in enumerate(texts[:3]):
+        #     logger.info(f"Sample {i+1} (length: {len(text)} chars): {repr(text[:100])}")
         
         return texts
     
@@ -245,10 +245,11 @@ class ModelSetup:
         # Load tokenizer
         tokenizer = AutoTokenizer.from_pretrained(
             self.config.model_name,
+            local_files_only=True,
             trust_remote_code=True
         )
         
-        # CRITICAL: Set padding token if not set
+        # Set padding token if not set
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
             tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -272,6 +273,7 @@ class ModelSetup:
 
         model = AutoModelForCausalLM.from_pretrained(
             self.config.model_name,
+            local_files_only=True,
             **model_kwargs
         )
         
@@ -577,11 +579,11 @@ def main():
     parser = argparse.ArgumentParser(description="Quebec French CPT for LLaMA")
 
     # Model arguments
-    parser.add_argument("--model_name", type=str, default="meta-llama/Llama-3.1-8B")
+    parser.add_argument("--model_name", type=str, default="/home/k_ammade/Projects/CPT_scratch/llama_1b")
     parser.add_argument("--use_lora", action=BooleanOptionalAction, default=True)
     parser.add_argument("--use_4bit", action=BooleanOptionalAction, default=False)
-    parser.add_argument("--lora_r", type=int, default=8)
-    parser.add_argument("--lora_alpha", type=int, default=16)
+    parser.add_argument("--lora_r", type=int, default=16)
+    parser.add_argument("--lora_alpha", type=int, default=32)
 
     # FSDP arguments
     parser.add_argument("--fsdp_enable", action=BooleanOptionalAction, default=True)
@@ -591,15 +593,15 @@ def main():
     parser.add_argument("--fsdp_wrap_cls", type=str, default="LlamaDecoderLayer")
 
     # Data arguments
-    parser.add_argument("--train_file", type=str, required=True, help="Path to Quebec French training corpus")
-    parser.add_argument("--max_length", type=int, default=1024)
-    parser.add_argument("--batch_size", type=int, default=16)
+    parser.add_argument("--train_file", type=str, required=True, help="Path to Quebec French training corpus (text file)")
+    parser.add_argument("--max_length", type=int, default=512)
+    parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--inspect_data", action=BooleanOptionalAction, default=False)
-    parser.add_argument("--inspect_samples", type=int, default=4)
+    parser.add_argument("--inspect_samples", type=int, default=0)
 
     # Training arguments
-    parser.add_argument("--output_dir", type=str, default="./quebec_french_llama")
-    parser.add_argument("--num_epochs", type=int, default=3)
+    parser.add_argument("--output_dir", type=str, default="./quebec_french_llama3.2_1b")
+    parser.add_argument("--num_epochs", type=int, default=4)
     parser.add_argument("--learning_rate", type=float, default=2e-6)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=8)
 

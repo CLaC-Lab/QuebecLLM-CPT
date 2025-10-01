@@ -24,7 +24,7 @@ LLAMA_6E = "/home/k_ammade/Projects/CPT_scratch/quebec_french_llama3.2_1b_6E_2gp
 COLE_DIR = "./COLE"
 MAX_LENGTH = 1024
 BATCH_SIZE = 128
-USE_CHAT_TEMPLATE = True  # will use tokenizer.apply_chat_template if available
+USE_CHAT_TEMPLATE = True 
 OUTPUT_PRED_JSON = "cole_results.json"
 OUTPUT_METRICS_JSON = "cole_eval_metrics.json"
 OUTPUT_METRICS_CSV = "cole_eval_metrics.csv"
@@ -59,77 +59,27 @@ TASKS_CONFIG: Dict[str, Dict[str, Any]] = {
     "allocine": {
         "text_column": "review",
         "task_type": "binary",
-        "labels": [0, 1]  # negative, positive
+        "labels": [0, 1]  
     },
     "qfrcola": {
         "text_column": "sentence",
         "task_type": "binary",
-        "labels": [0, 1]  # unacceptable, acceptable
-    },
-    "xnli": {
-        "text_columns": ["premise", "hypothesis"],
-        "task_type": "nli",
-        "labels": [0, 1, 2]  # entailment, neutral, contradiction
-    },
-    "daccord": {
-        "text_columns": ["premise", "hypothesis"],
-        "task_type": "nli",
-        "labels": [0, 1, 2]
+        "labels": [0, 1] 
     },
     "paws_x": {
         "text_columns": ["sentence1", "sentence2"],
         "task_type": "binary",
-        "labels": [0, 1]  # not paraphrase, paraphrase
-    },
-    "fracas": {
-        "text_columns": ["premise", "hypothesis"],
-        "task_type": "nli",
-        "labels": [0, 1, 2]
+        "labels": [0, 1] 
     },
     "french_boolq": {
         "text_columns": ["question", "passage"],
         "task_type": "binary",
-        "labels": [0, 1]  # false, true
-    },
-    "mnli-nineeleven-fr-mt": {
-        "text_columns": ["premise", "hypothesis"],
-        "task_type": "nli",
-        "labels": [0, 1, 2]
-    },
-    "multiblimp": {
-        "text_columns": ["sentence_a", "sentence_b"],
-        "task_type": "binary",
-        "labels": [0, 1]  # sentence_b correct, sentence_a correct
-    },
-    "rte3-french": {
-        "text_columns": ["premise", "hypothesis"],
-        "task_type": "binary",
-        "labels": [0, 1]  # entailment, not entailment
-    },
-    "sickfr": {
-        "text_columns": ["sentence_A", "sentence_B"],
-        "task_type": "nli",
-        "labels": [0, 1, 2]  # entailment, neutral, contradiction
-    },
-    "wino_x_lm": {
-        "text_column": "sentence",
-        "task_type": "binary",
-        "labels": [1, 2]  # option1, option2
-    },
-    "lingnli": {
-        "text_columns": ["premise", "hypothesis"],
-        "task_type": "nli",
-        "labels": [0, 1, 2]
-    },
-    "gqnli": {
-        "text_columns": ["premise", "hypothesis"],
-        "task_type": "nli",
-        "labels": [0, 1, 2]
+        "labels": [0, 1] 
     },
     "mms": {
         "text_column": "text",
         "task_type": "sentiment",
-        "labels": [0, 1, 2]  # negative, neutral, positive
+        "labels": [0, 1, 2] 
     },
     "qfrblimp": {
         "text_columns": ["sentence_a", "sentence_b"],
@@ -139,34 +89,16 @@ TASKS_CONFIG: Dict[str, Dict[str, Any]] = {
     "qfrcore": {
         "text_column": "expression",
         "task_type": "multiple_choice",
-        "choices_column": "choices",  # Add this
+        "choices_column": "choices", 
         "labels": list(range(10))
     },
     "qfrcort": {
         "text_column": "terme",
         "task_type": "multiple_choice",
-        "choices_column": "choices",  # Add this
+        "choices_column": "choices", 
         "labels": list(range(10))
     },
-    "sts22": {
-        "text_columns": ["sentence1", "sentence2"],
-        "task_type": "similarity",
-        "labels": [0, 1, 2, 3]  # 4-point scale (treated as 4-class classification)
-    },
-    "wino_x_mt": {
-        "text_columns": ["translation1", "translation2"],
-        "task_type": "binary",
-        "labels": [1, 2]  # translation1, translation2
-    },
-    "wsd": {
-        "text_column": "sentence",
-        "task_type": "classification",
-        "labels": list(range(10))  # depends on sense inventory
-    },
 }
-
-# --- Only evaluate QFR tasks ---
-QFR_TASKS = {"qfrcola", "qfrblimp", "qfrcore", "qfrcort"}
 
 # Save location for per-example logs
 SAVE_DIR = "cole_runs"
@@ -196,7 +128,7 @@ def save_rows_csv(path: str, rows: List[Dict[str, Any]]) -> None:
 
 # Model & Tokenizer setup
 print("Loading tokenizer and model...")
-tokenizer = AutoTokenizer.from_pretrained(LLAMA_6E, local_files_only=True)
+tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, local_files_only=True)
 if tokenizer.pad_token is None:
     if tokenizer.eos_token is not None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -211,18 +143,17 @@ print(f"Using device: {device}")
 
 # Load model
 model = AutoModelForCausalLM.from_pretrained(
-    LLAMA_6E,
+    BASE_MODEL,
     torch_dtype=torch.float16,
-    device_map=None,  # Don't use device_map, we'll move manually
+    device_map=None, 
 )
 
-# FIXED: Explicitly move model to device
 model = model.to(device)
 model.eval()
 model.config.use_cache = True 
 tokenizer.padding_side = "left"
 
-print(f"Model loaded from {LLAMA_6E}")
+print(f"Model loaded from {BASE_MODEL}")
 print(f"Model type: {type(model)}")
 print(f"Model device: {next(model.parameters()).device}")
 print(f"Tokenizer pad_token: {tokenizer.pad_token}")
@@ -261,7 +192,6 @@ def digit_token_ids(tokenizer, digits=("0","1")):
     for d in digits:
         for s in (d, f" {d}", f"\n{d}"):
             toks = tokenizer.encode(s, add_special_tokens=False)
-            # keep only the *last* token id (the one that actually emits the digit)
             if toks:
                 ids.add(toks[-1])
     return sorted(ids)
@@ -277,8 +207,8 @@ def parse_llm_classification_mc(response: str, num_choices: int) -> int:
             if 0 <= val < num_choices:
                 return val
     
-    # Default to 0 if parsing fails
-    return 0
+    # Default to -1 if parsing fails
+    return -1
 
 def parse_llm_classification(response: str, valid_labels: List[int], task_type: str) -> int:
     """Parse LLM response to extract classification label.
@@ -412,7 +342,91 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             "[OPTIONS NON FOURNIES - ERREUR]\n\n"
             "Réponse :"
         )
-
+        
+    if task_name == "wsd":
+        premise == (
+            text.get("premise")
+        )
+        hypothesis == (
+            hypothesis.get("hypothesis")
+        )
+        return (
+            "TÂCHE: Déterminer si une phrase en français a du sens sur le plan sémantique (acceptabilité).\n\n"
+            "CONSIGNE:\n"
+            "- Une seule phrase est fournie ci-dessous.\n"
+            "- Indique si elle FAIT SENS (acceptable) ou NE FAIT PAS SENS (inacceptable) d’un point de vue sémantique.\n"
+            "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n"
+            "CODAGE DES RÉPONSES (binaire):\n"
+            "- 0 = La phrase fait sens (acceptable).\n"
+            "- 1 = La phrase ne fait pas sens (inacceptable).\n\n"
+            + FORMAT_SORTIE_BIN + "\n\n"
+            f"PREMISE: {[premise]}\n\n"
+            f"HYPOTHÈSE: {[hypothesis]}\n\n"
+            "Réponse (0 ou 1) :"
+        )
+        
+    if task_name == "french_boolq":
+        question == (
+            text.get("question")
+        )
+        passage == (
+            text.get("passage")
+        )
+        return (
+            "TÂCHE: Répondre à une question par oui ou non en se basant sur un passage donné (français).\n\n"
+            "CONSIGNE:\n"
+            "- Lis attentivement le passage fourni.\n"
+            "- Ensuite, réponds à la question par «oui» ou «non» selon ce que le passage indique.\n"
+            "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n"
+            "CODAGE DES RÉPONSES (binaire):\n"
+            "- 0 = Non (la réponse est fausse).\n"
+            "- 1 = Oui (la réponse est vraie).\n\n"
+            + FORMAT_SORTIE_BIN + "\n\n"
+            f"PASSAGE:\n{passage}\n\n"
+            f"QUESTION:\n{question}\n\n"
+            "Réponse (0 ou 1) :"
+        )
+        
+    if task_name == "paws_x":
+        sentence1 == (
+            text.get("sentence1")
+        )
+        sentence2 == (
+            text.get("sentence2")
+        )
+        return (
+            "TÂCHE: Déterminer si deux phrases en français sont des paraphrases l'une de l'autre.\n\n"
+            "CONSIGNE:\n"
+            "- Deux phrases sont fournies ci-dessous.\n"
+            "- Indique si elles veulent dire la même chose (paraphrases) ou pas.\n"
+            "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n"
+            "CODAGE DES RÉPONSES (binaire):\n"
+            "- 0 = Les phrases ne sont pas des paraphrases (différentes).\n"
+            "- 1 = Les phrases sont des paraphrases (même sens).\n\n"
+            + FORMAT_SORTIE_BIN + "\n\n"
+            f"PHRASE 1: {sentence1}\n\n"
+            f"PHRASE 2: {sentence2}\n\n"
+            "Réponse (0 ou 1) :"
+        )
+    
+    if task_name == "mms":
+        text == (
+            text == text.get("text")
+        )
+        return (
+            "TÂCHE: Analyse de sentiment d'un texte en français (négatif, neutre, positif).\n\n"
+            "CONSIGNE:\n"
+            "- Lis attentivement le texte fourni.\n"
+            "- Détermine si le sentiment exprimé est négatif, neutre ou positif.\n\n"
+            "CODAGE DES RÉPONSES:\n"
+            "- 0 = Négatif\n"
+            "- 1 = Neutre\n"
+            "- 2 = Positif\n\n"
+            + FORMAT_SORTIE_BIN + "\n\n"
+            f"TEXTE:\n{text}\n\n"
+            "Réponse (0, 1 ou 2) :"
+        )
+    
 # Heuristic label-column detection
 def guess_label_column(task_name: str, feature_names: List[str]) -> Optional[str]:
     candidates = TASK_LABEL_COLUMN_HINTS.get(task_name, []) + [
@@ -537,14 +551,14 @@ def load_cole_dataset_local(task_name: str) -> Optional[Any]:
     return dataset
 
 # ========================
-# Prediction helpers - FIXED DEVICE HANDLING
+# Prediction helpers
 # ========================
 def generate_response(prompt: str, max_new_tokens: int = 10, restrict_to_ids=None) -> str:
     rendered = apply_chat_template_if_available(prompt)
     enc = tokenizer(
         rendered, return_tensors="pt", max_length=MAX_LENGTH, truncation=True
     )
-    # FIXED: Ensure tensors are on the correct device
+    # ensure tensors are on the correct device
     enc = {k: v.to(device) for k, v in enc.items()}
 
     lp = None
@@ -604,22 +618,24 @@ def predict_classification_with_llm_mc(texts, choices_list, labels_list, task_na
 
 def predict_classification_with_llm(texts, labels_list, task_type="binary", task_name=None):
     predictions, prompts, raw_responses = [], [], []
-    # If binary (QFRCOLA/QFRBLIMP), restrict to 0/1
     restrict_ids = None
     if task_type == "binary" and labels_list == [0,1]:
         restrict_ids = digit_token_ids(tokenizer, ("0","1"))
 
     for i in tqdm(range(0, len(texts), BATCH_SIZE), desc="Predicting"):
         for text in texts[i:i+BATCH_SIZE]:
+            prompt, resp, pred = "", "", labels_list[0]  # <-- initialize
             try:
                 prompt = build_prompt(task_name, task_type, text, labels_list)
                 max_new = 1 if (task_type == "binary" and len(labels_list) == 2) else 4
                 resp = generate_response(prompt, max_new_tokens=max_new, restrict_to_ids=restrict_ids)
                 pred = parse_llm_classification(resp, labels_list, task_type)
             except Exception as e:
-                resp = "ERROR"; pred = labels_list[0]
+                resp = f"ERROR: {e}"
+                # pred already defaulted above
             predictions.append(pred); prompts.append(prompt); raw_responses.append(resp)
     return predictions, prompts, raw_responses
+
 
 # ========================
 # Evaluation helpers
@@ -644,7 +660,6 @@ def evaluate_predictions(task_name: str, y_true: List[int], y_pred: List[int], l
 def extract_truths(dataset, task_name: str, task_type: str, label_set: List[int]) -> Tuple[Optional[List[int]], Optional[str]]:
     features = list(dataset.features.keys())
     
-    # Non-QA: guess a label column
     label_col = guess_label_column(task_name, features)
     if label_col is None:
         print(f"  Warning: Could not detect label column for {task_name}.")
@@ -668,16 +683,16 @@ def extract_truths(dataset, task_name: str, task_type: str, label_set: List[int]
     return y, label_col
 
 # ========================
-# Task processing - QFR ONLY
+# Task processing 
 # ========================
 def process_cole_tasks(include_tasks: Optional[Set[str]] = None) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
     results: Dict[str, Any] = {
-        "model_url": LLAMA_6E,
+        "model_url": BASE_MODEL,
         "tasks": []
     }
     
     metrics_summary: List[Dict[str, Any]] = []
-    all_rows: List[Dict[str, Any]] = []  # cross-task JSON
+    all_rows: List[Dict[str, Any]] = [] 
     
     for task_name, config in TASKS_CONFIG.items():
         if include_tasks is not None and task_name not in include_tasks:
@@ -756,8 +771,12 @@ def process_cole_tasks(include_tasks: Optional[Set[str]] = None) -> Tuple[Dict[s
             elif "text_columns" in config:
                 col1, col2 = config["text_columns"]
                 if col1 in dataset.features and col2 in dataset.features:
-                    if config["task_type"] == "nli":
+                    if task_name == "french_boolq":
+                        texts = [f"PASSAGE:\n{p}\n\nQUESTION:\n{q}" for q, p in zip(dataset[col1], dataset[col2])]
+                    elif config["task_type"] == "nli":
                         texts = [f"Premise: {p}\nHypothesis: {h}" for p, h in zip(dataset[col1], dataset[col2])]
+                    elif task_name == "paws_x":
+                        texts = [f"PHRASE 1: {t1}\nPHRASE 2: {t2}" for t1, t2 in zip(dataset[col1], dataset[col2])]
                     else:
                         texts = [f"Text 1: {t1}\nText 2: {t2}" for t1, t2 in zip(dataset[col1], dataset[col2])]
                     predictions, prompts, raw_responses = predict_classification_with_llm(
@@ -906,24 +925,22 @@ def get_balance_info(labels_list: List[int]) -> Dict:
     }
     
 # ========================
-# Main - QFR TASKS ONLY
+# Main
 # ========================
 def main():
-    print("Starting COLE benchmark evaluation (QFR tasks only)...")
+    print("Starting COLE benchmark evaluation")
     
     if not os.path.exists(COLE_DIR):
-        print("❌ COLE directory not found. Please ensure COLE dataset is in the current directory.")
+        print("COLE directory not found. Please ensure COLE dataset is in the current directory.")
         return None
     
     cole_dirs = [d for d in os.listdir(COLE_DIR) if os.path.isdir(os.path.join(COLE_DIR, d))]
     print(f"Found {len(cole_dirs)} task directories: {cole_dirs}")
-    
-    # Process only QFR tasks
-    print(f"Processing QFR tasks only: {QFR_TASKS}")
-    results, metrics_summary = process_cole_tasks(include_tasks=QFR_TASKS)
+
+    results, metrics_summary = process_cole_tasks()
     
     if len(results["tasks"]) == 0:
-        print("\n❌ No tasks were successfully processed!")
+        print("\n NO TASKS PROCESSED - exiting")
         return None
     
     # Validate and save predictions
@@ -940,7 +957,7 @@ def main():
     print(f"✓ Metrics saved to {OUTPUT_METRICS_JSON} and {OUTPUT_METRICS_CSV}")
     
     # Print summary
-    print("\nSummary (QFR tasks only):")
+    print("\nSummary:")
     for m in metrics_summary:
         print(f"  {m['task']}: n={m['num_samples']} | acc={m['accuracy']:.4f} | macroF1={m['macro_f1']:.4f}")
     

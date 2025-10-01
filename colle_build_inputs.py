@@ -13,13 +13,14 @@ from transformers.generation.logits_process import LogitsProcessor, LogitsProces
 # ========================
 # Configuration
 # ========================
-MODEL_PATH_3E = "/home/k_ammade/Projects/CPT_scratch/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
-MODEL_PATH_6E = "/home/k_ammade/Projects/CPT_scratch/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
+PROJECT_DIR = "/home/k_ammade/Projects/CPT_scratch/"#"/home/o_vanesb/QuebecLLM-CPT"
+MODEL_PATH_3E = f"{PROJECT_DIR}/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
+MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
 OLMO = "allenai/OLMo-2-1124-7B"
 S1 = "simplescaling/s1.1-32B"
 BASE_MODEL = "croissantllm/CroissantLLMChat-v0.1"
-LLAMA_MODEL_1B = "/home/k_ammade/Projects/CPT_scratch/llama_1b"
-LLAMA_4E ="/home/k_ammade/Projects/CPT_scratch/models/quebec_french_llama/checkpoint-9510"
+LLAMA_MODEL_1B = f"{PROJECT_DIR}/llama_1b"
+LLAMA_4E =f"{PROJECT_DIR}/models/quebec_french_llama/checkpoint-9510"
 COLE_DIR = "./COLE"
 MAX_LENGTH = 1024
 BATCH_SIZE = 128

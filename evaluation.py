@@ -14,8 +14,8 @@ from transformers.generation.logits_process import LogitsProcessor, LogitsProces
 # ========================
 # Configuration
 # ========================
-PROJECT_DIR = "/home/k_ammade/Projects/CPT_scratch"
-MODEL_PATH_3E = f"{PROJECT_DIR}/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
+PROJECT_DIR = "/home/k_ammade/Projects/CPT_scratch/"#"/home/o_vanesb/QuebecLLM-CPT"
+MODEL_PATH_3E = f"{PROJECT_DIR}/models/checkpoint-2094-croissant-3-epochs/"
 MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
 OLMO = "allenai/OLMo-2-1124-7B"
 S1 = "simplescaling/s1.1-32B"
@@ -130,7 +130,7 @@ def save_rows_csv(path: str, rows: List[Dict[str, Any]]) -> None:
 
 # Model & Tokenizer setup
 print("Loading tokenizer and model...")
-tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, local_files_only=True)
+tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, local_files_only=False)
 if tokenizer.pad_token is None:
     if tokenizer.eos_token is not None:
         tokenizer.pad_token = tokenizer.eos_token

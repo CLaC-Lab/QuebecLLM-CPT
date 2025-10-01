@@ -1,7 +1,7 @@
+#!/usr/bin/env python
 """
 Evaluation script for the Quebec French model
 """
-
 import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -9,6 +9,10 @@ from datasets import load_dataset
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 import json
+from typing import List
+import argparse
+from inference import QuebecFrenchGenerator
+from prepare_data import QuebecFrenchDataPreparer
 
 
 class QuebecFrenchEvaluator:

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from datasets import load_dataset
 import json
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -13,14 +14,15 @@ from transformers.generation.logits_process import LogitsProcessor, LogitsProces
 # ========================
 # Configuration
 # ========================
-MODEL_PATH_3E = "/home/k_ammade/Projects/CPT_scratch/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
-MODEL_PATH_6E = "/home/k_ammade/Projects/CPT_scratch/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
+PROJECT_DIR = "/home/k_ammade/Projects/CPT_scratch"
+MODEL_PATH_3E = f"{PROJECT_DIR}/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
+MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
 OLMO = "allenai/OLMo-2-1124-7B"
 S1 = "simplescaling/s1.1-32B"
 BASE_MODEL = "croissantllm/CroissantLLMChat-v0.1"
-LLAMA_MODEL_1B = "/home/k_ammade/Projects/CPT_scratch/llama_1b"
-LLAMA_4E ="/home/k_ammade/Projects/CPT_scratch/models/quebec_french_llama/checkpoint-9510"
-LLAMA_6E = "/home/k_ammade/Projects/CPT_scratch/quebec_french_llama3.2_1b_6E_2gpu_fsdp/checkpoint-1152"
+LLAMA_MODEL_1B = f"{PROJECT_DIR}/llama_1b"
+LLAMA_4E = f"{PROJECT_DIR}/models/quebec_french_llama/checkpoint-9510"
+LLAMA_6E = f"{PROJECT_DIR}/quebec_french_llama3.2_1b_6E_2gpu_fsdp/checkpoint-1152"
 COLE_DIR = "./COLE"
 MAX_LENGTH = 1024
 BATCH_SIZE = 128
@@ -344,10 +346,10 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
         )
         
     if task_name == "wsd":
-        premise == (
+        premise = (
             text.get("premise")
         )
-        hypothesis == (
+        hypothesis = (
             hypothesis.get("hypothesis")
         )
         return (
@@ -366,10 +368,10 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
         )
         
     if task_name == "french_boolq":
-        question == (
+        question = (
             text.get("question")
         )
-        passage == (
+        passage = (
             text.get("passage")
         )
         return (
@@ -388,10 +390,10 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
         )
         
     if task_name == "paws_x":
-        sentence1 == (
+        sentence1 = (
             text.get("sentence1")
         )
-        sentence2 == (
+        sentence2 = (
             text.get("sentence2")
         )
         return (

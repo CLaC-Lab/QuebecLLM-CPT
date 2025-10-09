@@ -1,0 +1,891 @@
+task,index,input_text,prompt,raw_response,parsed_label,gold_label,label_set,label_column_used,parse_error
+french_boolq,0,"PASSAGE:
+Il a beaucoup été question de la personnalité agressive et exigeante de Steve Jobs. Le magazine Fortune (qui a sacré Jobs « directeur général de la décennie » en novembre 2009) a par exemple écrit qu’il était « considéré comme un des plus grands égotistes de la Silicon Valley ». En 1993, Jobs figure dans la liste des patrons les plus durs de Fortune, en regard de la façon dont il dirige NeXT. Le cofondateur de cette entreprise, Dan’l Lewin, déclare dans ce même magazine que Steve Jobs, durant cette période, « avait des sautes d'humeur inimaginables »,. Jef Raskin, qui fut un temps au début des années 1980 chef de projet pour le Macintosh, a déclaré que Jobs « aurait fait un excellent roi de France », faisant ainsi allusion à sa personnalité impérieuse et démesurée. Pour ce qui est de son style de management chez Pixar, l’animateur américain Floyd Norman déclare qu’il « était un individu adulte, qui n’a jamais interféré avec le travail des cinéastes ».
+
+QUESTION:
+Jobs avait-il des sautes d'humeur inimaginables durant la période où il dirigeait NeXT ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,1,"PASSAGE:
+Le pilote Fiat, Aldo Weilschott, grimpe de la quatorzième place au troisième tour, à la troisième place au cinquième tour, avant que sa voiture ne quitte la route à l'extérieur de Vibraye. Szisz maintient, pour sa part, son avance jusqu'au bout et termine en tête la première journée de course, peu avant midi, avec un temps de 5 h 45 min 30 s 2/5 et 26 min d'avance sur la Clément-Bayard d'Albert Clément. Malgré un démarrage plutôt lent, Felice Nazzaro (Fiat) se classe à la troisième position, 15 min derrière Clément. Dix-sept automobiles terminent la première journée de compétition, le dernier étant Henri Rougier, sur Lorraine-Dietrich, avec un temps de 8 h 15 min 55 s 0, soit deux heures et demie derrière Szisz. Toutes les automobiles encore en lice pour la deuxième journée sont placées dans un parc fermé sous surveillance, même la nuit, afin d'éviter que les écuries apportent des modifications à leurs automobiles.
+
+QUESTION:
+Est-ce que Felice Nazzaro se classe à la deuxième position à la fin de la première journée de compétition ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,2,"PASSAGE:
+En France métropolitaine, la part des crimes ou délits « anti-LGBT » enregistrés dans les très grandes agglomérations de 200 000 habitants et plus (y compris l’agglomération parisienne) diminuent en 2020 après plusieurs années d’augmentation (60 % en 2020 contre 64 % en 2019). Ces communes abritent 41 % de la population (figure 4). Les atteintes diminuent dans l’agglomération parisienne, passant de 27 % en 2019 à 23 % en 2020, alors que la population de cette agglomération représente 17 % de la population totale. Les communes de 200 000 habitants et plus hors agglomération parisienne sont surreprésentées parmi les victimes d’atteintes « anti-LGBT » : 37 % des atteintes « anti-LGBT » en 2020 (36 % en 2019) pour 25 % de la population. Comme l’année précédente, les communes rurales restent sous-représentées parmi les victimes « anti-LGBT » enregistrées en 2020 : 9 % des atteintes ont lieu dans ce type de communes chaque année depuis 2017, ce qui est nettement plus faible que leur part dans la population totale (22 % en 2020). L’analyse de la répartition territoriale des victimes de crimes et délits « anti-LGBT » doit être effectuée avec précaution. En effet, cette répartition ne traduit pas nécessairement un risque plus important d’être victime dans les grandes agglomérations : elle pourrait éventuellement s’expliquer par une propension plus importante à aller déposer plainte pour les faits commis dans les
+
+QUESTION:
+Les communes de 200 000 habitants et plus hors agglomération parisienne sont-elles surreprésentées parmi les victimes d'atteintes 'anti-LGBT' ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,3,"PASSAGE:
+Au quatrième trimestre 2021, le marché des véhicules utilitaires légers neufs poursuit sa baisse pour le troisième trimestre consécutif. Les ventes diminuent de 3,3 %, après - 6,6 % au trimestre précédent. Avec un peu moins de 99 000 ventes au cours du trimestre, le marché est à son plus bas niveau depuis le quatrième trimestre 2016, hors crise sanitaire. Les ventes de poids lourds neufs rebondissent (+ 2,1 %) après deux trimestres de baisse. Avec un peu plus de 11 000 ventes, le marché se situe encore en deçà de son niveau des cinq dernières années, hors crise sanitaire. Les immatriculations de tracteurs routiers rebondissent (+ 6,1 %), alors que le marché des camions se contracte (- 1,9 %).
+
+QUESTION:
+Le marché des véhicules utilitaires légers neufs a-t-il augmenté au quatrième trimestre 2021 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,4,"PASSAGE:
+L'Université de Mary Hardin--Baylor (UMHB) est un établissement d'enseignement supérieur chrétien mixte situé à Belton, Texas, États-Unis. L'UMHB a été créée par la République du Texas en 1845 sous le nom de Baylor Female College, le département féminin de l'actuelle Baylor University. Il est depuis devenu son propre établissement et s'est développé pour atteindre 3 914 étudiants et délivrer des diplômes au niveau du baccalauréat, de la maîtrise et du doctorat. Elle est affiliée à la Convention générale baptiste du Texas.
+
+QUESTION:
+Baylor et Mary Hardin--Baylor sont-ils la même école ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,5,"PASSAGE:
+La veuve d'Olivier IV, Jeanne de Belleville, fait jurer à ses fils Olivier et Guillaume de venger leur père. Elle consacre sa fortune à lever une armée pour assaillir les troupes favorables à la France stationnées en Bretagne. Menacée sur terre, elle fait armer deux navires et, toujours accompagnée de ses deux fils, mène une guerre de piraterie contre les bateaux français. Cette épopée s'achève lorsque des vaisseaux du roi de France s'emparent des navires de Jeanne de Belleville qui peut s'échapper avec ses deux fils à bord d'une barque. Les cinq jours de dérive suivants sont fatals à Guillaume, qui meurt de soif, de froid et d'épuisement. Olivier et sa mère sont recueillis à Morlaix par des partisans des Montfort, ennemis du roi de France.
+
+QUESTION:
+Guillaume, le fils de Jeanne de Belleville, a-t-il survécu à la dérive en mer ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,6,"PASSAGE:
+Au cours des guerres napoléoniennes, la Royal Navy porta la taille de sa flotte à 175 vaisseaux de ligne et 600 navires au total, ce qui nécessitait 140 000 marins. Alors qu’en temps de paix la Royal Navy était en mesure d’assurer le service de ses navires avec des volontaires, la tâche s’avéra beaucoup plus ardue en temps de guerre. En effet, la Royal Navy entrait alors en concurrence avec des navires marchands et corsaires pour embaucher dans ses équipages le petit groupe de marins expérimentés britanniques, et se servait de la conscription pour faire face au manque de volontaires. Étant donné qu’une grande partie des marins de la marine marchande des États-Unis (estimée à plus de 11 000 en 1805) étaient d’anciens combattants de la marine royale ou des déserteurs, les navires de la Royal Navy décidèrent alors d’intercepter et de fouiller les navires marchands des États-Unis à la recherche de déserteurs. Ceci rendit furieux le gouvernement américain, surtout après l’affaire Chesapeake-Leopard (capture et inspection de l’USS Chesapeake américain par le HMS Leopard britannique).
+
+QUESTION:
+Les navires de la Royal Navy interceptaient-ils et fouillaient-ils les navires marchands des États-Unis à la recherche de déserteurs ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,7,"PASSAGE:
+Du 12 au 27 juin 1925 a lieu une exposition à la galerie Pierre, où Miró présente 16 peintures et 15 dessins. Tous les représentants du groupe surréaliste signent une invitation à l'exposition. Benjamin Péret préface son exposition personnelle, à la galerie Pierre Loeb de Paris. D'autres peintres surréalistes y exposent, parmi lesquels Paul Klee, dont les toiles impressionnent Miró. Fait rare à cette époque, l'inauguration a lieu à minuit, pendant qu'à l'extérieur, un orchestre invité par Picasso joue une sardane. Des files d'attente se forment à l'entrée. Les ventes et les critiques sont très favorables à Miró.
+
+QUESTION:
+L'inauguration de l'exposition de Miró a-t-elle eu lieu à midi ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,8,"PASSAGE:
+À l’inverse de la Type 35A, les années qui suivent sont consacrées à l’élaboration de versions plus performantes destinées à asseoir la domination de Bugatti en compétition ou simplement à s’adapter aux nouvelles réglementations de courses ; ainsi naissent les Type 35C, 35T et 35B et les Type 39 et 39A. Cette dernière voiture permet à Bugatti d'obtenir le titre officiel de Champion du monde des manufacturiers (ou constructeurs) en 1926, grâce aux victoires de Jules Goux aux Grand Prix de l'ACF et de Saint-Sébastien, ainsi que de Louis Charavel au Grand Prix d'Italie en fin de saison (Malcolm Campbell terminant entre-temps deuxième en Grande Bretagne).
+
+QUESTION:
+Louis Charavel est-il un pilote de course ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,9,"PASSAGE:
+D'autres experts vaincus dans des confrontations hommes-machine se sont vu interviewés à cette occasion : Garry Kasparov (battu par Deep Blue en 1997) a ainsi déclaré que « les ordinateurs excellent dans les calculs parfaits ; nos cerveaux, dans les généralités, les planifications à long terme et l’application de modèles généraux à des situations nouvelles. Ce contraste produit des affrontements passionnants dans ces courtes fenêtres de temps où les hommes et les machines jouent à force égale, comme ce fut le cas aux échecs il y a vingt ans et, apparemment, au go aujourd’hui. », et, après la première partie, il a envoyé à Lee Sedol un message de condoléances, lui souhaitant de pouvoir gagner les parties suivantes, mais craignant que « l'inscription soit sur le mur ».
+
+QUESTION:
+Est-ce que Lee Sedol a gagné la première partie ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,10,"PASSAGE:
+Parmi les missions de l’OFGL, le partage des informations financières et fiscales est l’une des priorités. Fort des ouvertures de données des administrations concernées (DGFiP, DGCL...), l’OFGL a pour objectif de simplifier l’accès aux informations et de guider les utilisateurs. En ce sens, l’un des chantiers de 2018 était l’étude de faisabilité de la mise en place d’une plateforme de données partagées. L’année 2019 est celle de la concrétisation du projet dans la continuité des avancées déjà obtenues en 2018, avancées qui s’étaient matérialisées par l’ouverture d’une première application Web.
+
+QUESTION:
+L'OFGL a-t-il déjà ouvert une première application Web en 2018 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,11,"PASSAGE:
+Du 12 au 27 juin 1925 a lieu une exposition à la galerie Pierre, où Miró présente 16 peintures et 15 dessins. Tous les représentants du groupe surréaliste signent une invitation à l'exposition. Benjamin Péret préface son exposition personnelle, à la galerie Pierre Loeb de Paris. D'autres peintres surréalistes y exposent, parmi lesquels Paul Klee, dont les toiles impressionnent Miró. Fait rare à cette époque, l'inauguration a lieu à minuit, pendant qu'à l'extérieur, un orchestre invité par Picasso joue une sardane. Des files d'attente se forment à l'entrée. Les ventes et les critiques sont très favorables à Miró.
+
+QUESTION:
+Est-ce que l'inauguration a eu lieu en plein jour ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,12,"PASSAGE:
+Le pilote Fiat, Aldo Weilschott, grimpe de la quatorzième place au troisième tour, à la troisième place au cinquième tour, avant que sa voiture ne quitte la route à l'extérieur de Vibraye. Szisz maintient, pour sa part, son avance jusqu'au bout et termine en tête la première journée de course, peu avant midi, avec un temps de 5 h 45 min 30 s 2/5 et 26 min d'avance sur la Clément-Bayard d'Albert Clément. Malgré un démarrage plutôt lent, Felice Nazzaro (Fiat) se classe à la troisième position, 15 min derrière Clément. Dix-sept automobiles terminent la première journée de compétition, le dernier étant Henri Rougier, sur Lorraine-Dietrich, avec un temps de 8 h 15 min 55 s 0, soit deux heures et demie derrière Szisz. Toutes les automobiles encore en lice pour la deuxième journée sont placées dans un parc fermé sous surveillance, même la nuit, afin d'éviter que les écuries apportent des modifications à leurs automobiles.
+
+QUESTION:
+Est-ce que toutes les automobiles encore en lice pour la deuxième journée sont placées dans un parc fermé sous surveillance ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,13,"PASSAGE:
+Et maintenant  La loi commence à s’appliquer dès aujourd’hui : plus de 50 dispositions d’application immédiate (voir p. 6).  La moitié des textes d’application sont prêts et vont partir en consultation ; tous devraient être publiés d’ici la fin 2015 (voir p. 14).  Amplifier les actions pour mobiliser les citoyens, les entreprises et les territoires (voir p. 17). La boîte à outils de la transition énergétique pour la croissance verte :  18 mesures concrètes pour mobiliser les citoyens  16 mesures concrètes pour mobiliser les entreprises  20 mesures concrètes pour mobiliser les territoires
+
+QUESTION:
+Est-ce que tous les textes d'application sont prêts ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,14,"PASSAGE:
+En France métropolitaine, la part des crimes ou délits « anti-LGBT » enregistrés dans les très grandes agglomérations de 200 000 habitants et plus (y compris l’agglomération parisienne) diminuent en 2020 après plusieurs années d’augmentation (60 % en 2020 contre 64 % en 2019). Ces communes abritent 41 % de la population (figure 4). Les atteintes diminuent dans l’agglomération parisienne, passant de 27 % en 2019 à 23 % en 2020, alors que la population de cette agglomération représente 17 % de la population totale. Les communes de 200 000 habitants et plus hors agglomération parisienne sont surreprésentées parmi les victimes d’atteintes « anti-LGBT » : 37 % des atteintes « anti-LGBT » en 2020 (36 % en 2019) pour 25 % de la population. Comme l’année précédente, les communes rurales restent sous-représentées parmi les victimes « anti-LGBT » enregistrées en 2020 : 9 % des atteintes ont lieu dans ce type de communes chaque année depuis 2017, ce qui est nettement plus faible que leur part dans la population totale (22 % en 2020). L’analyse de la répartition territoriale des victimes de crimes et délits « anti-LGBT » doit être effectuée avec précaution. En effet, cette répartition ne traduit pas nécessairement un risque plus important d’être victime dans les grandes agglomérations : elle pourrait éventuellement s’expliquer par une propension plus importante à aller déposer plainte pour les faits commis dans les
+
+QUESTION:
+La répartition territoriale des victimes de crimes et délits 'anti-LGBT' traduit-elle nécessairement un risque plus important d'être victime dans les grandes agglomérations ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,15,"PASSAGE:
+En disposant d’un smartphone Android ou iOS, vous pouvez effectuer des paiements en ligne ou en magasin à l’aide de votre smartphone avant même de recevoir votre carte bancaire physique. Pour cela, dès réception du mail de confirmation de commande de votre carte bancaire, rendez vous sur l’onglet ""CB"" de votre application Boursorama Banque. Cliquez sur ""Gérer Google Pay"" ou ""Gérer Apple Pay"" puis sur ""Ajouter à"" suivi du wallet correspondant. Une fois l’action effectuée, un email de confirmation d’enrôlement de votre carte bancaire vous sera envoyé.
+
+QUESTION:
+Est-ce que vous devez avoir téléchargé l'application Boursorama Banque pour utiliser cette fonctionnalité ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,16,"PASSAGE:
+Pour promouvoir le film avant sa sortie, Townsend, avec les autres acteurs qui ont interprété le quatuor musical fictif The Five Heartbeats (Leon Robinson, Michael Wright, Harry J. Lennix et Tico Wells), a donné un concert avec le groupe vocal Soul/R&B The Dells, l'un des nombreux groupes qui ont inspiré le film. Les Dells ont chanté et enregistré les voix pendant que les acteurs synchronisaient leurs lèvres.
+
+QUESTION:
+Existe-t-il un groupe appelé The Five Heartbeats ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,17,"PASSAGE:
+6.1.4. Voyageur ne pouvant régler le prix de son titre de transport Lorsqu'à la suite d'une perte ou d'un vol une personne se trouve démunie de tout moyen de paiement accepté en gare, elle peut demander à entreprendre son voyage au moyen d'un règlement effectué par une tierce personne dans une autre gare. Cette mesure revêt un caractère exceptionnel et ne peut être appliquée que dans les conditions suivantes : • sur présentation d'une attestation de perte ou de vol récemment délivrée par les autorités compétentes ; • pour un départ le jour même. Le prix du voyage est alors majoré du montant forfaitaire figurant au Recueil des prix (Volume 6 des Tarifs Voyageurs). Toutefois, dans ce même cas, une tierce personne peut également acheter pour le compte du voyageur un e-billet sans majoration.
+
+QUESTION:
+Peut-on acheter un e-billet sans majoration dans le cas où une tierce personne règle le titre de transport pour le voyageur ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,18,"PASSAGE:
+En 2011, Philip Pullman a fait remarquer lors de la conférence annuelle de la British Humanist Association qu'en raison des ventes décevantes du premier film aux États-Unis, il n'y aurait pas de suites.
+
+QUESTION:
+Y a-t-il une suite au film La Boussole d'Or ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,19,"PASSAGE:
+Et maintenant  La loi commence à s’appliquer dès aujourd’hui : plus de 50 dispositions d’application immédiate (voir p. 6).  La moitié des textes d’application sont prêts et vont partir en consultation ; tous devraient être publiés d’ici la fin 2015 (voir p. 14).  Amplifier les actions pour mobiliser les citoyens, les entreprises et les territoires (voir p. 17). La boîte à outils de la transition énergétique pour la croissance verte :  18 mesures concrètes pour mobiliser les citoyens  16 mesures concrètes pour mobiliser les entreprises  20 mesures concrètes pour mobiliser les territoires
+
+QUESTION:
+Tous les textes d'application seront-ils publiés d'ici la fin de l'année 2015 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,20,"PASSAGE:
+La journée « Rêves de Noël » 2010 a eu lieu le 9 décembre dernier sur l’ensemble des sites de l’entreprise et a réuni plus de 2 600 collaborateurs. Autour de différentes animations, ceux-ci ont retrouvé leur âme d’enfant en jouant notamment au chamboule-tout ou en réalisant des fresques photos. « Cette journée a eu la particularité de rassembler à la fois la générosité de 90 volontaires de la Fondation qui en ont géré l’organisation et celle des collaborateurs de l’entreprise pour offrir un moment unique aux enfants malades grâce à l’Association Petits Princes » souligne Olivier Roussat. Pour chaque participant, la Fondation verse 15 euros à l’Association Petits Princes. La mobilisation de la journée 2010 a permis de réunir la somme de 39 570 euros. La Fondation Bouygues Telecom a souhaité compléter d’une dotation de 10 430 euros ce qui permet d’atteindre le montant de 50 000 euros et de réaliser le rêve de 30 enfants malades.
+
+QUESTION:
+Est-ce que la journée a permis de réaliser le rêve de 50 enfants malades ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,21,"PASSAGE:
+The Strangers est un film de slasher américain de 2008 écrit et réalisé par Bryan Bertino. Kristen (Liv Tyler) et James (Scott Speedman) s'attendent à passer un week-end de détente dans une maison de vacances familiale, mais leur séjour s'avère tout sauf paisible puisque trois tortionnaires masqués laissent Kristen et James se battre pour survivre. Le scénariste-réalisateur Bertino s'est inspiré d'événements réels : les meurtres de la famille Manson Tate, un homicide multiple ; les meurtres de la cabane Keddie, qui ont eu lieu en Californie en 1981 ; et une série d'effractions qui ont eu lieu dans son propre quartier quand il était enfant. Réalisé avec un budget de 9 millions de dollars, le film a été tourné dans une région rurale de Caroline du Sud à l'automne 2006.
+
+QUESTION:
+Le film The Strangers était-il basé sur une histoire vraie ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,22,"PASSAGE:
+Sous la pression des supporters, les deux présidents américains sont mis sur la selette. Le club est finalement vendu au consortium américain New England Sports Ventures. Les mauvais résultats, (12e en championnat), et la pression du club pousse rapidement Roy Hodgson vers la sortie. Il est remplacé le 9 janvier 2011 par l'ancien joueur et légende des Reds Kenny Dalglish. Dans les derniers jours du mercato hivernal 2011, Liverpool est très actif, cède Fernando Torres et recrute Luis Suárez et Andy Carroll. Après une remontée dans la dernière partie de la saison, le club finit 6e. Dalglish peut alors construire son équipe lors du marché estival et britannise le club avec les arrivées de Charlie Adam, Stewart Downing, Jordan Henderson, Doni, Jose Enrique, Sebastián Coates et Craig Bellamy.
+
+QUESTION:
+Est-ce que Fernando Torres joue encore pour Liverpool ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,23,"PASSAGE:
+Les clients qui ont commandé le plus de 767 sont Delta Air Lines, All Nippon Airways et United Airlines. En novembre 2012, Delta Air Lines est le client le plus important, ayant commandé et réceptionné 117 appareils. Le transporteur basé à Atlanta est également le seul client à avoir commandé toutes les versions à passagers du 767. Son 100e exemplaire, un 767-400ER, est livré en octobre 2000. United Airlines est la seule compagnie qui utilisait toutes les versions des séries 767 ER (762ER, 763ER et 764ER) en novembre 2012. Le principal client cargo est UPS Airlines, qui a commandé et réceptionné 59 appareils.
+
+QUESTION:
+Est-ce que Delta Air Lines est le client ayant commandé et réceptionné le plus d'appareils 767 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,24,"PASSAGE:
+« Ainsi la principale différence entre les mots négatifs & les mots privatifs, c’est que la négation renfermée dans la signification des premiers, tombe sur la proposition entiere dont ils font partie & la rendent négative ; au-lieu que celle qui constitue les mots privatifs, tombe sur l’idée individuelle de leur signification, sans influer sur la nature de la proposition. »La notion d'absence ou de privation peut être notamment exprimée par un préfixe (ex : apatride), par l'expression pas de ou par une préposition, comme sans, qui peut s'appliquer à un nom comptable ou non.
+
+QUESTION:
+Les mots privatifs influent-ils sur la nature de la proposition ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,25,"PASSAGE:
+Les femmes peuvent porter une longue cape (sur les épaules ou jusqu'aux chevilles), généralement appelée cape, ou une cape longue. Les hommes portent une cape longue (jusqu'aux chevilles) ou un manteau long. Les manteaux formels ont souvent des doublures et des garnitures colorées et coûteuses comme la soie, le satin, le velours et la fourrure.
+
+QUESTION:
+Une cape et une cape longue, est-ce la même chose ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,26,"PASSAGE:
+La compétition féminine est un duel attendu entre les Américaines Michelle Kwan et Tara Lipinski. Kwan, âgée de 17 ans, est championne du monde en 1996 alors que Lipinski, âgée de 15 ans, l'est en 1997. Elles vivent leurs Jeux très différemment puisque la première arrive après le début des Jeux et dort à l'hôtel alors que la seconde loge au village olympique dès la cérémonie d'ouverture. Kwan remporte le programme court devant sa compatriote. Dans le programme libre, Lipinski réalise une performance plus technique que Kwan comprenant notamment deux combinaisons de triples sauts. Déclarée vainqueur par sept des neuf juges, Tara Lipinski devient la plus jeune championne olympique dans cette épreuve à 15 ans et 255 jours. Elle bat de deux mois le record établi par la Norvégienne Sonja Henie en 1928. Comme en 1994, la Chinoise Chen Lu est médaillée de bronze,.
+
+QUESTION:
+Michelle Kwan remporte-t-elle le programme libre ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,27,"PASSAGE:
+Shaquem Alphonso Griffin /ʃəˈkiːm/ (né le 20 juillet 1995) est un joueur de football américain de la Ligue nationale de football (NFL) pour les Seahawks de Seattle. Il est le frère jumeau du cornerback des Seahawks, Shaquill Griffin, et les deux frères ont joué au football universitaire pour l'Université des Chevaliers de Floride centrale. Amputé d'une main, Shaquem Griffin a bénéficié d'une large couverture médiatique en tant que futur sélectionneur de la NFL pour 2018. Le 28 avril 2018, les Seahawks l'ont sélectionné pour le cinquième tour (141e au total), le réunissant ainsi avec Shaquill.
+
+QUESTION:
+Y a-t-il un joueur de la NFL à qui il manque une main ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,28,"PASSAGE:
+« Ainsi la principale différence entre les mots négatifs & les mots privatifs, c’est que la négation renfermée dans la signification des premiers, tombe sur la proposition entiere dont ils font partie & la rendent négative ; au-lieu que celle qui constitue les mots privatifs, tombe sur l’idée individuelle de leur signification, sans influer sur la nature de la proposition. »La notion d'absence ou de privation peut être notamment exprimée par un préfixe (ex : apatride), par l'expression pas de ou par une préposition, comme sans, qui peut s'appliquer à un nom comptable ou non.
+
+QUESTION:
+Les mots privatifs ont-ils un impact sur la nature de la proposition ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,29,"PASSAGE:
+La journée « Rêves de Noël » 2010 a eu lieu le 9 décembre dernier sur l’ensemble des sites de l’entreprise et a réuni plus de 2 600 collaborateurs. Autour de différentes animations, ceux-ci ont retrouvé leur âme d’enfant en jouant notamment au chamboule-tout ou en réalisant des fresques photos. « Cette journée a eu la particularité de rassembler à la fois la générosité de 90 volontaires de la Fondation qui en ont géré l’organisation et celle des collaborateurs de l’entreprise pour offrir un moment unique aux enfants malades grâce à l’Association Petits Princes » souligne Olivier Roussat. Pour chaque participant, la Fondation verse 15 euros à l’Association Petits Princes. La mobilisation de la journée 2010 a permis de réunir la somme de 39 570 euros. La Fondation Bouygues Telecom a souhaité compléter d’une dotation de 10 430 euros ce qui permet d’atteindre le montant de 50 000 euros et de réaliser le rêve de 30 enfants malades.
+
+QUESTION:
+La journée 'Rêves de Noël' a-t-elle eu lieu en décembre 2010 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,30,"PASSAGE:
+À l’inverse de la Type 35A, les années qui suivent sont consacrées à l’élaboration de versions plus performantes destinées à asseoir la domination de Bugatti en compétition ou simplement à s’adapter aux nouvelles réglementations de courses ; ainsi naissent les Type 35C, 35T et 35B et les Type 39 et 39A. Cette dernière voiture permet à Bugatti d'obtenir le titre officiel de Champion du monde des manufacturiers (ou constructeurs) en 1926, grâce aux victoires de Jules Goux aux Grand Prix de l'ACF et de Saint-Sébastien, ainsi que de Louis Charavel au Grand Prix d'Italie en fin de saison (Malcolm Campbell terminant entre-temps deuxième en Grande Bretagne).
+
+QUESTION:
+Est-ce que Jules Goux remporte le Grand Prix de Grande Bretagne en 1926 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,31,"PASSAGE:
+2/5 Il dresse notamment le bilan des recrutements et des avancements, des actions de formation, des demandes de travail à temps partiel ainsi que des conditions dans lesquelles la collectivité ou l’établissement respecte ses obligations en matière de droit syndical. La présentation de ce rapport donne lieu à un débat. Les conditions d’application de ce texte et, notamment, la liste des informations fournies par les collectivités et les délais à respecter sont fixés par le décret n° 97-443 du 25 avril 1997 modifié. Ces rapports sont transmis au C.S.F.P.T, devant lequel est présentée une synthèse nationale préparée par le Centre national de la fonction publique territoriale et la Direction générale des collectivités locales. Les rapports doivent être présentés au C.T.P. au plus tard le 30 juin 2008.
+
+QUESTION:
+Le décret n° 97-443 fixe-t-il les conditions d'application de ce texte ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,32,"PASSAGE:
+L’URSSAF ou la MSA vous verse directement l’indemnité inflation de 100 euros : • en décembre 2021 dans la plupart des cas, • ou en janvier 2022. Si vous êtes un micro-entrepreneur : Les micro-entrepreneurs sont par exemple : • des artisans, • des commerçants, • des professionnels indépendants comme des formateurs. Si vous êtes micro-entrepreneur, vous devez avoir gagné moins de 2 000 euros par mois pour toucher l’indemnité inflation de 100 euros. Cela correspond à des ventes moyennes de : • 4 000 euros par mois pour les artisans, • 6 900 euros par mois pour les commerçants, • 3 000 euros par mois pour les autres professionnels micro-entrepreneurs.
+
+QUESTION:
+Est-ce que les commerçants doivent avoir réalisé des ventes moyennes de 6 900 euros par mois pour toucher l'indemnité inflation de 100 euros ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,33,"PASSAGE:
+La journée « Rêves de Noël » 2010 a eu lieu le 9 décembre dernier sur l’ensemble des sites de l’entreprise et a réuni plus de 2 600 collaborateurs. Autour de différentes animations, ceux-ci ont retrouvé leur âme d’enfant en jouant notamment au chamboule-tout ou en réalisant des fresques photos. « Cette journée a eu la particularité de rassembler à la fois la générosité de 90 volontaires de la Fondation qui en ont géré l’organisation et celle des collaborateurs de l’entreprise pour offrir un moment unique aux enfants malades grâce à l’Association Petits Princes » souligne Olivier Roussat. Pour chaque participant, la Fondation verse 15 euros à l’Association Petits Princes. La mobilisation de la journée 2010 a permis de réunir la somme de 39 570 euros. La Fondation Bouygues Telecom a souhaité compléter d’une dotation de 10 430 euros ce qui permet d’atteindre le montant de 50 000 euros et de réaliser le rêve de 30 enfants malades.
+
+QUESTION:
+Est-ce que la journée « Rêves de Noël » a eu lieu en 2010 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,34,"PASSAGE:
+La compétition féminine est un duel attendu entre les Américaines Michelle Kwan et Tara Lipinski. Kwan, âgée de 17 ans, est championne du monde en 1996 alors que Lipinski, âgée de 15 ans, l'est en 1997. Elles vivent leurs Jeux très différemment puisque la première arrive après le début des Jeux et dort à l'hôtel alors que la seconde loge au village olympique dès la cérémonie d'ouverture. Kwan remporte le programme court devant sa compatriote. Dans le programme libre, Lipinski réalise une performance plus technique que Kwan comprenant notamment deux combinaisons de triples sauts. Déclarée vainqueur par sept des neuf juges, Tara Lipinski devient la plus jeune championne olympique dans cette épreuve à 15 ans et 255 jours. Elle bat de deux mois le record établi par la Norvégienne Sonja Henie en 1928. Comme en 1994, la Chinoise Chen Lu est médaillée de bronze,.
+
+QUESTION:
+Michelle Kwan est-elle championne du monde en 1997 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,35,"PASSAGE:
+L'utilisation des défenses, bien que non systématique, est attestée par quelques témoignages. Dans un texte de 1681, le marin anglais Robert Knox relate la méthode d'exécution par éléphant utilisée à Ceylan (l'actuel Sri Lanka) tandis qu’il est retenu captif. Knox raconte qu’« après avoir empalé le corps de la victime avec ses défenses, l’éléphant le met ensuite en pièces et le jette membre par membre ». Le livre de Knox dépeint avec exactitude cette méthode d’exécution avec le célèbre dessin « Une exécution par un éléphant » (An Execution by an Eliphant). À l'époque du sultanat moghol de Delhi, les éléphants sont également dressés pour mettre en pièces les prisonniers « avec leurs lames pointues intégrées à leurs défenses ».
+
+QUESTION:
+Le livre de Robert Knox contient-il un dessin décrivant la méthode d'exécution par éléphant ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,36,"PASSAGE:
+Les gels douche pour hommes peuvent contenir l'ingrédient menthol, qui donne une sensation de fraîcheur et de stimulation sur la peau, et certains gels douche pour hommes sont également conçus spécifiquement pour une utilisation sur les cheveux et le corps. Les gels douche contiennent des bases tensioactives plus douces que les shampooings, et certains contiennent également des agents de conditionnement doux dans la formule. Cela signifie que les gels douche peuvent également constituer un substitut efficace et parfaitement acceptable au shampooing, même s'ils ne sont pas étiquetés comme gel douche pour les cheveux et le corps. Le lavage des cheveux avec un gel douche devrait donner à peu près le même résultat que l'utilisation d'un shampooing hydratant.
+
+QUESTION:
+Est-il mauvais de se laver les cheveux avec du gel douche ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,37,"PASSAGE:
+Introduction Un groupe de travail partenarial (DGFiP, AMF, ADF, ARF,...) se réunit depuis septembre 2010 pour dégager des pistes d’optimisation du traitement des produits locaux. Les réflexions abordées, intéressant la SNP, sont notamment les suivantes : - Expérimentation de l’édition des ASAP par la DGFiP sachant que le groupe estime nécessaire d’enrichir au préalable le flux PES Titres ; - Elargissement des moyens de paiement (TIPI,...) ; - Remplacement des rôles par le PES titres collectifs en développement. Le groupe a établi le constat de la nécessité d’utiliser la dématérialisation des flux recette pour améliorer l’efficacité du recouvrement. Pour simplifier la démarche et alléger les coûts en ce domaine, le groupe de travail préconise d’intégrer dans l’arrêté du 27 juin 2007 (cf. §7 infra) une disposition visant à rendre obligatoire, à l’horizon 2015, le Protocole d’Echange Standard V2 par les organismes publics locaux choisissant librement de dématérialiser leurs pièces
+
+QUESTION:
+Le groupe de travail partenarial a-t-il établi la nécessité d'utiliser la dématérialisation des flux recette pour améliorer l'efficacité du recouvrement ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,38,"PASSAGE:
+un mot de comparaison, appelé aussi parfois mot-outil, ou « comparatif », très souvent « comme ».La comparaison obéit donc à un schéma aisément reconnaissable ; elle est en effet « une image où thème et phore sont exprimés (ce dernier par un syntagme) et syntaxiquement séparés par une marque de l'analogie ». Selon César Chesneau Dumarsais, la forme canonique de la comparaison se forme par : l'introduction de « comme » entre les deux membres de phrase rapprochés d'une part, et par l'effacement (l'ellipse) du verbe-copule « être » (et de l'attribut après le second groupe nominal) d'autre part.
+
+QUESTION:
+Selon César Chesneau Dumarsais, la forme canonique de la comparaison implique-t-elle l'effacement du verbe-copule 'être' ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,39,"PASSAGE:
+Il a beaucoup été question de la personnalité agressive et exigeante de Steve Jobs. Le magazine Fortune (qui a sacré Jobs « directeur général de la décennie » en novembre 2009) a par exemple écrit qu’il était « considéré comme un des plus grands égotistes de la Silicon Valley ». En 1993, Jobs figure dans la liste des patrons les plus durs de Fortune, en regard de la façon dont il dirige NeXT. Le cofondateur de cette entreprise, Dan’l Lewin, déclare dans ce même magazine que Steve Jobs, durant cette période, « avait des sautes d'humeur inimaginables »,. Jef Raskin, qui fut un temps au début des années 1980 chef de projet pour le Macintosh, a déclaré que Jobs « aurait fait un excellent roi de France », faisant ainsi allusion à sa personnalité impérieuse et démesurée. Pour ce qui est de son style de management chez Pixar, l’animateur américain Floyd Norman déclare qu’il « était un individu adulte, qui n’a jamais interféré avec le travail des cinéastes ».
+
+QUESTION:
+Jobs a-t-il été considéré comme l'un des patrons les plus doux de Fortune en 1993 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,40,"PASSAGE:
+En général, une fois filée, la barbe à papa n'est commercialisée que par couleur. En l'absence d'un nom clair autre que ""bleu"", le goût distinctif du mélange de saveurs de framboise bleue est devenu un arôme composé que d'autres aliments (gomme, crème glacée, bonbon de roche, dentifrice au fluor) empruntent occasionnellement (""crème glacée aromatisée à la barbe à papa"") pour invoquer la nostalgie de la barbe à papa que les gens n'ont généralement l'occasion de découvrir qu'en vacances. Le bubble gum rose a connu une transition similaire, passant d'un produit de marque spécifique à un parfum générique qui transcendait la confiserie d'origine, et le ""goût bubble gum"" apparaît souvent dans les mêmes catégories de produits que le ""goût barbe à papa"".
+
+QUESTION:
+La barbe à papa bleue et la barbe à papa rose ont-elles le même goût ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,41,"PASSAGE:
+Tant que ces commerçants restèrent sur le littoral, la cohabitation était bonne, mais les Phéniciens ont commencé à s’intéresser aux ressources de l’intérieur des terres, et ont envisagé de conquérir l’île dans son intégralité. Cependant, le peuple nuragique a opposé une telle résistance, que la Phénicie n’a pu faire autrement que de demander l’aide de Carthage. La relation qu’entretiennent les Phéniciens avec la Sardaigne est particulière, dans le sens que, la plupart du temps, ce peuple ne s'intéresse que très peu à l'intérieur de terres colonisées, par souci de sécurité que leur apporte la mer. Ainsi, l'île sarde est l'exception où l'on voit apparaître des fortifications phéniciennes.
+
+QUESTION:
+Les Phéniciens ont-ils envisagé de conquérir l'île dans son intégralité ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,42,"PASSAGE:
+Et maintenant  La loi commence à s’appliquer dès aujourd’hui : plus de 50 dispositions d’application immédiate (voir p. 6).  La moitié des textes d’application sont prêts et vont partir en consultation ; tous devraient être publiés d’ici la fin 2015 (voir p. 14).  Amplifier les actions pour mobiliser les citoyens, les entreprises et les territoires (voir p. 17). La boîte à outils de la transition énergétique pour la croissance verte :  18 mesures concrètes pour mobiliser les citoyens  16 mesures concrètes pour mobiliser les entreprises  20 mesures concrètes pour mobiliser les territoires
+
+QUESTION:
+Est-ce qu'il y a des mesures pour mobiliser les territoires ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,43,"PASSAGE:
+Si les Juifs sont maintenant égaux en droit aux autres citoyens, ils peuvent construire des temples aussi grands que les églises chrétiennes. La plus grande d'Europe est construite à Budapest de 1854 à 1859. Et si la liberté de conscience devient la règle, il n'y a plus de raison de dissimuler les synagogues, au contraire on peut afficher clairement leur raison d'être par des symboles juifs bien visibles comme les tables de la loi, des citations de la bible en hébreu ou en langue vernaculaire, l'étoile de David ou la menorah.
+
+QUESTION:
+Les synagogues doivent-elles être dissimulées si la liberté de conscience est la règle ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,44,"PASSAGE:
+La journée « Rêves de Noël » 2010 a eu lieu le 9 décembre dernier sur l’ensemble des sites de l’entreprise et a réuni plus de 2 600 collaborateurs. Autour de différentes animations, ceux-ci ont retrouvé leur âme d’enfant en jouant notamment au chamboule-tout ou en réalisant des fresques photos. « Cette journée a eu la particularité de rassembler à la fois la générosité de 90 volontaires de la Fondation qui en ont géré l’organisation et celle des collaborateurs de l’entreprise pour offrir un moment unique aux enfants malades grâce à l’Association Petits Princes » souligne Olivier Roussat. Pour chaque participant, la Fondation verse 15 euros à l’Association Petits Princes. La mobilisation de la journée 2010 a permis de réunir la somme de 39 570 euros. La Fondation Bouygues Telecom a souhaité compléter d’une dotation de 10 430 euros ce qui permet d’atteindre le montant de 50 000 euros et de réaliser le rêve de 30 enfants malades.
+
+QUESTION:
+La Fondation Bouygues Telecom a-t-elle complété la somme réunie lors de la journée 'Rêves de Noël' ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,45,"PASSAGE:
+Évolution du Résultat financier normalisé Le Résultat financier normalisé de la période s’élève à - 474 M€, en amélioration par rapport à l’année précédente de 146 M€ avec une bonne maîtrise des frais financiers en France notamment sous l’effet de la baisse des taux. Les effets de change et l’optimisation de la gestion de trésorerie au Brésil ont par ailleurs compensé la hausse des taux d’intérêt dans ce pays. Le Résultat financier normalisé en France s’améliore fortement (- 121 M€ vs - 204 M€ en 2014) compte tenu de la baisse continue des taux d’intérêt servis (refinancements récents à des taux inférieurs aux obligations venues à échéance), de la renégociation à la baisse du coupon de l’ORA Monoprix et de gains de change liés aux opérations de cession en Amérique latine.
+
+QUESTION:
+Le Résultat financier normalisé en France s'est-il détérioré par rapport à l'année précédente ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,46,"PASSAGE:
+L’URSSAF ou la MSA vous verse directement l’indemnité inflation de 100 euros : • en décembre 2021 dans la plupart des cas, • ou en janvier 2022. Si vous êtes un micro-entrepreneur : Les micro-entrepreneurs sont par exemple : • des artisans, • des commerçants, • des professionnels indépendants comme des formateurs. Si vous êtes micro-entrepreneur, vous devez avoir gagné moins de 2 000 euros par mois pour toucher l’indemnité inflation de 100 euros. Cela correspond à des ventes moyennes de : • 4 000 euros par mois pour les artisans, • 6 900 euros par mois pour les commerçants, • 3 000 euros par mois pour les autres professionnels micro-entrepreneurs.
+
+QUESTION:
+Est-ce que l'indemnité inflation de 100 euros peut être versée en janvier 2021 pour certains cas ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,47,"PASSAGE:
+The Resident est une série télévisée de drames médicaux américains diffusée par la Fox Broadcasting Company qui a été présentée en première le 21 janvier 2018, en tant que remplacement de mi-saison pour la saison télévisée 2017-18. La série de fiction se concentre sur la vie et les devoirs des membres du personnel du Chastain Park Memorial Hospital, tout en se penchant sur les pratiques bureaucratiques de l'industrie hospitalière. Anciennement appelée The City, la série a été achetée par la Fox à Showtime en 2017. Il a été créé par Amy Holden Jones, Hayley Schore et Roshan Sethi. Le 10 mai 2017, la Fox a commandé une saison complète de 14 épisodes et a renouvelé la série pour une deuxième saison le 7 mai 2018. La première saison s'est officiellement terminée le 14 mai 2018.
+
+QUESTION:
+L'émission de télévision The Resident est-elle terminée pour la saison ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,48,"PASSAGE:
+À l’inverse de la Type 35A, les années qui suivent sont consacrées à l’élaboration de versions plus performantes destinées à asseoir la domination de Bugatti en compétition ou simplement à s’adapter aux nouvelles réglementations de courses ; ainsi naissent les Type 35C, 35T et 35B et les Type 39 et 39A. Cette dernière voiture permet à Bugatti d'obtenir le titre officiel de Champion du monde des manufacturiers (ou constructeurs) en 1926, grâce aux victoires de Jules Goux aux Grand Prix de l'ACF et de Saint-Sébastien, ainsi que de Louis Charavel au Grand Prix d'Italie en fin de saison (Malcolm Campbell terminant entre-temps deuxième en Grande Bretagne).
+
+QUESTION:
+Les nouvelles versions sont-elles plus rapides que la Type 35A ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,49,"PASSAGE:
+Au quatrième trimestre 2021, le marché des véhicules utilitaires légers neufs poursuit sa baisse pour le troisième trimestre consécutif. Les ventes diminuent de 3,3 %, après - 6,6 % au trimestre précédent. Avec un peu moins de 99 000 ventes au cours du trimestre, le marché est à son plus bas niveau depuis le quatrième trimestre 2016, hors crise sanitaire. Les ventes de poids lourds neufs rebondissent (+ 2,1 %) après deux trimestres de baisse. Avec un peu plus de 11 000 ventes, le marché se situe encore en deçà de son niveau des cinq dernières années, hors crise sanitaire. Les immatriculations de tracteurs routiers rebondissent (+ 6,1 %), alors que le marché des camions se contracte (- 1,9 %).
+
+QUESTION:
+Est-ce que les ventes de véhicules utilitaires légers neufs ont augmenté au quatrième trimestre 2021 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,50,"PASSAGE:
+L'adresse de la rue aura la même adresse que celle du bureau de poste, plus un ""numéro d'unité"" qui correspond au numéro de la boîte postale. Par exemple, à El Centro, en Californie, le bureau de poste est situé au 1598 Main Street. Par conséquent, pour la boîte postale 9975 (fictive), l'adresse de la rue serait 1598 Main Street, unité 9975, El Centro, CA. Au niveau national, les cinq premiers chiffres du code postal peuvent ou non être identiques à l'adresse de la boîte postale, et les quatre derniers chiffres (code postal + 4) sont pratiquement toujours différents. À l'exception de quelques uns des plus grands bureaux de poste des États-Unis, l'adresse de la rue (et non celle de la boîte postale) est la même pour toutes les boîtes situées à un endroit donné.
+
+QUESTION:
+La boîte postale précède-t-elle l'adresse postale ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,51,"PASSAGE:
+Sur les 71 mots de cette liste, 67 sont des noms, et la plupart seraient généralement considérés comme des mots empruntés ; les seuls mots anglais modernes qui contiennent Q non suivi de U et qui ne sont pas empruntés à une autre langue sont qiana, qwerty et tranq. Cependant, tous les mots de prêt de cette liste sont considérés comme naturalisés en anglais selon au moins un grand dictionnaire (voir Références), souvent parce qu'ils se réfèrent à des concepts ou à des rôles sociétaux qui n'ont pas d'équivalent exact en anglais. Pour que les mots apparaissent ici, ils doivent figurer dans leur propre entrée dans un dictionnaire ; les mots qui ne font que faire partie d'une phrase plus longue ne sont pas inclus.
+
+QUESTION:
+Y a-t-il un mot avec Q sans U ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,52,"PASSAGE:
+D'autres experts vaincus dans des confrontations hommes-machine se sont vu interviewés à cette occasion : Garry Kasparov (battu par Deep Blue en 1997) a ainsi déclaré que « les ordinateurs excellent dans les calculs parfaits ; nos cerveaux, dans les généralités, les planifications à long terme et l’application de modèles généraux à des situations nouvelles. Ce contraste produit des affrontements passionnants dans ces courtes fenêtres de temps où les hommes et les machines jouent à force égale, comme ce fut le cas aux échecs il y a vingt ans et, apparemment, au go aujourd’hui. », et, après la première partie, il a envoyé à Lee Sedol un message de condoléances, lui souhaitant de pouvoir gagner les parties suivantes, mais craignant que « l'inscription soit sur le mur ».
+
+QUESTION:
+Est-ce que Garry Kasparov pense que Lee Sedol va perdre la série de parties ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,53,"PASSAGE:
+Je vous propose de commencer cette Assemblée Générale. Je souhaite d’abord vous dire que je suis très heureux de vous accueillir à cette Assemblée Générale d’Air France KLM. Je souhaite la bienvenue à l’ensemble des actionnaires, en m’adressant particulièrement aux actionnaires néerlandais, qui pourront suivre cette réunion grâce à la traduction simultanée. Lors de la session questions-réponses, ils pourront poser des questions en néerlandais, qui seront traduites en français par nos interprètes. Je souhaite aussi vous rappeler que ce type de réunion est un moment d’échange entre les actionnaires et la société. A cette fin, je demande aux journalistes et aux analystes de bien vouloir laisser la parole aux actionnaires. Je vais maintenant procéder aux opérations légales.
+
+QUESTION:
+Les journalistes et les analystes peuvent-ils poser des questions ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,54,"PASSAGE:
+Le pilote Fiat, Aldo Weilschott, grimpe de la quatorzième place au troisième tour, à la troisième place au cinquième tour, avant que sa voiture ne quitte la route à l'extérieur de Vibraye. Szisz maintient, pour sa part, son avance jusqu'au bout et termine en tête la première journée de course, peu avant midi, avec un temps de 5 h 45 min 30 s 2/5 et 26 min d'avance sur la Clément-Bayard d'Albert Clément. Malgré un démarrage plutôt lent, Felice Nazzaro (Fiat) se classe à la troisième position, 15 min derrière Clément. Dix-sept automobiles terminent la première journée de compétition, le dernier étant Henri Rougier, sur Lorraine-Dietrich, avec un temps de 8 h 15 min 55 s 0, soit deux heures et demie derrière Szisz. Toutes les automobiles encore en lice pour la deuxième journée sont placées dans un parc fermé sous surveillance, même la nuit, afin d'éviter que les écuries apportent des modifications à leurs automobiles.
+
+QUESTION:
+Est-ce qu'Henri Rougier a terminé la première journée de compétition en tête ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,55,"PASSAGE:
+Indiana Jones et le Temple Maudit est un film d'action-aventure américain de 1984 réalisé par Steven Spielberg. Il s'agit du deuxième volet de la franchise Indiana Jones et d'un préquel au film Raiders of the Lost Ark de 1981, dans lequel Harrison Ford reprend son rôle de personnage principal. Après son arrivée dans le nord de l'Inde, Indiana Jones est sollicité par des villageois désespérés pour trouver une pierre mystique et sauver leurs enfants d'un culte de Thuggee pratiquant l'esclavage des enfants, la magie noire et le sacrifice humain rituel en l'honneur de la déesse Kali.
+
+QUESTION:
+Indiana Jones et le Temple Maudit est-il un préquel ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,56,"PASSAGE:
+À l’inverse de la Type 35A, les années qui suivent sont consacrées à l’élaboration de versions plus performantes destinées à asseoir la domination de Bugatti en compétition ou simplement à s’adapter aux nouvelles réglementations de courses ; ainsi naissent les Type 35C, 35T et 35B et les Type 39 et 39A. Cette dernière voiture permet à Bugatti d'obtenir le titre officiel de Champion du monde des manufacturiers (ou constructeurs) en 1926, grâce aux victoires de Jules Goux aux Grand Prix de l'ACF et de Saint-Sébastien, ainsi que de Louis Charavel au Grand Prix d'Italie en fin de saison (Malcolm Campbell terminant entre-temps deuxième en Grande Bretagne).
+
+QUESTION:
+Les nouvelles réglementations de courses ont-elles changé ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,57,"PASSAGE:
+Et maintenant  La loi commence à s’appliquer dès aujourd’hui : plus de 50 dispositions d’application immédiate (voir p. 6).  La moitié des textes d’application sont prêts et vont partir en consultation ; tous devraient être publiés d’ici la fin 2015 (voir p. 14).  Amplifier les actions pour mobiliser les citoyens, les entreprises et les territoires (voir p. 17). La boîte à outils de la transition énergétique pour la croissance verte :  18 mesures concrètes pour mobiliser les citoyens  16 mesures concrètes pour mobiliser les entreprises  20 mesures concrètes pour mobiliser les territoires
+
+QUESTION:
+Est-ce que toutes les dispositions sont applicables dès aujourd'hui ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,58,"PASSAGE:
+L’URSSAF ou la MSA vous verse directement l’indemnité inflation de 100 euros : • en décembre 2021 dans la plupart des cas, • ou en janvier 2022. Si vous êtes un micro-entrepreneur : Les micro-entrepreneurs sont par exemple : • des artisans, • des commerçants, • des professionnels indépendants comme des formateurs. Si vous êtes micro-entrepreneur, vous devez avoir gagné moins de 2 000 euros par mois pour toucher l’indemnité inflation de 100 euros. Cela correspond à des ventes moyennes de : • 4 000 euros par mois pour les artisans, • 6 900 euros par mois pour les commerçants, • 3 000 euros par mois pour les autres professionnels micro-entrepreneurs.
+
+QUESTION:
+Est-ce que les micro-entrepreneurs doivent avoir gagné plus de 2 000 euros par mois pour toucher l'indemnité inflation de 100 euros ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,59,"PASSAGE:
+Sixième fils du comte Thomas Ier de Savoie, il commence une carrière d'ecclésiastique (1226-1233), avant de devenir un seigneur laïc en Bugey, Vaud et Faucigny, ainsi qu'en Angleterre (1234-1263). Son engagement auprès du roi Henri III d'Angleterre, qui est son neveu par alliance, lui a en effet permis d'acquérir une expérience diplomatique et militaire, ainsi que d'importants moyens financiers qui lui sont ensuite utiles dans les territoires soumis à son autorité personnelle. Cette expérience lui est d'autant plus utile lorsqu'en 1263, alors qu'il est âgé de soixante ans, il doit succéder à son neveu, en devenant comte de Savoie et de Maurienne. Grand voyageur, grand diplomate et guerrier, il est aussi un grand administrateur, légiste et bâtisseur. Avec lui, le comté de Savoie se consolide et la gouvernance devient plus efficace en raison de quelques réformes — administratives, législatives et fiscales — inspirées de ses vies passées.
+
+QUESTION:
+Le personnage en question a-t-il succédé à son neveu en devenant comte de Savoie et de Maurienne ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,60,"PASSAGE:
+Du 12 au 27 juin 1925 a lieu une exposition à la galerie Pierre, où Miró présente 16 peintures et 15 dessins. Tous les représentants du groupe surréaliste signent une invitation à l'exposition. Benjamin Péret préface son exposition personnelle, à la galerie Pierre Loeb de Paris. D'autres peintres surréalistes y exposent, parmi lesquels Paul Klee, dont les toiles impressionnent Miró. Fait rare à cette époque, l'inauguration a lieu à minuit, pendant qu'à l'extérieur, un orchestre invité par Picasso joue une sardane. Des files d'attente se forment à l'entrée. Les ventes et les critiques sont très favorables à Miró.
+
+QUESTION:
+Est-ce que l'exposition de Miró a eu lieu en 1935 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,61,"PASSAGE:
+Le groupe verse des cotisations pour un régime de retraite multi-employeurs en France, la CRPN (Caisse de Retraite du Personnel Navigant). Ce plan multi-employeur étant assimilé à un plan d’Etat, il est comptabilisé en tant que régime à cotisations définies en « charges de retraite à cotisations définies ». Effectifs moyens de la période Période du 1er janvier au 30 juin 2019 2018 Pilotes 8 378 7 870 Personnel navigant commercial 22 185 21 897 Personnel au sol 52 022 51 377 Personnel intérimaire 3 021 3 125 Total 85 606 84 269 8. AMORTISSEMENTS, DEPRECIATIONS ET PROVISIONS En millions d'euros 2019 2018 Période du 1er janvier au 30 juin Amortissements Immobilisations incorporelles 90 79 Immobilisations aéronautiques 587 585 Autres immobilisations corporelles 99 95 Droits d'utilisation 633 615 1 409 1 374 Dépréciations et provisions Stocks 13 (3) Créances 6 22 Provisions 46 49 65 68 Total 1 474 1 442
+
+QUESTION:
+Le groupe verse-t-il des cotisations pour un régime de retraite multi-employeurs en France ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,62,"PASSAGE:
+Tant que ces commerçants restèrent sur le littoral, la cohabitation était bonne, mais les Phéniciens ont commencé à s’intéresser aux ressources de l’intérieur des terres, et ont envisagé de conquérir l’île dans son intégralité. Cependant, le peuple nuragique a opposé une telle résistance, que la Phénicie n’a pu faire autrement que de demander l’aide de Carthage. La relation qu’entretiennent les Phéniciens avec la Sardaigne est particulière, dans le sens que, la plupart du temps, ce peuple ne s'intéresse que très peu à l'intérieur de terres colonisées, par souci de sécurité que leur apporte la mer. Ainsi, l'île sarde est l'exception où l'on voit apparaître des fortifications phéniciennes.
+
+QUESTION:
+Les Phéniciens s'intéressent-ils habituellement à l'intérieur des terres colonisées ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,63,"PASSAGE:
+Sous le règne de Ferdinand II sont réalisés de nombreux projets d'envergure. On dénombre ainsi les routes du Tirrena Inferiore, de l'Amalfitana, de la Sorrentina, de la Frentana, de l'Appula, de la Sannitica, de l'Aquilona et de la Ferdinandea Salentina. D'anciennes routes sont également modernisées avec la construction de plusieurs nouvelles sections routières le long des cinq principales routes du royaume : celles qui unissent la capitale aux Abruzzes, aux Pouilles, à la Basilicate, à la Calabre et à l’État pontifical. Ces voies de transports sont aussi dotées d'un service postal innovant qui fonctionne quotidiennement. En 1828, deux ans avant le début du règne de Ferdinand II, les Deux-Siciles comprennent près de 2 800 km de voies routières alors qu'en 1855, date de l'extension maximale du réseau routier, elles comprennent environ 8 500 km.
+
+QUESTION:
+Est-ce que les routes du royaume sont modernisées sous le règne de Ferdinand II ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,64,"PASSAGE:
+Entre 1973 et la fin des années 1980, la hausse des prix du pétrole a conduit à faire des choix sur les sources d’énergie. À la suite de la mise en place du programme nucléaire, la production nationale d’énergie primaire est passée de 44 Mtep en 1973 (dont 9 % de nucléaire) à 139 Mtep en 2013 (79 % de nucléaire). Les productions de charbon, de pétrole et de gaz naturel ont poursuivi leur déclin, jusqu’à s’arrêter en avril 2004 pour le charbon et en octobre 2013 pour le gaz. En 2013, la production nationale s’est redressée et a même dépassé le record de 2011, sous l’effet des seules énergies renouvelables. La production d’électricité nucléaire s’est contractée nettement depuis 2012. Quant aux énergies fossiles (pétrole, gaz naturel, charbon), à un peu plus de 2 Mtep, leur contribution continue de diminuer. * Énergies renouvelables thermiques (voir définitions p. 47)
+
+QUESTION:
+La production d'électricité nucléaire a-t-elle augmenté depuis 2012 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,65,"PASSAGE:
+Le World Trade Center original était un grand complexe de sept bâtiments dans le Lower Manhattan, à New York, aux États-Unis. Il comprenait les célèbres Twin Towers, qui ont ouvert le 4 avril 1973 et ont été détruites en 2001 lors des attaques du 11 septembre. Au moment de leur achèvement, les Twin Towers - le premier World Trade Center, à 417 m, et le deuxième World Trade Center, à 415,1 m - étaient les plus hauts bâtiments du monde. Les autres bâtiments du complexe comprenaient le Marriott World Trade Center (3 WTC), le 4 WTC, le 5 WTC, le 6 WTC et le 7 WTC. Le complexe était situé dans le quartier financier de New York et contenait 13 400 000 pieds carrés (1 240 000 m) d'espace de bureaux.
+
+QUESTION:
+Les Twin Towers étaient-elles le World Trade Center ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,66,"PASSAGE:
+Je vous propose de commencer cette Assemblée Générale. Je souhaite d’abord vous dire que je suis très heureux de vous accueillir à cette Assemblée Générale d’Air France KLM. Je souhaite la bienvenue à l’ensemble des actionnaires, en m’adressant particulièrement aux actionnaires néerlandais, qui pourront suivre cette réunion grâce à la traduction simultanée. Lors de la session questions-réponses, ils pourront poser des questions en néerlandais, qui seront traduites en français par nos interprètes. Je souhaite aussi vous rappeler que ce type de réunion est un moment d’échange entre les actionnaires et la société. A cette fin, je demande aux journalistes et aux analystes de bien vouloir laisser la parole aux actionnaires. Je vais maintenant procéder aux opérations légales.
+
+QUESTION:
+Y a-t-il des actionnaires néerlandais présents ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,67,"PASSAGE:
+La chasse au renard avec des chiens courants, en tant qu'activité formalisée, est née en Angleterre au XVIe siècle, sous une forme très similaire à celle pratiquée jusqu'en février 2005, date à laquelle une loi interdisant cette activité en Angleterre et au Pays de Galles est entrée en vigueur. Une interdiction de la chasse en Écosse avait été votée en 2002, mais elle continue de relever de la loi en Irlande du Nord et dans plusieurs autres pays, dont l'Australie, le Canada, la France, l'Irlande et les États-Unis. En Australie, le terme désigne également la chasse au renard avec des armes à feu, similaire à la chasse au cerf. Dans une grande partie du monde, la chasse en général est comprise comme se rapportant à tout gibier ou arme (par exemple, la chasse au cerf à l'aide d'un arc et de flèches) ; en Grande-Bretagne et en Irlande, la ""chasse"" sans qualification implique la chasse au renard (ou d'autres formes de chasse avec des chiens courants - le beagling, la chasse à la traîne, la chasse à la botte propre, la chasse au vison ou la chasse au cerf), telle qu'elle est décrite ici.
+
+QUESTION:
+Y a-t-il encore des chasses au renard en Angleterre ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,68,"PASSAGE:
+La fréquence angulaire est la grandeur de la quantité de vecteur vitesse angulaire. Le terme vecteur de fréquence angulaire ω → (\displaystyle (\vec (\omega ))) est parfois utilisé comme synonyme de la quantité vectorielle de vitesse angulaire.
+
+QUESTION:
+La fréquence angulaire et la vitesse angulaire sont-elles identiques ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,69,"PASSAGE:
+En 1985, il prend la suite de Mark Johnson en tant que capitaine et quittera le poste peu de temps avant son départ pour Pittsburgh, en raison de mauvaise entente avec la direction de l'équipe. Le jour de son transfert des Whalers pour rejoindre les Penguins, il est le meilleur pointeur, buteur, passeur de l'équipe ainsi que le joueur ayant le plus joué de matchs avec l'équipe, que ce soit dans la LNH mais également du temps où l'équipe évoluait dans l'Association mondiale de hockey. Il finit sa carrière avec en 714 matchs 264 buts, 557 passes pour un total de 821 points.
+
+QUESTION:
+A-t-il quitté son poste de capitaine des Whalers en raison de mauvaise entente avec la direction de l'équipe ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,70,"PASSAGE:
+Sur Isla Sorna, une île au large de la côte Pacifique du Costa Rica, une jeune fille nommée Cathy Bowman erre pendant des vacances en famille et survit à une attaque d'un essaim de Compsognathus. Ses parents intentent un procès contre la société de génétique InGen, désormais dirigée par le neveu de John Hammond, Peter Ludlow, qui prévoit d'utiliser Isla Sorna pour alléger les pertes financières imposées par l'incident survenu à Jurassic Park quatre ans plus tôt. Le mathématicien Dr Ian Malcolm rencontre Hammond à son manoir. Hammond explique qu'Isla Sorna, abandonnée des années plus tôt lors d'un ouragan, est l'endroit où InGen a créé ses dinosaures avant de les déplacer vers Jurassic Park sur l'île Nublar. Hammond espère arrêter InGen en envoyant une équipe à Isla Sorna pour documenter les dinosaures, provoquant ainsi le soutien du public contre l'ingérence humaine sur l'île. Ian, qui a survécu à la catastrophe de Jurassic Park, est réticent. Après avoir appris que sa petite amie, la paléontologue Sarah Harding, fait partie de l'équipe et se trouve déjà sur Isla Sorna, Ian accepte de se rendre sur l'île, mais seulement pour la récupérer.
+
+QUESTION:
+La fille dans ""Le Monde perdu : Jurassic Park"" est-elle morte ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,71,"PASSAGE:
+Évolution du Résultat financier normalisé Le Résultat financier normalisé de la période s’élève à - 474 M€, en amélioration par rapport à l’année précédente de 146 M€ avec une bonne maîtrise des frais financiers en France notamment sous l’effet de la baisse des taux. Les effets de change et l’optimisation de la gestion de trésorerie au Brésil ont par ailleurs compensé la hausse des taux d’intérêt dans ce pays. Le Résultat financier normalisé en France s’améliore fortement (- 121 M€ vs - 204 M€ en 2014) compte tenu de la baisse continue des taux d’intérêt servis (refinancements récents à des taux inférieurs aux obligations venues à échéance), de la renégociation à la baisse du coupon de l’ORA Monoprix et de gains de change liés aux opérations de cession en Amérique latine.
+
+QUESTION:
+Les effets de change ont-ils compensé la hausse des taux d'intérêt au Brésil ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,72,"PASSAGE:
+L'Alsacien retrouve sa surface de prédilection après six semaines de pause estivale dans le cadre de la première édition mondiale du rallye de Bulgarie. Il signe le chrono de référence dans les cinq premiers secteurs et construit une avance de plus de trente secondes sur Dani Sordo, seul pilote parvenant à suivre son rythme. Il limite son offensive dans les étapes suivantes pour assurer ses trajectoires et remporte la première épreuve asphalte de la saison. Victime de problèmes de freins et de la destruction de son pare-chocs avant, il reste en retrait lors du coup d'envoi du rallye de Finlande. Auteur de trois temps scratchs dans la dernière étape, il parvient à accrocher la dernière marche du podium au détriment de Petter Solberg.
+
+QUESTION:
+Est-ce que l'Alsacien a remporté toutes les épreuves asphalte de la saison ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,73,"PASSAGE:
+Sixième fils du comte Thomas Ier de Savoie, il commence une carrière d'ecclésiastique (1226-1233), avant de devenir un seigneur laïc en Bugey, Vaud et Faucigny, ainsi qu'en Angleterre (1234-1263). Son engagement auprès du roi Henri III d'Angleterre, qui est son neveu par alliance, lui a en effet permis d'acquérir une expérience diplomatique et militaire, ainsi que d'importants moyens financiers qui lui sont ensuite utiles dans les territoires soumis à son autorité personnelle. Cette expérience lui est d'autant plus utile lorsqu'en 1263, alors qu'il est âgé de soixante ans, il doit succéder à son neveu, en devenant comte de Savoie et de Maurienne. Grand voyageur, grand diplomate et guerrier, il est aussi un grand administrateur, légiste et bâtisseur. Avec lui, le comté de Savoie se consolide et la gouvernance devient plus efficace en raison de quelques réformes — administratives, législatives et fiscales — inspirées de ses vies passées.
+
+QUESTION:
+Le personnage en question a-t-il commencé sa carrière en tant qu'ecclésiastique ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,74,"PASSAGE:
+Le squalelet féroce remplace régulièrement ses dents, comme d'autres requins. Cependant il ne les perd pas une par une, mais par rangées entières. On a calculé qu'un individu de 14 cm de longueur aura perdu 15 ensembles de dents inférieures au moment où il atteindra 50 cm de long, pour un total de 435 à 465 dents. Cela nécessite d'importants besoins puisés dans ses ressources et c'est probablement pourquoi les anciennes rangées de dents sont avalées, de sorte que le requin peut recycler le calcium. Contrairement à d'autres requins, la rétine du squalelet féroce possède des cellules ganglionnaires concentrées dans une zone concentrique plutôt que dans un plan horizontal du champ visuel, ce qui pourrait l'aider à se concentrer sur les proies se trouvant en face à lui.
+
+QUESTION:
+Le squalelet féroce perd-il ses dents une par une ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,75,"PASSAGE:
+Tant que ces commerçants restèrent sur le littoral, la cohabitation était bonne, mais les Phéniciens ont commencé à s’intéresser aux ressources de l’intérieur des terres, et ont envisagé de conquérir l’île dans son intégralité. Cependant, le peuple nuragique a opposé une telle résistance, que la Phénicie n’a pu faire autrement que de demander l’aide de Carthage. La relation qu’entretiennent les Phéniciens avec la Sardaigne est particulière, dans le sens que, la plupart du temps, ce peuple ne s'intéresse que très peu à l'intérieur de terres colonisées, par souci de sécurité que leur apporte la mer. Ainsi, l'île sarde est l'exception où l'on voit apparaître des fortifications phéniciennes.
+
+QUESTION:
+La cohabitation entre les Phéniciens et le peuple nuragique était-elle bonne tant que les commerçants restaient sur le littoral ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,76,"PASSAGE:
+Sanders jouait au football principalement en tant que cornerback, mais aussi en tant que kicker, punt returner, et occasionnellement en tant que receveur. Il a joué dans la Ligue nationale de football (NFL) pour les Falcons d'Atlanta, les 49ers de San Francisco, les Cowboys de Dallas, les Redskins de Washington et les Ravens de Baltimore, et a remporté le Super Bowl avec les 49ers et les Cowboys. Joueur de baseball professionnel, il a joué pour les Yankees de New York, les Braves d'Atlanta, les Reds de Cincinnati et les Giants de San Francisco, et a participé à la série mondiale de 1992 avec les Braves. Il a fréquenté l'université d'État de Floride, où il a été reconnu deux fois All-American en football, et a également joué au baseball et fait de l'athlétisme.
+
+QUESTION:
+Deion Sanders a-t-il déjà remporté une série mondiale ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,77,"PASSAGE:
+Sixième fils du comte Thomas Ier de Savoie, il commence une carrière d'ecclésiastique (1226-1233), avant de devenir un seigneur laïc en Bugey, Vaud et Faucigny, ainsi qu'en Angleterre (1234-1263). Son engagement auprès du roi Henri III d'Angleterre, qui est son neveu par alliance, lui a en effet permis d'acquérir une expérience diplomatique et militaire, ainsi que d'importants moyens financiers qui lui sont ensuite utiles dans les territoires soumis à son autorité personnelle. Cette expérience lui est d'autant plus utile lorsqu'en 1263, alors qu'il est âgé de soixante ans, il doit succéder à son neveu, en devenant comte de Savoie et de Maurienne. Grand voyageur, grand diplomate et guerrier, il est aussi un grand administrateur, légiste et bâtisseur. Avec lui, le comté de Savoie se consolide et la gouvernance devient plus efficace en raison de quelques réformes — administratives, législatives et fiscales — inspirées de ses vies passées.
+
+QUESTION:
+A-t-il succédé à son neveu en tant que comte de Savoie et de Maurienne ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,78,"PASSAGE:
+L'Alsacien retrouve sa surface de prédilection après six semaines de pause estivale dans le cadre de la première édition mondiale du rallye de Bulgarie. Il signe le chrono de référence dans les cinq premiers secteurs et construit une avance de plus de trente secondes sur Dani Sordo, seul pilote parvenant à suivre son rythme. Il limite son offensive dans les étapes suivantes pour assurer ses trajectoires et remporte la première épreuve asphalte de la saison. Victime de problèmes de freins et de la destruction de son pare-chocs avant, il reste en retrait lors du coup d'envoi du rallye de Finlande. Auteur de trois temps scratchs dans la dernière étape, il parvient à accrocher la dernière marche du podium au détriment de Petter Solberg.
+
+QUESTION:
+L'Alsacien a-t-il été victime de problèmes de freins et de la destruction de son pare-chocs avant lors du rallye de Finlande ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,79,"PASSAGE:
+Entre 1973 et la fin des années 1980, la hausse des prix du pétrole a conduit à faire des choix sur les sources d’énergie. À la suite de la mise en place du programme nucléaire, la production nationale d’énergie primaire est passée de 44 Mtep en 1973 (dont 9 % de nucléaire) à 139 Mtep en 2013 (79 % de nucléaire). Les productions de charbon, de pétrole et de gaz naturel ont poursuivi leur déclin, jusqu’à s’arrêter en avril 2004 pour le charbon et en octobre 2013 pour le gaz. En 2013, la production nationale s’est redressée et a même dépassé le record de 2011, sous l’effet des seules énergies renouvelables. La production d’électricité nucléaire s’est contractée nettement depuis 2012. Quant aux énergies fossiles (pétrole, gaz naturel, charbon), à un peu plus de 2 Mtep, leur contribution continue de diminuer. * Énergies renouvelables thermiques (voir définitions p. 47)
+
+QUESTION:
+La contribution des énergies fossiles a-t-elle augmenté depuis 2013 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,80,"PASSAGE:
+COMMENT LE PASS FONCTIONNERA-T-IL EN EUROPE ? Le certificat COVID numérique de l'UE contient un QR Code avec une signature numérique pour le protéger contre la falsification et qui identifie l’Etat émetteur du certificat. Chaque organisme émetteur (par exemple un hôpital, un centre de test, une autorité sanitaire) dispose de sa propre clé de signature numérique. Tous ces éléments sont stockés dans une base de données sécurisée dans chaque pays. Des applications de lecture nationales permettent de lire le QR Code afin de faciliter l’embarquement et le débarquement des passagers. Le QR Code est scanné, la signature vérifiée et les règles sanitaires appliquées. 1 3 5 2 4
+
+QUESTION:
+Chaque organisme émetteur dispose-t-il de la même clé de signature numérique ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,81,"PASSAGE:
+Entre 1973 et la fin des années 1980, la hausse des prix du pétrole a conduit à faire des choix sur les sources d’énergie. À la suite de la mise en place du programme nucléaire, la production nationale d’énergie primaire est passée de 44 Mtep en 1973 (dont 9 % de nucléaire) à 139 Mtep en 2013 (79 % de nucléaire). Les productions de charbon, de pétrole et de gaz naturel ont poursuivi leur déclin, jusqu’à s’arrêter en avril 2004 pour le charbon et en octobre 2013 pour le gaz. En 2013, la production nationale s’est redressée et a même dépassé le record de 2011, sous l’effet des seules énergies renouvelables. La production d’électricité nucléaire s’est contractée nettement depuis 2012. Quant aux énergies fossiles (pétrole, gaz naturel, charbon), à un peu plus de 2 Mtep, leur contribution continue de diminuer. * Énergies renouvelables thermiques (voir définitions p. 47)
+
+QUESTION:
+Est-ce que les énergies renouvelables ont contribué à la production nationale d'énergie en 2013 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,82,"PASSAGE:
+Les clients qui ont commandé le plus de 767 sont Delta Air Lines, All Nippon Airways et United Airlines. En novembre 2012, Delta Air Lines est le client le plus important, ayant commandé et réceptionné 117 appareils. Le transporteur basé à Atlanta est également le seul client à avoir commandé toutes les versions à passagers du 767. Son 100e exemplaire, un 767-400ER, est livré en octobre 2000. United Airlines est la seule compagnie qui utilisait toutes les versions des séries 767 ER (762ER, 763ER et 764ER) en novembre 2012. Le principal client cargo est UPS Airlines, qui a commandé et réceptionné 59 appareils.
+
+QUESTION:
+Est-ce que United Airlines est le seul client à avoir commandé toutes les versions à passagers du 767 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,83,"PASSAGE:
+Sixième fils du comte Thomas Ier de Savoie, il commence une carrière d'ecclésiastique (1226-1233), avant de devenir un seigneur laïc en Bugey, Vaud et Faucigny, ainsi qu'en Angleterre (1234-1263). Son engagement auprès du roi Henri III d'Angleterre, qui est son neveu par alliance, lui a en effet permis d'acquérir une expérience diplomatique et militaire, ainsi que d'importants moyens financiers qui lui sont ensuite utiles dans les territoires soumis à son autorité personnelle. Cette expérience lui est d'autant plus utile lorsqu'en 1263, alors qu'il est âgé de soixante ans, il doit succéder à son neveu, en devenant comte de Savoie et de Maurienne. Grand voyageur, grand diplomate et guerrier, il est aussi un grand administrateur, légiste et bâtisseur. Avec lui, le comté de Savoie se consolide et la gouvernance devient plus efficace en raison de quelques réformes — administratives, législatives et fiscales — inspirées de ses vies passées.
+
+QUESTION:
+Le personnage en question a-t-il acquis une expérience diplomatique et militaire en Angleterre ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,84,"PASSAGE:
+Voici la liste des équipes qui ont surmonté les déficits de la série 3-1 en remportant trois matchs d'affilée pour s'imposer dans une série éliminatoire. Dans l'histoire des grands sports professionnels nord-américains, les équipes qui étaient en déficit de 3-1 dans la série sont revenues et ont remporté la série 52 fois, dont plus de la moitié par des équipes de la Ligue nationale de hockey (LNH). Les équipes ont surmonté le déficit de 3-1 lors de la dernière ronde du championnat à huit reprises, dont six fois par des équipes de la Major League Baseball (MLB) lors des séries mondiales. Les équipes qui ont surmonté un déficit de 3-0 en remportant quatre matchs consécutifs ont été victorieuses à cinq reprises, quatre fois dans la NHL et une fois dans la MLB.
+
+QUESTION:
+Quelqu'un est-il revenu du 3-0 en finale de la NBA ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,85,"PASSAGE:
+L'Alsacien retrouve sa surface de prédilection après six semaines de pause estivale dans le cadre de la première édition mondiale du rallye de Bulgarie. Il signe le chrono de référence dans les cinq premiers secteurs et construit une avance de plus de trente secondes sur Dani Sordo, seul pilote parvenant à suivre son rythme. Il limite son offensive dans les étapes suivantes pour assurer ses trajectoires et remporte la première épreuve asphalte de la saison. Victime de problèmes de freins et de la destruction de son pare-chocs avant, il reste en retrait lors du coup d'envoi du rallye de Finlande. Auteur de trois temps scratchs dans la dernière étape, il parvient à accrocher la dernière marche du podium au détriment de Petter Solberg.
+
+QUESTION:
+Est-ce que la voiture de l'Alsacien est endommagée ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,86,"PASSAGE:
+Du 12 au 27 juin 1925 a lieu une exposition à la galerie Pierre, où Miró présente 16 peintures et 15 dessins. Tous les représentants du groupe surréaliste signent une invitation à l'exposition. Benjamin Péret préface son exposition personnelle, à la galerie Pierre Loeb de Paris. D'autres peintres surréalistes y exposent, parmi lesquels Paul Klee, dont les toiles impressionnent Miró. Fait rare à cette époque, l'inauguration a lieu à minuit, pendant qu'à l'extérieur, un orchestre invité par Picasso joue une sardane. Des files d'attente se forment à l'entrée. Les ventes et les critiques sont très favorables à Miró.
+
+QUESTION:
+Est-ce que l'exposition a attiré peu de visiteurs ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,87,"PASSAGE:
+2/5 Il dresse notamment le bilan des recrutements et des avancements, des actions de formation, des demandes de travail à temps partiel ainsi que des conditions dans lesquelles la collectivité ou l’établissement respecte ses obligations en matière de droit syndical. La présentation de ce rapport donne lieu à un débat. Les conditions d’application de ce texte et, notamment, la liste des informations fournies par les collectivités et les délais à respecter sont fixés par le décret n° 97-443 du 25 avril 1997 modifié. Ces rapports sont transmis au C.S.F.P.T, devant lequel est présentée une synthèse nationale préparée par le Centre national de la fonction publique territoriale et la Direction générale des collectivités locales. Les rapports doivent être présentés au C.T.P. au plus tard le 30 juin 2008.
+
+QUESTION:
+Les rapports doivent-ils être présentés au C.T.P. avant le 30 juin 2008 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,88,"PASSAGE:
+Introduction Un groupe de travail partenarial (DGFiP, AMF, ADF, ARF,...) se réunit depuis septembre 2010 pour dégager des pistes d’optimisation du traitement des produits locaux. Les réflexions abordées, intéressant la SNP, sont notamment les suivantes : - Expérimentation de l’édition des ASAP par la DGFiP sachant que le groupe estime nécessaire d’enrichir au préalable le flux PES Titres ; - Elargissement des moyens de paiement (TIPI,...) ; - Remplacement des rôles par le PES titres collectifs en développement. Le groupe a établi le constat de la nécessité d’utiliser la dématérialisation des flux recette pour améliorer l’efficacité du recouvrement. Pour simplifier la démarche et alléger les coûts en ce domaine, le groupe de travail préconise d’intégrer dans l’arrêté du 27 juin 2007 (cf. §7 infra) une disposition visant à rendre obligatoire, à l’horizon 2015, le Protocole d’Echange Standard V2 par les organismes publics locaux choisissant librement de dématérialiser leurs pièces
+
+QUESTION:
+Le Protocole d'Echange Standard V2 est-il déjà obligatoire pour les organismes publics locaux ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,89,"PASSAGE:
+La phase à élimination directe de la Coupe du monde de la FIFA 2018 était la deuxième et dernière étape de la compétition, après la phase de groupes. Elle a débuté le 30 juin par les huitièmes de finale et s'est terminée le 15 juillet par le match final, qui s'est déroulé au stade Luzhniki de Moscou. Les deux meilleures équipes de chaque groupe (16 au total) ont atteint la phase à élimination directe pour s'affronter dans un tournoi à élimination directe. Un match pour la troisième place a également été disputé entre les deux équipes perdantes des demi-finales.
+
+QUESTION:
+Y a-t-il une petite finale pour la troisième place de la coupe du monde ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,90,"PASSAGE:
+Entre 1973 et la fin des années 1980, la hausse des prix du pétrole a conduit à faire des choix sur les sources d’énergie. À la suite de la mise en place du programme nucléaire, la production nationale d’énergie primaire est passée de 44 Mtep en 1973 (dont 9 % de nucléaire) à 139 Mtep en 2013 (79 % de nucléaire). Les productions de charbon, de pétrole et de gaz naturel ont poursuivi leur déclin, jusqu’à s’arrêter en avril 2004 pour le charbon et en octobre 2013 pour le gaz. En 2013, la production nationale s’est redressée et a même dépassé le record de 2011, sous l’effet des seules énergies renouvelables. La production d’électricité nucléaire s’est contractée nettement depuis 2012. Quant aux énergies fossiles (pétrole, gaz naturel, charbon), à un peu plus de 2 Mtep, leur contribution continue de diminuer. * Énergies renouvelables thermiques (voir définitions p. 47)
+
+QUESTION:
+La production de charbon a-t-elle continué à augmenter jusqu'en 2013 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,91,"PASSAGE:
+Sixième fils du comte Thomas Ier de Savoie, il commence une carrière d'ecclésiastique (1226-1233), avant de devenir un seigneur laïc en Bugey, Vaud et Faucigny, ainsi qu'en Angleterre (1234-1263). Son engagement auprès du roi Henri III d'Angleterre, qui est son neveu par alliance, lui a en effet permis d'acquérir une expérience diplomatique et militaire, ainsi que d'importants moyens financiers qui lui sont ensuite utiles dans les territoires soumis à son autorité personnelle. Cette expérience lui est d'autant plus utile lorsqu'en 1263, alors qu'il est âgé de soixante ans, il doit succéder à son neveu, en devenant comte de Savoie et de Maurienne. Grand voyageur, grand diplomate et guerrier, il est aussi un grand administrateur, légiste et bâtisseur. Avec lui, le comté de Savoie se consolide et la gouvernance devient plus efficace en raison de quelques réformes — administratives, législatives et fiscales — inspirées de ses vies passées.
+
+QUESTION:
+Le personnage en question a-t-il effectué de grands voyages ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,92,"PASSAGE:
+Le pilote Fiat, Aldo Weilschott, grimpe de la quatorzième place au troisième tour, à la troisième place au cinquième tour, avant que sa voiture ne quitte la route à l'extérieur de Vibraye. Szisz maintient, pour sa part, son avance jusqu'au bout et termine en tête la première journée de course, peu avant midi, avec un temps de 5 h 45 min 30 s 2/5 et 26 min d'avance sur la Clément-Bayard d'Albert Clément. Malgré un démarrage plutôt lent, Felice Nazzaro (Fiat) se classe à la troisième position, 15 min derrière Clément. Dix-sept automobiles terminent la première journée de compétition, le dernier étant Henri Rougier, sur Lorraine-Dietrich, avec un temps de 8 h 15 min 55 s 0, soit deux heures et demie derrière Szisz. Toutes les automobiles encore en lice pour la deuxième journée sont placées dans un parc fermé sous surveillance, même la nuit, afin d'éviter que les écuries apportent des modifications à leurs automobiles.
+
+QUESTION:
+Est-ce que Aldo Weilschott a terminé la course ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,93,"PASSAGE:
+En mars 2012, il a été annoncé que quatre universités - Durham, Exeter, Queen Mary University of London et York - deviendraient membres du groupe Russell en août de la même année. Tous les nouveaux membres étaient auparavant membres du groupe d'universités britanniques de 1994.
+
+QUESTION:
+L'université de Durham fait-elle partie du groupe Russell ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,94,"PASSAGE:
+Au quatrième trimestre 2021, le marché des véhicules utilitaires légers neufs poursuit sa baisse pour le troisième trimestre consécutif. Les ventes diminuent de 3,3 %, après - 6,6 % au trimestre précédent. Avec un peu moins de 99 000 ventes au cours du trimestre, le marché est à son plus bas niveau depuis le quatrième trimestre 2016, hors crise sanitaire. Les ventes de poids lourds neufs rebondissent (+ 2,1 %) après deux trimestres de baisse. Avec un peu plus de 11 000 ventes, le marché se situe encore en deçà de son niveau des cinq dernières années, hors crise sanitaire. Les immatriculations de tracteurs routiers rebondissent (+ 6,1 %), alors que le marché des camions se contracte (- 1,9 %).
+
+QUESTION:
+Le marché des poids lourds neufs est-il au-dessus de son niveau des cinq dernières années, hors crise sanitaire ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,95,"PASSAGE:
+Le pilote Fiat, Aldo Weilschott, grimpe de la quatorzième place au troisième tour, à la troisième place au cinquième tour, avant que sa voiture ne quitte la route à l'extérieur de Vibraye. Szisz maintient, pour sa part, son avance jusqu'au bout et termine en tête la première journée de course, peu avant midi, avec un temps de 5 h 45 min 30 s 2/5 et 26 min d'avance sur la Clément-Bayard d'Albert Clément. Malgré un démarrage plutôt lent, Felice Nazzaro (Fiat) se classe à la troisième position, 15 min derrière Clément. Dix-sept automobiles terminent la première journée de compétition, le dernier étant Henri Rougier, sur Lorraine-Dietrich, avec un temps de 8 h 15 min 55 s 0, soit deux heures et demie derrière Szisz. Toutes les automobiles encore en lice pour la deuxième journée sont placées dans un parc fermé sous surveillance, même la nuit, afin d'éviter que les écuries apportent des modifications à leurs automobiles.
+
+QUESTION:
+Est-ce que la voiture d'Aldo Weilschott quitte la route à l'extérieur de Vibraye ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,96,"PASSAGE:
+Du 12 au 27 juin 1925 a lieu une exposition à la galerie Pierre, où Miró présente 16 peintures et 15 dessins. Tous les représentants du groupe surréaliste signent une invitation à l'exposition. Benjamin Péret préface son exposition personnelle, à la galerie Pierre Loeb de Paris. D'autres peintres surréalistes y exposent, parmi lesquels Paul Klee, dont les toiles impressionnent Miró. Fait rare à cette époque, l'inauguration a lieu à minuit, pendant qu'à l'extérieur, un orchestre invité par Picasso joue une sardane. Des files d'attente se forment à l'entrée. Les ventes et les critiques sont très favorables à Miró.
+
+QUESTION:
+Est-ce que tous les représentants du groupe surréaliste ont signé une invitation à l'exposition de Miró ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,97,"PASSAGE:
+La purée de tomate est un liquide épais obtenu en cuisant et en filtrant les tomates. La différence entre la pâte de tomate, la purée de tomate et la sauce tomate est la consistance ; la purée de tomate a une consistance plus épaisse et une saveur plus profonde que la sauce.
+
+QUESTION:
+La purée de tomates est-elle la même chose que la sauce tomate ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,98,"PASSAGE:
+En France métropolitaine, la part des crimes ou délits « anti-LGBT » enregistrés dans les très grandes agglomérations de 200 000 habitants et plus (y compris l’agglomération parisienne) diminuent en 2020 après plusieurs années d’augmentation (60 % en 2020 contre 64 % en 2019). Ces communes abritent 41 % de la population (figure 4). Les atteintes diminuent dans l’agglomération parisienne, passant de 27 % en 2019 à 23 % en 2020, alors que la population de cette agglomération représente 17 % de la population totale. Les communes de 200 000 habitants et plus hors agglomération parisienne sont surreprésentées parmi les victimes d’atteintes « anti-LGBT » : 37 % des atteintes « anti-LGBT » en 2020 (36 % en 2019) pour 25 % de la population. Comme l’année précédente, les communes rurales restent sous-représentées parmi les victimes « anti-LGBT » enregistrées en 2020 : 9 % des atteintes ont lieu dans ce type de communes chaque année depuis 2017, ce qui est nettement plus faible que leur part dans la population totale (22 % en 2020). L’analyse de la répartition territoriale des victimes de crimes et délits « anti-LGBT » doit être effectuée avec précaution. En effet, cette répartition ne traduit pas nécessairement un risque plus important d’être victime dans les grandes agglomérations : elle pourrait éventuellement s’expliquer par une propension plus importante à aller déposer plainte pour les faits commis dans les
+
+QUESTION:
+La part des crimes ou délits 'anti-LGBT' enregistrés dans les très grandes agglomérations a-t-elle augmenté en 2020 par rapport à 2019 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,99,"PASSAGE:
+Le berger allemand (en allemand : Deutscher Schäferhund, prononciation allemande : (ˈʃɛːfɐˌhʊnt)) est une race de chien de travail de taille moyenne à grande qui est originaire d'Allemagne. Le nom officiel de la race est German Shepherd Dog en langue anglaise (parfois abrégé en GSD). La race est connue sous le nom d'Alsacien en Grande-Bretagne et en Irlande. Le Berger allemand est une race de chien relativement nouvelle, dont l'origine remonte à 1899. Faisant partie du groupe des bergers, les bergers allemands sont des chiens de travail développés à l'origine pour la conduite des troupeaux de moutons. Depuis cette époque, cependant, en raison de leur force, de leur intelligence, de leur aptitude au dressage et de leur obéissance, les Bergers allemands du monde entier sont souvent la race préférée pour de nombreux types de travail, notamment l'assistance aux handicapés, la recherche et le sauvetage, les rôles de police et de militaire, et même le jeu. Le berger allemand est la deuxième race la plus enregistrée par l'American Kennel Club et la septième par le Kennel Club au Royaume-Uni.
+
+QUESTION:
+Un berger allemand est-il la même chose qu'un Alsacien ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,100,"PASSAGE:
+New Balance maintient une présence manufacturière aux États-Unis, ainsi qu'au Royaume-Uni pour le marché européen, où elle produit certains de ses modèles les plus populaires, comme le modèle 990, contrairement à ses concurrents, qui fabriquent souvent exclusivement en dehors des États-Unis et de l'Europe. De ce fait, les chaussures New Balance ont tendance à être plus chères que celles de nombreux autres fabricants. Pour compenser cette différence de prix, New Balance prétend différencier ses produits par des caractéristiques techniques, telles que des inserts en gel mélangé, des compteurs de talons et un plus grand choix de tailles, en particulier pour les largeurs très étroites et/ou très larges. La société a réalisé des bénéfices totaux d'environ 69 milliards de dollars depuis 1992. Elle est la deuxième entreprise sportive américaine la plus réputée, après Nike.
+
+QUESTION:
+New-Balance et Nike sont-ils la même entreprise ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,101,"PASSAGE:
+L'Alsacien retrouve sa surface de prédilection après six semaines de pause estivale dans le cadre de la première édition mondiale du rallye de Bulgarie. Il signe le chrono de référence dans les cinq premiers secteurs et construit une avance de plus de trente secondes sur Dani Sordo, seul pilote parvenant à suivre son rythme. Il limite son offensive dans les étapes suivantes pour assurer ses trajectoires et remporte la première épreuve asphalte de la saison. Victime de problèmes de freins et de la destruction de son pare-chocs avant, il reste en retrait lors du coup d'envoi du rallye de Finlande. Auteur de trois temps scratchs dans la dernière étape, il parvient à accrocher la dernière marche du podium au détriment de Petter Solberg.
+
+QUESTION:
+L'Alsacien a-t-il remporté le rallye de Bulgarie ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,102,"PASSAGE:
+La veuve d'Olivier IV, Jeanne de Belleville, fait jurer à ses fils Olivier et Guillaume de venger leur père. Elle consacre sa fortune à lever une armée pour assaillir les troupes favorables à la France stationnées en Bretagne. Menacée sur terre, elle fait armer deux navires et, toujours accompagnée de ses deux fils, mène une guerre de piraterie contre les bateaux français. Cette épopée s'achève lorsque des vaisseaux du roi de France s'emparent des navires de Jeanne de Belleville qui peut s'échapper avec ses deux fils à bord d'une barque. Les cinq jours de dérive suivants sont fatals à Guillaume, qui meurt de soif, de froid et d'épuisement. Olivier et sa mère sont recueillis à Morlaix par des partisans des Montfort, ennemis du roi de France.
+
+QUESTION:
+Jeanne de Belleville a-t-elle levé une armée pour assaillir les troupes favorables à la France ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,103,"PASSAGE:
+En disposant d’un smartphone Android ou iOS, vous pouvez effectuer des paiements en ligne ou en magasin à l’aide de votre smartphone avant même de recevoir votre carte bancaire physique. Pour cela, dès réception du mail de confirmation de commande de votre carte bancaire, rendez vous sur l’onglet ""CB"" de votre application Boursorama Banque. Cliquez sur ""Gérer Google Pay"" ou ""Gérer Apple Pay"" puis sur ""Ajouter à"" suivi du wallet correspondant. Une fois l’action effectuée, un email de confirmation d’enrôlement de votre carte bancaire vous sera envoyé.
+
+QUESTION:
+Est-ce que vous pouvez utiliser cette fonctionnalité si vous n'avez pas de smartphone Android ou iOS ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,104,"PASSAGE:
+Le corps est gris foncé ou noir avec quelques taches sur le ventre. Sa surface peut comporter des marques rectilignes et de nombreuses cicatrices, dues aux combats entre les mâles ou avec des calmars géants. Contrairement à la peau lisse de la plupart des grandes baleines, la peau du dos est habituellement noueuse et peut être comparée à celle d'un pruneau. La peau est normalement d'un gris uniforme, mais peut paraître brune en plein soleil. Des individus albinos ont également été signalés,. Dans les eaux chaudes, les cachalots muent en permanence, perdant de grands lambeaux de peau souvent consommés par les poissons des alentours et permettant ainsi aux cétacés de se débarrasser de certains de leurs parasites. Cette mue est moins fréquente dans les plus hautes latitudes. Les cachalots peuvent parfois en groupe se frotter les uns contre les autres pour mieux se débarrasser de leur épiderme.
+
+QUESTION:
+La peau du dos des cachalots est-elle lisse ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,105,"PASSAGE:
+L’objectif d’avoir formé plus de 2/3 des 5 000 collaborateurs directement impliqués dans la mise en œuvre des politiques de financement et d’investissement a été dépassé en 2013. En effet, compte tenu de l’importance du sujet, le module de formation en ligne a été rendu obligatoire pour tous les collaborateurs dans certaines entités du Groupe. Nos émissions de gaz à effet de serre résultent des consommations d’énergie dans nos locaux et des déplacements professionnels. Le ratio par collaborateur a baissé en 2013 sous l’impulsion d’actions d’efficacité énergétique dans nos bâtiments et d’un recours facilité à la vidéoconférence ou la webconférence. Il est en ligne avec l’objectif de réduction de 10 % à l’horizon 2015. La réduction observée résulte d’une part des campagnes organisées pour optimiser le recours au papier comme la campagne éco-gestes diffusée dans tout le Groupe en 2013, mais aussi de la dématérialisation accrue de la relation avec nos clients dans les marchés retail. Elle est en ligne avec l’objectif de réduction de 15 % à l’horizon 2015.
+
+QUESTION:
+Le module de formation en ligne a-t-il été rendu obligatoire pour tous les collaborateurs dans certaines entités du Groupe ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,106,"PASSAGE:
+Le tie-break n'est parfois pas utilisé pour le dernier set d'un match et un set d'avantage est utilisé à la place. Par conséquent, le set décisif doit être joué jusqu'à ce qu'un joueur ou une équipe ait gagné deux matchs de plus que l'adversaire. C'est le cas dans trois des quatre grands championnats de tennis, tous sauf l'US Open où un tie-break est joué même dans le set décisif (cinquième set pour les hommes, troisième set pour les femmes) à 6--6. Un tie-break n'est pas joué dans le set décisif dans les trois autres grands championnats : l'Open d'Australie, l'Open de France et Wimbledon. (Lorsque le tie-break a été introduit pour la première fois à Wimbledon en 1971, il a été invoqué à 8--8 plutôt qu'à 6--6). L'US Open organise un ""Super Samedi"" où les deux demi-finales masculines sont jouées en même temps que la finale féminine le deuxième samedi de l'événement ; un tie-break est donc plus prudent lorsque le repos des joueurs et l'emploi du temps sont plus importants.
+
+QUESTION:
+Y a-t-il un tie-break dans le dernier set à Wimbledon ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,107,"PASSAGE:
+« Ainsi la principale différence entre les mots négatifs & les mots privatifs, c’est que la négation renfermée dans la signification des premiers, tombe sur la proposition entiere dont ils font partie & la rendent négative ; au-lieu que celle qui constitue les mots privatifs, tombe sur l’idée individuelle de leur signification, sans influer sur la nature de la proposition. »La notion d'absence ou de privation peut être notamment exprimée par un préfixe (ex : apatride), par l'expression pas de ou par une préposition, comme sans, qui peut s'appliquer à un nom comptable ou non.
+
+QUESTION:
+Les mots négatifs ont-ils un impact sur la nature de la proposition ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,108,"PASSAGE:
+Parmi les missions de l’OFGL, le partage des informations financières et fiscales est l’une des priorités. Fort des ouvertures de données des administrations concernées (DGFiP, DGCL...), l’OFGL a pour objectif de simplifier l’accès aux informations et de guider les utilisateurs. En ce sens, l’un des chantiers de 2018 était l’étude de faisabilité de la mise en place d’une plateforme de données partagées. L’année 2019 est celle de la concrétisation du projet dans la continuité des avancées déjà obtenues en 2018, avancées qui s’étaient matérialisées par l’ouverture d’une première application Web.
+
+QUESTION:
+L'objectif de l'OFGL est-il de compliquer l'accès aux informations financières et fiscales ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,109,"PASSAGE:
+Les préparations à base d'hydroxyzine nécessitent une ordonnance médicale. Le médicament est disponible sous deux formulations, le pamoate et les sels de dihydrochlorure ou d'hydrochlorure. Vistaril, Equipose, Masmoran et Paxistil sont des préparations du sel de pamoate, tandis que Atarax, Alamon, Aterax, Durrax, Tran-Q, Orgatrax, Quiess et Tranquizine sont des préparations du sel de chlorhydrate.
+
+QUESTION:
+Y a-t-il une différence entre l'hydroxyzine hydrochloride et l'hydroxyzine pamoate ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,110,"PASSAGE:
+Je vous propose de commencer cette Assemblée Générale. Je souhaite d’abord vous dire que je suis très heureux de vous accueillir à cette Assemblée Générale d’Air France KLM. Je souhaite la bienvenue à l’ensemble des actionnaires, en m’adressant particulièrement aux actionnaires néerlandais, qui pourront suivre cette réunion grâce à la traduction simultanée. Lors de la session questions-réponses, ils pourront poser des questions en néerlandais, qui seront traduites en français par nos interprètes. Je souhaite aussi vous rappeler que ce type de réunion est un moment d’échange entre les actionnaires et la société. A cette fin, je demande aux journalistes et aux analystes de bien vouloir laisser la parole aux actionnaires. Je vais maintenant procéder aux opérations légales.
+
+QUESTION:
+Y aura-t-il une session de questions-réponses ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,111,"PASSAGE:
+Le gouvernement du Commonwealth a ses propres lois fiscales et les Portoricains sont également tenus de payer certains impôts fédéraux américains, bien que la plupart des résidents n'aient pas à payer l'impôt fédéral sur le revenu des personnes physiques. En 2009, Porto Rico a versé 3,742 milliards de dollars au Trésor américain. Les résidents de Porto Rico cotisent à la sécurité sociale et ont donc droit aux prestations de sécurité sociale au moment de leur retraite. Toutefois, ils sont exclus du revenu de sécurité complémentaire.
+
+QUESTION:
+L'impôt fédéral sur le revenu est-il le même que celui de la sécurité sociale ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,112,"PASSAGE:
+Sur les 20 joueurs de l'équipe des États-Unis, 13 ont finalement joué dans la LNH. Cinq d'entre eux ont ensuite disputé plus de 500 matchs de la LNH, et trois en ont disputé plus de 1 000.
+
+QUESTION:
+Quelqu'un de l'équipe de hockey des États-Unis de 1980 a-t-il joué dans la LNH ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,113,"PASSAGE:
+En avril 2013, le All England Club a confirmé son intention de construire un toit rétractable au-dessus du court numéro 1. Le toit devrait être en place pour les championnats de 2019.
+
+QUESTION:
+Le court numéro 1 de Wimbledon a-t-il un toit ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,114,"PASSAGE:
+Au cours des guerres napoléoniennes, la Royal Navy porta la taille de sa flotte à 175 vaisseaux de ligne et 600 navires au total, ce qui nécessitait 140 000 marins. Alors qu’en temps de paix la Royal Navy était en mesure d’assurer le service de ses navires avec des volontaires, la tâche s’avéra beaucoup plus ardue en temps de guerre. En effet, la Royal Navy entrait alors en concurrence avec des navires marchands et corsaires pour embaucher dans ses équipages le petit groupe de marins expérimentés britanniques, et se servait de la conscription pour faire face au manque de volontaires. Étant donné qu’une grande partie des marins de la marine marchande des États-Unis (estimée à plus de 11 000 en 1805) étaient d’anciens combattants de la marine royale ou des déserteurs, les navires de la Royal Navy décidèrent alors d’intercepter et de fouiller les navires marchands des États-Unis à la recherche de déserteurs. Ceci rendit furieux le gouvernement américain, surtout après l’affaire Chesapeake-Leopard (capture et inspection de l’USS Chesapeake américain par le HMS Leopard britannique).
+
+QUESTION:
+Les États-Unis avaient-ils une population importante de marins expérimentés ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,115,"PASSAGE:
+La peine capitale pour les mineurs aux États-Unis existait jusqu'au 1er mars 2005, date à laquelle la Cour suprême des États-Unis l'a interdite dans l'affaire Roper v. Simmons.
+
+QUESTION:
+Peut-on être condamné à la peine de mort quand on est mineur ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,116,"PASSAGE:
+Ont également été mis à jour les tableaux dénombrant les surfaces, populations et établissements d'enseignement et de santés particulièrement exposés au bruit. Enfin, la carte stratégique de bruit Lnight pour la situation de référence jointe au PPBE qui, dans sa version jointe lors de la consultation du public, utilisait l’indice LAeq nuit 55 pour le tracé de la courbe de bruit extérieure, a été remplacée par une carte utilisant l’indice Lnight 50 conformément à la réglementation en vigueur. D'autres modifications ont consisté à mettre à jour certaines informations ou à préciser certains points. Notamment, a été précisé le cadre du dispositif de sanction dans le cas du non-respect des procédures de restriction d'exploitation, la date d’approbation du Plan d'exposition au bruit de l'aérodrome. Enfin, le nombre de locaux ayant bénéficié d'une attribution d'aide à l’insonorisation pour les années 2014 et 2015 a été actualisé et le nombre de stations de mesures permanentes de bruit installées autour de l'aérodrome de Paris-Le Bourget a été mis à jour.
+
+QUESTION:
+Les personnes dans les établissements d'enseignement et de santé peuvent-elles être affectées par le bruit ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,117,"PASSAGE:
+Le pilote Fiat, Aldo Weilschott, grimpe de la quatorzième place au troisième tour, à la troisième place au cinquième tour, avant que sa voiture ne quitte la route à l'extérieur de Vibraye. Szisz maintient, pour sa part, son avance jusqu'au bout et termine en tête la première journée de course, peu avant midi, avec un temps de 5 h 45 min 30 s 2/5 et 26 min d'avance sur la Clément-Bayard d'Albert Clément. Malgré un démarrage plutôt lent, Felice Nazzaro (Fiat) se classe à la troisième position, 15 min derrière Clément. Dix-sept automobiles terminent la première journée de compétition, le dernier étant Henri Rougier, sur Lorraine-Dietrich, avec un temps de 8 h 15 min 55 s 0, soit deux heures et demie derrière Szisz. Toutes les automobiles encore en lice pour la deuxième journée sont placées dans un parc fermé sous surveillance, même la nuit, afin d'éviter que les écuries apportent des modifications à leurs automobiles.
+
+QUESTION:
+Est-ce que les écuries peuvent apporter des modifications à leurs automobiles pendant la nuit ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,118,"PASSAGE:
+Interrogé sur le développement d'une série de suites, King a déclaré : ""J'aimerais bien revoir Jake et Sadie, et aussi revisiter le trou de lapin qui plonge les gens dans le passé, mais parfois il vaut mieux ne pas y retourner pour une seconde aide.
+
+QUESTION:
+Y aura-t-il une deuxième saison à 11.22.63 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,119,"PASSAGE:
+« Ainsi la principale différence entre les mots négatifs & les mots privatifs, c’est que la négation renfermée dans la signification des premiers, tombe sur la proposition entiere dont ils font partie & la rendent négative ; au-lieu que celle qui constitue les mots privatifs, tombe sur l’idée individuelle de leur signification, sans influer sur la nature de la proposition. »La notion d'absence ou de privation peut être notamment exprimée par un préfixe (ex : apatride), par l'expression pas de ou par une préposition, comme sans, qui peut s'appliquer à un nom comptable ou non.
+
+QUESTION:
+L'expression 'pas de' peut-elle exprimer la notion d'absence ou de privation ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,120,"PASSAGE:
+EMT-I/85 est un niveau de formation EMT-I formulé par le Registre national des techniciens médicaux d'urgence en 1985. Ce niveau de formation comprend des procédures plus invasives que celles couvertes au niveau EMT-Basic, y compris la thérapie IV, l'utilisation d'appareils respiratoires avancés, et prévoit des compétences d'évaluation avancées. L'EMT-I/85 administre généralement les mêmes médicaments qu'un EMT-B (oxygène, glucose oral, charbon actif, auto-injecteurs d'épinéphrine (EpiPens), nitroglycérine et inhalateurs-doseurs tels que l'albutérol). Cependant, dans certains États, ils étaient également autorisés à administrer de la naloxone, du D50 et du glucagon. Comme pour tous les autres niveaux d'EMT, leur champ d'action était régi par l'État et/ou leur directeur médical.
+
+QUESTION:
+Un EMT-basic peut-il lancer un IV ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,121,"PASSAGE:
+En 1985, il prend la suite de Mark Johnson en tant que capitaine et quittera le poste peu de temps avant son départ pour Pittsburgh, en raison de mauvaise entente avec la direction de l'équipe. Le jour de son transfert des Whalers pour rejoindre les Penguins, il est le meilleur pointeur, buteur, passeur de l'équipe ainsi que le joueur ayant le plus joué de matchs avec l'équipe, que ce soit dans la LNH mais également du temps où l'équipe évoluait dans l'Association mondiale de hockey. Il finit sa carrière avec en 714 matchs 264 buts, 557 passes pour un total de 821 points.
+
+QUESTION:
+A-t-il joué dans une ligue de hockey professionnelle ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,122,"PASSAGE:
+Au quatrième trimestre 2021, le marché des véhicules utilitaires légers neufs poursuit sa baisse pour le troisième trimestre consécutif. Les ventes diminuent de 3,3 %, après - 6,6 % au trimestre précédent. Avec un peu moins de 99 000 ventes au cours du trimestre, le marché est à son plus bas niveau depuis le quatrième trimestre 2016, hors crise sanitaire. Les ventes de poids lourds neufs rebondissent (+ 2,1 %) après deux trimestres de baisse. Avec un peu plus de 11 000 ventes, le marché se situe encore en deçà de son niveau des cinq dernières années, hors crise sanitaire. Les immatriculations de tracteurs routiers rebondissent (+ 6,1 %), alors que le marché des camions se contracte (- 1,9 %).
+
+QUESTION:
+Le marché des camions a-t-il augmenté au quatrième trimestre 2021 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,123,"PASSAGE:
+Le groupe verse des cotisations pour un régime de retraite multi-employeurs en France, la CRPN (Caisse de Retraite du Personnel Navigant). Ce plan multi-employeur étant assimilé à un plan d’Etat, il est comptabilisé en tant que régime à cotisations définies en « charges de retraite à cotisations définies ». Effectifs moyens de la période Période du 1er janvier au 30 juin 2019 2018 Pilotes 8 378 7 870 Personnel navigant commercial 22 185 21 897 Personnel au sol 52 022 51 377 Personnel intérimaire 3 021 3 125 Total 85 606 84 269 8. AMORTISSEMENTS, DEPRECIATIONS ET PROVISIONS En millions d'euros 2019 2018 Période du 1er janvier au 30 juin Amortissements Immobilisations incorporelles 90 79 Immobilisations aéronautiques 587 585 Autres immobilisations corporelles 99 95 Droits d'utilisation 633 615 1 409 1 374 Dépréciations et provisions Stocks 13 (3) Créances 6 22 Provisions 46 49 65 68 Total 1 474 1 442
+
+QUESTION:
+Le régime de retraite multi-employeurs est-il comptabilisé en tant que régime à cotisations définies ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,124,"PASSAGE:
+Les clients qui ont commandé le plus de 767 sont Delta Air Lines, All Nippon Airways et United Airlines. En novembre 2012, Delta Air Lines est le client le plus important, ayant commandé et réceptionné 117 appareils. Le transporteur basé à Atlanta est également le seul client à avoir commandé toutes les versions à passagers du 767. Son 100e exemplaire, un 767-400ER, est livré en octobre 2000. United Airlines est la seule compagnie qui utilisait toutes les versions des séries 767 ER (762ER, 763ER et 764ER) en novembre 2012. Le principal client cargo est UPS Airlines, qui a commandé et réceptionné 59 appareils.
+
+QUESTION:
+Est-ce que Delta Air Lines a reçu son 100e exemplaire, un 767-400ER, en octobre 2000 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,125,"PASSAGE:
+Il n'y a pas d'artère brachio-céphalique pour le côté gauche du corps. La carotide commune gauche et l'artère sous-clavière gauche se détachent directement de l'arc aortique. Cependant, il existe deux veines brachio-céphaliques.
+
+QUESTION:
+Y a-t-il une artère brachio-céphalique droite et gauche ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,126,"PASSAGE:
+Entre 1973 et la fin des années 1980, la hausse des prix du pétrole a conduit à faire des choix sur les sources d’énergie. À la suite de la mise en place du programme nucléaire, la production nationale d’énergie primaire est passée de 44 Mtep en 1973 (dont 9 % de nucléaire) à 139 Mtep en 2013 (79 % de nucléaire). Les productions de charbon, de pétrole et de gaz naturel ont poursuivi leur déclin, jusqu’à s’arrêter en avril 2004 pour le charbon et en octobre 2013 pour le gaz. En 2013, la production nationale s’est redressée et a même dépassé le record de 2011, sous l’effet des seules énergies renouvelables. La production d’électricité nucléaire s’est contractée nettement depuis 2012. Quant aux énergies fossiles (pétrole, gaz naturel, charbon), à un peu plus de 2 Mtep, leur contribution continue de diminuer. * Énergies renouvelables thermiques (voir définitions p. 47)
+
+QUESTION:
+Est-ce que la production d'électricité nucléaire a augmenté depuis 2012 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,127,"PASSAGE:
+2/5 Il dresse notamment le bilan des recrutements et des avancements, des actions de formation, des demandes de travail à temps partiel ainsi que des conditions dans lesquelles la collectivité ou l’établissement respecte ses obligations en matière de droit syndical. La présentation de ce rapport donne lieu à un débat. Les conditions d’application de ce texte et, notamment, la liste des informations fournies par les collectivités et les délais à respecter sont fixés par le décret n° 97-443 du 25 avril 1997 modifié. Ces rapports sont transmis au C.S.F.P.T, devant lequel est présentée une synthèse nationale préparée par le Centre national de la fonction publique territoriale et la Direction générale des collectivités locales. Les rapports doivent être présentés au C.T.P. au plus tard le 30 juin 2008.
+
+QUESTION:
+Le décret n° 97-443 a-t-il été modifié ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,128,"PASSAGE:
+Et maintenant  La loi commence à s’appliquer dès aujourd’hui : plus de 50 dispositions d’application immédiate (voir p. 6).  La moitié des textes d’application sont prêts et vont partir en consultation ; tous devraient être publiés d’ici la fin 2015 (voir p. 14).  Amplifier les actions pour mobiliser les citoyens, les entreprises et les territoires (voir p. 17). La boîte à outils de la transition énergétique pour la croissance verte :  18 mesures concrètes pour mobiliser les citoyens  16 mesures concrètes pour mobiliser les entreprises  20 mesures concrètes pour mobiliser les territoires
+
+QUESTION:
+La loi sur la transition énergétique commence-t-elle à s'appliquer aujourd'hui ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,129,"PASSAGE:
+D'autres experts vaincus dans des confrontations hommes-machine se sont vu interviewés à cette occasion : Garry Kasparov (battu par Deep Blue en 1997) a ainsi déclaré que « les ordinateurs excellent dans les calculs parfaits ; nos cerveaux, dans les généralités, les planifications à long terme et l’application de modèles généraux à des situations nouvelles. Ce contraste produit des affrontements passionnants dans ces courtes fenêtres de temps où les hommes et les machines jouent à force égale, comme ce fut le cas aux échecs il y a vingt ans et, apparemment, au go aujourd’hui. », et, après la première partie, il a envoyé à Lee Sedol un message de condoléances, lui souhaitant de pouvoir gagner les parties suivantes, mais craignant que « l'inscription soit sur le mur ».
+
+QUESTION:
+Les ordinateurs excellent-ils dans les généralités, les planifications à long terme et l'application de modèles généraux à des situations nouvelles ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,130,"PASSAGE:
+Depuis son lancement en 2013, la console de jeu Xbox One a reçu de Microsoft des mises à jour qui lui permettent de jouer à certains jeux de ses deux prédécesseurs, la Xbox et la Xbox 360. Le 15 juin 2015, la rétrocompatibilité avec les jeux Xbox 360 pris en charge est devenue disponible pour les utilisateurs éligibles du programme Xbox Preview grâce à une mise à jour bêta du logiciel du système Xbox One. La mise à jour du tableau de bord contenant la rétrocompatibilité a été rendue publique le 12 novembre 2015. Le 24 octobre 2017, une autre mise à jour de ce type a ajouté des jeux de la bibliothèque Xbox originale. Voici une liste de tous les jeux rétrocompatibles sur Xbox One sous cette fonctionnalité.
+
+QUESTION:
+Tous les jeux Xbox 360 fonctionneront-ils sur Xbox One ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,131,"PASSAGE:
+La veuve d'Olivier IV, Jeanne de Belleville, fait jurer à ses fils Olivier et Guillaume de venger leur père. Elle consacre sa fortune à lever une armée pour assaillir les troupes favorables à la France stationnées en Bretagne. Menacée sur terre, elle fait armer deux navires et, toujours accompagnée de ses deux fils, mène une guerre de piraterie contre les bateaux français. Cette épopée s'achève lorsque des vaisseaux du roi de France s'emparent des navires de Jeanne de Belleville qui peut s'échapper avec ses deux fils à bord d'une barque. Les cinq jours de dérive suivants sont fatals à Guillaume, qui meurt de soif, de froid et d'épuisement. Olivier et sa mère sont recueillis à Morlaix par des partisans des Montfort, ennemis du roi de France.
+
+QUESTION:
+Les navires de Jeanne de Belleville ont-ils été capturés par des vaisseaux du roi de France ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,132,"PASSAGE:
+À l’inverse de la Type 35A, les années qui suivent sont consacrées à l’élaboration de versions plus performantes destinées à asseoir la domination de Bugatti en compétition ou simplement à s’adapter aux nouvelles réglementations de courses ; ainsi naissent les Type 35C, 35T et 35B et les Type 39 et 39A. Cette dernière voiture permet à Bugatti d'obtenir le titre officiel de Champion du monde des manufacturiers (ou constructeurs) en 1926, grâce aux victoires de Jules Goux aux Grand Prix de l'ACF et de Saint-Sébastien, ainsi que de Louis Charavel au Grand Prix d'Italie en fin de saison (Malcolm Campbell terminant entre-temps deuxième en Grande Bretagne).
+
+QUESTION:
+La Type 39 permet-elle à Bugatti d'obtenir le titre de Champion du monde des constructeurs en 1926 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,133,"PASSAGE:
+Il a beaucoup été question de la personnalité agressive et exigeante de Steve Jobs. Le magazine Fortune (qui a sacré Jobs « directeur général de la décennie » en novembre 2009) a par exemple écrit qu’il était « considéré comme un des plus grands égotistes de la Silicon Valley ». En 1993, Jobs figure dans la liste des patrons les plus durs de Fortune, en regard de la façon dont il dirige NeXT. Le cofondateur de cette entreprise, Dan’l Lewin, déclare dans ce même magazine que Steve Jobs, durant cette période, « avait des sautes d'humeur inimaginables »,. Jef Raskin, qui fut un temps au début des années 1980 chef de projet pour le Macintosh, a déclaré que Jobs « aurait fait un excellent roi de France », faisant ainsi allusion à sa personnalité impérieuse et démesurée. Pour ce qui est de son style de management chez Pixar, l’animateur américain Floyd Norman déclare qu’il « était un individu adulte, qui n’a jamais interféré avec le travail des cinéastes ».
+
+QUESTION:
+Jobs a-t-il interféré avec le travail des cinéastes chez Pixar ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,134,"PASSAGE:
+""Chasing Cars"" est une chanson du groupe de rock alternatif nord-irlandais Snow Patrol. Elle est le deuxième single de leur quatrième album studio, Eyes Open (2006). Elle a été enregistrée en 2005 et est sortie le 6 juin 2006 aux États-Unis et le 24 juillet 2006 au Royaume-Uni. La chanson a gagné en popularité aux États-Unis après avoir été présentée dans la deuxième saison finale du drame médical populaire Grey's Anatomy, qui a été diffusé le 15 mai 2006.
+
+QUESTION:
+""Chasing Cars"" était-elle écrite pour Grey's Anatomy ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,135,"PASSAGE:
+Le pilote Fiat, Aldo Weilschott, grimpe de la quatorzième place au troisième tour, à la troisième place au cinquième tour, avant que sa voiture ne quitte la route à l'extérieur de Vibraye. Szisz maintient, pour sa part, son avance jusqu'au bout et termine en tête la première journée de course, peu avant midi, avec un temps de 5 h 45 min 30 s 2/5 et 26 min d'avance sur la Clément-Bayard d'Albert Clément. Malgré un démarrage plutôt lent, Felice Nazzaro (Fiat) se classe à la troisième position, 15 min derrière Clément. Dix-sept automobiles terminent la première journée de compétition, le dernier étant Henri Rougier, sur Lorraine-Dietrich, avec un temps de 8 h 15 min 55 s 0, soit deux heures et demie derrière Szisz. Toutes les automobiles encore en lice pour la deuxième journée sont placées dans un parc fermé sous surveillance, même la nuit, afin d'éviter que les écuries apportent des modifications à leurs automobiles.
+
+QUESTION:
+Est-ce que Szisz est en bonne position pour gagner la course ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,136,"PASSAGE:
+Évolution du Résultat financier normalisé Le Résultat financier normalisé de la période s’élève à - 474 M€, en amélioration par rapport à l’année précédente de 146 M€ avec une bonne maîtrise des frais financiers en France notamment sous l’effet de la baisse des taux. Les effets de change et l’optimisation de la gestion de trésorerie au Brésil ont par ailleurs compensé la hausse des taux d’intérêt dans ce pays. Le Résultat financier normalisé en France s’améliore fortement (- 121 M€ vs - 204 M€ en 2014) compte tenu de la baisse continue des taux d’intérêt servis (refinancements récents à des taux inférieurs aux obligations venues à échéance), de la renégociation à la baisse du coupon de l’ORA Monoprix et de gains de change liés aux opérations de cession en Amérique latine.
+
+QUESTION:
+Les frais financiers en France ont-ils été bien maîtrisés ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,137,"PASSAGE:
+La liaison carbone-hydrogène (liaison C--H) est une liaison entre les atomes de carbone et d'hydrogène que l'on trouve dans de nombreux composés organiques. Cette liaison est une liaison covalente, ce qui signifie que le carbone partage ses électrons de valence extérieure avec jusqu'à quatre hydrogènes. Cela complète leurs deux enveloppes extérieures, ce qui les rend stables. Les liaisons carbone-hydrogène ont une longueur de liaison d'environ 1,09 Å (1,09 × 10 m) et une énergie de liaison d'environ 413 kJ/mol (voir tableau ci-dessous). En utilisant l'échelle de Pauling - C (2,55) et H (2,2) - la différence d'électronégativité entre ces deux atomes est de 0,35. En raison de cette petite différence d'électronégativité, la liaison C-H est généralement considérée comme non polaire. Dans les formules structurelles des molécules, les atomes d'hydrogène sont souvent omis. Les classes de composés composées uniquement de liaisons C--H et de liaisons C--C sont les alcanes, les alcènes, les alcynes et les hydrocarbures aromatiques. Collectivement, ils sont connus sous le nom d'hydrocarbures.
+
+QUESTION:
+Le carbone peut-il former des liaisons covalentes polaires avec l'hydrogène ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,138,"PASSAGE:
+Les clients qui ont commandé le plus de 767 sont Delta Air Lines, All Nippon Airways et United Airlines. En novembre 2012, Delta Air Lines est le client le plus important, ayant commandé et réceptionné 117 appareils. Le transporteur basé à Atlanta est également le seul client à avoir commandé toutes les versions à passagers du 767. Son 100e exemplaire, un 767-400ER, est livré en octobre 2000. United Airlines est la seule compagnie qui utilisait toutes les versions des séries 767 ER (762ER, 763ER et 764ER) en novembre 2012. Le principal client cargo est UPS Airlines, qui a commandé et réceptionné 59 appareils.
+
+QUESTION:
+Est-ce que UPS Airlines est le principal client cargo du 767 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,139,"PASSAGE:
+L'Inde n'a jamais participé à la Coupe du monde de la FIFA, bien que l'équipe se soit qualifiée par défaut pour la Coupe du monde de 1950 après le retrait de toutes les autres nations de son groupe de qualification. Toutefois, l'Inde s'est retirée avant le début du tournoi. L'équipe a également participé à trois reprises à la plus grande compétition de football d'Asie, la Coupe d'Asie de l'AFC. Son meilleur résultat dans la compétition a eu lieu en 1964, lorsque l'équipe a terminé deuxième. L'Inde participe également au championnat SAFF, la plus grande compétition régionale de football en Asie du Sud. Elle a remporté le tournoi six fois depuis son lancement en 1993.
+
+QUESTION:
+L'équipe indienne de football s'est-elle qualifiée pour la FIFA 2018 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,140,"PASSAGE:
+L'Alsacien retrouve sa surface de prédilection après six semaines de pause estivale dans le cadre de la première édition mondiale du rallye de Bulgarie. Il signe le chrono de référence dans les cinq premiers secteurs et construit une avance de plus de trente secondes sur Dani Sordo, seul pilote parvenant à suivre son rythme. Il limite son offensive dans les étapes suivantes pour assurer ses trajectoires et remporte la première épreuve asphalte de la saison. Victime de problèmes de freins et de la destruction de son pare-chocs avant, il reste en retrait lors du coup d'envoi du rallye de Finlande. Auteur de trois temps scratchs dans la dernière étape, il parvient à accrocher la dernière marche du podium au détriment de Petter Solberg.
+
+QUESTION:
+L'Alsacien a-t-il remporté la première épreuve asphalte de la saison ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,141,"PASSAGE:
+Sous la pression des supporters, les deux présidents américains sont mis sur la selette. Le club est finalement vendu au consortium américain New England Sports Ventures. Les mauvais résultats, (12e en championnat), et la pression du club pousse rapidement Roy Hodgson vers la sortie. Il est remplacé le 9 janvier 2011 par l'ancien joueur et légende des Reds Kenny Dalglish. Dans les derniers jours du mercato hivernal 2011, Liverpool est très actif, cède Fernando Torres et recrute Luis Suárez et Andy Carroll. Après une remontée dans la dernière partie de la saison, le club finit 6e. Dalglish peut alors construire son équipe lors du marché estival et britannise le club avec les arrivées de Charlie Adam, Stewart Downing, Jordan Henderson, Doni, Jose Enrique, Sebastián Coates et Craig Bellamy.
+
+QUESTION:
+Le club a-t-il fini 1er en championnat cette saison-là ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,142,"PASSAGE:
+Sous le règne de Ferdinand II sont réalisés de nombreux projets d'envergure. On dénombre ainsi les routes du Tirrena Inferiore, de l'Amalfitana, de la Sorrentina, de la Frentana, de l'Appula, de la Sannitica, de l'Aquilona et de la Ferdinandea Salentina. D'anciennes routes sont également modernisées avec la construction de plusieurs nouvelles sections routières le long des cinq principales routes du royaume : celles qui unissent la capitale aux Abruzzes, aux Pouilles, à la Basilicate, à la Calabre et à l’État pontifical. Ces voies de transports sont aussi dotées d'un service postal innovant qui fonctionne quotidiennement. En 1828, deux ans avant le début du règne de Ferdinand II, les Deux-Siciles comprennent près de 2 800 km de voies routières alors qu'en 1855, date de l'extension maximale du réseau routier, elles comprennent environ 8 500 km.
+
+QUESTION:
+Le réseau routier des Deux-Siciles comprend-il environ 8 500 km en 1828 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,143,"PASSAGE:
+Si les Juifs sont maintenant égaux en droit aux autres citoyens, ils peuvent construire des temples aussi grands que les églises chrétiennes. La plus grande d'Europe est construite à Budapest de 1854 à 1859. Et si la liberté de conscience devient la règle, il n'y a plus de raison de dissimuler les synagogues, au contraire on peut afficher clairement leur raison d'être par des symboles juifs bien visibles comme les tables de la loi, des citations de la bible en hébreu ou en langue vernaculaire, l'étoile de David ou la menorah.
+
+QUESTION:
+Les symboles juifs peuvent-ils être affichés clairement sur les synagogues si la liberté de conscience est la règle ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,144,"PASSAGE:
+Sur le site d'agrégation des critiques de films Rotten Tomatoes, les films que tous les critiques interrogés considèrent comme mauvais ont une note de 0%. Certains d'entre eux sont souvent considérés comme faisant partie des pires films jamais réalisés.
+
+QUESTION:
+Y a-t-il un film avec un 0 sur Rotten Romatoes ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,145,"PASSAGE:
+À l’inverse de la Type 35A, les années qui suivent sont consacrées à l’élaboration de versions plus performantes destinées à asseoir la domination de Bugatti en compétition ou simplement à s’adapter aux nouvelles réglementations de courses ; ainsi naissent les Type 35C, 35T et 35B et les Type 39 et 39A. Cette dernière voiture permet à Bugatti d'obtenir le titre officiel de Champion du monde des manufacturiers (ou constructeurs) en 1926, grâce aux victoires de Jules Goux aux Grand Prix de l'ACF et de Saint-Sébastien, ainsi que de Louis Charavel au Grand Prix d'Italie en fin de saison (Malcolm Campbell terminant entre-temps deuxième en Grande Bretagne).
+
+QUESTION:
+La Type 35A est-elle la version la plus performante de Bugatti ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,146,"PASSAGE:
+À l’inverse de la Type 35A, les années qui suivent sont consacrées à l’élaboration de versions plus performantes destinées à asseoir la domination de Bugatti en compétition ou simplement à s’adapter aux nouvelles réglementations de courses ; ainsi naissent les Type 35C, 35T et 35B et les Type 39 et 39A. Cette dernière voiture permet à Bugatti d'obtenir le titre officiel de Champion du monde des manufacturiers (ou constructeurs) en 1926, grâce aux victoires de Jules Goux aux Grand Prix de l'ACF et de Saint-Sébastien, ainsi que de Louis Charavel au Grand Prix d'Italie en fin de saison (Malcolm Campbell terminant entre-temps deuxième en Grande Bretagne).
+
+QUESTION:
+Est-ce que Bugatti a continué à développer des voitures de course après la Type 35A ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,147,"PASSAGE:
+Barq's /ˈbɑːrks/ est une boisson gazeuse américaine. Sa marque de bière de racine est réputée pour sa teneur en caféine. Barq's, créée par Edward Barq et mise en bouteille depuis le début du XXe siècle, est la propriété de la famille Barq mais est mise en bouteille par la société Coca-Cola. Elle était connue sous le nom de Barq's Famous Olde Tyme Root Beer jusqu'en 2012.
+
+QUESTION:
+La bière de racine de Barq's est-elle un produit Pepsi ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,148,"PASSAGE:
+Sous le règne de Ferdinand II sont réalisés de nombreux projets d'envergure. On dénombre ainsi les routes du Tirrena Inferiore, de l'Amalfitana, de la Sorrentina, de la Frentana, de l'Appula, de la Sannitica, de l'Aquilona et de la Ferdinandea Salentina. D'anciennes routes sont également modernisées avec la construction de plusieurs nouvelles sections routières le long des cinq principales routes du royaume : celles qui unissent la capitale aux Abruzzes, aux Pouilles, à la Basilicate, à la Calabre et à l’État pontifical. Ces voies de transports sont aussi dotées d'un service postal innovant qui fonctionne quotidiennement. En 1828, deux ans avant le début du règne de Ferdinand II, les Deux-Siciles comprennent près de 2 800 km de voies routières alors qu'en 1855, date de l'extension maximale du réseau routier, elles comprennent environ 8 500 km.
+
+QUESTION:
+Est-ce que les cinq principales routes du royaume sont reliées à la capitale ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,149,"PASSAGE:
+En 1985, il prend la suite de Mark Johnson en tant que capitaine et quittera le poste peu de temps avant son départ pour Pittsburgh, en raison de mauvaise entente avec la direction de l'équipe. Le jour de son transfert des Whalers pour rejoindre les Penguins, il est le meilleur pointeur, buteur, passeur de l'équipe ainsi que le joueur ayant le plus joué de matchs avec l'équipe, que ce soit dans la LNH mais également du temps où l'équipe évoluait dans l'Association mondiale de hockey. Il finit sa carrière avec en 714 matchs 264 buts, 557 passes pour un total de 821 points.
+
+QUESTION:
+A-t-il marqué plus de 300 buts dans sa carrière ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,150,"PASSAGE:
+Le corps est gris foncé ou noir avec quelques taches sur le ventre. Sa surface peut comporter des marques rectilignes et de nombreuses cicatrices, dues aux combats entre les mâles ou avec des calmars géants. Contrairement à la peau lisse de la plupart des grandes baleines, la peau du dos est habituellement noueuse et peut être comparée à celle d'un pruneau. La peau est normalement d'un gris uniforme, mais peut paraître brune en plein soleil. Des individus albinos ont également été signalés,. Dans les eaux chaudes, les cachalots muent en permanence, perdant de grands lambeaux de peau souvent consommés par les poissons des alentours et permettant ainsi aux cétacés de se débarrasser de certains de leurs parasites. Cette mue est moins fréquente dans les plus hautes latitudes. Les cachalots peuvent parfois en groupe se frotter les uns contre les autres pour mieux se débarrasser de leur épiderme.
+
+QUESTION:
+La mue des cachalots est-elle plus fréquente dans les plus hautes latitudes ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,151,"PASSAGE:
+Dans le Wisconsin, l'âge de la consommation d'alcool est de 21 ans. Les personnes n'ayant pas l'âge légal de boire peuvent être servies, posséder ou consommer de l'alcool si elles sont accompagnées d'un parent, d'un tuteur légal ou d'un conjoint ayant l'âge légal de boire. Les personnes âgées de 18 à 20 ans peuvent également se faire servir, posséder ou consommer de l'alcool si elles sont accompagnées d'un parent, d'un tuteur légal ou d'un conjoint qui a l'âge légal de boire. Les personnes âgées de 18 à 20 ans peuvent également posséder (mais pas consommer) de l'alcool dans le cadre de leur emploi.
+
+QUESTION:
+Peut-on boire de l'alcool avec ses parents dans le Wisconsin ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,152,"PASSAGE:
+Au quatrième trimestre 2021, le marché des véhicules utilitaires légers neufs poursuit sa baisse pour le troisième trimestre consécutif. Les ventes diminuent de 3,3 %, après - 6,6 % au trimestre précédent. Avec un peu moins de 99 000 ventes au cours du trimestre, le marché est à son plus bas niveau depuis le quatrième trimestre 2016, hors crise sanitaire. Les ventes de poids lourds neufs rebondissent (+ 2,1 %) après deux trimestres de baisse. Avec un peu plus de 11 000 ventes, le marché se situe encore en deçà de son niveau des cinq dernières années, hors crise sanitaire. Les immatriculations de tracteurs routiers rebondissent (+ 6,1 %), alors que le marché des camions se contracte (- 1,9 %).
+
+QUESTION:
+Est-ce que les ventes de camions ont diminué au quatrième trimestre 2021 ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,153,"PASSAGE:
+Au quatrième trimestre 2021, le marché des véhicules utilitaires légers neufs poursuit sa baisse pour le troisième trimestre consécutif. Les ventes diminuent de 3,3 %, après - 6,6 % au trimestre précédent. Avec un peu moins de 99 000 ventes au cours du trimestre, le marché est à son plus bas niveau depuis le quatrième trimestre 2016, hors crise sanitaire. Les ventes de poids lourds neufs rebondissent (+ 2,1 %) après deux trimestres de baisse. Avec un peu plus de 11 000 ventes, le marché se situe encore en deçà de son niveau des cinq dernières années, hors crise sanitaire. Les immatriculations de tracteurs routiers rebondissent (+ 6,1 %), alors que le marché des camions se contracte (- 1,9 %).
+
+QUESTION:
+Les ventes de poids lourds neufs ont-elles augmenté au troisième trimestre 2021 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,154,"PASSAGE:
+En unité de mesure culinaire, une cuillère à dessert rase (dstspn.) équivaut à deux cuillères à café, soit 10 millilitres, alors qu'une cuillère à soupe américaine correspond à trois cuillères à café (15 ml ou une demi-once liquide) aux États-Unis, et deux cuillères à dessert, soit quatre cuillères à café (20 ml ou deux tiers d'une once liquide) en Grande-Bretagne et en Australie, ce qui est l'ancienne norme britannique. Pour les ingrédients secs, on spécifie souvent une cuillère à café ronde ou bombée à la place.
+
+QUESTION:
+Une cuillère à soupe est-elle plus grosse qu'une cuillère à dessert ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,155,"PASSAGE:
+Tant que ces commerçants restèrent sur le littoral, la cohabitation était bonne, mais les Phéniciens ont commencé à s’intéresser aux ressources de l’intérieur des terres, et ont envisagé de conquérir l’île dans son intégralité. Cependant, le peuple nuragique a opposé une telle résistance, que la Phénicie n’a pu faire autrement que de demander l’aide de Carthage. La relation qu’entretiennent les Phéniciens avec la Sardaigne est particulière, dans le sens que, la plupart du temps, ce peuple ne s'intéresse que très peu à l'intérieur de terres colonisées, par souci de sécurité que leur apporte la mer. Ainsi, l'île sarde est l'exception où l'on voit apparaître des fortifications phéniciennes.
+
+QUESTION:
+Les fortifications phéniciennes sont-elles courantes dans les colonies ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,156,"PASSAGE:
+un mot de comparaison, appelé aussi parfois mot-outil, ou « comparatif », très souvent « comme ».La comparaison obéit donc à un schéma aisément reconnaissable ; elle est en effet « une image où thème et phore sont exprimés (ce dernier par un syntagme) et syntaxiquement séparés par une marque de l'analogie ». Selon César Chesneau Dumarsais, la forme canonique de la comparaison se forme par : l'introduction de « comme » entre les deux membres de phrase rapprochés d'une part, et par l'effacement (l'ellipse) du verbe-copule « être » (et de l'attribut après le second groupe nominal) d'autre part.
+
+QUESTION:
+La comparaison est-elle une image où thème et phore sont exprimés et syntaxiquement séparés par une marque de l'analogie ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,157,"PASSAGE:
+La compétition féminine est un duel attendu entre les Américaines Michelle Kwan et Tara Lipinski. Kwan, âgée de 17 ans, est championne du monde en 1996 alors que Lipinski, âgée de 15 ans, l'est en 1997. Elles vivent leurs Jeux très différemment puisque la première arrive après le début des Jeux et dort à l'hôtel alors que la seconde loge au village olympique dès la cérémonie d'ouverture. Kwan remporte le programme court devant sa compatriote. Dans le programme libre, Lipinski réalise une performance plus technique que Kwan comprenant notamment deux combinaisons de triples sauts. Déclarée vainqueur par sept des neuf juges, Tara Lipinski devient la plus jeune championne olympique dans cette épreuve à 15 ans et 255 jours. Elle bat de deux mois le record établi par la Norvégienne Sonja Henie en 1928. Comme en 1994, la Chinoise Chen Lu est médaillée de bronze,.
+
+QUESTION:
+Chen Lu est-elle médaillée d'or en 1998 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,158,"PASSAGE:
+Je vous propose de commencer cette Assemblée Générale. Je souhaite d’abord vous dire que je suis très heureux de vous accueillir à cette Assemblée Générale d’Air France KLM. Je souhaite la bienvenue à l’ensemble des actionnaires, en m’adressant particulièrement aux actionnaires néerlandais, qui pourront suivre cette réunion grâce à la traduction simultanée. Lors de la session questions-réponses, ils pourront poser des questions en néerlandais, qui seront traduites en français par nos interprètes. Je souhaite aussi vous rappeler que ce type de réunion est un moment d’échange entre les actionnaires et la société. A cette fin, je demande aux journalistes et aux analystes de bien vouloir laisser la parole aux actionnaires. Je vais maintenant procéder aux opérations légales.
+
+QUESTION:
+L'Assemblée Générale est-elle un moment d'échange entre les actionnaires et la société ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,159,"PASSAGE:
+Les clients qui ont commandé le plus de 767 sont Delta Air Lines, All Nippon Airways et United Airlines. En novembre 2012, Delta Air Lines est le client le plus important, ayant commandé et réceptionné 117 appareils. Le transporteur basé à Atlanta est également le seul client à avoir commandé toutes les versions à passagers du 767. Son 100e exemplaire, un 767-400ER, est livré en octobre 2000. United Airlines est la seule compagnie qui utilisait toutes les versions des séries 767 ER (762ER, 763ER et 764ER) en novembre 2012. Le principal client cargo est UPS Airlines, qui a commandé et réceptionné 59 appareils.
+
+QUESTION:
+Est-ce que Delta Air Lines a commandé les versions 762ER, 763ER et 764ER ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,160,"PASSAGE:
+Face à la menace terroriste, protéger les usagers et les personnels des établissements de santé, sociaux et médico-sociaux est essentiel. Ce guide de bonnes pratiques a deux objectifs : ► fournir des indications concrètes pour préparer les établissements, les personnels et les usagers à l’éventualité d’une attaque ; ► réagir au mieux avant même l’arrivée des forces de sécurité et durant leur intervention. Une bonne organisation préalable des établissements, de même qu’une réaction adaptée de l’ensemble des agents et des usagers, peuvent permettre de mieux se protéger et de sauver des vies. Ce guide complète les procédures et consignes de sécurité déjà mises en place pour prévenir la menace terroriste et d’autres risques. Il s’inspire de bonnes pratiques développées par plusieurs établissements. Chacun, par son comportement, permet de renforcer l’efficacité du dispositif de sécurité. Un second guide permet d’impliquer le personnel. Nous sommes tous les acteurs de notre propre sécurité et de celle d’autrui.
+
+QUESTION:
+Le guide de bonnes pratiques a-t-il pour objectif de préparer les établissements à l'éventualité d'une attaque terroriste ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,161,"PASSAGE:
+Entre 1973 et la fin des années 1980, la hausse des prix du pétrole a conduit à faire des choix sur les sources d’énergie. À la suite de la mise en place du programme nucléaire, la production nationale d’énergie primaire est passée de 44 Mtep en 1973 (dont 9 % de nucléaire) à 139 Mtep en 2013 (79 % de nucléaire). Les productions de charbon, de pétrole et de gaz naturel ont poursuivi leur déclin, jusqu’à s’arrêter en avril 2004 pour le charbon et en octobre 2013 pour le gaz. En 2013, la production nationale s’est redressée et a même dépassé le record de 2011, sous l’effet des seules énergies renouvelables. La production d’électricité nucléaire s’est contractée nettement depuis 2012. Quant aux énergies fossiles (pétrole, gaz naturel, charbon), à un peu plus de 2 Mtep, leur contribution continue de diminuer. * Énergies renouvelables thermiques (voir définitions p. 47)
+
+QUESTION:
+Est-ce que les énergies fossiles ont une forte contribution à la production nationale d'énergie ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,162,"PASSAGE:
+Au cours des guerres napoléoniennes, la Royal Navy porta la taille de sa flotte à 175 vaisseaux de ligne et 600 navires au total, ce qui nécessitait 140 000 marins. Alors qu’en temps de paix la Royal Navy était en mesure d’assurer le service de ses navires avec des volontaires, la tâche s’avéra beaucoup plus ardue en temps de guerre. En effet, la Royal Navy entrait alors en concurrence avec des navires marchands et corsaires pour embaucher dans ses équipages le petit groupe de marins expérimentés britanniques, et se servait de la conscription pour faire face au manque de volontaires. Étant donné qu’une grande partie des marins de la marine marchande des États-Unis (estimée à plus de 11 000 en 1805) étaient d’anciens combattants de la marine royale ou des déserteurs, les navires de la Royal Navy décidèrent alors d’intercepter et de fouiller les navires marchands des États-Unis à la recherche de déserteurs. Ceci rendit furieux le gouvernement américain, surtout après l’affaire Chesapeake-Leopard (capture et inspection de l’USS Chesapeake américain par le HMS Leopard britannique).
+
+QUESTION:
+Y avait-il une pénurie de marins expérimentés pendant les guerres napoléoniennes ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,163,"PASSAGE:
+Love Finds a Home est un film dramatique chrétien, le huitième et dernier volet basé sur une série de livres de Janette Oke. Il a été diffusé sur la chaîne Hallmark Channel le 5 septembre 2009. Le film est basé sur le livre Love Finds a Home de Janette Oke. Sarah Jones, Haylie Duff et Jordan Bridges reprennent leurs rôles de Love Takes Wing.
+
+QUESTION:
+Y a-t-il une suite à Love Finds a Home ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,164,"PASSAGE:
+Au cours des guerres napoléoniennes, la Royal Navy porta la taille de sa flotte à 175 vaisseaux de ligne et 600 navires au total, ce qui nécessitait 140 000 marins. Alors qu’en temps de paix la Royal Navy était en mesure d’assurer le service de ses navires avec des volontaires, la tâche s’avéra beaucoup plus ardue en temps de guerre. En effet, la Royal Navy entrait alors en concurrence avec des navires marchands et corsaires pour embaucher dans ses équipages le petit groupe de marins expérimentés britanniques, et se servait de la conscription pour faire face au manque de volontaires. Étant donné qu’une grande partie des marins de la marine marchande des États-Unis (estimée à plus de 11 000 en 1805) étaient d’anciens combattants de la marine royale ou des déserteurs, les navires de la Royal Navy décidèrent alors d’intercepter et de fouiller les navires marchands des États-Unis à la recherche de déserteurs. Ceci rendit furieux le gouvernement américain, surtout après l’affaire Chesapeake-Leopard (capture et inspection de l’USS Chesapeake américain par le HMS Leopard britannique).
+
+QUESTION:
+La Royal Navy avait-elle 175 vaisseaux de ligne pendant les guerres napoléoniennes ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,165,"PASSAGE:
+Du 12 au 27 juin 1925 a lieu une exposition à la galerie Pierre, où Miró présente 16 peintures et 15 dessins. Tous les représentants du groupe surréaliste signent une invitation à l'exposition. Benjamin Péret préface son exposition personnelle, à la galerie Pierre Loeb de Paris. D'autres peintres surréalistes y exposent, parmi lesquels Paul Klee, dont les toiles impressionnent Miró. Fait rare à cette époque, l'inauguration a lieu à minuit, pendant qu'à l'extérieur, un orchestre invité par Picasso joue une sardane. Des files d'attente se forment à l'entrée. Les ventes et les critiques sont très favorables à Miró.
+
+QUESTION:
+Est-ce que l'exposition a duré un mois ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,166,"PASSAGE:
+L'Alsacien retrouve sa surface de prédilection après six semaines de pause estivale dans le cadre de la première édition mondiale du rallye de Bulgarie. Il signe le chrono de référence dans les cinq premiers secteurs et construit une avance de plus de trente secondes sur Dani Sordo, seul pilote parvenant à suivre son rythme. Il limite son offensive dans les étapes suivantes pour assurer ses trajectoires et remporte la première épreuve asphalte de la saison. Victime de problèmes de freins et de la destruction de son pare-chocs avant, il reste en retrait lors du coup d'envoi du rallye de Finlande. Auteur de trois temps scratchs dans la dernière étape, il parvient à accrocher la dernière marche du podium au détriment de Petter Solberg.
+
+QUESTION:
+Est-ce que l'Alsacien a fini premier ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,167,"PASSAGE:
+Le jour de Christophe Colomb est un jour férié national dans de nombreux pays des Amériques et ailleurs, qui célèbre officiellement l'anniversaire de l'arrivée de Christophe Colomb sur le continent américain le 12 octobre 1492. Le débarquement est célébré comme ""Columbus Day"" aux États-Unis, comme ""Día de la Raza"" (jour de la course) dans certains pays d'Amérique latine, comme ""Día de la Hispanidad"" et ""Fiesta Nacional"" en Espagne, où c'est également la fête religieuse de la Virgen del Pilar, comme Día de las Américas (Journée des Amériques) au Belize et en Uruguay, comme Día del Respeto a la Diversidad Cultural (Journée du respect de la diversité culturelle) en Argentine, et comme Giornata Nazionale di Cristoforo Colombo ou Festa Nazionale di Cristoforo Colombo en Italie ainsi que dans les petites italies du monde entier. En tant que jour de commémoration de Notre-Dame du Pilier, le 12 octobre avait été déclaré jour de fête religieuse dans tout l'Empire espagnol en 1730 ; la Fiesta séculaire de la Raza Española a été proposée pour la première fois par Faustino Rodríguez-San Pedro y Díaz-Argüelles en 1913. Ces dernières années, la célébration de la fête a rencontré une certaine opposition de la part de diverses organisations.
+
+QUESTION:
+Le jour de Christophe Colomb est-il un jour férié national aux états-unis ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,168,"PASSAGE:
+2/5 Il dresse notamment le bilan des recrutements et des avancements, des actions de formation, des demandes de travail à temps partiel ainsi que des conditions dans lesquelles la collectivité ou l’établissement respecte ses obligations en matière de droit syndical. La présentation de ce rapport donne lieu à un débat. Les conditions d’application de ce texte et, notamment, la liste des informations fournies par les collectivités et les délais à respecter sont fixés par le décret n° 97-443 du 25 avril 1997 modifié. Ces rapports sont transmis au C.S.F.P.T, devant lequel est présentée une synthèse nationale préparée par le Centre national de la fonction publique territoriale et la Direction générale des collectivités locales. Les rapports doivent être présentés au C.T.P. au plus tard le 30 juin 2008.
+
+QUESTION:
+La synthèse nationale est-elle préparée par le Centre national de la fonction publique territoriale et la Direction générale des collectivités locales ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,169,"PASSAGE:
+Le succès du film Fidèle Vagabond (1957), avec ses 8 millions de dollars américains de recettes aux États-Unis, a convaincu le studio Disney que pour prospérer il devait poursuivre la production de films en prises de vues réelles modestes et reléguer l'animation à une activité secondaire. Ce film est aussi le premier d'un grand nombre de productions Disney mêlant enfant(s) et chien(s). Les productions en Europe reprennent en 1957 avec l'installation au Royaume-Uni du producteur Bill Anderson dont la première action est d'engager le réalisateur Ken Annakin qui tourne ensuite Le Troisième Homme sur la montagne (1959) en Suisse puis des films en France et en Allemagne.
+
+QUESTION:
+Les productions Disney en Europe ont-elles repris en 1959 ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,170,"PASSAGE:
+Le succès du film Fidèle Vagabond (1957), avec ses 8 millions de dollars américains de recettes aux États-Unis, a convaincu le studio Disney que pour prospérer il devait poursuivre la production de films en prises de vues réelles modestes et reléguer l'animation à une activité secondaire. Ce film est aussi le premier d'un grand nombre de productions Disney mêlant enfant(s) et chien(s). Les productions en Europe reprennent en 1957 avec l'installation au Royaume-Uni du producteur Bill Anderson dont la première action est d'engager le réalisateur Ken Annakin qui tourne ensuite Le Troisième Homme sur la montagne (1959) en Suisse puis des films en France et en Allemagne.
+
+QUESTION:
+Le succès de Fidèle Vagabond a-t-il convaincu le studio Disney de poursuivre la production de films en prises de vues réelles ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,171,"PASSAGE:
+Ont également été mis à jour les tableaux dénombrant les surfaces, populations et établissements d'enseignement et de santés particulièrement exposés au bruit. Enfin, la carte stratégique de bruit Lnight pour la situation de référence jointe au PPBE qui, dans sa version jointe lors de la consultation du public, utilisait l’indice LAeq nuit 55 pour le tracé de la courbe de bruit extérieure, a été remplacée par une carte utilisant l’indice Lnight 50 conformément à la réglementation en vigueur. D'autres modifications ont consisté à mettre à jour certaines informations ou à préciser certains points. Notamment, a été précisé le cadre du dispositif de sanction dans le cas du non-respect des procédures de restriction d'exploitation, la date d’approbation du Plan d'exposition au bruit de l'aérodrome. Enfin, le nombre de locaux ayant bénéficié d'une attribution d'aide à l’insonorisation pour les années 2014 et 2015 a été actualisé et le nombre de stations de mesures permanentes de bruit installées autour de l'aérodrome de Paris-Le Bourget a été mis à jour.
+
+QUESTION:
+La version précédente de la carte stratégique de bruit Lnight respectait-elle la réglementation en vigueur ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,172,"PASSAGE:
+En disposant d’un smartphone Android ou iOS, vous pouvez effectuer des paiements en ligne ou en magasin à l’aide de votre smartphone avant même de recevoir votre carte bancaire physique. Pour cela, dès réception du mail de confirmation de commande de votre carte bancaire, rendez vous sur l’onglet ""CB"" de votre application Boursorama Banque. Cliquez sur ""Gérer Google Pay"" ou ""Gérer Apple Pay"" puis sur ""Ajouter à"" suivi du wallet correspondant. Une fois l’action effectuée, un email de confirmation d’enrôlement de votre carte bancaire vous sera envoyé.
+
+QUESTION:
+Est-ce que vous devez avoir un compte Google Pay ou Apple Pay pour utiliser cette fonctionnalité ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,173,"PASSAGE:
+Sous la pression des supporters, les deux présidents américains sont mis sur la selette. Le club est finalement vendu au consortium américain New England Sports Ventures. Les mauvais résultats, (12e en championnat), et la pression du club pousse rapidement Roy Hodgson vers la sortie. Il est remplacé le 9 janvier 2011 par l'ancien joueur et légende des Reds Kenny Dalglish. Dans les derniers jours du mercato hivernal 2011, Liverpool est très actif, cède Fernando Torres et recrute Luis Suárez et Andy Carroll. Après une remontée dans la dernière partie de la saison, le club finit 6e. Dalglish peut alors construire son équipe lors du marché estival et britannise le club avec les arrivées de Charlie Adam, Stewart Downing, Jordan Henderson, Doni, Jose Enrique, Sebastián Coates et Craig Bellamy.
+
+QUESTION:
+Est-ce que Liverpool finit dans les 5 premiers ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,174,"PASSAGE:
+Sous la pression des supporters, les deux présidents américains sont mis sur la selette. Le club est finalement vendu au consortium américain New England Sports Ventures. Les mauvais résultats, (12e en championnat), et la pression du club pousse rapidement Roy Hodgson vers la sortie. Il est remplacé le 9 janvier 2011 par l'ancien joueur et légende des Reds Kenny Dalglish. Dans les derniers jours du mercato hivernal 2011, Liverpool est très actif, cède Fernando Torres et recrute Luis Suárez et Andy Carroll. Après une remontée dans la dernière partie de la saison, le club finit 6e. Dalglish peut alors construire son équipe lors du marché estival et britannise le club avec les arrivées de Charlie Adam, Stewart Downing, Jordan Henderson, Doni, Jose Enrique, Sebastián Coates et Craig Bellamy.
+
+QUESTION:
+Liverpool a-t-il fini 6e en championnat cette saison-là ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,
+french_boolq,175,"PASSAGE:
+Introduction Un groupe de travail partenarial (DGFiP, AMF, ADF, ARF,...) se réunit depuis septembre 2010 pour dégager des pistes d’optimisation du traitement des produits locaux. Les réflexions abordées, intéressant la SNP, sont notamment les suivantes : - Expérimentation de l’édition des ASAP par la DGFiP sachant que le groupe estime nécessaire d’enrichir au préalable le flux PES Titres ; - Elargissement des moyens de paiement (TIPI,...) ; - Remplacement des rôles par le PES titres collectifs en développement. Le groupe a établi le constat de la nécessité d’utiliser la dématérialisation des flux recette pour améliorer l’efficacité du recouvrement. Pour simplifier la démarche et alléger les coûts en ce domaine, le groupe de travail préconise d’intégrer dans l’arrêté du 27 juin 2007 (cf. §7 infra) une disposition visant à rendre obligatoire, à l’horizon 2015, le Protocole d’Echange Standard V2 par les organismes publics locaux choisissant librement de dématérialiser leurs pièces
+
+QUESTION:
+Le flux PES Titres est-il suffisamment enrichi selon le groupe de travail ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,176,"PASSAGE:
+Je vous propose de commencer cette Assemblée Générale. Je souhaite d’abord vous dire que je suis très heureux de vous accueillir à cette Assemblée Générale d’Air France KLM. Je souhaite la bienvenue à l’ensemble des actionnaires, en m’adressant particulièrement aux actionnaires néerlandais, qui pourront suivre cette réunion grâce à la traduction simultanée. Lors de la session questions-réponses, ils pourront poser des questions en néerlandais, qui seront traduites en français par nos interprètes. Je souhaite aussi vous rappeler que ce type de réunion est un moment d’échange entre les actionnaires et la société. A cette fin, je demande aux journalistes et aux analystes de bien vouloir laisser la parole aux actionnaires. Je vais maintenant procéder aux opérations légales.
+
+QUESTION:
+Les journalistes et les analystes peuvent-ils poser des questions pendant la session questions-réponses ?",,ERROR: 'str' object has no attribute 'get',0,0,"[0, 1]",label,
+french_boolq,177,"PASSAGE:
+Dans le cadre de l'initiative Marvel's Marvel NOW !, une nouvelle série en cours de Deadpool a été lancée, écrite par Brian Posehn et Gerry Duggan et illustrée par Tony Moore. Il est également membre des Thunderbolts. Dans le 27ème numéro de sa nouvelle série, dans le cadre de ""All-New Marvel NOW !"", Deadpool s'est marié pour la troisième fois. Initialement un secret, sa mariée a été révélée dans le webcomic Deadpool : Le gantelet pour être Shiklah, la reine des morts-vivants. Deadpool découvre également qu'il a une fille du nom d'Eleanor d'une ancienne flamme de Deadpool nommée Carmelita.
+
+QUESTION:
+Deadpool a-t-il un enfant dans la bande dessinée ?",,ERROR: 'str' object has no attribute 'get',0,1,"[0, 1]",label,

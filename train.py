@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 Quebec French Continual Pretraining Pipeline - FIXED VERSION
 Updated --> Fixed tensor dimension mismatch issue in data processing
@@ -72,7 +73,7 @@ class DataConfig:
 @dataclass
 class TrainingConfig:
     """Configuration for training"""
-    output_dir: str = "./quebec_llama3.2_3b"
+    output_dir: str = "./quebec_french_llama3.2_3b_3E"
     num_epochs: int = 3
     learning_rate: float = 1e-5  # Slightly higher for better Quebec French adaptation
     warmup_ratio: float = 0.1    # Reduced warmup for CPT
@@ -505,8 +506,8 @@ class QuebecFrenchTrainer:
             # FIXED: Add data loading configurations
             dataloader_drop_last=True,  # Drop incomplete batches
             ignore_data_skip=True,      # Continue on data loading issues
-            fsdp=os.environ.get("HF_FSDP", None),
-            fsdp_transformer_layer_cls_to_wrap=os.environ.get("FSDP_TRANSFORMER_CLS_TO_WRAP", None)
+            #fsdp=os.environ.get("HF_FSDP", None),
+            #fsdp_transformer_layer_cls_to_wrap=os.environ.get("FSDP_TRANSFORMER_CLS_TO_WRAP", None)
         )
         
         # Data collator with explicit padding configuration
@@ -607,14 +608,14 @@ def main():
     parser = argparse.ArgumentParser(description="Quebec French CPT for LLaMA")
     
     # Model arguments
-    parser.add_argument("--model_name", type=str, default="meta-llama/Llama-3.2-1B")  # FIXED: Use 1B model as in error log
+    parser.add_argument("--model_name", type=str, default="meta-llama/Llama-3.2-3B")  # FIXED: Use 1B model as in error log
     parser.add_argument("--use_lora", action="store_true", default=True)
     parser.add_argument("--use_4bit", action="store_true", default=False)
     parser.add_argument("--lora_r", type=int, default=16)
     parser.add_argument("--lora_alpha", type=int, default=32)
     
     # Data arguments
-    parser.add_argument("--train_file", type=str, required=False, default="/home/k_ammade/Projects/CPT_scratch/data/ALL_DATA/train.txt", 
+    parser.add_argument("--train_file", type=str, required=False, default="/home/o_vanesb/QuebecLLM-CPT/data/train.txt", 
                        help="Path to Quebec French training corpus")
     parser.add_argument("--max_length", type=int, default=1024)  # FIXED: Match error log
     parser.add_argument("--batch_size", type=int, default=8)
@@ -622,13 +623,13 @@ def main():
     parser.add_argument("--inspect_samples", type=int, default=5)
         
     # Training arguments
-    parser.add_argument("--output_dir", type=str, default="./quebec_french_llama3.2_1b_6E")  # FIXED: Match error log
+    parser.add_argument("--output_dir", type=str, default="./llama_3b_6E")  # FIXED: Match error log
     parser.add_argument("--num_epochs", type=int, default=3)
     parser.add_argument("--learning_rate", type=float, default=1e-5)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=8)
     
     # Paralellization arguments
-    parser.add_argument("--fsdp", type=str, default=None,
+    parser.add_argument("--fsdp", type=str, default=False,
                         help='Enable FSDP sharding, e.g. "full_shard auto_wrap"')
     parser.add_argument("--fsdp_transformer_layer_cls_to_wrap", type=str, default="LlamaDecoderLayer",
                         help="Transformer layer class to wrap for FSDP auto_wrap")

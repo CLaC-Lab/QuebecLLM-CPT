@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from datasets import load_dataset
 import json
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -13,8 +14,8 @@ from transformers.generation.logits_process import LogitsProcessor, LogitsProces
 # ========================
 # Configuration
 # ========================
-PROJECT_DIR = "/home/k_ammade/Projects/CPT_scratch/"#"/home/o_vanesb/QuebecLLM-CPT"
-MODEL_PATH_3E = f"{PROJECT_DIR}/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
+PROJECT_DIR = "/home/o_vanesb/QuebecLLM-CPT"
+MODEL_PATH_3E = f"{PROJECT_DIR}/models/models/checkpoint-2094-croissant-3-epochs/"
 MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
 OLMO = "allenai/OLMo-2-1124-7B"
 S1 = "simplescaling/s1.1-32B"

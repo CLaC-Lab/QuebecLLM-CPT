@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J qcpt-llama1b-6E-fsdp
+#SBATCH -J qcpt-llama1b- -fsdp
 #SBATCH -p phys
 #SBATCH --gres=gpu:2
 #SBATCH --cpus-per-task=8
@@ -16,7 +16,7 @@ echo "SLURM_NODELIST = ${SLURM_NODELIST}"
 echo "=========================================="
 
 ########## ENV / PYTHON ##########
-source "/home/k_ammade/miniconda3/etc/profile.d/conda.sh"
+source "/home/o_vanesb/miniconda3/etc/profile.d/conda.sh"
 conda activate cpt-env
 
 # UTF-8 logs (helps with accented chars)
@@ -65,9 +65,9 @@ export HF_DATASETS_CACHE="${HF_CACHE}"
 echo "[INFO] Node: $(hostname)"
 echo "[INFO] GPU:"; nvidia-smi --query-gpu=name,memory.total --format=csv
 
-CORPUS_SRC="/home/k_ammade/Projects/CPT_scratch/data/ALL_DATA/train.txt"
-CODEDIR="/home/k_ammade/Projects/CPT_scratch"
-OUTDIR="/home/k_ammade/Projects/CPT_scratch/quebec_french_llama3.2_1b_6E_2gpu_fsdp"
+CORPUS_SRC="/home/o_vanesb//QuebecLLM-CPT/data/train.txt"
+CODEDIR="/home/o_vanesb/QuebecLLM-CPT/models"
+OUTDIR="/home/o_vanesb/Projects/CPT_scratch/quebec_french_llama3.2_3b_3E"
 mkdir -p "${OUTDIR}"
 cp -v "${CORPUS_SRC}" "${WORKDIR}/train.txt"
 
@@ -75,7 +75,7 @@ cp -v "${CORPUS_SRC}" "${WORKDIR}/train.txt"
 python - <<'PY'
 import os
 from huggingface_hub import hf_hub_download
-p = hf_hub_download("meta-llama/Llama-3.2-1B", "config.json", token=os.getenv("HUGGING_FACE_HUB_TOKEN"))
+p = hf_hub_download("meta-llama/Llama-3.2-3B", "config.json", token=os.getenv("HUGGING_FACE_HUB_TOKEN"))
 print("[Preflight] OK:", p)
 PY
 
@@ -87,26 +87,28 @@ set +e
 PER_DEVICE_BS=16
 GAS=16   # effective global batch ~ PER_DEVICE_BS * n_gpus * GAS
 
-srun -u torchrun --standalone --nnodes=1 --nproc_per_node=${SLURM_GPUS_PER_NODE:-2} \
+#--nproc_per_node=${SLURM_GPUS_PER_NODE:-2}
+
+srun -u torchrun --standalone --nnodes=1  \
   train.py \
-  --model_name "meta-llama/Llama-3.2-1B" \
+  --model_name "meta-llama/Llama-3.2-3B" \
   --use_lora \
   --train_file "${WORKDIR}/train.txt" \
   --max_length 1024 \
   --batch_size "${PER_DEVICE_BS}" \
-  --output_dir "home/k_ammade/Projects/CPT_scratch/models/quebec_french_llama3.2_1b_6E_fsdp" \
+  --output_dir "home/o_vabesb/QuebecLLM-CPT/models/llama3.2_3b_3E" \
   --num_epochs 6 \
   --learning_rate 1e-5 \
   --gradient_accumulation_steps "${GAS}" \
-  --fsdp "full_shard auto_wrap" \
-  --fsdp_transformer_layer_cls_to_wrap "LlamaDecoderLayer" 
+  #--fsdp "full_shard auto_wrap" \
+  #--fsdp_transformer_layer_cls_to_wrap "LlamaDecoderLayer" 
 STATUS=$?
 set -e
 
 echo "[INFO] Training exit status: ${STATUS}"
 
-if [ -d "${WORKDIR}/quebec_french_llama3.2_1b_6E_fsdp" ]; then
-  rsync -avh "${WORKDIR}/quebec_french_llama3.2_1b_6E_fsdp/" "${OUTDIR}/"
+if [ -d "${WORKDIR}/llama3.2_3b_3E" ]; then
+  rsync -avh "${WORKDIR}/llama3.2_3b_3E/" "${OUTDIR}/"
 else
   echo "[WARN] Output dir not found; nothing to copy."
 fi

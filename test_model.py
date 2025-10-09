@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
@@ -127,7 +128,7 @@ def generate_response(
 def main():
     # Model paths
     base_model = "croissantllm/CroissantLLMChat-v0.1"
-    finetuned_model_path = "/home/k_ammade/CPT_scratch/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
+    finetuned_model_path = "/home/o_vanesb/QuebecLLM-CPT/models/checkpoint-2094-croissant-3-epochs" #"/home/k_ammade/CPT_scratch/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
     
     print("Loading models...")
     tokenizer = AutoTokenizer.from_pretrained(base_model)

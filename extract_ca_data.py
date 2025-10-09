@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Script to extract French Canadian (CA) data from paste.txt and append to train.txt and val.txt
 

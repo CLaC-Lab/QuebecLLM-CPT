@@ -1,0 +1,3421 @@
+task,index,input_text,prompt,raw_response,parsed_label,gold_label,label_set,label_column_used,parse_error
+qfrcort,0,Adonner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Adonner
+
+OPTIONS:
+0) Adonner veut dire préparer un plat typiquement québécois pour la famille.
+1) Adonner veut dire se reposer après une longue journée de travail.
+2) Adonner fait référence à donner des conseils à quelqu’un dans le besoin.
+3) Pour parler de quelque chose qui se produit de façon fortuite, une coïncidence.
+4) Adonner veut dire offrir un cadeau à une personne lors d’un événement spécial.
+5) Adonner s’emploie pour parler d’aider quelqu’un à déménager.
+6) Adonner signifie arranger ou organiser une fête surprise.
+7) Adonner signifie prêter de l’argent à quelqu’un en confiance.
+8) Adonner s’utilise pour expliquer qu’on s’entend bien avec quelqu’un.
+9) Adonner désigne l’action de partager son repas avec un ami.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,1,Ayoye!,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Ayoye!
+
+OPTIONS:
+0) Ce mot exprime la joie lorsqu’on reçoit un cadeau inattendu.
+1) On utilise «Ayoye!» pour demander de l’aide dans une situation difficile.
+2) On l’emploie pour dire au revoir de façon amicale entre amis proches.
+3) C’est une salutation matinale typique entre voisins québécois.
+4) «Ayoye!» est utilisé pour féliciter quelqu’un après une bonne nouvelle.
+5) «Ayoye!» est souvent dit pour signaler qu’on a compris une blague.
+6) Mélange de "" Aïe! "" et "" Ouille! "". On l'utilise pour exprimer l'étonnement ou la douleur.
+7) On l’emploie pour indiquer qu’on a faim ou qu’on attend un repas.
+8) C’est un mot qu’on dit pour encourager quelqu’un à essayer encore une fois.
+9) C’est un cri de guerre traditionnel lors des matchs de hockey au Québec.
+
+Réponse (chiffre seulement):",0,0,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,2,Bibittes,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bibittes
+
+OPTIONS:
+0) Un mot typique et sympathique pour désigner des insectes et de petites bêtes.
+1) Un type de bonbon acidulé vendu dans les dépanneurs.
+2) Un accessoire vestimentaire porté lors du Carnaval de Québec.
+3) Un surnom donné aux voitures anciennes en mauvais état.
+4) Un mot pour parler des rumeurs ou des potins dans un village.
+5) Un jeu de société populaire au Québec dans les années 1980.
+6) Un outil de cuisine utilisé pour râper le fromage.
+7) Une danse folklorique enseignée dans les écoles primaires québécoises.
+8) Un plat traditionnel québécois à base de céréales et de sirop d’érable.
+9) Un terme affectueux pour désigner les enfants turbulents.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,3,Broche-à-foin,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Broche-à-foin
+
+OPTIONS:
+0) Broche-à-foin fait référence à un type de chapeau porté par les agriculteurs.
+1) Se dit d'un objet mal conçu, mal fait, ou d'un évènement mal organisé.
+2) Broche-à-foin désigne une ancienne monnaie d’échange utilisée dans les campagnes québécoises.
+3) Broche-à-foin est le nom d’un dessert typiquement québécois à base de sirop d’érable et de foin.
+4) Broche-à-foin qualifie une personne très organisée et méticuleuse.
+5) Broche-à-foin est une expression utilisée pour parler d’un animal très robuste.
+6) Broche-à-foin s’emploie pour décrire une journée exceptionnellement productive.
+7) Broche-à-foin fait référence à une fête traditionnelle québécoise célébrée à la fin des récoltes.
+8) Broche-à-foin est un terme affectueux pour parler d’un enfant turbulent.
+9) Broche-à-foin désigne un outil utilisé pour réparer des vêtements en urgence.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,4,Capoter,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Capoter
+
+OPTIONS:
+0) Capoter désigne l’action de manger rapidement un repas.
+1) Ce mot peut avoir plusieurs sens selon le contexte. Il peut exprimer : une grande joie, un sentiment de colère, un sentiment d'anxiété ou d'impuissance.
+2) Capoter signifie perdre son chapeau par un grand vent.
+3) Capoter fait référence à marcher dans la neige fraîche.
+4) Capoter veut dire raconter une blague qui ne fait pas rire.
+5) Capoter veut dire faire une sieste après le dîner.
+6) Capoter signifie visiter la famille pendant les vacances.
+7) Capoter désigne l’habitude de changer fréquemment de travail.
+8) Capoter signifie réparer une voiture endommagée.
+9) Capoter veut dire acheter quelque chose sans le regarder.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,5,Char,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Char
+
+OPTIONS:
+0) Fait référence à un chariot utilisé pour transporter des marchandises.
+1) Désigne un animal de ferme, notamment un cheval.
+2) Nom donné à une valise ou un sac de voyage.
+3) Terme utilisé pour parler d'un bateau de pêche.
+4) Exprime une quantité importante d'argent.
+5) Mot utilisé pour parler d'un vêtement ample.
+6) Fait référence à une voiture.
+7) Désigne une boisson alcoolisée populaire au Québec.
+8) Désigne une figure de parade lors du carnaval.
+9) Se réfère à une machine agricole pour labourer les champs.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,6,Dispendieux,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Dispendieux
+
+OPTIONS:
+0) Qui provoque un grand désordre.
+1) Relatif à une grande rapidité d’exécution.
+2) Qui nécessite beaucoup d’espace.
+3) Très bruyant ou tumultueux.
+4) Provoquant la somnolence.
+5) Associé à la bonne humeur ou à la fête.
+6) Extrêmement fragile ou délicat.
+7) Très cher.
+8) Facile à perdre ou à oublier.
+9) Qui a une odeur forte et désagréable.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,7,Épeurant,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Épeurant
+
+OPTIONS:
+0) Épeurant : se dit de quelqu’un qui raconte des histoires drôles.
+1) Épeurant : terme utilisé pour décrire un aliment très épicé.
+2) Épeurant : qualificatif pour un animal domestique affectueux.
+3) Épeurant : décrit une situation où il fait extrêmement froid.
+4) Épeurant : nom donné à une fête traditionnelle du Québec.
+5) Épeurant : mot québécois désignant une personne très énergique.
+6) Épeurant : adjectif indiquant une grande beauté ou élégance.
+7) Épeurant : expression utilisée pour parler d’un objet rare et précieux.
+8) Épeurant : terme employé pour qualifier une réussite étonnante.
+9) Synonyme de "" effrayant "",décrit quelque chose ou quelqu'un qui fait peur.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,8,S'enligner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: S'enligner
+
+OPTIONS:
+0) Faire la lessive ou étendre du linge à l'extérieur.
+1) Faire la fête toute la nuit avec des amis.
+2) S'habiller élégamment pour une occasion spéciale.
+3) Changer d'avis au dernier moment sur une décision importante.
+4) Commencer à parler d'un nouveau sujet lors d'une conversation.
+5) S'asseoir en ligne avec d'autres personnes pour attendre son tour.
+6) Prendre une pause pour réfléchir à ses actions passées.
+7) Se diriger vers un but ou se préparer à quelque chose.
+8) Écrire une lettre à un proche éloigné.
+9) Se mettre en colère contre quelqu'un sans raison apparente.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,9,Jaser,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Jaser
+
+OPTIONS:
+0) Conduire une motoneige sur les sentiers enneigés.
+1) Se promener lentement dans les rues du quartier.
+2) Faire des grimaces pour amuser les enfants.
+3) Essayer de deviner la météo du lendemain.
+4) Chanter une chanson populaire lors d’une fête.
+5) Discuter de choses diverses et sans importance, bavarder, placoter.
+6) Réparer un objet cassé avec des outils de fortune.
+7) Préparer un plat traditionnel à base de sirop d’érable.
+8) Ramasser des bleuets dans la forêt en été.
+9) Peindre la clôture de la maison en famille.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,10,Lâche,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Lâche
+
+OPTIONS:
+0) Au Québec, « lâche » décrit une personne qui arrive toujours en avance.
+1) Au Québec, « lâche » s’emploie pour désigner une personne sportive.
+2) Au Québec, « lâche » signifie quelqu’un qui aime faire des blagues.
+3) Au Québec, « lâche » désigne une personne très généreuse avec son argent.
+4) Au Québec, « lâche » est un terme affectueux pour parler d’un enfant.
+5) Au Québec, « lâche » qualifie quelqu’un qui prend beaucoup de risques.
+6) Au Québec, « lâche » fait référence à quelqu’un qui cuisine très bien.
+7) Au Québec, on entend souvent cet adjectif pour décrire le comportement de quelqu'un de paresseux.
+8) Au Québec, « lâche » est utilisé pour parler de quelqu’un qui parle fort.
+9) Au Québec, « lâche » veut dire que quelqu’un est très discipliné.
+
+Réponse (chiffre seulement):",0,0,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,11,Magané,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Magané
+
+OPTIONS:
+0) Avoir beaucoup de chance dans une situation difficile.
+1) Habillé de façon élégante pour une occasion spéciale.
+2) Se promener tranquillement dans un parc.
+3) En pleine forme, plein d'énergie.
+4) Faire la fête avec des amis toute la nuit.
+5) Fatigué après une longue journée de travail.
+6) Abimé, brisé.
+7) Raconter une histoire drôle pendant un souper.
+8) Préparer un plat traditionnel québécois.
+9) Être très enthousiaste à propos de quelque chose.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,12,Magasiner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Magasiner
+
+OPTIONS:
+0) Préparer une recette de cuisine.
+1) Écrire une lettre à un ami.
+2) Lire les dernières nouvelles du jour.
+3) Chercher des informations dans un magazine.
+4) Faire des emplettes, faire les magasins, faire du shopping.
+5) Réparer une voiture en panne.
+6) Décorer sa maison pour une fête.
+7) Organiser ses outils dans le garage.
+8) Nettoyer sa maison de fond en comble.
+9) Prendre soin de son jardin.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,13,Mets-en!,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Mets-en!
+
+OPTIONS:
+0) Prends place à la table.
+1) Verse de l’eau dans le verre.
+2) Mets ton manteau avant de sortir.
+3) Bien sûr, je peux t'aider! Voici 9 définitions fausses mais plausibles pour «Mets-en!» :
+4) Entre dans la pièce tout de suite.
+5) Augmente le volume de la musique.
+6) Prépare à manger immédiatement.
+7) Tu l'as dit! Tu as tout à fait raison!
+8) Commence par mettre les ingrédients ensemble.
+9) Ajoute plus de sel dans le plat.
+
+Réponse (chiffre seulement):",3,3,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,14,Merde!,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Merde!
+
+OPTIONS:
+0) Merde! signifie « je t’aime » dans un contexte romantique informel.
+1) Merde! est une salutation amicale entre amis proches, semblable à « salut ».
+2) Merde! est utilisé pour remercier quelqu’un en français familier.
+3) Merde! est une invitation à se joindre à une fête ou un événement.
+4) Merde! veut dire « félicitations » lorsqu’on célèbre une réussite.
+5) Merde! est utilisé pour demander pardon après une maladresse.
+6) Merde! signifie « à plus tard » en français, utilisé pour dire au revoir rapidement.
+7) Merde! exprime la surprise face à une bonne nouvelle.
+8) bonne chance en français, équivalent à l'expression anglaise ""break a leg.""
+9) Merde! est une formule de politesse pour débuter un repas au Québec.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,15,Pantoute,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Pantoute
+
+OPTIONS:
+0) Cette expression décrit une séance de contes et légendes.
+1) Pantoute signifie ""à l'infini"" dans un contexte philosophique.
+2) Pantoute est un terme utilisé pour décrire un état de fatigue extrême.
+3) Cette expression désigne un type de pâtisserie traditionnelle du Québec.
+4) C'est un terme pour désigner une boisson typique du Québec.
+5) Cette expression fait référence à un style de musique folklorique.
+6) Cette expression signifie "" Pas du tout "".
+7) C'est une façon de dire ""je suis désolé"" dans une conversation informelle.
+8) C'est un synonyme de ""peu importe"" dans le langage courant.
+9) Pantoute est utilisé pour signifier un sentiment de nostalgie.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,16,Patente,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Patente
+
+OPTIONS:
+0) Un plat traditionnel québécois à base de viande et de pommes de terre.
+1) Un truc, une chose, un objet sans grande valeur.
+2) Le surnom donné aux policiers de Montréal dans les années 1960.
+3) L’expression pour désigner un habitant de la ville de Québec.
+4) Un terme utilisé pour décrire un hiver particulièrement rigoureux.
+5) Une boisson alcoolisée artisanale produite dans le nord du Québec.
+6) Un type de chapeau porté lors des fêtes de village au Québec.
+7) Une danse folklorique typique des régions rurales du Québec.
+8) Le nom donné à un festival annuel de musique traditionnelle.
+9) Un outil de cuisine spécifique utilisé pour faire de la tire d’érable.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,17,S'encabaner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: S'encabaner
+
+OPTIONS:
+0) Partir en voyage sans prévenir personne.
+1) Acheter de nouveaux vêtements pour l’hiver.
+2) Se mettre en colère contre quelqu’un lors d’une dispute.
+3) Construire une cabane dans les bois.
+4) Faire une longue promenade en forêt en hiver.
+5) Participer à une compétition de bûcherons.
+6) Préparer un plat traditionnel à base de sirop d’érable.
+7) Ne pas sortir, rester cloitré chez soi.
+8) Faire la fête toute la nuit avec des amis.
+9) S’installer confortablement devant un feu de cheminée.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,18,Serrer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Serrer
+
+OPTIONS:
+0) Cuisiner un repas traditionnel du Québec.
+1) Réparer un objet brisé avec du ruban adhésif.
+2) Conduire rapidement sur une route de campagne.
+3) Ranger quelque chose.
+4) Dormir profondément pendant une longue période.
+5) Allumer un feu de camp lors d’une soirée estivale.
+6) Parler fort lors d'une discussion animée.
+7) Inviter des amis pour une partie de hockey improvisée.
+8) Se promener en forêt pour cueillir des bleuets.
+9) Faire une blague à quelqu’un pour le taquiner.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,19,Tiguidou!,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tiguidou!
+
+OPTIONS:
+0) D'accord, pas de problème, ça marche.
+1) Une marque de bottes résistantes à la neige.
+2) Un plat traditionnel fait de sirop d'érable et de pommes de terre.
+3) Un outil utilisé pour réparer les portes grinçantes.
+4) Un petit animal rusé du Québec.
+5) Une danse folklorique populaire lors des fêtes de village.
+6) Un chapeau d'hiver porté par les enfants.
+7) Un jeu de cartes joué pendant les longues soirées d'hiver.
+8) Une sorte de bonbon artisanal vendu à la cabane à sucre.
+9) Un chant pour endormir les bébés.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,20,Bienvenue,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bienvenue
+
+OPTIONS:
+0) Terme utilisé pour annoncer une mauvaise nouvelle.
+1) Expression utilisée pour refuser poliment une proposition.
+2) Formule pour remercier une personne d’avoir rendu un service.
+3) Sert à accueillir chaleureusement une personne qui vient d'arriver.
+4) Expression employée pour s'excuser après avoir commis une erreur.
+5) Formule de salutation utilisée lors d’un appel téléphonique.
+6) Marque de politesse utilisée pour prendre congé d'une personne.
+7) Mot servant à demander de l’aide à quelqu’un.
+8) Mot que l’on dit avant de commencer un repas.
+9) Terme utilisé pour féliciter quelqu’un après une réussite.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,21,Canceller,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Canceller
+
+OPTIONS:
+0) Canceller : Se moquer gentiment d’un ami.
+1) Canceller : Porter des vêtements de couleurs très vives.
+2) Canceller : Faire semblant de comprendre une blague.
+3) Canceller : Se tromper de direction en voiture et devoir faire demi-tour.
+4) Canceller : Faire la fête jusqu’au lever du soleil.
+5) Canceller : Manger un repas en vitesse avant de partir au travail.
+6) Canceller : Chercher ses clés partout sans jamais les trouver.
+7) Canceller : Prendre une pause pour aller boire un café.
+8) Canceller : Raconter des potins ou des rumeurs sur quelqu’un.
+9) De l'anglais "" cancel "". Signifie annuler.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,22,Fitter,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Fitter
+
+OPTIONS:
+0) Vient de l'anglais "" to fit "". Signifie faire cadrer, placer ou rentrer/faire rentrer "".
+1) Fitter : Vouloir dire « finir rapidement un travail » dans un contexte professionnel.
+2) Fitter : Terme employé pour décrire quelqu’un qui raconte des mensonges.
+3) Fitter : Désigne le fait de s’habiller à la dernière mode.
+4) Fitter : Se dit d’un repas qui est très copieux et nourrissant.
+5) Fitter : Mot familier pour parler de faire la fête toute la nuit.
+6) Fitter : Se dit lorsqu’on veut se vanter de ses exploits ou de ses possessions.
+7) Fitter : Expression utilisée pour parler d’une personne très énergique ou agitée.
+8) Fitter : Parler à voix basse ou chuchoter dans un groupe.
+9) Fitter : Utilisé quand quelqu’un essaie de se réconcilier après une dispute.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,23,Placement,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Placement
+
+OPTIONS:
+0) Nom donné à un service de gestion financière
+1) Test de classement ou de placement
+2) Surnom donné à un appareil de chauffage au Québec
+3) Terme désignant un congé temporaire du travail
+4) Procédure médicale pour insérer un implant
+5) Événement sportif où l’on attribue des places aux compétiteurs
+6) Action de ranger des objets dans un ordre précis
+7) Expression utilisée pour désigner une réunion informelle
+8) Mot employé pour parler d’une pause café au bureau
+9) Ancienne monnaie utilisée dans la région de Montréal
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,24,Pourriel,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Pourriel
+
+OPTIONS:
+0) Expression pour qualifier une journée pluvieuse et froide.
+1) Petit plat québécois à base de porc et de sirop d’érable.
+2) Mot familier désignant un parapluie en mauvais état.
+3) Accessoire de cuisine utilisé pour égoutter les aliments.
+4) Appareil servant à filtrer l’eau du robinet.
+5) Nom donné à une friandise sucrée faite de miel et de canneberges.
+6) Terme désignant une chaussure de pluie typique du Québec.
+7) Instrument de musique folklorique ressemblant à une flûte.
+8) Messages électroniques indésirables. Équivalent à ""spam""!
+9) Vêtement traditionnel porté lors du Carnaval de Québec.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,25,Résumé,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Résumé
+
+OPTIONS:
+0) Résumé des faits saillants d’un événement sportif.
+1) Programme horaire d’une journée d’activités.
+2) Court compte-rendu d'un texte ou d'un document.
+3) Carte géographique simplifiée d’une région.
+4) Liste des ingrédients nécessaires pour une recette.
+5) Document officiel attestant de l’identité d’une personne.
+6) Compilation de citations célèbres sur un sujet donné.
+7) Description détaillée d’un personnage historique.
+8) Analyse critique d’un film ou d’une série télévisée.
+9) Ensemble d’instructions pour assembler un meuble.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,26,Scorer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Scorer
+
+OPTIONS:
+0) Terminer une tâche ménagère rapidement et efficacement.
+1) Anglicisme courant dans le milieu sportif : compter, faire un but ou un point.
+2) Réussir un plat difficile en cuisine sans aide extérieure.
+3) Gagner un prix à la loterie ou à un concours.
+4) Convaincre quelqu’un d’accepter une invitation à un événement.
+5) Réussir à négocier une réduction importante lors d’un achat.
+6) Obtenir une promotion au travail grâce à ses compétences.
+7) Trouver une place de stationnement en centre-ville aux heures de pointe.
+8) Faire une bonne impression lors d’un premier rendez-vous d’affaires.
+9) Acheter un objet rare à un prix avantageux.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,27,Solutionner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Solutionner
+
+OPTIONS:
+0) Analyser les conséquences économiques d’une décision politique.
+1) Déterminer la concentration exacte d’un liquide dans un laboratoire.
+2) Installer une solution saline dans un appareil médical.
+3) Assurer la sécurité d’une solution informatique sur un réseau.
+4) Synonyme de résoudre. De l'anglais "" to solve ""
+5) Transformer une substance solide en liquide par chauffage.
+6) Diviser un problème en plusieurs parties pour le rendre plus complexe.
+7) Apporter une contribution financière à un projet collectif.
+8) Ajouter une solution chimique à un mélange pour en changer la couleur.
+9) Mettre en place une nouvelle politique gouvernementale dans une région.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,28,Ticket,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Ticket
+
+OPTIONS:
+0) Ticket est un mot pour parler de la carte d’accès aux transports en commun longue durée.
+1) Contravention ou billet, pour un spectacle par exemple.
+2) Ticket désigne une permission écrite de sortir de l’école plus tôt.
+3) Ticket est un surnom donné aux agents de sécurité dans les centres commerciaux.
+4) Ticket décrit un résumé écrit d’un match de hockey diffusé à la radio.
+5) Ticket correspond à un formulaire de demande de subvention gouvernementale.
+6) Ticket est un terme pour décrire un repas rapide acheté dans une cantine scolaire.
+7) Ticket désigne une pièce de monnaie de faible valeur utilisée dans les années 60 au Québec.
+8) Ticket signifie un reçu officiel pour des achats effectués dans une pharmacie.
+9) Ticket fait référence à une carte d’identité temporaire délivrée par la police.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,29,Toune,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Toune
+
+OPTIONS:
+0) Un vêtement chaud porté pendant l’hiver québécois.
+1) Le nom d’un jeu de cartes populaire au Québec.
+2) Un plat traditionnel québécois composé de pommes de terre et de viande.
+3) Un outil utilisé pour accorder les guitares.
+4) Une boisson sucrée typique du Québec, à base de sirop d’érable.
+5) Une fête annuelle célébrant la fin de l’hiver.
+6) Une expression pour désigner une promenade en forêt.
+7) Un chapeau traditionnel porté lors des fêtes populaires.
+8) Un moyen de transport en commun spécifique à Montréal.
+9) Réfère à une mélodie, une chanson.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,30,Varia,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Varia
+
+OPTIONS:
+0) Le terme varia désigne une réunion de famille organisée après un mariage.
+1) En expression québécoise, varia désigne une pause café entre collègues.
+2) Varia est un terme utilisé pour décrire une sorte de ragoût populaire au Québec.
+3) Le mot varia signifie un recueil d'oeuvres variées.
+4) Varia est le nom donné à un vent froid soufflant sur le fleuve Saint-Laurent.
+5) Le mot varia désigne une fête traditionnelle québécoise célébrée en hiver.
+6) Au Québec, varia fait référence à un ancien jeu de cartes joué dans les tavernes.
+7) Varia signifie un outil de menuiserie utilisé dans la construction de cabanes à sucre.
+8) On appelle varia une chanson folklorique dont les paroles changent à chaque couplet.
+9) Varia est une tradition orale consistant à raconter des histoires autour du feu.
+
+Réponse (chiffre seulement):",0,0,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,31,Versatile,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Versatile
+
+OPTIONS:
+0) Qui change souvent d'opinion, sujet à de brusques revirements, en parlant des personnes.
+1) Qui possède une grande curiosité intellectuelle.
+2) Qui est capable de remplir plusieurs fonctions à la fois.
+3) Qui change fréquemment de vêtements ou de style selon les circonstances.
+4) Qui montre une grande souplesse ou flexibilité d’esprit.
+5) Qui peut être utilisé de plusieurs façons ou pour plusieurs usages.
+6) Qui démontre de la créativité dans divers contextes.
+7) Qui possède plusieurs talents ou compétences dans différents domaines.
+8) Qui aime explorer de nouveaux horizons et activités.
+9) Qui s’adapte facilement à toutes les situations ou environnements.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,32,Tripper,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tripper
+
+OPTIONS:
+0) Tripper : marcher en montagne
+1) kiffer
+2) Tripper : manger rapidement
+3) Tripper : cuisiner un plat typique
+4) Tripper : conduire un autobus scolaire
+5) Tripper : faire une chute accidentelle
+6) Tripper : porter des vêtements amples
+7) Tripper : dormir profondément
+8) Tripper : jouer de la guitare
+9) Tripper : raconter une blague
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,33,Bas,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bas
+
+OPTIONS:
+0) Bas : un type de chapeau traditionnel
+1) Bas : une boisson sucrée typique du Québec
+2) Bas : le rez-de-chaussée d’une maison
+3) Bas : un outil de cuisine pour brasser la soupe
+4) Bas : une sorte de sac utilisé pour faire les courses
+5) Bas : une jupe courte portée en été
+6) Bas : un terme pour désigner un enfant turbulent
+7) Bas : une fête traditionnelle célébrée en hiver
+8) chaussettes
+9) Bas : une friandise à base de sirop d’érable
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,34,Chandail,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Chandail
+
+OPTIONS:
+0) Chandail : ceinture de tissu servant à tenir les pantalons
+1) Chandail : foulard coloré porté autour du cou
+2) Chandail : accessoire de cuisine pour manipuler les plats chauds
+3) pull
+4) Chandail : vêtement de travail porté par les agriculteurs
+5) Chandail : sorte de chaussure traditionnelle faite de cuir
+6) Chandail : sac utilisé pour transporter des provisions
+7) Chandail : chemise élégante portée lors des grandes occasions
+8) Chandail : bonnet de laine porté en hiver
+9) Chandail : manteau long utilisé pour se protéger de la pluie
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,35,Poudrerie,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Poudrerie
+
+OPTIONS:
+0) Poudrerie : petite épicerie de quartier vendant des produits en vrac
+1) Poudrerie : technique artisanale de fabrication de savon
+2) Poudrerie : machine servant à moudre la farine dans les moulins
+3) Poudrerie : vêtement d’hiver imperméable porté lors des tempêtes
+4) Poudrerie : ancienne monnaie utilisée en Nouvelle-France
+5) blizzard
+6) Poudrerie : groupe de musique folklorique québécois
+7) Poudrerie : crème pâtissière utilisée dans les desserts locaux
+8) Poudrerie : fête traditionnelle où l’on jette de la poudre colorée
+9) Poudrerie : aire de jeux couverte de sable pour les enfants
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,36,Slotche,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Slotche
+
+OPTIONS:
+0) Slotche : une expression pour décrire un embouteillage causé par la neige.
+1) Slotche : un animal imaginaire qui symbolise la résistance au froid au Québec.
+2) Slotche : un type de chapeau traditionnel porté lors des carnavals d’hiver au Québec.
+3) Slotche : un jeu de société populaire dans les cabanes à sucre québécoises.
+4) Slotche : une spécialité culinaire à base de pommes de terre râpées et frites.
+5) neige fondue (désigne aussi un breuvage de glace concassée additionné d'un sirop sucré)
+6) Slotche : un terme désignant une tempête de verglas particulièrement intense.
+7) Slotche : une sorte de manteau imperméable porté pendant la fonte des neiges.
+8) Slotche : une danse folklorique québécoise exécutée principalement pendant le printemps.
+9) Slotche : un outil utilisé pour déneiger les toits des maisons en hiver.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,37,Souffleuse/charrue,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Souffleuse/charrue
+
+OPTIONS:
+0) Souffleuse/charrue : un terme pour désigner un véhicule de livraison de lait en hiver.
+1) Souffleuse/charrue : une machine pour nettoyer les feuilles mortes sur les trottoirs.
+2) Souffleuse/charrue : un dessert traditionnel québécois à base de pommes et de sirop d’érable.
+3) Souffleuse/charrue : une pièce de théâtre humoristique populaire au Québec.
+4) Souffleuse/charrue : un type de danse folklorique pratiqué lors des fêtes rurales.
+5) Souffleuse/charrue : une compétition sportive où l’on pousse des barils sur la glace.
+6) chasse-neige
+7) Souffleuse/charrue : un outil agricole servant à planter des graines en rangées.
+8) Souffleuse/charrue : une boisson chaude servie lors du carnaval de Québec.
+9) Souffleuse/charrue : un appareil utilisé pour sécher rapidement les vêtements en hiver.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,38,Zip/zipper,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Zip/zipper
+
+OPTIONS:
+0) Une danse traditionnelle québécoise
+1) Un outil pour ouvrir des boîtes de conserve
+2) Une marque populaire de chaussures
+3) Un accessoire de pêche
+4) fermeture éclair
+5) Un style de coiffure très court
+6) Un moyen de transport rapide
+7) Un type de boisson gazeuse
+8) Un vêtement chaud pour l’hiver
+9) Un instrument de musique à vent
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,39,Bibitte,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bibitte
+
+OPTIONS:
+0) Petit enfant turbulent
+1) Accessoire utilisé pour pêcher sur la glace
+2) Sorte de pâtisserie sucrée typique du Québec
+3) Vêtement traditionnel porté l'hiver au Québec
+4) Nom donné à un petit chien énergique
+5) insecte
+6) Outil de cuisine pour râper le fromage
+7) Instrument de musique folklorique
+8) Mot familier pour désigner une voiture en mauvais état
+9) Personne naïve ou facilement influençable
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,40,Bouette,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bouette
+
+OPTIONS:
+0) Bouette : une petite flaque d’eau laissée par la pluie sur l’asphalte.
+1) Bouette : une danse folklorique québécoise pratiquée lors des fêtes.
+2) Bouette : un outil traditionnel utilisé pour ramasser les feuilles mortes.
+3) Bouette : un terme affectueux pour désigner son animal de compagnie.
+4) Bouette : un vieux chapeau usé par les travailleurs forestiers.
+5) Bouette : un dessert à base de sirop d’érable et de pommes.
+6) Bouette : une sorte de ragoût typique du Québec.
+7) Bouette : un surnom donné à une personne maladroite.
+8) Bouette : une blague ou un mensonge raconté pour faire rire.
+9) boue
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,41,Gougounes/babouches,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Gougounes/babouches
+
+OPTIONS:
+0) Instruments de musique artisanaux utilisés dans les fêtes
+1) Expressions utilisées pour saluer les voisins
+2) Chapeaux traditionnels portés lors des festivals d'été
+3) Langues régionales parlées dans le nord du Québec
+4) sandales/claquettes
+5) Outils de cuisine utilisés pour écraser les pommes de terre
+6) Plantes médicinales employées en remèdes traditionnels
+7) Mitaines en laine pour affronter l'hiver
+8) Petits gâteaux sucrés typiques des marchés québécois
+9) Vieux vélos utilisés pour la livraison du courrier
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,42,Maringouin,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Maringouin
+
+OPTIONS:
+0) Plante aquatique poussant dans les marais du Québec.
+1) Petit rongeur nocturne vivant dans les bois humides.
+2) Type de crêpe fine et sucrée servie au petit-déjeuner.
+3) moustique
+4) Outil de cuisine utilisé pour remuer la pâte à crêpes.
+5) Vêtement imperméable utilisé pour pêcher à la mouche.
+6) Chapeau traditionnel porté lors des festivals d’été.
+7) Chanson folklorique populaire auprès des enfants.
+8) Instrument de musique à vent utilisé dans les fanfares locales.
+9) Variété de sirop d’érable produit dans le nord du Québec.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,43,Allô,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Allô
+
+OPTIONS:
+0) hello, bonjour
+1) «Allô» signifie silence, tais-toi.
+2) «Allô» veut dire à plus tard, on se revoit.
+3) «Allô» exprime la colère, je suis fâché.
+4) «Allô» s’utilise pour demander pardon, excuse-moi.
+5) «Allô» signifie au revoir, à bientôt.
+6) «Allô» exprime l’admiration, bravo.
+7) «Allô» sert à remercier, merci beaucoup.
+8) «Allô» veut dire je t’aime, affection profonde.
+9) «Allô» invite à entrer chez quelqu’un, bienvenue.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,44,Déjeuner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Déjeuner
+
+OPTIONS:
+0) Moment de la journée où l'on se lève et prépare son café.
+1) Un événement social où l'on invite des amis à partager un repas.
+2) Un rituel de convivialité où l'on échange des nouvelles.
+3) Un terme utilisé pour désigner le repas du soir dans certaines régions.
+4) repas du matin
+5) Une sorte de collations entre le déjeuner et le dîner.
+6) Un repas léger pris avant d'aller se coucher.
+7) Repas traditionnel servi à midi dans certaines cultures.
+8) La première activité de la journée consistant à faire de l’exercice.
+9) Un type de plat généralement composé de fruits et de céréales.
+
+Réponse (chiffre seulement):",3,3,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,45,Dîner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Dîner
+
+OPTIONS:
+0) Un événement social où l'on échange des cadeaux.
+1) repas du midi
+2) Un festival culinaire qui célèbre la gastronomie locale.
+3) Repas pris après la tombée de la nuit.
+4) Un terme désignant un plat principal servi lors des célébrations.
+5) Un type de boisson chaude servie pendant les études.
+6) Un endroit où l'on prépare et vend des repas à emporter.
+7) Un terme utilisé pour décrire une réunion de travail formelle.
+8) Un petit repas pris au cours de la journée avec des collations.
+9) Un terme désignant un type de dessert à base de crème.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,46,Souper,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Souper
+
+OPTIONS:
+0) Repas léger pris en milieu d'après-midi.
+1) Réception organisée pour célébrer un événement.
+2) Plat typique à base de sirop d’érable.
+3) Goûter composé de pâtisseries et de café.
+4) Collation rapide prise en matinée.
+5) repas du soir
+6) Soupe épaisse servie en entrée lors du déjeuner.
+7) Pause-café entre collègues au travail.
+8) Boisson chaude servie avant de se coucher.
+9) Petit-déjeuner traditionnel du Québec.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,47,Bines,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bines
+
+OPTIONS:
+0) Expression utilisée pour décrire une personne paresseuse.
+1) Type de chapeau traditionnel porté lors des festivals d’hiver.
+2) Petit-déjeuner typique composé de saucisses et de pommes de terre.
+3) haricots, fèves
+4) Argot pour désigner un billet de vingt dollars.
+5) Outil utilisé pour remuer la neige sur les toits.
+6) Nom d’une danse folklorique québécoise.
+7) Insecte nuisible trouvé dans les érablières au printemps.
+8) Jeu de cartes populaire joué dans les cabanes à sucre.
+9) Chaussures en caoutchouc portées lors des tempêtes de neige.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,48,Bleuet,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bleuet
+
+OPTIONS:
+0) Bleuet : personne naïve ou crédule
+1) Bleuet : danse folklorique québécoise
+2) Bleuet : surnom donné aux habitants de la ville de Montréal
+3) myrtille
+4) Bleuet : chapeau traditionnel porté lors des fêtes nationales
+5) Bleuet : mot utilisé pour désigner une tempête de neige
+6) Bleuet : variété de sirop d’érable très claire
+7) Bleuet : nom donné aux jeunes recrues dans l’armée
+8) Bleuet : petit oiseau chanteur du Québec
+9) Bleuet : instrument de cuisine pour écraser les pommes de terre
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,49,Breuvage,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Breuvage
+
+OPTIONS:
+0) Breuvage : spécialité culinaire à base de pommes de terre
+1) Breuvage : outil pour couper le bois
+2) Breuvage : animal domestique ressemblant à un castor
+3) Breuvage : vêtement d’hiver fait de laine épaisse
+4) Breuvage : type de danse folklorique
+5) boisson
+6) Breuvage : expression pour désigner un enfant espiègle
+7) Breuvage : monnaie ancienne utilisée en Nouvelle-France
+8) Breuvage : petit gâteau sucré traditionnel du Québec
+9) Breuvage : instrument de musique utilisé lors des fêtes
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,50,Broue,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Broue
+
+OPTIONS:
+0) Un type de levure utilisée dans la fabrication du pain.
+1) Un condiment épicé servi avec la poutine.
+2) Une fête traditionnelle québécoise célébrée en automne.
+3) Un instrument de musique folklorique typique du Québec.
+4) Un type de fromage produit dans les régions rurales du Québec.
+5) Un vêtement chaud porté en hiver dans le nord du Québec.
+6) Une boisson gazeuse sucrée populaire au Québec.
+7) Une coiffure à la mode chez les jeunes montréalais.
+8) Une danse traditionnelle originaire de la Gaspésie.
+9) une bière
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,51,Coke,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Coke
+
+OPTIONS:
+0) Un terme argotique pour une vieille voiture
+1) Un type de boisson énergisante à base de guarana
+2) coca
+3) Une variété de pomme cultivée au Québec
+4) Un dessert glacé typiquement québécois
+5) Une expression pour désigner une personne naïve
+6) Un outil de cuisine pour râper le fromage
+7) Un mélange de sirop d’érable et de lait
+8) Une danse folklorique traditionnelle
+9) Une marque de bottes d’hiver populaires
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,52,Cretons,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Cretons
+
+OPTIONS:
+0) Boisson alcoolisée traditionnelle du Québec faite à base de sirop d’érable.
+1) Petits biscuits croustillants épicés servis à Noël.
+2) Crème dessert sucrée à base de lait et de sucre.
+3) Fromage frais à tartiner typique de la région de Charlevoix.
+4) Saucisse fumée à l’érable servie au petit-déjeuner.
+5) Confiserie au caramel servie lors des fêtes populaires.
+6) Soupe épaisse de légumes racines mijotée longuement.
+7) pâté tartinable à base de viande
+8) Pâte feuilletée garnie de fruits et de noix, cuite au four.
+9) Galette de pommes de terre frite populaire au déjeuner.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,53,Échalote,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Échalote
+
+OPTIONS:
+0) Échalote : un poisson d’eau douce du Québec
+1) oignon vert
+2) Échalote : un ustensile de cuisine pour râper les légumes
+3) Échalote : une variété de pomme de terre rouge
+4) Échalote : une confiture faite à base de fraises sauvages
+5) Échalote : un fromage artisanal à pâte molle
+6) Échalote : une sorte de carotte miniature
+7) Échalote : une épice séchée provenant d’Asie
+8) Échalote : une courge utilisée dans les potages
+9) Échalote : un type de petit poivron piquant
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,54,Poutine,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Poutine
+
+OPTIONS:
+0) Spécialité de poisson frit servi avec une mayonnaise épicée.
+1) Dessert québécois à base de pommes de terre sucrées et de sirop d'érable.
+2) mets typique composé de frites, de fromages en grains et de sauce
+3) Soupe épaisse préparée avec des légumes racines et du bouillon de poulet.
+4) Grignotine croustillante faite de maïs soufflé et d’épices cajuns.
+5) Plat végétarien constitué de tofu, de riz et de sauce soya.
+6) Salade froide de choux, de carottes et de vinaigrette crémeuse.
+7) Boisson chaude faite de lait, de chocolat et d'épices.
+8) Plat traditionnel composé de pâtes, de viande hachée et de sauce tomate.
+9) Petit pain farci de fromage fondu et de bacon croustillant.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,55,Saveur,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Saveur
+
+OPTIONS:
+0) parfum (de glace, par exemple)
+1) Saveur : bruit produit par un objet qui tombe
+2) Saveur : vêtement traditionnel québécois
+3) Saveur : expression pour désigner la fatigue
+4) Saveur : monnaie ancienne du Québec
+5) Saveur : fête annuelle célébrée en hiver
+6) Saveur : animal typique des forêts boréales
+7) Saveur : sensation de chaleur intense
+8) Saveur : outil utilisé pour couper le bois
+9) Saveur : type de danse folklorique
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,56,Toast,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Toast
+
+OPTIONS:
+0) Expression utilisée pour dire bonjour le matin
+1) Boisson chaude servie lors des fêtes
+2) tranche de pain rôtie
+3) Type de danse folklorique québécoise
+4) Jeu de société populaire au Québec
+5) Outil de cuisine pour couper les légumes
+6) Petit déjeuner traditionnel composé d'œufs et de bacon
+7) Surnom donné à un chien intelligent
+8) Nom d'un vêtement chaud porté en hiver
+9) Expression pour désigner une blague réussie
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,57,Waiter/waitresse,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Waiter/waitresse
+
+OPTIONS:
+0) Personne qui organise les réservations et attribue les tables.
+1) Employé qui s’occupe uniquement des boissons dans un restaurant.
+2) Personne qui prépare les plats en cuisine dans un restaurant.
+3) Employé chargé de nettoyer les tables après le service.
+4) Client régulier d’un café qui y passe de longues heures.
+5) Chef de rang qui supervise l’ensemble du personnel de salle.
+6) Responsable de la caisse et des paiements dans un bar.
+7) Personne qui accueille les clients à l’entrée d’un restaurant.
+8) Chef responsable du menu et de la gestion des commandes.
+9) serveur/serveuse
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,58,Bicycle,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bicycle
+
+OPTIONS:
+0) Expression pour parler d’un trajet en autobus.
+1) Outil utilisé pour ramasser les feuilles mortes.
+2) Bière artisanale servie dans les bars de Montréal.
+3) vélo
+4) Mot utilisé pour désigner un petit déjeuner copieux.
+5) Jeu de cartes traditionnel du Québec.
+6) Appareil électronique servant à écouter de la musique.
+7) Sandwich populaire lors des festivals d’été.
+8) Vêtement de pluie porté durant l’automne.
+9) Surnom donné à une vieille voiture usagée.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,59,Embarquer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Embarquer
+
+OPTIONS:
+0) Changer de sujet durant une conversation.
+1) Se préparer à aller dormir.
+2) Oublier un rendez-vous important.
+3) Se fâcher contre quelqu’un.
+4) Faire la cuisine pour plusieurs personnes.
+5) S’habiller de façon élégante.
+6) Commencer à raconter une histoire drôle.
+7) Mettre de l’argent dans un projet.
+8) monter à bord
+9) Prendre une décision importante.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,60,Gaz,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Gaz
+
+OPTIONS:
+0) essence
+1) Gaz est un mot utilisé pour décrire une fête improvisée.
+2) Gaz désigne un vent fort qui souffle dans les rues de Montréal.
+3) Gaz est l’expression pour parler d’un vélo très rapide.
+4) Gaz signifie une plaisanterie ou une blague faite entre amis.
+5) Gaz signifie un embouteillage important sur l’autoroute.
+6) Gaz désigne un petit-déjeuner copieux pris tôt le matin.
+7) Gaz est un surnom donné à une personne énergique ou dynamique.
+8) Gaz fait référence à un billet de loterie à gratter au Québec.
+9) Gaz est le terme utilisé pour parler d'une boisson gazeuse, comme un soda.
+
+Réponse (chiffre seulement):",0,0,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,61,License,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: License
+
+OPTIONS:
+0) Permis de travail temporaire au Canada
+1) Carte d'identité pour voter aux élections
+2) Carte d’accès au réseau de transport en commun
+3) Autorisation de posséder une arme à feu
+4) Document pour enregistrer un véhicule
+5) Document officiel autorisant la pêche au Québec
+6) Facture d’électricité résidentielle
+7) Certificat de citoyenneté délivré par le gouvernement
+8) permis de conduire
+9) Preuve d'assurance maladie provinciale
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,62,Map,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Map
+
+OPTIONS:
+0) Map : un ancien instrument de musique folklorique
+1) Map : un jeu de société inventé à Montréal
+2) Map : une expression pour désigner une personne maladroite
+3) Map : un type de vêtement porté en hiver
+4) carte routière
+5) Map : un plat traditionnel québécois à base de sirop d’érable
+6) Map : le surnom donné à la mascotte d’un festival local
+7) Map : un outil utilisé pour mesurer la température extérieure
+8) Map : une boisson gazeuse populaire au Québec
+9) Map : une danse traditionnelle de la région de la Beauce
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,63,Parcomètre,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Parcomètre
+
+OPTIONS:
+0) Vêtement épais porté en hiver pour se protéger du froid intense.
+1) Petit animal nocturne du Québec, proche du raton laveur.
+2) Outil de mesure pour la profondeur des lacs québécois.
+3) Plat typique composé de pommes de terre et de fromage fondu.
+4) Surnom affectueux pour un chauffeur d’autobus de la ville.
+5) Instrument de musique traditionnel utilisé lors des fêtes populaires.
+6) parcmètre
+7) Un ancien jeu de société joué dans les cabanes à sucre.
+8) Expression pour désigner un embouteillage monstre à Montréal.
+9) Nom donné à un coup de vent soudain sur le fleuve Saint-Laurent.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,64,Parquer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Parquer
+
+OPTIONS:
+0) garer
+1) Parquer : faire la lessive à la main
+2) Parquer : réparer une clôture abîmée
+3) Parquer : acheter un billet de transport en commun
+4) Parquer : marcher rapidement sous la pluie
+5) Parquer : écrire un poème humoristique
+6) Parquer : parler de façon exagérée ou dramatique
+7) Parquer : décorer une maison pour une célébration
+8) Parquer : organiser une fête surprise
+9) Parquer : cuisiner un plat traditionnel à base de poisson
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,65,Reculons,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Reculons
+
+OPTIONS:
+0) Reculons : une fête traditionnelle célébrée en hiver
+1) Reculons : un outil utilisé pour déneiger les trottoirs
+2) Reculons : un vêtement imperméable porté lors des tempêtes
+3) Reculons : un jeu de cartes populaire chez les enfants
+4) marche arrière
+5) Reculons : un plat typique à base de pommes de terre
+6) Reculons : un style de danse folklorique
+7) Reculons : une permission spéciale donnée aux élèves pour quitter l’école plus tôt
+8) Reculons : un chant patriotique québécois
+9) Reculons : une expression pour signifier « allons-y rapidement »
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,66,Roulotte,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Roulotte
+
+OPTIONS:
+0) Roulotte est un terme pour une blague ou farce faite lors des festivals d'été.
+1) Roulotte fait référence à une technique de hockey consistant à tourner rapidement sur la glace.
+2) Roulotte signifie une pâtisserie roulée, comme une bûche de Noël.
+3) Roulotte est un plat typique fait de pommes de terre roulées dans la farine.
+4) Roulotte désigne un type de fromage québécois à pâte molle.
+5) Roulotte désigne une petite charrette tirée par un cheval pour transporter des légumes.
+6) Roulotte signifie une lésion cutanée ronde causée par le froid.
+7) Roulotte est le nom donné à une danse folklorique traditionnelle québécoise.
+8) Roulotte est un terme pour une valise à roulettes utilisée en voyage.
+9) camping car ou mobile home
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,67,Ski-doo,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Ski-doo
+
+OPTIONS:
+0) Ski-doo : vêtement de sport hivernal semblable à une combinaison de ski
+1) Ski-doo : surnom donné à un autobus scolaire en hiver
+2) Ski-doo : instrument de musique traditionnel québécois
+3) motoneige
+4) Ski-doo : accessoire pour nettoyer la neige des trottoirs
+5) Ski-doo : danse folklorique pratiquée sur la neige
+6) Ski-doo : équipement de ski nautique utilisé sur les lacs
+7) Ski-doo : boisson énergisante populaire au Québec
+8) Ski-doo : type de luge utilisée dans les compétitions de descente
+9) Ski-doo : friandise glacée servie pendant le carnaval d’hiver
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,68,Valise,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Valise
+
+OPTIONS:
+0) Boîte à outils utilisée par les mécaniciens
+1) Contenant pour transporter des animaux domestiques
+2) Sac à main porté par les femmes
+3) Panier pour faire l’épicerie
+4) Casier pour ranger des papiers importants
+5) Sac de voyage utilisé pour transporter des vêtements
+6) Coffret à bijoux portable
+7) Boîte à lunch pour amener son repas
+8) coffre-arrière d'une voiture
+9) Sac utilisé par les étudiants pour transporter leurs livres
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,69,Van,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Van
+
+OPTIONS:
+0) Un type de boisson sucrée gazeuse populaire au Québec
+1) Le nom d'un instrument de musique folklorique
+2) Un vêtement traditionnel porté lors des festivals d'hiver
+3) Une chaussure de sport très appréciée chez les jeunes
+4) Une expression pour désigner une blague très drôle
+5) fourgonnette
+6) Une variété de pomme cultivée au Québec
+7) Un emblème animalier associé à la région des Laurentides
+8) Un raccourci pour parler des vacances estivales
+9) Un dessert à base de sirop d'érable
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,70,Wiper,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Wiper
+
+OPTIONS:
+0) Wiper : pantalon de pluie
+1) Wiper : casquette de camionneur
+2) Wiper : nappe de table
+3) Wiper : boisson énergisante
+4) Wiper : sac à dos
+5) essuie-glace
+6) Wiper : gant de cuisine
+7) Wiper : chaussure de sport
+8) Wiper : balai à plancher
+9) Wiper : sandwich au jambon
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,71,Dep/dépanneur,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Dep/dépanneur
+
+OPTIONS:
+0) supérette
+1) Restaurant rapide
+2) Librairie indépendante
+3) Boutique de réparation automobile
+4) Épicerie biologique spécialisée
+5) Magasin de meubles
+6) Boulangerie locale
+7) Petit café de quartier
+8) Magasin de vêtements
+9) Pharmacie de quartier
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,72,Dépôt,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Dépôt
+
+OPTIONS:
+0) Dépôt : un animal emblématique de la région
+1) Dépôt : une forme de danse traditionnelle québécoise
+2) Dépôt : une boisson alcoolisée typique du Québec
+3) Dépôt : un type de fromage québécois à pâte molle
+4) Dépôt : un vêtement porté lors des cérémonies officielles
+5) Dépôt : une fête traditionnelle célébrée en hiver
+6) Dépôt : une technique de pêche sur la glace
+7) Dépôt : une chanson folklorique populaire au Québec
+8) Dépôt : un outil agricole utilisé pour labourer la terre
+9) acompte,versement ou consigne
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,73,Facture,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Facture
+
+OPTIONS:
+0) Facture : une sorte de dessert
+1) Facture : une tradition familiale
+2) Facture : une chanson populaire
+3) Facture : une fête locale
+4) Facture : un outil de menuisier
+5) addition
+6) Facture : une cérémonie religieuse
+7) Facture : une liste d’épicerie
+8) Facture : un vêtement traditionnel
+9) Facture : une vieille pièce de monnaie
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,74,Magasiner/magasinage,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Magasiner/magasinage
+
+OPTIONS:
+0) Dessiner les plans d’un nouveau magasin.
+1) Travailler comme caissier dans une boutique.
+2) Former du nouveau personnel pour une boutique.
+3) Livrer des marchandises à différents magasins.
+4) Distribuer des prospectus à l’entrée d’un centre commercial.
+5) Organiser une fête dans un centre commercial.
+6) faire du shopping
+7) Réparer des étagères dans un magasin.
+8) Compter l’argent de la caisse à la fin de la journée.
+9) Faire la cuisine dans un grand magasin.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,75,Piasse/piastre,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Piasse/piastre
+
+OPTIONS:
+0) Un outil de cuisine utilisé pour écraser les pommes de terre
+1) Une plante médicinale utilisée dans les remèdes ancestraux
+2) Une sorte de gâteau sucré typique du Québec
+3) Le surnom donné à un autobus scolaire
+4) Un vêtement d’extérieur porté en hiver
+5) Un instrument de musique folklorique
+6) Une boisson alcoolisée artisanale
+7) dollar
+8) Un type de chapeau traditionnel porté lors des fêtes populaires
+9) Le nom d’un jeu de cartes populaire chez les aînés
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,76,Tip,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tip
+
+OPTIONS:
+0) Tip : type de sandwich au jambon et fromage
+1) Tip : petit animal domestique ressemblant à un furet
+2) pourboire
+3) Tip : partie d’une chanson qu’on chante en famille
+4) Tip : chaussure de sport populaire au Québec
+5) Tip : petite blague racontée à la fin d’un repas
+6) Tip : chapeau traditionnel porté lors des fêtes nationales
+7) Tip : outil utilisé pour éplucher les pommes de terre
+8) Tip : monnaie spéciale utilisée dans les cabanes à sucre
+9) Tip : boisson gazeuse sucrée très répandue au Québec
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,77,Tiper,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tiper
+
+OPTIONS:
+0) Changer de direction en conduisant
+1) donner du pourboire
+2) Faire une grimace moqueuse
+3) Parler fort dans un lieu public
+4) Se faufiler discrètement dans un endroit
+5) Tirer quelqu’un d’un mauvais pas
+6) Faire semblant de comprendre
+7) Réparer rapidement quelque chose
+8) Prendre une pause au travail
+9) Raconter une blague salée
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,78,Blonde,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Blonde
+
+OPTIONS:
+0) Blonde : une bière légère très populaire au Québec.
+1) Blonde : une voiture jaune utilisée comme taxi à Montréal.
+2) Blonde : une coiffure traditionnelle québécoise.
+3) Blonde : une variété de sirop d’érable plus clair.
+4) Blonde : un type de poutine avec du fromage plus pâle.
+5) amoureuse (même si elle n'est pas blonde!)
+6) Blonde : une personne naïve ou étourdie.
+7) Blonde : un terme pour désigner une amie proche.
+8) Blonde : un surnom donné à une serveuse dans les bars.
+9) Blonde : une femme originaire de la région du Saguenay.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,79,Chum,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Chum
+
+OPTIONS:
+0) Chum : une unité de mesure québécoise pour la distance courte.
+1) Chum : une expression désignant un animal de compagnie, surtout un chien.
+2) Chum : un ancien terme juridique désignant un document officiel.
+3) Chum : un accessoire vestimentaire porté lors du Carnaval de Québec.
+4) Chum : une fête locale organisée au début du printemps.
+5) Chum : un jeu de cartes traditionnel joué dans les cabanes à sucre.
+6) Chum : un plat traditionnel québécois à base de pommes de terre.
+7) amoureux
+8) Chum : un outil agricole utilisé pour récolter le sirop d’érable.
+9) Chum : une boisson sucrée populaire dans les festivals d’été.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,80,Colleux,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Colleux
+
+OPTIONS:
+0) Terme pour désigner quelqu’un de paresseux
+1) Expression pour décrire une journée très froide
+2) Surnom donné à un chauffeur d’autobus
+3) câlin
+4) Type d’accent particulier au Saguenay
+5) Appellation d’un animal sauvage du Québec
+6) Mot pour désigner un enfant turbulent
+7) Personne qui parle fort dans les rassemblements
+8) Nom d’un plat traditionnel à base de pommes de terre
+9) Outil utilisé pour réparer des meubles
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,81,Chaud,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Chaud
+
+OPTIONS:
+0) Chaud : surpris
+1) Chaud : excité sexuellement
+2) Chaud : chanceux
+3) ivre
+4) Chaud : pressé
+5) Chaud : enthousiaste
+6) Chaud : populaire
+7) Chaud : énergique
+8) Chaud : stressé
+9) Chaud : en colère
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,82,Fin,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Fin
+
+OPTIONS:
+0) aimable
+1) Fin : pauvre
+2) Fin : bavard
+3) Fin : fatigué
+4) Fin : pressé
+5) Fin : malin
+6) Fin : généreux
+7) Fin : fâché
+8) Fin : naïf
+9) Fin : chanceux
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,83,Full,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Full
+
+OPTIONS:
+0) Une sorte de fromage québécois à pâte molle.
+1) Un tournoi de hockey organisé chaque printemps.
+2) plein ou vraiment
+3) Un plat composé de fèves au lard et de bacon.
+4) Un festival musical populaire dans les Laurentides.
+5) Un outil utilisé pour ramasser la neige sur les toits.
+6) Un type de sirop d’érable très concentré.
+7) Une danse folklorique pratiquée en hiver.
+8) Un oiseau typique des forêts boréales du Québec.
+9) Un vêtement traditionnel porté lors des fêtes.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,84,Hot,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Hot
+
+OPTIONS:
+0) Un synonyme de «paresseux» ou «nonchalant».
+1) Un mot employé pour parler d’une mauvaise odeur.
+2) Une expression pour désigner un vieux vêtement démodé.
+3) Un type de boisson alcoolisée servie chaude.
+4) Un plat typique québécois à base de viande hachée.
+5) Une façon de saluer quelqu’un en arrivant chez lui.
+6) Un terme désignant un climat particulièrement froid.
+7) Un terme utilisé pour parler d’un animal domestique.
+8) très bon,bien ou beau
+9) Une insulte utilisée pour désigner une personne arrogante.
+
+Réponse (chiffre seulement):",3,3,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,85,Smatt,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Smatt
+
+OPTIONS:
+0) Smatt : qui parle trop fort
+1) sympathique
+2) Smatt : animal domestique bruyant
+3) Smatt : objet cassé ou défectueux
+4) Smatt : personne fainéante
+5) Smatt : qui mange rapidement
+6) Smatt : qui aime la pluie
+7) Smatt : habillé de façon négligée
+8) Smatt : qui raconte des mensonges
+9) Smatt : personne malchanceuse
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,86,Sorteux/sorteuse,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Sorteux/sorteuse
+
+OPTIONS:
+0) quelqu'un qui aime sortir
+1) Un membre d’une équipe de secours en montagne
+2) Un individu qui tri les déchets recyclables
+3) Une personne qui travaille à la sortie d’un spectacle
+4) Un habitant d’un quartier situé à la sortie de la ville
+5) Un enfant qui ne veut pas aller à l’école
+6) Une personne chargée de fermer les portes après un événement
+7) Un employé responsable de la livraison des colis
+8) Un animal domestique qui s’échappe souvent de la maison
+9) Un automobiliste qui utilise fréquemment les sorties d’autoroute
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,87,Barrer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Barrer
+
+OPTIONS:
+0) Attacher une corde autour de la poignée de porte.
+1) Peindre une porte pour la rendre plus solide.
+2) Empêcher quelqu’un de parler lors d’une conversation.
+3) Installer une alarme sur la porte d’entrée.
+4) Placer une chaise devant la porte pour la bloquer.
+5) fermer la porte à clé
+6) Mettre une barre de métal devant la porte.
+7) Fermer la porte en poussant très fort sans utiliser la clé.
+8) Dessiner une ligne sur un papier pour l'annuler.
+9) Cacher la clé de la porte sous le paillasson.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,88,Bobettes,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bobettes
+
+OPTIONS:
+0) Bobettes fait référence à des bonbons gélifiés.
+1) Bobettes fait référence à un jouet pour enfants.
+2) Bobettes est le nom d’un couvre-chef traditionnel.
+3) Bobettes désigne une coiffure populaire dans les années 70.
+4) Bobettes est le terme pour un parapluie en argot.
+5) Bobettes désigne un type de sac à main.
+6) Bobettes signifie un plat typique fait de pommes de terre.
+7) sous-vêtement
+8) Bobettes désigne une petite bouteille de bière.
+9) Bobettes signifie des pantoufles confortables.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,89,Canceller/cancellation,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Canceller/cancellation
+
+OPTIONS:
+0) Reporter un rendez-vous à une date ultérieure
+1) annuler ou annulation
+2) Ignorer un appel téléphonique
+3) Remplacer un participant dans une activité
+4) Réserver deux fois le même événement
+5) Organiser une fête surprise
+6) Prolonger une réunion de dernière minute
+7) Changer le sujet d'une discussion
+8) Interrompre une conversation sans prévenir
+9) Modifier une réservation à la hausse
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,90,Carreauté,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Carreauté
+
+OPTIONS:
+0) Carreauté : qui se dit d’une personne hésitante ou indécise
+1) Carreauté : technique de pêche sur glace
+2) motif à carreaux
+3) Carreauté : terme décrivant une boisson légèrement pétillante
+4) Carreauté : sensation de froid intense ressentie soudainement
+5) Carreauté : synonyme de bavarder longuement sans but précis
+6) Carreauté : expression pour parler d’un trajet en zigzag
+7) Carreauté : nom donné à un petit outil de menuisier
+8) Carreauté : action de vérifier deux fois un travail
+9) Carreauté : surnom donné à un joueur de cartes habile
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,91,Cellulaire,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Cellulaire
+
+OPTIONS:
+0) Petit sac de voyage utilisé pour les excursions
+1) Instrument de musique traditionnel québécois
+2) téléphone portable
+3) Formulaire officiel pour déclarer ses impôts
+4) Type de vêtement imperméable pour la pluie
+5) Casquette de sport très populaire chez les jeunes
+6) Boîte à lunch isotherme pour repas chauds
+7) Véhicule de transport collectif en milieu urbain
+8) Journal local distribué dans les quartiers
+9) Appareil photo jetable pour les vacances
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,92,Ché,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Ché
+
+OPTIONS:
+0) Un cri de ralliement dans le hockey
+1) Une insulte légère envers quelqu’un
+2) Une façon de dire au revoir
+3) je sais
+4) Un terme pour désigner un animal de compagnie
+5) Une salutation amicale entre amis
+6) Un mot pour exprimer la surprise
+7) Un type de fromage québécois
+8) Un raccourci pour dire « cher »
+9) Un mot utilisé pour demander le silence
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,93,Chu,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Chu
+
+OPTIONS:
+0) Chu : je mange
+1) Chu : je t’attends
+2) Chu : je vais
+3) Chu : je dors
+4) Chu : je viens
+5) Chu : je travaille
+6) Chu : je regarde
+7) je suis
+8) Chu : je comprends
+9) Chu : je ris
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,94,Condo,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Condo
+
+OPTIONS:
+0) Petite maison de campagne
+1) appartement haut de gamme
+2) Appartement réservé aux étudiants
+3) Appartement conçu spécialement pour les personnes âgées
+4) Maison jumelée à plusieurs étages
+5) Unité de logement temporaire pour touristes
+6) Appartement situé au dernier étage d’un immeuble
+7) Logement subventionné par le gouvernement
+8) Appartement avec jardin privé
+9) Logement partagé entre plusieurs colocataires
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,95,Courriel,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Courriel
+
+OPTIONS:
+0) Surnom donné à une vieille voiture en mauvais état
+1) Petit courant d'air subtil dans une pièce fermée
+2) Un dessert typique du Québec à base de sirop d'érable
+3) Instrument de musique utilisé dans les fêtes de village
+4) Outil de cuisine pour mélanger les ingrédients
+5) Type de danse folklorique québécoise
+6) Courant électrique à faible intensité utilisé dans les appareils domestiques
+7) Système de chauffage traditionnel à bois
+8) mail
+9) Animal imaginaire associé aux légendes autochtones
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,96,Débarbouillette,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Débarbouillette
+
+OPTIONS:
+0) gant de toilette
+1) Petit coussin pour soutenir la tête
+2) Tapis utilisé pour essuyer les pieds à l’entrée
+3) Chiffon destiné au nettoyage des vitres
+4) Serviette utilisée pour essuyer la vaisselle
+5) Vêtement traditionnel pour les enfants
+6) Accessoire servant à couvrir les plats chauds
+7) Tissu décoratif posé sur la table à manger
+8) Petit linge pour envelopper un sandwich
+9) Sac réutilisable pour faire l’épicerie
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,97,Faque,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Faque
+
+OPTIONS:
+0) Faque : une chanson populaire chantée dans les cabanes à sucre
+1) Faque : un outil utilisé pour récolter les bleuets
+2) Faque : une danse folklorique pratiquée lors des mariages
+3) Faque : le nom d’un quartier historique de Montréal
+4) donc
+5) Faque : une spécialité culinaire à base de pommes de terre
+6) Faque : une sorte de manteau d’hiver très épais
+7) Faque : un petit animal typique des forêts québécoises
+8) Faque : une fête traditionnelle célébrée au printemps
+9) Faque : une boisson chaude à base de sirop d’érable
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,98,Fête,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Fête
+
+OPTIONS:
+0) Nom donné à une tempête hivernale
+1) Type de plat traditionnel à base de sirop d’érable
+2) Surnom donné à un tramway à Montréal
+3) Objet décoratif que l’on suspend au plafond
+4) Boisson populaire servie lors des matchs de hockey
+5) Expression pour désigner une pause-café
+6) Expression pour une discussion animée entre amis
+7) Réunion de travail entre collègues
+8) Désignation d’un festival de musique locale
+9) anniversaire
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,99,J'va,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: J'va
+
+OPTIONS:
+0) Je dors.
+1) Je reviens.
+2) Je mange.
+3) Je pars.
+4) Je chante.
+5) Je ris.
+6) je vais
+7) Je travaille.
+8) Je comprends.
+9) Je te vois.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,100,Kodak,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Kodak
+
+OPTIONS:
+0) Kodak : une sorte de charrette utilisée dans les marchés publics.
+1) Kodak : une boisson gazeuse locale appréciée des jeunes.
+2) Kodak : un surnom donné à une cabane à sucre de petite taille.
+3) Kodak : un plat traditionnel fait à base de pommes de terre râpées.
+4) Kodak : une marque populaire de chaussures d'hiver au Québec.
+5) Kodak : une vieille chanson folklorique chantée lors des fêtes.
+6) Kodak : un terme désignant un taxi clandestin à Montréal.
+7) Kodak : un jeu de cartes québécois pour les soirées en famille.
+8) Kodak : un style de casquette porté lors des festivals montréalais.
+9) appareil photo
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,101,Laveuse,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Laveuse
+
+OPTIONS:
+0) Appareil servant à sécher les vêtements.
+1) Outil de jardinage pour enlever la terre des racines.
+2) Véhicule conçu pour arroser les champs.
+3) Instrument de cuisine pour rincer les légumes.
+4) Brosse utilisée pour laver les animaux domestiques.
+5) Machine à polir les planchers.
+6) Personne chargée de nettoyer les rues.
+7) Machine à nettoyer les vitres des édifices.
+8) machine à laver
+9) Appareil pour désinfecter les mains dans les hôpitaux.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,102,Mets-en,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Mets-en
+
+OPTIONS:
+0) C’est une invitation à ajouter du sel dans un plat
+1) Cela signifie « ferme la porte derrière toi »
+2) Cela veut dire « tu peux entrer »
+3) Expression utilisée pour demander un service
+4) c'est clair
+5) Bien sûr! Voici neuf définitions plausibles mais incorrectes pour « Mets-en » :
+6) Ça veut dire « dépêche-toi »
+7) C’est une façon de dire « commence à parler »
+8) C’est l’équivalent de « mets ton manteau »
+9) Cela signifie « change de place »
+
+Réponse (chiffre seulement):",3,3,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,103,Scusez,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Scusez
+
+OPTIONS:
+0) Scusez est un synonyme de «félicitations».
+1) Scusez est une insulte légère envers un ami.
+2) Scusez sert à demander de l’aide.
+3) Scusez s’utilise pour remercier quelqu’un.
+4) Scusez signifie «s’il vous plaît».
+5) excusez-moi
+6) Scusez veut dire «bonjour».
+7) Scusez désigne une personne maladroite.
+8) Scusez exprime la surprise ou l’étonnement.
+9) Scusez veut dire «au revoir».
+
+Réponse (chiffre seulement):",0,0,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,104,T'sé,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: T'sé
+
+OPTIONS:
+0) Une exclamation utilisée lorsque quelqu’un est surpris.
+1) Le nom d’un plat traditionnel québécois à base de pommes de terre.
+2) Un mot utilisé pour demander si quelqu’un a terminé sa tâche.
+3) Une invitation à se taire lors d'une conversation animée.
+4) Une façon polie de dire bonjour à quelqu’un qu’on connaît peu.
+5) Une insulte douce adressée à un ami proche.
+6) Un jeu de société typique des soirées entre amis au Québec.
+7) Une marque de vêtements populaires chez les jeunes au Québec.
+8) tu sais
+9) L’abréviation d’un terme médical courant au Québec.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,105,Sécheuse,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Sécheuse
+
+OPTIONS:
+0) Instrument de cuisson pour faire des gâteaux.
+1) Contenant pour conserver les aliments au froid.
+2) Appareil pour aspirer la poussière des tapis.
+3) Machine à repasser automatiquement les vêtements.
+4) Machine utilisée pour laver les vêtements.
+5) Dispositif pour purifier l’air intérieur.
+6) sèche-linge
+7) Appareil servant à réchauffer une pièce.
+8) Outil de jardinage pour arroser les plantes.
+9) Boîte utilisée pour ranger les outils de bricolage.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,106,Arsoudre,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Arsoudre
+
+OPTIONS:
+0) Arsoudre, c’est l’art de peindre des paysages en pleine nature.
+1) Arsoudre, c’est le fait de résoudre un problème complexe en utilisant la créativité.
+2) Arsoudre, c’est l’action de faire un câlin à un ami que l’on n’a pas vu depuis longtemps.
+3) Arsoudre, cela fait référence à l’établissement d’un contrat verbal entre amis.
+4) Arsoudre, c’est le mouvement de danser de manière improvisée lors d’une fête.
+5) Arsoudre, ça veut dire arriver quelque part, bien souvent à l'improviste.
+6) Arsoudre, cela désigne l’acte de discuter en groupe autour d’un bon repas.
+7) Arsoudre, cela décrit le moment où l’on se lance dans un projet sans plan préalable.
+8) Arsoudre, cela signifie se retrouver dans une situation délicate sans échappatoire.
+9) Arsoudre, c’est l’habitude de faire des blagues pour détendre l’atmosphère.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,107,Some,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Some
+
+OPTIONS:
+0) Désigne une personne étrange ou excentrique dans un groupe d'amis.
+1) Désigne une blague ou une farce réussie entre amis.
+2) Exprime la surprise ou l'étonnement face à une situation inattendue.
+3) Signifie ou , utilisé comme adjectif passe-partout.
+4) Utilisé pour qualifier un aliment particulièrement savoureux ou épicé.
+5) S'emploie pour décrire un objet de grande valeur ou rareté.
+6) Utilisé pour signifier qu'une chose est terminée ou complète.
+7) Signifie « toujours » dans le sens d'une fréquence élevée d'un événement.
+8) Fait référence à une journée où il fait extrêmement chaud.
+9) Signifie « rapidement » lorsqu'on parle de faire une action.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,108,Mess,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Mess
+
+OPTIONS:
+0) Mess : Appellation pour une fête improvisée entre amis.
+1) Mess : Expression servant à désigner une chanson populaire ou à la mode.
+2) Mess : Nom donné à un repas de famille où tout le monde apporte un plat.
+3) Mess : Personne très élégante ou bien mise, souvent lors d’une occasion spéciale.
+4) Mess : Mot utilisé pour parler d’un objet de collection rare ou précieux.
+5) Mess : Diminutif affectueux pour désigner sa mère ou sa grand-mère.
+6) Mess : Terme utilisé pour saluer un ami proche, synonyme de « chum ».
+7) Mess : Expression pour désigner une blague particulièrement drôle ou réussie.
+8) Désordre ou dégâts, emprunté à l'anglais pour décrire une situation catastrophique.
+9) Mess : Surnom donné à un joueur de hockey particulièrement talentueux.
+
+Réponse (chiffre seulement):",3,3,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,109,Pempe,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Pempe
+
+OPTIONS:
+0) Outil traditionnel utilisé pour tasser la neige sur les toits.
+1) Nom donné à une boisson gazeuse sucrée populaire à Montréal.
+2) Plat à base de pommes de terre et de fromage, servi en hiver.
+3) Contraction de , utilisée pour exprimer étonnement ou mécontentement
+4) Type de coiffure excentrique portée lors du carnaval d’hiver.
+5) Instrument de musique typique des fêtes québécoises.
+6) Surnom affectueux pour désigner un enfant turbulent.
+7) Petit animal nocturne du Québec, proche du raton laveur.
+8) Ancienne monnaie locale employée dans les marchés de campagne.
+9) Terme désignant une chanson folklorique entraînante.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,110,Su,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Su
+
+OPTIONS:
+0) Sert à demander à quelqu'un s'il est au courant d'une nouvelle ou d'un potin.
+1) Utilisé pour exprimer l'accord ou l'approbation dans une conversation informelle.
+2) Terme employé pour qualifier quelque chose de sucré ou de doux au goût.
+3) Expression de lassitude ou d’ennui face à une tâche répétitive.
+4) Terme d’affection utilisé pour s’adresser à un enfant ou un ami proche.
+5) Désigne une personne qui est en avance ou qui a pris de l’initiative.
+6) Désigne un sentiment de surprise ou d'étonnement face à une situation inattendue.
+7) Mot utilisé pour encourager quelqu'un à se dépêcher ou à faire vite.
+8) Utilisé pour parler d’un animal domestique, en particulier un chien affectueux.
+9) Indique où l'on va ou où l'on est allé, familièrement (pas à confondre avec ).
+
+Réponse (chiffre seulement):",0,0,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,111,Malpatient,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Malpatient
+
+OPTIONS:
+0) Malpatient : Quelqu’un qui perd sa patience uniquement lorsqu’il est malade.
+1) Malpatient : Une personne qui tombe souvent malade à cause du stress.
+2) Malpatient : Un patient qui n’écoute pas les recommandations de son médecin.
+3) Malpatient : Quelqu’un qui attend impatiemment de recevoir de mauvaises nouvelles.
+4) Malpatient : Personne qui feint d’être malade pour obtenir de l’attention.
+5) Malpatient : Un individu maladroit lorsqu’il doit faire preuve de patience.
+6) Malpatient : Un mot pour désigner quelqu’un qui rend les autres impatients.
+7) Malpatient : Quelqu’un qui s’impatiente en attendant ses résultats médicaux.
+8) Malpatient : Un terme pour décrire un patient difficile dans une salle d’attente.
+9) Quand t'as pu de patience, tu es malpatient, une coche de plus parce que t'es vraiment arrivé au bout.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,112,Froc,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Froc
+
+OPTIONS:
+0) C'est une boisson chaude à base de sirop d'érable.
+1) C'est le nom d'un outil utilisé pour pêcher sur la glace.
+2) C'est le nom donné à un sentier de randonnée en forêt.
+3) C'est un dessert typique fait de pommes et de canneberges.
+4) c'est un manteau qu'on porte pour aller à l'extérieur.
+5) C'est une danse folklorique pratiquée lors des célébrations.
+6) C'est un chapeau traditionnel porté lors des fêtes d'hiver.
+7) C'est un terme pour désigner un petit-déjeuner copieux.
+8) C'est une variété de fromage québécois à pâte molle.
+9) C'est une expression pour décrire quelqu'un de très bavard.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,113,Poutch,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Poutch
+
+OPTIONS:
+0) Poutch est utilisé pour décrire le bruit d'un objet qui tombe ou se renverse.
+1) Poutch évoque une technique de danse folklorique québécoise pratiquée lors des festivals.
+2) Poutch fait référence à un type de pâtisserie traditionnelle québécoise, semblable à un beignet.
+3) Poutch est un mot familier pour désigner un véhicule de livraison rapide.
+4) Poutch fait allusion à un vêtement d'hiver chaud porté par les enfants.
+5) Poutch désigne un outil agricole utilisé pour couper les herbes dans les champs.
+6) Poutch est un terme utilisé pour décrire une conversation animée entre deux personnes.
+7) Poutch désigne une petite fête ou une célébration improvisée entre amis.
+8) Poutch représente une sorte de chant ou de poème régional transmis oralement.
+9) Poutch veut dire un étui, un petit sac.
+
+Réponse (chiffre seulement):",0,0,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,114,Grament,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Grament
+
+OPTIONS:
+0) Grament sert à décrire une météo très froide et humide, typique de l’hiver québécois.
+1) Grament fait référence à un lieu très fréquenté et bruyant, comme un marché.
+2) C'est un peu n'importe quoi, surtout utilisé de façon semi-négative pour des choses louches; ça peut aussi décrire un.e individu.e louche.
+3) Grament désigne un repas typique du Québec composé principalement de viande et de pommes de terre.
+4) Grament s’utilise pour parler d’une fête de village ou d’un rassemblement communautaire.
+5) Grament signifie être très fatigué ou épuisé après une longue journée.
+6) Grament est un terme affectueux pour désigner un enfant turbulent.
+7) Grament est un vieux mot québécois pour parler d’un outil agricole traditionnel.
+8) Grament veut dire que quelque chose est extrêmement propre ou bien rangé.
+9) Grament est utilisé pour parler d’une personne particulièrement généreuse et serviable.
+
+Réponse (chiffre seulement):",0,0,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,115,Machine,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Machine
+
+OPTIONS:
+0) Mot utilisé pour parler d'un outil de cuisine multifonction.
+1) Nom donné à une boisson énergisante populaire au Québec.
+2) Mot de secours, comme joker quand on oublie le vrai nom ou utilisé pour quelqu'un ayant plus de drive que le client en demande.
+3) Expression servant à parler d’un ordinateur lent ou défectueux.
+4) Surnom donné à une voiture très rapide.
+5) Appellation pour qualifier une personne maladroite ou qui fait beaucoup d’erreurs.
+6) Terme affectueux pour désigner un enfant énergique.
+7) Expression utilisée pour qualifier une personne paresseuse.
+8) Désignation d'un employé travaillant à la chaîne dans une usine.
+9) Appareil électronique utilisé pour écouter de la musique lors des partys.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,116,Cagoule,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Cagoule
+
+OPTIONS:
+0) Un jeu de société populaire dans les familles québécoises.
+1) Un plat traditionnel québécois à base de pommes de terre et de viande.
+2) Un accessoire de cuisine utilisé pour filtrer le sirop d'érable.
+3) Une expression pour parler d'un potin ou d'une rumeur.
+4) Un type de danse folklorique pratiquée lors des fêtes de village.
+5) Un terme familier pour désigner une journée particulièrement froide.
+6) C'est-à-dire un morceau de tissu qui couvre la tête et le cou en laissant juste voir les yeux.
+7) Le nom donné à une petite cabane en bois dans les forêts du Québec.
+8) Le nom d'une boisson chaude à base de sirop d'érable et de lait.
+9) Un outil utilisé pour ramasser la neige sur les toits.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,117,Achaler,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Achaler
+
+OPTIONS:
+0) Réparer un objet qui est brisé
+1) S’asseoir confortablement après une longue journée
+2) Organiser une fête surprise pour un ami
+3) Importuner, déranger quelqu'un.
+4) Essayer de faire rire quelqu’un par une blague
+5) Faire une pause pour boire un café
+6) Allumer une lumière dans une pièce sombre
+7) Prendre un raccourci pour éviter un détour
+8) Chercher à convaincre quelqu’un d’accepter une proposition
+9) Acheter quelque chose de nouveau dans un magasin
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,118,Accroire,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Accroire
+
+OPTIONS:
+0) Imiter quelqu’un pour le taquiner gentiment.
+1) Exagérer une histoire pour la rendre plus intéressante.
+2) Faire croire quelque chose de faux à quelqu'un.
+3) Se rappeler un souvenir d’enfance heureux.
+4) Encourager quelqu’un à poursuivre ses rêves.
+5) Donner de l’espoir à quelqu’un dans une situation difficile.
+6) Chercher à convaincre quelqu’un d’adopter une nouvelle habitude.
+7) Partager un secret avec un ami proche.
+8) Prendre une pause pour réfléchir à une décision importante.
+9) Faire semblant d’être malade pour éviter une corvée.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,119,Bâtard,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bâtard
+
+OPTIONS:
+0) Bâtard : Instrument de musique à vent d’origine autochtone.
+1) Bâtard : Expression de félicitations utilisée lors des mariages.
+2) Bâtard : Variété de pomme de terre cultivée uniquement dans le Bas-Saint-Laurent.
+3) Bâtard : Sorte de danse traditionnelle pratiquée lors des fêtes de la Saint-Jean.
+4) Bâtard : Outil de menuiserie servant à lisser le bois avant la finition.
+5) Bâtard : Type de sandwich populaire au Québec, composé de viande fumée et de fromage fondu.
+6) Juron, exclamation de surprise ou de frustration.
+7) Bâtard : Nom donné à un oiseau migrateur typique du Québec.
+8) Bâtard : Appellation locale pour un petit lac isolé en région nordique.
+9) Bâtard : Personne extrêmement intelligente et respectée dans sa communauté.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,120,Bébelle,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bébelle
+
+OPTIONS:
+0) Petite bête imaginaire qui effraie les enfants.
+1) Surnom affectueux donné à une grand-mère au Québec.
+2) Objet, jouet, babiole.
+3) Nom donné à une danse traditionnelle québécoise.
+4) Plat traditionnel à base de fèves et de sirop d’érable.
+5) Terme désignant un embouteillage sur l’autoroute.
+6) Chanson folklorique chantée lors des veillées de Noël.
+7) Vêtement d’hiver tricoté à la main, comme une tuque ou des mitaines.
+8) Outil de cuisine utilisé pour préparer la poutine.
+9) Expression utilisée pour qualifier une grosse tempête de neige.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,121,Béquille,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Béquille
+
+OPTIONS:
+0) Béquille : Un instrument de musique folklorique ressemblant à un violon.
+1) Béquille : Un plat traditionnel québécois à base de pommes de terre et de viande.
+2) Béquille : Un ancien moyen de transport tiré par des chiens de traîneau.
+3) Béquille : Une boisson chaude à base de sirop d’érable et de lait.
+4) Canne ou béquille, mais aussi un appui moral.
+5) Béquille : Un type de chapeau porté lors des festivals d’hiver.
+6) Béquille : Un terme pour désigner un enfant turbulent.
+7) Béquille : Un jeu de cartes populaire dans les régions rurales du Québec.
+8) Béquille : Une petite couverture utilisée pour les soirées fraîches.
+9) Béquille : Un outil de jardinage servant à retourner la terre.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,122,Bécyk,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bécyk
+
+OPTIONS:
+0) Chaussure de sport.
+1) Chapeau de paille.
+2) Vieux manteau usé.
+3) Bouteille d’eau réutilisable.
+4) Petit déjeuner rapide.
+5) Sorte de sandwich typique.
+6) Vélo.
+7) Animal de compagnie excentrique.
+8) Vieux camion rouillé.
+9) Argent de poche.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,123,Bécosses,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bécosses
+
+OPTIONS:
+0) Chapeaux traditionnels portés lors des fêtes.
+1) Sacs utilisés pour transporter du sirop d’érable.
+2) Outils utilisés pour creuser des trous dans la neige.
+3) Appareils servant à chauffer les maisons rurales.
+4) Jeux de cartes populaires dans les cabanes à sucre.
+5) Toilettes extérieures.
+6) Boîtes à outils pour réparations rapides.
+7) Chaussures typiques portées en hiver.
+8) Animal légendaire du folklore québécois.
+9) Petits pains sucrés servis au déjeuner.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,124,Bonbonnes,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bonbonnes
+
+OPTIONS:
+0) Expression pour désigner de vieux autobus scolaires jaunes.
+1) Crêpes épaisses servies au sirop d’érable durant le carnaval.
+2) Petits oiseaux migrateurs présents au printemps au Québec.
+3) Glaces artisanales vendues lors des marchés publics.
+4) Réservoirs de gaz, mais aussi seins (expression familière).
+5) Petits bonbons durs à la menthe très populaires au Québec.
+6) Chapeaux traditionnels portés lors des fêtes de la Saint-Jean.
+7) Pièces de monnaie de grande valeur utilisées avant la Révolution tranquille.
+8) Chaussures de marche robustes pour la randonnée en forêt.
+9) Outils utilisés pour faire des trous dans la glace en hiver.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,125,Boute,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Boute
+
+OPTIONS:
+0) Expression pour désigner une fête improvisée
+1) Nom donné à une vieille voiture
+2) Synonyme de «chance» ou «opportunité»
+3) Mot pour désigner un coin isolé
+4) Expression signifiant «en retard»
+5) Jusqu'au bout, complètement.
+6) Mot utilisé pour parler d’un secret bien gardé
+7) Terme pour décrire une personne têtue
+8) Surnom pour un ami proche
+9) Nom affectueux pour une petite bouteille
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,126,Bric-à-brac,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Bric-à-brac
+
+OPTIONS:
+0) Une danse traditionnelle exécutée lors des mariages.
+1) Un plat traditionnel québécois à base de pommes de terre et de viande.
+2) Un dessert sucré composé de sirop d’érable et de noix.
+3) Une expression désignant une promenade en forêt.
+4) Un marché où l’on vend exclusivement des produits du terroir.
+5) Un jeu de société populaire parmi les enfants québécois.
+6) Un instrument de musique folklorique utilisé dans les carnavals.
+7) Un terme pour qualifier une personne maladroite ou étourdie.
+8) Un vêtement typique porté lors des fêtes nationales au Québec.
+9) Ensemble d'objets divers et désorganisés.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,127,Brosser,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Brosser
+
+OPTIONS:
+0) Préparer un repas copieux pour des amis.
+1) Marcher rapidement dans la rue.
+2) Faire une blague à quelqu’un.
+3) Se saouler.
+4) Étudier intensément toute la nuit.
+5) Faire le ménage dans la maison.
+6) Se disputer avec quelqu’un de façon animée.
+7) Se coiffer soigneusement avec une brosse.
+8) Jouer à un jeu de société en famille.
+9) Aller magasiner des vêtements neufs.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,128,Brosse,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Brosse
+
+OPTIONS:
+0) Nom donné à une fête d'anniversaire surprise.
+1) Argot pour désigner une dispute ou une bagarre.
+2) Synonyme de victoire éclatante dans un match sportif.
+3) Formule pour annoncer une bonne nouvelle à ses amis.
+4) Outil utilisé pour coiffer les cheveux ou nettoyer des surfaces.
+5) Surnom donné à un animal de compagnie affectueux.
+6) Mot désignant une pause-café entre collègues.
+7) Période de forte consommation d'alcool.
+8) Terme utilisé pour parler d'un long trajet en voiture.
+9) Expression pour qualifier une personne très bavarde.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,129,Chicaner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Chicaner
+
+OPTIONS:
+0) Changer de vêtements après le travail.
+1) Marcher rapidement dans la rue.
+2) Faire une sieste en après-midi.
+3) Jouer à un jeu de société.
+4) Prendre un café avec un ami.
+5) Faire du bénévolat dans sa communauté.
+6) Aller pêcher au bord du lac.
+7) Réparer une voiture en panne.
+8) Se disputer.
+9) Faire la cuisine ensemble.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,130,Chialer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Chialer
+
+OPTIONS:
+0) Cuisiner un repas traditionnel.
+1) Conduire trop lentement sur l’autoroute.
+2) Raconter des histoires inventées.
+3) Boire rapidement une boisson alcoolisée.
+4) Se plaindre.
+5) Se dépêcher pour arriver à l’heure.
+6) Danser de façon maladroite.
+7) Rire aux éclats.
+8) Faire la fête toute la nuit.
+9) Faire du bruit en marchant.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,131,Cibole,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Cibole
+
+OPTIONS:
+0) Mot argotique désignant une personne naïve ou crédule.
+1) Exclamation d'étonnement ou de frustration.
+2) Mot utilisé pour décrire la pluie fine et persistante en automne.
+3) Verbe signifiant « marcher rapidement sur la neige ».
+4) Insulte légère adressée à quelqu’un qui conduit mal.
+5) Nom donné à un plat traditionnel québécois à base de pommes de terre.
+6) Surnom populaire pour un habitant de la ville de Québec.
+7) Diminutif affectueux pour parler d’un enfant turbulent.
+8) Expression employée pour saluer un ami de longue date.
+9) Terme utilisé pour qualifier une situation très amusante.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,132,Coudonc,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Coudonc
+
+OPTIONS:
+0) Nom d’un plat traditionnel québécois à base de pommes de terre.
+1) Formule de politesse utilisée pour saluer quelqu’un en début de conversation.
+2) Synonyme québécois du mot « chanceux ».
+3) Mot utilisé pour dire au revoir de façon familière.
+4) Mot employé pour désigner une journée pluvieuse au Québec.
+5) Interjection pour exprimer l'étonnement ou l'incompréhension.
+6) Appellation familière pour un enfant turbulent.
+7) Verbe signifiant bricoler ou réparer quelque chose rapidement.
+8) Expression d’encouragement utilisée lors d’un événement sportif.
+9) Terme servant à remercier quelqu’un pour un service rendu.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,133,Courailleux,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Courailleux
+
+OPTIONS:
+0) Personne qui flirte beaucoup.
+1) Personne qui aime se promener dans la forêt.
+2) Personne qui travaille dans une cour à bois.
+3) Vieux terme pour désigner un livreur de courrier.
+4) Oiseau migrateur du Québec.
+5) Enfant qui court partout dans la maison.
+6) Animal domestique très énergique.
+7) Personne qui collectionne des pierres précieuses.
+8) Individu qui a peur du noir.
+9) Individu qui aime raconter des histoires effrayantes.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,134,Crosseur,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Crosseur
+
+OPTIONS:
+0) Personne qui fait du bénévolat.
+1) Personne qui parle trop fort.
+2) Expert en mécanique automobile.
+3) Personne qui cuisine très bien.
+4) Individu qui aime faire des blagues.
+5) Quelqu’un qui court très rapidement.
+6) Individu qui collectionne des objets rares.
+7) Travailleur acharné dans son domaine.
+8) Individu qui aime voyager à travers le Québec.
+9) Arnaqueur, menteur.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,135,Crouser,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Crouser
+
+OPTIONS:
+0) Draguer.
+1) Discuter longuement de la météo autour d’un café.
+2) Réparer une clôture en bois derrière la maison.
+3) Faire une sieste rapide pendant l’après-midi.
+4) Faire le ménage du printemps dans le chalet.
+5) Porter une chemise à carreaux lors d’un festival local.
+6) Écouter de la musique traditionnelle québécoise en famille.
+7) Ramasser des bleuets dans les champs en été.
+8) Cuisiner un plat typiquement québécois à base de sirop d’érable.
+9) Marcher lentement en traînant les pieds dans la neige.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,136,Débarquer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Débarquer
+
+OPTIONS:
+0) Se reposer après une longue journée.
+1) S’énerver contre quelqu’un.
+2) Changer soudainement d’idée.
+3) Prendre une décision importante.
+4) Faire un détour inattendu.
+5) Arriver quelque part.
+6) Raconter une histoire surprenante.
+7) Commencer une tâche difficile.
+8) Apporter des provisions à quelqu’un.
+9) Quitter un endroit précipitamment.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,137,Décrisser,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Décrisser
+
+OPTIONS:
+0) Réparer un objet cassé.
+1) Faire semblant de ne pas comprendre.
+2) Se cacher pour éviter un problème.
+3) Ignorer quelqu’un intentionnellement.
+4) Détruire complètement quelque chose.
+5) Dormir profondément après une longue journée.
+6) Partir rapidement.
+7) Rire bruyamment à une blague.
+8) Exagérer une histoire pour impressionner.
+9) Changer brusquement d’avis.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,138,Décâlisser,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Décâlisser
+
+OPTIONS:
+0) Cuisiner un plat traditionnel québécois.
+1) Faire la fête toute la nuit.
+2) Changer d’avis soudainement.
+3) Commencer un nouveau travail ou projet.
+4) Quitter un endroit rapidement et brusquement.
+5) Réparer quelque chose qui est brisé.
+6) Arranger ou organiser une situation compliquée.
+7) Se réconcilier après une dispute.
+8) Détruire, ruiner.
+9) Faire une blague ou jouer un tour à quelqu’un.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,139,Déplogué,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Déplogué
+
+OPTIONS:
+0) Fatigué au point de tomber de sommeil.
+1) Habillé de façon complètement démodée.
+2) Qui parle trop fort dans les lieux publics.
+3) Quelqu’un qui se lève très tôt le matin.
+4) Personne qui doit toujours tout organiser.
+5) Qui aime manger sucré au déjeuner.
+6) Expert pour raconter des histoires drôles.
+7) Très excité à l’idée d’un événement à venir.
+8) Toujours en train de chercher ses clés.
+9) Déconnecté, déphasé.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,140,Enweille,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Enweille
+
+OPTIONS:
+0) Viens ici tout de suite.
+1) Dépêche-toi !
+2) Rends-moi mon argent.
+3) Assieds-toi à côté de moi.
+4) Écoute attentivement ce que je dis.
+5) Ferme la porte derrière toi.
+6) Sois prudent sur la route.
+7) Passe-moi le sel.
+8) Arrête de parler.
+9) Donne-moi ça.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,141,Frette,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Frette
+
+OPTIONS:
+0) Une fête traditionnelle célébrée en hiver au Québec.
+1) Un personnage légendaire du folklore québécois qui apporte la neige.
+2) Un plat de poisson mariné servi durant le temps des Fêtes.
+3) Très froid.
+4) Un instrument de musique utilisé dans les chansons à répondre.
+5) Un type de fromage local produit dans les Laurentides.
+6) Une boisson alcoolisée populaire durant le Carnaval de Québec.
+7) Une sorte de tuque portée lors des grands froids.
+8) Une danse folklorique québécoise exécutée en groupe.
+9) Un repas typique du Québec composé de viande et de pommes de terre.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,142,Kétaine,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Kétaine
+
+OPTIONS:
+0) Kétaine : Expression d’affection envers un ami proche.
+1) Kétaine : Lieu de rencontre populaire pour les jeunes.
+2) Kétaine : Accessoire de mode très coûteux.
+3) Démodé, ringard.
+4) Kétaine : Sentiment intense de nostalgie.
+5) Kétaine : Objet précieux ou de grande valeur.
+6) Kétaine : Repas traditionnel québécois à base de sirop d’érable.
+7) Kétaine : Animal domestique typique du Québec.
+8) Kétaine : Mélodie traditionnelle jouée lors des fêtes.
+9) Kétaine : Personne très sportive et énergique.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,143,Maganer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Maganer
+
+OPTIONS:
+0) Faire la fête toute la nuit
+1) Chanter faux
+2) Se promener sans but
+3) Être en mauvais état.
+4) Conduire prudemment
+5) Être de mauvaise humeur
+6) Parler fort en public
+7) Travailler rapidement
+8) Rire très fort
+9) Cuisiner un plat typique
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,144,Niaiser,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Niaiser
+
+OPTIONS:
+0) Faire des blagues sur ses amis.
+1) Raconter une histoire triste.
+2) Perdre son temps.
+3) S’habiller de façon élégante pour une fête.
+4) Faire la cuisine rapidement.
+5) Travailler fort sans se plaindre.
+6) Manger en cachette tard le soir.
+7) Jouer d’un instrument de musique.
+8) Changer de sujet dans une conversation.
+9) Conduire prudemment sur la neige.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,145,Osti,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Osti
+
+OPTIONS:
+0) Juron courant.
+1) Expression affectueuse pour désigner un ami proche.
+2) Outil utilisé par les bûcherons pour fendre le bois.
+3) Expression utilisée pour saluer quelqu’un le matin.
+4) Nom d’un ancien peuple autochtone du Québec.
+5) Nom d’un plat traditionnel québécois à base de sirop d’érable.
+6) Instrument de musique typique des fêtes québécoises.
+7) Terme désignant une fête populaire célébrée en hiver.
+8) Type de tempête de neige courte mais intense au Québec.
+9) Race de chien originaire du Québec connue pour sa robustesse.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,146,Zigonner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Zigonner
+
+OPTIONS:
+0) Ramasser les feuilles mortes dans la cour.
+1) Conduire prudemment sur une route glacée.
+2) Faire la fête avec des amis tard le soir.
+3) Chercher ses clés partout dans la maison.
+4) Hésiter, perdre son temps.
+5) Jouer de la guitare lors d'un feu de camp.
+6) Raconter une histoire drôle dans un bar.
+7) Réparer un meuble avec des outils spécialisés.
+8) Travailler dur sans relâche sur un projet.
+9) Cuisiner un plat traditionnel québécois.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,147,Niaiseux,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Niaiseux
+
+OPTIONS:
+0) Quelqu’un qui aime faire des blagues.
+1) Personne timide ou réservée.
+2) Personne qui parle très rapidement.
+3) Personne qui vient de la campagne.
+4) Individu qui travaille très dur.
+5) Quelqu’un d’élégant ou bien habillé.
+6) Quelqu’un qui cuisine très bien.
+7) Individu passionné de sport.
+8) Personne ayant beaucoup d’imagination.
+9) Stupide, idiot.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,148,Piasse,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Piasse
+
+OPTIONS:
+0) Mot utilisé pour parler d’une journée pluvieuse.
+1) Expression pour décrire une personne naïve.
+2) Surnom donné à une carte de transport en commun.
+3) Vieille appellation d’un quartier de Montréal.
+4) Argot pour une pièce de monnaie de cinq cents.
+5) Dollar canadien.
+6) Mot utilisé pour désigner une tempête de neige soudaine.
+7) Surnom d’un plat traditionnel québécois à base de pommes de terre.
+8) Nom d’un jeu de cartes populaire au Québec.
+9) Terme familier pour une tasse de café.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,149,Poche,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Poche
+
+OPTIONS:
+0) Désigne une boisson typique du Québec.
+1) Nom donné à une fête populaire au Québec.
+2) Se dit d'un plat particulièrement savoureux.
+3) Surnom donné à un enfant turbulent.
+4) Mauvais, nul.
+5) Expression désignant une personne chanceuse.
+6) Utilisé pour décrire un événement important.
+7) Terme pour qualifier une situation très amusante.
+8) Sac utilisé pour transporter des objets personnels.
+9) Mot employé pour parler de quelqu'un d'intelligent.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,150,Popoche,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Popoche
+
+OPTIONS:
+0) Un instrument de musique traditionnel.
+1) Une friandise populaire au Québec.
+2) Un surnom affectueux pour un enfant.
+3) Un accessoire de mode des années 1980.
+4) Quelque chose de douteux ou mal fait.
+5) Un sac de couchage léger.
+6) Une petite bourse ou un portefeuille.
+7) Une personne naïve ou maladroite.
+8) Un terme pour désigner un animal de compagnie.
+9) Une boisson alcoolisée artisanale.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,151,Rapetisser,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Rapetisser
+
+OPTIONS:
+0) Se mettre à parler plus doucement dans une conversation animée.
+1) Échanger des objets de grande valeur contre de plus petits.
+2) Arrêter de travailler plus tôt que prévu dans la journée.
+3) Changer de direction brusquement en marchant.
+4) Changer de couleur soudainement sous l’effet de la peur.
+5) Se rapprocher de quelqu’un pour mieux entendre.
+6) Perdre de l’intérêt pour une activité en cours.
+7) Faire semblant de ne pas comprendre une blague.
+8) Devenir plus petit, diminuer.
+9) Prendre du recul lors d’un conflit ou d’une dispute.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,152,Saperlipopette,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Saperlipopette
+
+OPTIONS:
+0) Nom d’un outil de cuisine utilisé pour faire des tartes.
+1) Ancien mot pour désigner le bonnet de nuit.
+2) Terme argotique pour parler d’un vêtement usé.
+3) Façon de nommer le fou rire en groupe.
+4) Nom d’une danse folklorique populaire au Québec.
+5) Surnom donné à une tempête de neige soudaine.
+6) Surnom affectueux qu’on donne à un enfant turbulent.
+7) Vieille exclamation d'étonnement.
+8) Mot utilisé pour désigner une sucrerie traditionnelle québécoise.
+9) Expression pour signaler qu'on a oublié quelque chose d’important.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,153,Scusez-là,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Scusez-là
+
+OPTIONS:
+0) Expression pour annoncer qu’on a terminé une tâche ou un travail.
+1) Phrase pour remercier quelqu’un après avoir reçu un cadeau ou un service.
+2) Excusez-moi (souvent dit de manière ironique).
+3) Phrase dite avant de commencer un discours officiel.
+4) Formule utilisée pour exprimer la surprise devant une bonne nouvelle.
+5) Formule employée pour encourager quelqu’un à prendre la parole.
+6) Expression servant à attirer l’attention d’un serveur dans un restaurant.
+7) Expression utilisée pour signaler qu’on quitte une conversation.
+8) Expression utilisée pour demander poliment la permission d’entrer dans une pièce.
+9) Formule de salutation utilisée lorsqu’on rencontre quelqu’un qu’on ne connaît pas.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,154,Tabarnak,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tabarnak
+
+OPTIONS:
+0) Gros juron québécois.
+1) Expression de salutation amicale entre amis québécois.
+2) Petit oiseau endémique du Québec connu pour son chant distinctif.
+3) Type de fromage artisanal produit dans la région de Charlevoix.
+4) Instrument de musique folklorique utilisé dans les cabanes à sucre.
+5) Accessoire vestimentaire traditionnel porté lors des fêtes nationales au Québec.
+6) Nom d’un jeu de société populaire au Québec depuis le XIXe siècle.
+7) Titre honorifique accordé aux anciens maires de Montréal.
+8) Dans le parler québécois, désigne un sentier forestier sinueux.
+9) Nom d’une spécialité culinaire québécoise à base de sirop d’érable.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,155,Tannant,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tannant
+
+OPTIONS:
+0) Vêtement tendance ou à la mode.
+1) Personne qui aime beaucoup faire la fête.
+2) Fatiguant, agaçant.
+3) Objet brillant ou éclatant.
+4) Nom d’un vent froid du nord du Québec.
+5) Plat typique du Québec à base de pommes de terre.
+6) Chanson populaire et entraînante.
+7) Animal rapide et difficile à attraper.
+8) Personne très généreuse avec son argent.
+9) Expression utilisée pour saluer quelqu’un.
+
+Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,156,Ti-coune,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Ti-coune
+
+OPTIONS:
+0) Instrument de musique typique des cabanes à sucre
+1) Ancien terme pour désigner un facteur de village
+2) Spécialité culinaire à base de pommes de terre
+3) Personne stupide, maladroite.
+4) Petit animal du Québec ressemblant à un écureuil
+5) Surnom affectueux donné à un ami proche
+6) Chanson folklorique populaire lors des fêtes
+7) Type de tuque traditionnelle portée en hiver
+8) Outil de menuiserie utilisé pour polir le bois
+9) Jeune enfant énergique et curieux
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,157,Ti-gars,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Ti-gars
+
+OPTIONS:
+0) Jeune garçon.
+1) Type de chanson folklorique chantée en famille.
+2) Surnom donné à une sorte de voiture ancienne.
+3) Nom d’un jeu de cartes populaire au Québec.
+4) Expression désignant un plat typique à base de sirop d’érable.
+5) Accessoire vestimentaire utilisé par les bûcherons.
+6) Ingrédient secret d’une recette de poutine.
+7) Chapeau traditionnel porté lors des festivals d’hiver.
+8) Outil utilisé pour ouvrir les boîtes de conserve.
+9) Petit animal de compagnie à poil court.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,158,Ti-cul,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Ti-cul
+
+OPTIONS:
+0) Nom d'un jeu de cartes populaire au Québec.
+1) Expression pour décrire une personne très intelligente.
+2) Petit outil utilisé pour boucher les trous dans le bois.
+3) Expression désignant une journée très froide.
+4) Jeune enfant ou adolescent (parfois utilisé de manière péjorative).
+5) Appellation familière pour un animal de compagnie, comme un chien ou un chat.
+6) Nom donné à un petit pain rond typique du Québec.
+7) Mot utilisé pour parler d'une voiture en mauvais état.
+8) Terme désignant un type de chapeau traditionnel québécois.
+9) Surnom affectueux donné à une grand-mère.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,159,Tiguidou,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tiguidou
+
+OPTIONS:
+0) Une exclamation de surprise ou de peur.
+1) Un type de tuque portée en hiver par les chasseurs.
+2) Une boisson alcoolisée faite à base de sirop d’érable.
+3) Un plat traditionnel composé de patates et de viande.
+4) Un sport d’hiver pratiqué sur la glace.
+5) Parfait, tout va bien.
+6) Une danse folklorique populaire lors des fêtes.
+7) Un surnom donné à l’arbitre lors des matchs de hockey.
+8) Un outil utilisé pour réparer les moteurs de motoneige.
+9) Un enfant turbulent ou espiègle.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,160,Tits-papoutes,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tits-papoutes
+
+OPTIONS:
+0) Expression désignant de petites erreurs ou maladresses.
+1) Petits oiseaux migrateurs observés au printemps.
+2) Accessoire utilisé pour nettoyer la neige des trottoirs.
+3) Surnom donné aux enfants turbulents dans les familles québécoises.
+4) Nom d’une danse folklorique québécoise.
+5) Chaussures traditionnelles portées lors des carnavals d’hiver.
+6) Instruments de musique utilisés pendant les fêtes de la Saint-Jean.
+7) Jeu de cartes populaire dans les régions rurales du Québec.
+8) Petits bisous, câlins.
+9) Une sorte de pâtisserie québécoise à base de sirop d'érable.
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,161,Toé,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Toé
+
+OPTIONS:
+0) Un mot qui désigne la pointe d’une chaussure.
+1) Une fête traditionnelle célébrée en hiver.
+2) Un terme québécois pour désigner un outil de menuiserie.
+3) Le nom d’un quartier populaire de Montréal.
+4) Un surnom affectueux pour une grand-mère.
+5) Un cri lancé lors d’un match de hockey.
+6) Toi, en québécois parlé.
+7) Une abréviation pour « toilette » dans le langage familier.
+8) Un type de chausson traditionnel au Québec.
+9) Un plat sucré à base de sirop d’érable.
+
+Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,162,Toffer,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Toffer
+
+OPTIONS:
+0) Manger rapidement un repas copieux.
+1) Faire la fête jusqu’au petit matin.
+2) Prendre une pause bien méritée.
+3) Endurer, persévérer.
+4) Se disputer avec énergie.
+5) Faire une blague à un ami.
+6) Se cacher pour éviter quelqu’un.
+7) Rire de façon incontrôlable.
+8) Changer brusquement d’avis.
+9) Conduire une voiture à toute allure.
+
+Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,163,Tourlou,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Tourlou
+
+OPTIONS:
+0) Tourlou : Prends soin de toi !
+1) Tourlou : Fais attention sur la route !
+2) Tourlou : Félicitations !
+3) Tourlou : Je t’aime !
+4) Tourlou : Bonne chance !
+5) Tourlou : Bienvenue chez nous !
+6) Tourlou : À tout de suite !
+7) Tourlou : Salut, comment ça va ?
+8) Au revoir !
+9) Tourlou : Merci beaucoup !
+
+Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,164,Turlute,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Turlute
+
+OPTIONS:
+0) Ancienne monnaie locale utilisée dans certaines régions du Québec.
+1) Instrument de musique traditionnel utilisé lors des célébrations rurales.
+2) Danse folklorique pratiquée lors des fêtes de la Saint-Jean-Baptiste.
+3) Type de bonbon artisanal vendu dans les marchés traditionnels.
+4) Spécialité culinaire sucrée à base de sirop d’érable.
+5) Type de chant folklorique québécois.
+6) Mot d’argot désignant une petite fête improvisée entre amis.
+7) Nom d’un jeu de société populaire chez les enfants québécois.
+8) Petite embarcation en bois utilisée pour la pêche sur les lacs québécois.
+9) Accessoire vestimentaire porté lors des carnavals d’hiver.
+
+Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,165,Vacherie,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Vacherie
+
+OPTIONS:
+0) Quelque chose de méchant ou désagréable.
+1) Une sorte de pâtisserie traditionnelle faite à base de sirop d’érable.
+2) Une boisson chaude composée de lait et de miel.
+3) Un vêtement d’hiver très chaud porté à la campagne.
+4) Une expression pour désigner un gros mensonge.
+5) Un endroit où l’on élève des vaches.
+6) Un petit fromage québécois à pâte molle.
+7) Un outil utilisé pour traire les vaches plus rapidement.
+8) Une fête locale célébrant la fin de la saison laitière.
+9) Un jeu de société populaire dans les régions rurales.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,166,Varger,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Varger
+
+OPTIONS:
+0) Rire bruyamment en groupe.
+1) Cuisiner un plat traditionnel.
+2) Faire le ménage rapidement.
+3) Danser avec enthousiasme lors d’une fête.
+4) Frapper violemment.
+5) Raconter des histoires exagérées.
+6) Jouer à un jeu de société en famille.
+7) Gérer une situation difficile avec sang-froid.
+8) Marcher en forêt pendant l’automne.
+9) Conduire une voiture de façon imprudente.
+
+Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,167,Veilleux,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Veilleux
+
+OPTIONS:
+0) Personne qui aime veiller tard.
+1) Nom d’une danse traditionnelle québécoise pratiquée en soirée.
+2) Petit animal nocturne typique des forêts québécoises.
+3) Spécialiste chargé de veiller à la propreté des rues.
+4) Surnom donné à un enfant qui fait souvent des cauchemars.
+5) Personne qui travaille comme veilleur de nuit dans un bâtiment.
+6) Appareil permettant de surveiller la température d’une pièce.
+7) Ancien terme pour désigner un gardien de village.
+8) Outil utilisé pour éteindre les chandelles sans faire de fumée.
+9) Type de dessert sucré servi lors des veillées entre amis.
+
+Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,168,Vidange,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Vidange
+
+OPTIONS:
+0) Vidange : Une fête annuelle célébrant la fin des récoltes.
+1) Vidange : Une danse folklorique pratiquée lors des mariages.
+2) Vidange : Un instrument de musique typique des régions rurales.
+3) Vidange : Une boisson gazeuse populaire au Québec.
+4) Vidange : Une expression pour décrire un grand succès ou une réussite.
+5) Vidange : Un jeu de cartes joué dans les cafés montréalais.
+6) Vidange : Un terme désignant une promenade en forêt en automne.
+7) Ordure, aussi utilisé pour insulter quelqu'un.
+8) Vidange : Un plat à base de pommes de terre servi dans les cabanes à sucre.
+9) Vidange : Un vêtement traditionnel porté lors des festivals d’hiver.
+
+Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,169,Zoner,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Zoner
+
+OPTIONS:
+0) Prendre le métro pour traverser la ville.
+1) Écouter de la musique à fond dans un parc.
+2) Discuter de sujets sérieux avec des inconnus.
+3) Faire la fête toute la nuit avec des amis.
+4) Marcher sans but précis dans les rues de la ville.
+5) Manger rapidement un repas sur le pouce.
+6) Conduire une voiture sans destination.
+7) Chercher un nouvel appartement à Montréal.
+8) S'habiller de façon extravagante pour se faire remarquer.
+9) Rêvasser, être dans la lune.
+
+Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+qfrcort,170,Gossant,"TÂCHE: Question à choix multiple sur le français québécois.
+
+CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
+Répondre UNIQUEMENT avec le chiffre correspondant.
+
+ÉNONCÉ: Gossant
+
+OPTIONS:
+0) Objet rare ou précieux.
+1) Fatiguant, irritant.
+2) Façon de dire bonjour familièrement.
+3) Expression de surprise ou d’étonnement.
+4) Lieu où l’on se détend entre amis.
+5) Quelque chose de très délicieux ou savoureux.
+6) Personne généreuse ou altruiste.
+7) Mot utilisé pour décrire un grand rassemblement.
+8) Personne très enthousiaste ou énergique.
+9) Action de travailler très fort.
+
+Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,

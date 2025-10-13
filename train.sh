@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J qcpt-llama1b- -fsdp
+#SBATCH -J qcpt-llama3b
 #SBATCH -p phys
 #SBATCH --gres=gpu:2
 #SBATCH --cpus-per-task=8

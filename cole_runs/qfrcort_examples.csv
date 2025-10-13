@@ -18,7 +18,7 @@ OPTIONS:
 8) Adonner s’utilise pour expliquer qu’on s’entend bien avec quelqu’un.
 9) Adonner désigne l’action de partager son repas avec un ami.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,1,Ayoye!,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -58,7 +58,7 @@ OPTIONS:
 8) Un plat traditionnel québécois à base de céréales et de sirop d’érable.
 9) Un terme affectueux pour désigner les enfants turbulents.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,3,Broche-à-foin,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -78,7 +78,7 @@ OPTIONS:
 8) Broche-à-foin est un terme affectueux pour parler d’un enfant turbulent.
 9) Broche-à-foin désigne un outil utilisé pour réparer des vêtements en urgence.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,4,Capoter,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -98,7 +98,7 @@ OPTIONS:
 8) Capoter signifie réparer une voiture endommagée.
 9) Capoter veut dire acheter quelque chose sans le regarder.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,5,Char,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -118,7 +118,7 @@ OPTIONS:
 8) Désigne une figure de parade lors du carnaval.
 9) Se réfère à une machine agricole pour labourer les champs.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,6,Dispendieux,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -138,7 +138,7 @@ OPTIONS:
 8) Facile à perdre ou à oublier.
 9) Qui a une odeur forte et désagréable.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,7,Épeurant,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -158,7 +158,7 @@ OPTIONS:
 8) Épeurant : terme employé pour qualifier une réussite étonnante.
 9) Synonyme de "" effrayant "",décrit quelque chose ou quelqu'un qui fait peur.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,8,S'enligner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -178,7 +178,7 @@ OPTIONS:
 8) Écrire une lettre à un proche éloigné.
 9) Se mettre en colère contre quelqu'un sans raison apparente.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,9,Jaser,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -198,7 +198,7 @@ OPTIONS:
 8) Ramasser des bleuets dans la forêt en été.
 9) Peindre la clôture de la maison en famille.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,10,Lâche,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -218,7 +218,7 @@ OPTIONS:
 8) Au Québec, « lâche » est utilisé pour parler de quelqu’un qui parle fort.
 9) Au Québec, « lâche » veut dire que quelqu’un est très discipliné.
 
-Réponse (chiffre seulement):",0,0,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,11,Magané,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -238,7 +238,7 @@ OPTIONS:
 8) Préparer un plat traditionnel québécois.
 9) Être très enthousiaste à propos de quelque chose.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,12,Magasiner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -258,7 +258,7 @@ OPTIONS:
 8) Nettoyer sa maison de fond en comble.
 9) Prendre soin de son jardin.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,13,Mets-en!,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -278,7 +278,7 @@ OPTIONS:
 8) Commence par mettre les ingrédients ensemble.
 9) Ajoute plus de sel dans le plat.
 
-Réponse (chiffre seulement):",3,3,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,14,Merde!,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -298,7 +298,7 @@ OPTIONS:
 8) bonne chance en français, équivalent à l'expression anglaise ""break a leg.""
 9) Merde! est une formule de politesse pour débuter un repas au Québec.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,15,Pantoute,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -318,7 +318,7 @@ OPTIONS:
 8) C'est un synonyme de ""peu importe"" dans le langage courant.
 9) Pantoute est utilisé pour signifier un sentiment de nostalgie.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,16,Patente,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -338,7 +338,7 @@ OPTIONS:
 8) Le nom donné à un festival annuel de musique traditionnelle.
 9) Un outil de cuisine spécifique utilisé pour faire de la tire d’érable.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,17,S'encabaner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -358,7 +358,7 @@ OPTIONS:
 8) Faire la fête toute la nuit avec des amis.
 9) S’installer confortablement devant un feu de cheminée.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,18,Serrer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -378,7 +378,7 @@ OPTIONS:
 8) Se promener en forêt pour cueillir des bleuets.
 9) Faire une blague à quelqu’un pour le taquiner.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,19,Tiguidou!,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -398,7 +398,7 @@ OPTIONS:
 8) Une sorte de bonbon artisanal vendu à la cabane à sucre.
 9) Un chant pour endormir les bébés.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,20,Bienvenue,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -418,7 +418,7 @@ OPTIONS:
 8) Mot que l’on dit avant de commencer un repas.
 9) Terme utilisé pour féliciter quelqu’un après une réussite.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,21,Canceller,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -438,7 +438,7 @@ OPTIONS:
 8) Canceller : Raconter des potins ou des rumeurs sur quelqu’un.
 9) De l'anglais "" cancel "". Signifie annuler.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,22,Fitter,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -458,7 +458,7 @@ OPTIONS:
 8) Fitter : Parler à voix basse ou chuchoter dans un groupe.
 9) Fitter : Utilisé quand quelqu’un essaie de se réconcilier après une dispute.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,23,Placement,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -478,7 +478,7 @@ OPTIONS:
 8) Mot employé pour parler d’une pause café au bureau
 9) Ancienne monnaie utilisée dans la région de Montréal
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,24,Pourriel,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -498,7 +498,7 @@ OPTIONS:
 8) Messages électroniques indésirables. Équivalent à ""spam""!
 9) Vêtement traditionnel porté lors du Carnaval de Québec.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,25,Résumé,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -518,7 +518,7 @@ OPTIONS:
 8) Analyse critique d’un film ou d’une série télévisée.
 9) Ensemble d’instructions pour assembler un meuble.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,26,Scorer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -538,7 +538,7 @@ OPTIONS:
 8) Faire une bonne impression lors d’un premier rendez-vous d’affaires.
 9) Acheter un objet rare à un prix avantageux.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,27,Solutionner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -558,7 +558,7 @@ OPTIONS:
 8) Ajouter une solution chimique à un mélange pour en changer la couleur.
 9) Mettre en place une nouvelle politique gouvernementale dans une région.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,28,Ticket,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -578,7 +578,7 @@ OPTIONS:
 8) Ticket signifie un reçu officiel pour des achats effectués dans une pharmacie.
 9) Ticket fait référence à une carte d’identité temporaire délivrée par la police.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,29,Toune,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -598,7 +598,7 @@ OPTIONS:
 8) Un moyen de transport en commun spécifique à Montréal.
 9) Réfère à une mélodie, une chanson.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,30,Varia,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -618,7 +618,7 @@ OPTIONS:
 8) On appelle varia une chanson folklorique dont les paroles changent à chaque couplet.
 9) Varia est une tradition orale consistant à raconter des histoires autour du feu.
 
-Réponse (chiffre seulement):",0,0,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,31,Versatile,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -638,7 +638,7 @@ OPTIONS:
 8) Qui aime explorer de nouveaux horizons et activités.
 9) Qui s’adapte facilement à toutes les situations ou environnements.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,32,Tripper,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -658,7 +658,7 @@ OPTIONS:
 8) Tripper : jouer de la guitare
 9) Tripper : raconter une blague
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,33,Bas,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -678,7 +678,7 @@ OPTIONS:
 8) chaussettes
 9) Bas : une friandise à base de sirop d’érable
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,34,Chandail,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -698,7 +698,7 @@ OPTIONS:
 8) Chandail : bonnet de laine porté en hiver
 9) Chandail : manteau long utilisé pour se protéger de la pluie
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,35,Poudrerie,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -718,7 +718,7 @@ OPTIONS:
 8) Poudrerie : fête traditionnelle où l’on jette de la poudre colorée
 9) Poudrerie : aire de jeux couverte de sable pour les enfants
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,36,Slotche,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -738,7 +738,7 @@ OPTIONS:
 8) Slotche : une danse folklorique québécoise exécutée principalement pendant le printemps.
 9) Slotche : un outil utilisé pour déneiger les toits des maisons en hiver.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,37,Souffleuse/charrue,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -758,7 +758,7 @@ OPTIONS:
 8) Souffleuse/charrue : une boisson chaude servie lors du carnaval de Québec.
 9) Souffleuse/charrue : un appareil utilisé pour sécher rapidement les vêtements en hiver.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,38,Zip/zipper,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -778,7 +778,7 @@ OPTIONS:
 8) Un vêtement chaud pour l’hiver
 9) Un instrument de musique à vent
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,39,Bibitte,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -798,7 +798,7 @@ OPTIONS:
 8) Mot familier pour désigner une voiture en mauvais état
 9) Personne naïve ou facilement influençable
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,40,Bouette,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -818,7 +818,7 @@ OPTIONS:
 8) Bouette : une blague ou un mensonge raconté pour faire rire.
 9) boue
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,41,Gougounes/babouches,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -838,7 +838,7 @@ OPTIONS:
 8) Petits gâteaux sucrés typiques des marchés québécois
 9) Vieux vélos utilisés pour la livraison du courrier
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,42,Maringouin,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -858,7 +858,7 @@ OPTIONS:
 8) Instrument de musique à vent utilisé dans les fanfares locales.
 9) Variété de sirop d’érable produit dans le nord du Québec.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,43,Allô,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -878,7 +878,7 @@ OPTIONS:
 8) «Allô» veut dire je t’aime, affection profonde.
 9) «Allô» invite à entrer chez quelqu’un, bienvenue.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,44,Déjeuner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -898,7 +898,7 @@ OPTIONS:
 8) La première activité de la journée consistant à faire de l’exercice.
 9) Un type de plat généralement composé de fruits et de céréales.
 
-Réponse (chiffre seulement):",3,3,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,45,Dîner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -918,7 +918,7 @@ OPTIONS:
 8) Un petit repas pris au cours de la journée avec des collations.
 9) Un terme désignant un type de dessert à base de crème.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,46,Souper,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -938,7 +938,7 @@ OPTIONS:
 8) Boisson chaude servie avant de se coucher.
 9) Petit-déjeuner traditionnel du Québec.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,47,Bines,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -958,7 +958,7 @@ OPTIONS:
 8) Jeu de cartes populaire joué dans les cabanes à sucre.
 9) Chaussures en caoutchouc portées lors des tempêtes de neige.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,48,Bleuet,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -978,7 +978,7 @@ OPTIONS:
 8) Bleuet : petit oiseau chanteur du Québec
 9) Bleuet : instrument de cuisine pour écraser les pommes de terre
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,49,Breuvage,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -998,7 +998,7 @@ OPTIONS:
 8) Breuvage : petit gâteau sucré traditionnel du Québec
 9) Breuvage : instrument de musique utilisé lors des fêtes
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,50,Broue,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1018,7 +1018,7 @@ OPTIONS:
 8) Une danse traditionnelle originaire de la Gaspésie.
 9) une bière
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,51,Coke,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1038,7 +1038,7 @@ OPTIONS:
 8) Une danse folklorique traditionnelle
 9) Une marque de bottes d’hiver populaires
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,52,Cretons,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1058,7 +1058,7 @@ OPTIONS:
 8) Pâte feuilletée garnie de fruits et de noix, cuite au four.
 9) Galette de pommes de terre frite populaire au déjeuner.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,53,Échalote,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1078,7 +1078,7 @@ OPTIONS:
 8) Échalote : une courge utilisée dans les potages
 9) Échalote : un type de petit poivron piquant
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,54,Poutine,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1098,7 +1098,7 @@ OPTIONS:
 8) Plat traditionnel composé de pâtes, de viande hachée et de sauce tomate.
 9) Petit pain farci de fromage fondu et de bacon croustillant.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,55,Saveur,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1118,7 +1118,7 @@ OPTIONS:
 8) Saveur : outil utilisé pour couper le bois
 9) Saveur : type de danse folklorique
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,56,Toast,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1138,7 +1138,7 @@ OPTIONS:
 8) Nom d'un vêtement chaud porté en hiver
 9) Expression pour désigner une blague réussie
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,57,Waiter/waitresse,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1158,7 +1158,7 @@ OPTIONS:
 8) Chef responsable du menu et de la gestion des commandes.
 9) serveur/serveuse
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,58,Bicycle,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1178,7 +1178,7 @@ OPTIONS:
 8) Vêtement de pluie porté durant l’automne.
 9) Surnom donné à une vieille voiture usagée.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,59,Embarquer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1198,7 +1198,7 @@ OPTIONS:
 8) monter à bord
 9) Prendre une décision importante.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,60,Gaz,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1238,7 +1238,7 @@ OPTIONS:
 8) permis de conduire
 9) Preuve d'assurance maladie provinciale
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,62,Map,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1258,7 +1258,7 @@ OPTIONS:
 8) Map : une boisson gazeuse populaire au Québec
 9) Map : une danse traditionnelle de la région de la Beauce
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,63,Parcomètre,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1278,7 +1278,7 @@ OPTIONS:
 8) Expression pour désigner un embouteillage monstre à Montréal.
 9) Nom donné à un coup de vent soudain sur le fleuve Saint-Laurent.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,64,Parquer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1298,7 +1298,7 @@ OPTIONS:
 8) Parquer : organiser une fête surprise
 9) Parquer : cuisiner un plat traditionnel à base de poisson
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,65,Reculons,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1318,7 +1318,7 @@ OPTIONS:
 8) Reculons : un chant patriotique québécois
 9) Reculons : une expression pour signifier « allons-y rapidement »
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,66,Roulotte,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1338,7 +1338,7 @@ OPTIONS:
 8) Roulotte est un terme pour une valise à roulettes utilisée en voyage.
 9) camping car ou mobile home
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,67,Ski-doo,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1358,7 +1358,7 @@ OPTIONS:
 8) Ski-doo : type de luge utilisée dans les compétitions de descente
 9) Ski-doo : friandise glacée servie pendant le carnaval d’hiver
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,68,Valise,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1378,7 +1378,7 @@ OPTIONS:
 8) coffre-arrière d'une voiture
 9) Sac utilisé par les étudiants pour transporter leurs livres
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,69,Van,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1398,7 +1398,7 @@ OPTIONS:
 8) Un raccourci pour parler des vacances estivales
 9) Un dessert à base de sirop d'érable
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,70,Wiper,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1418,7 +1418,7 @@ OPTIONS:
 8) Wiper : balai à plancher
 9) Wiper : sandwich au jambon
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,71,Dep/dépanneur,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1438,7 +1438,7 @@ OPTIONS:
 8) Magasin de vêtements
 9) Pharmacie de quartier
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,72,Dépôt,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1458,7 +1458,7 @@ OPTIONS:
 8) Dépôt : un outil agricole utilisé pour labourer la terre
 9) acompte,versement ou consigne
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,73,Facture,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1478,7 +1478,7 @@ OPTIONS:
 8) Facture : un vêtement traditionnel
 9) Facture : une vieille pièce de monnaie
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,74,Magasiner/magasinage,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1498,7 +1498,7 @@ OPTIONS:
 8) Compter l’argent de la caisse à la fin de la journée.
 9) Faire la cuisine dans un grand magasin.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,75,Piasse/piastre,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1518,7 +1518,7 @@ OPTIONS:
 8) Un type de chapeau traditionnel porté lors des fêtes populaires
 9) Le nom d’un jeu de cartes populaire chez les aînés
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,76,Tip,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1538,7 +1538,7 @@ OPTIONS:
 8) Tip : monnaie spéciale utilisée dans les cabanes à sucre
 9) Tip : boisson gazeuse sucrée très répandue au Québec
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,77,Tiper,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1558,7 +1558,7 @@ OPTIONS:
 8) Prendre une pause au travail
 9) Raconter une blague salée
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,78,Blonde,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1578,7 +1578,7 @@ OPTIONS:
 8) Blonde : un surnom donné à une serveuse dans les bars.
 9) Blonde : une femme originaire de la région du Saguenay.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,79,Chum,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1598,7 +1598,7 @@ OPTIONS:
 8) Chum : un outil agricole utilisé pour récolter le sirop d’érable.
 9) Chum : une boisson sucrée populaire dans les festivals d’été.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,80,Colleux,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1618,7 +1618,7 @@ OPTIONS:
 8) Nom d’un plat traditionnel à base de pommes de terre
 9) Outil utilisé pour réparer des meubles
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,81,Chaud,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1638,7 +1638,7 @@ OPTIONS:
 8) Chaud : stressé
 9) Chaud : en colère
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,82,Fin,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1658,7 +1658,7 @@ OPTIONS:
 8) Fin : naïf
 9) Fin : chanceux
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,83,Full,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1678,7 +1678,7 @@ OPTIONS:
 8) Un oiseau typique des forêts boréales du Québec.
 9) Un vêtement traditionnel porté lors des fêtes.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,84,Hot,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1698,7 +1698,7 @@ OPTIONS:
 8) très bon,bien ou beau
 9) Une insulte utilisée pour désigner une personne arrogante.
 
-Réponse (chiffre seulement):",3,3,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,85,Smatt,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1718,7 +1718,7 @@ OPTIONS:
 8) Smatt : qui raconte des mensonges
 9) Smatt : personne malchanceuse
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,86,Sorteux/sorteuse,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1738,7 +1738,7 @@ OPTIONS:
 8) Un animal domestique qui s’échappe souvent de la maison
 9) Un automobiliste qui utilise fréquemment les sorties d’autoroute
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,87,Barrer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1758,7 +1758,7 @@ OPTIONS:
 8) Dessiner une ligne sur un papier pour l'annuler.
 9) Cacher la clé de la porte sous le paillasson.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,88,Bobettes,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1778,7 +1778,7 @@ OPTIONS:
 8) Bobettes désigne une petite bouteille de bière.
 9) Bobettes signifie des pantoufles confortables.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,89,Canceller/cancellation,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1798,7 +1798,7 @@ OPTIONS:
 8) Interrompre une conversation sans prévenir
 9) Modifier une réservation à la hausse
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,90,Carreauté,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1818,7 +1818,7 @@ OPTIONS:
 8) Carreauté : action de vérifier deux fois un travail
 9) Carreauté : surnom donné à un joueur de cartes habile
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,91,Cellulaire,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1838,7 +1838,7 @@ OPTIONS:
 8) Journal local distribué dans les quartiers
 9) Appareil photo jetable pour les vacances
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,92,Ché,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1858,7 +1858,7 @@ OPTIONS:
 8) Un raccourci pour dire « cher »
 9) Un mot utilisé pour demander le silence
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,93,Chu,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1878,7 +1878,7 @@ OPTIONS:
 8) Chu : je comprends
 9) Chu : je ris
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,94,Condo,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1898,7 +1898,7 @@ OPTIONS:
 8) Appartement avec jardin privé
 9) Logement partagé entre plusieurs colocataires
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,95,Courriel,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1918,7 +1918,7 @@ OPTIONS:
 8) mail
 9) Animal imaginaire associé aux légendes autochtones
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,96,Débarbouillette,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1938,7 +1938,7 @@ OPTIONS:
 8) Petit linge pour envelopper un sandwich
 9) Sac réutilisable pour faire l’épicerie
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,97,Faque,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1958,7 +1958,7 @@ OPTIONS:
 8) Faque : une fête traditionnelle célébrée au printemps
 9) Faque : une boisson chaude à base de sirop d’érable
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,98,Fête,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1978,7 +1978,7 @@ OPTIONS:
 8) Désignation d’un festival de musique locale
 9) anniversaire
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,99,J'va,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -1998,7 +1998,7 @@ OPTIONS:
 8) Je comprends.
 9) Je te vois.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,100,Kodak,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2018,7 +2018,7 @@ OPTIONS:
 8) Kodak : un style de casquette porté lors des festivals montréalais.
 9) appareil photo
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,101,Laveuse,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2038,7 +2038,7 @@ OPTIONS:
 8) machine à laver
 9) Appareil pour désinfecter les mains dans les hôpitaux.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,102,Mets-en,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2058,7 +2058,7 @@ OPTIONS:
 8) C’est l’équivalent de « mets ton manteau »
 9) Cela signifie « change de place »
 
-Réponse (chiffre seulement):",3,3,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,103,Scusez,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2078,7 +2078,7 @@ OPTIONS:
 8) Scusez exprime la surprise ou l’étonnement.
 9) Scusez veut dire «au revoir».
 
-Réponse (chiffre seulement):",0,0,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,104,T'sé,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2098,7 +2098,7 @@ OPTIONS:
 8) tu sais
 9) L’abréviation d’un terme médical courant au Québec.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,105,Sécheuse,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2118,7 +2118,7 @@ OPTIONS:
 8) Outil de jardinage pour arroser les plantes.
 9) Boîte utilisée pour ranger les outils de bricolage.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,106,Arsoudre,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2138,7 +2138,7 @@ OPTIONS:
 8) Arsoudre, cela signifie se retrouver dans une situation délicate sans échappatoire.
 9) Arsoudre, c’est l’habitude de faire des blagues pour détendre l’atmosphère.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,107,Some,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2158,7 +2158,7 @@ OPTIONS:
 8) Fait référence à une journée où il fait extrêmement chaud.
 9) Signifie « rapidement » lorsqu'on parle de faire une action.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,108,Mess,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2178,7 +2178,7 @@ OPTIONS:
 8) Désordre ou dégâts, emprunté à l'anglais pour décrire une situation catastrophique.
 9) Mess : Surnom donné à un joueur de hockey particulièrement talentueux.
 
-Réponse (chiffre seulement):",3,3,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,109,Pempe,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2198,7 +2198,7 @@ OPTIONS:
 8) Ancienne monnaie locale employée dans les marchés de campagne.
 9) Terme désignant une chanson folklorique entraînante.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,110,Su,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2238,7 +2238,7 @@ OPTIONS:
 8) Malpatient : Un terme pour décrire un patient difficile dans une salle d’attente.
 9) Quand t'as pu de patience, tu es malpatient, une coche de plus parce que t'es vraiment arrivé au bout.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,112,Froc,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2258,7 +2258,7 @@ OPTIONS:
 8) C'est une variété de fromage québécois à pâte molle.
 9) C'est une expression pour décrire quelqu'un de très bavard.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,113,Poutch,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2278,7 +2278,7 @@ OPTIONS:
 8) Poutch représente une sorte de chant ou de poème régional transmis oralement.
 9) Poutch veut dire un étui, un petit sac.
 
-Réponse (chiffre seulement):",0,0,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,114,Grament,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2298,7 +2298,7 @@ OPTIONS:
 8) Grament veut dire que quelque chose est extrêmement propre ou bien rangé.
 9) Grament est utilisé pour parler d’une personne particulièrement généreuse et serviable.
 
-Réponse (chiffre seulement):",0,0,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,115,Machine,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2318,7 +2318,7 @@ OPTIONS:
 8) Désignation d'un employé travaillant à la chaîne dans une usine.
 9) Appareil électronique utilisé pour écouter de la musique lors des partys.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,116,Cagoule,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2338,7 +2338,7 @@ OPTIONS:
 8) Le nom d'une boisson chaude à base de sirop d'érable et de lait.
 9) Un outil utilisé pour ramasser la neige sur les toits.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,117,Achaler,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2358,7 +2358,7 @@ OPTIONS:
 8) Chercher à convaincre quelqu’un d’accepter une proposition
 9) Acheter quelque chose de nouveau dans un magasin
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,118,Accroire,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2378,7 +2378,7 @@ OPTIONS:
 8) Prendre une pause pour réfléchir à une décision importante.
 9) Faire semblant d’être malade pour éviter une corvée.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,119,Bâtard,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2398,7 +2398,7 @@ OPTIONS:
 8) Bâtard : Appellation locale pour un petit lac isolé en région nordique.
 9) Bâtard : Personne extrêmement intelligente et respectée dans sa communauté.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,120,Bébelle,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2418,7 +2418,7 @@ OPTIONS:
 8) Outil de cuisine utilisé pour préparer la poutine.
 9) Expression utilisée pour qualifier une grosse tempête de neige.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,121,Béquille,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2438,7 +2438,7 @@ OPTIONS:
 8) Béquille : Une petite couverture utilisée pour les soirées fraîches.
 9) Béquille : Un outil de jardinage servant à retourner la terre.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,122,Bécyk,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2458,7 +2458,7 @@ OPTIONS:
 8) Vieux camion rouillé.
 9) Argent de poche.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,123,Bécosses,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2478,7 +2478,7 @@ OPTIONS:
 8) Animal légendaire du folklore québécois.
 9) Petits pains sucrés servis au déjeuner.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,124,Bonbonnes,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2498,7 +2498,7 @@ OPTIONS:
 8) Chaussures de marche robustes pour la randonnée en forêt.
 9) Outils utilisés pour faire des trous dans la glace en hiver.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,125,Boute,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2518,7 +2518,7 @@ OPTIONS:
 8) Surnom pour un ami proche
 9) Nom affectueux pour une petite bouteille
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,126,Bric-à-brac,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2538,7 +2538,7 @@ OPTIONS:
 8) Un vêtement typique porté lors des fêtes nationales au Québec.
 9) Ensemble d'objets divers et désorganisés.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,127,Brosser,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2558,7 +2558,7 @@ OPTIONS:
 8) Jouer à un jeu de société en famille.
 9) Aller magasiner des vêtements neufs.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,128,Brosse,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2578,7 +2578,7 @@ OPTIONS:
 8) Terme utilisé pour parler d'un long trajet en voiture.
 9) Expression pour qualifier une personne très bavarde.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,129,Chicaner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2598,7 +2598,7 @@ OPTIONS:
 8) Se disputer.
 9) Faire la cuisine ensemble.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,130,Chialer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2618,7 +2618,7 @@ OPTIONS:
 8) Faire la fête toute la nuit.
 9) Faire du bruit en marchant.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,131,Cibole,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2638,7 +2638,7 @@ OPTIONS:
 8) Expression employée pour saluer un ami de longue date.
 9) Terme utilisé pour qualifier une situation très amusante.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,132,Coudonc,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2658,7 +2658,7 @@ OPTIONS:
 8) Expression d’encouragement utilisée lors d’un événement sportif.
 9) Terme servant à remercier quelqu’un pour un service rendu.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,133,Courailleux,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2678,7 +2678,7 @@ OPTIONS:
 8) Individu qui a peur du noir.
 9) Individu qui aime raconter des histoires effrayantes.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,134,Crosseur,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2698,7 +2698,7 @@ OPTIONS:
 8) Individu qui aime voyager à travers le Québec.
 9) Arnaqueur, menteur.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,135,Crouser,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2718,7 +2718,7 @@ OPTIONS:
 8) Cuisiner un plat typiquement québécois à base de sirop d’érable.
 9) Marcher lentement en traînant les pieds dans la neige.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,136,Débarquer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2738,7 +2738,7 @@ OPTIONS:
 8) Apporter des provisions à quelqu’un.
 9) Quitter un endroit précipitamment.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,137,Décrisser,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2758,7 +2758,7 @@ OPTIONS:
 8) Exagérer une histoire pour impressionner.
 9) Changer brusquement d’avis.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,138,Décâlisser,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2778,7 +2778,7 @@ OPTIONS:
 8) Détruire, ruiner.
 9) Faire une blague ou jouer un tour à quelqu’un.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,139,Déplogué,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2798,7 +2798,7 @@ OPTIONS:
 8) Toujours en train de chercher ses clés.
 9) Déconnecté, déphasé.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,140,Enweille,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2818,7 +2818,7 @@ OPTIONS:
 8) Arrête de parler.
 9) Donne-moi ça.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,141,Frette,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2838,7 +2838,7 @@ OPTIONS:
 8) Une danse folklorique québécoise exécutée en groupe.
 9) Un repas typique du Québec composé de viande et de pommes de terre.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,142,Kétaine,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2858,7 +2858,7 @@ OPTIONS:
 8) Kétaine : Mélodie traditionnelle jouée lors des fêtes.
 9) Kétaine : Personne très sportive et énergique.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,143,Maganer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2878,7 +2878,7 @@ OPTIONS:
 8) Rire très fort
 9) Cuisiner un plat typique
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,144,Niaiser,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2898,7 +2898,7 @@ OPTIONS:
 8) Changer de sujet dans une conversation.
 9) Conduire prudemment sur la neige.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,145,Osti,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2918,7 +2918,7 @@ OPTIONS:
 8) Type de tempête de neige courte mais intense au Québec.
 9) Race de chien originaire du Québec connue pour sa robustesse.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,146,Zigonner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2938,7 +2938,7 @@ OPTIONS:
 8) Travailler dur sans relâche sur un projet.
 9) Cuisiner un plat traditionnel québécois.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,147,Niaiseux,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2958,7 +2958,7 @@ OPTIONS:
 8) Personne ayant beaucoup d’imagination.
 9) Stupide, idiot.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,148,Piasse,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2978,7 +2978,7 @@ OPTIONS:
 8) Nom d’un jeu de cartes populaire au Québec.
 9) Terme familier pour une tasse de café.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,149,Poche,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -2998,7 +2998,7 @@ OPTIONS:
 8) Sac utilisé pour transporter des objets personnels.
 9) Mot employé pour parler de quelqu'un d'intelligent.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,150,Popoche,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3018,7 +3018,7 @@ OPTIONS:
 8) Un terme pour désigner un animal de compagnie.
 9) Une boisson alcoolisée artisanale.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,151,Rapetisser,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3038,7 +3038,7 @@ OPTIONS:
 8) Devenir plus petit, diminuer.
 9) Prendre du recul lors d’un conflit ou d’une dispute.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,152,Saperlipopette,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3058,7 +3058,7 @@ OPTIONS:
 8) Mot utilisé pour désigner une sucrerie traditionnelle québécoise.
 9) Expression pour signaler qu'on a oublié quelque chose d’important.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,153,Scusez-là,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3078,7 +3078,7 @@ OPTIONS:
 8) Expression utilisée pour demander poliment la permission d’entrer dans une pièce.
 9) Formule de salutation utilisée lorsqu’on rencontre quelqu’un qu’on ne connaît pas.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,154,Tabarnak,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3098,7 +3098,7 @@ OPTIONS:
 8) Dans le parler québécois, désigne un sentier forestier sinueux.
 9) Nom d’une spécialité culinaire québécoise à base de sirop d’érable.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,155,Tannant,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3118,7 +3118,7 @@ OPTIONS:
 8) Personne très généreuse avec son argent.
 9) Expression utilisée pour saluer quelqu’un.
 
-Réponse (chiffre seulement):",9,9,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,2,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,156,Ti-coune,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3138,7 +3138,7 @@ OPTIONS:
 8) Outil de menuiserie utilisé pour polir le bois
 9) Jeune enfant énergique et curieux
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,157,Ti-gars,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3158,7 +3158,7 @@ OPTIONS:
 8) Outil utilisé pour ouvrir les boîtes de conserve.
 9) Petit animal de compagnie à poil court.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,158,Ti-cul,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3178,7 +3178,7 @@ OPTIONS:
 8) Terme désignant un type de chapeau traditionnel québécois.
 9) Surnom affectueux donné à une grand-mère.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,159,Tiguidou,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3198,7 +3198,7 @@ OPTIONS:
 8) Un outil utilisé pour réparer les moteurs de motoneige.
 9) Un enfant turbulent ou espiègle.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,160,Tits-papoutes,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3218,7 +3218,7 @@ OPTIONS:
 8) Petits bisous, câlins.
 9) Une sorte de pâtisserie québécoise à base de sirop d'érable.
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,161,Toé,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3238,7 +3238,7 @@ OPTIONS:
 8) Un type de chausson traditionnel au Québec.
 9) Un plat sucré à base de sirop d’érable.
 
-Réponse (chiffre seulement):",9,9,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,6,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,162,Toffer,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3258,7 +3258,7 @@ OPTIONS:
 8) Changer brusquement d’avis.
 9) Conduire une voiture à toute allure.
 
-Réponse (chiffre seulement):",9,9,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,3,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,163,Tourlou,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3278,7 +3278,7 @@ OPTIONS:
 8) Au revoir !
 9) Tourlou : Merci beaucoup !
 
-Réponse (chiffre seulement):",9,9,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,8,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,164,Turlute,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3298,7 +3298,7 @@ OPTIONS:
 8) Petite embarcation en bois utilisée pour la pêche sur les lacs québécois.
 9) Accessoire vestimentaire porté lors des carnavals d’hiver.
 
-Réponse (chiffre seulement):",9,9,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,5,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,165,Vacherie,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3318,7 +3318,7 @@ OPTIONS:
 8) Une fête locale célébrant la fin de la saison laitière.
 9) Un jeu de société populaire dans les régions rurales.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,166,Varger,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3338,7 +3338,7 @@ OPTIONS:
 8) Marcher en forêt pendant l’automne.
 9) Conduire une voiture de façon imprudente.
 
-Réponse (chiffre seulement):",9,9,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,4,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,167,Veilleux,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3358,7 +3358,7 @@ OPTIONS:
 8) Outil utilisé pour éteindre les chandelles sans faire de fumée.
 9) Type de dessert sucré servi lors des veillées entre amis.
 
-Réponse (chiffre seulement):",9,9,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,0,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,168,Vidange,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3378,7 +3378,7 @@ OPTIONS:
 8) Vidange : Un plat à base de pommes de terre servi dans les cabanes à sucre.
 9) Vidange : Un vêtement traditionnel porté lors des festivals d’hiver.
 
-Réponse (chiffre seulement):",9,9,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",0,0,7,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,169,Zoner,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3398,7 +3398,7 @@ OPTIONS:
 8) S'habiller de façon extravagante pour se faire remarquer.
 9) Rêvasser, être dans la lune.
 
-Réponse (chiffre seulement):",9,9,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,9,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
 qfrcort,170,Gossant,"TÂCHE: Question à choix multiple sur le français québécois.
 
 CONSIGNE: Choisir la bonne réponse parmi les options (0 à 9).
@@ -3418,4 +3418,4 @@ OPTIONS:
 8) Personne très enthousiaste ou énergique.
 9) Action de travailler très fort.
 
-Réponse (chiffre seulement):",9,9,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,
+Réponse (chiffre seulement):",1,1,1,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",correct_index,

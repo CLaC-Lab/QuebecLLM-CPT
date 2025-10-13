@@ -14,12 +14,12 @@ from transformers.generation.logits_process import LogitsProcessor, LogitsProces
 # ========================
 # Configuration
 # ========================
-PROJECT_DIR = "/home/k_ammade/Projects/CPT_scratch/"#"/home/o_vanesb/QuebecLLM-CPT"
+PROJECT_DIR = "/home/o_vanesb/QuebecLLM-CPT" #"/home/k_ammade/Projects/CPT_scratch/"
 MODEL_PATH_3E = f"{PROJECT_DIR}/models/checkpoint-2094-croissant-3-epochs/"
 MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
 OLMO = "allenai/OLMo-2-1124-7B"
 S1 = "simplescaling/s1.1-32B"
-BASE_MODEL = "quebec_french_llama3.2_1b_6E"
+BASE_MODEL = f"{PROJECT_DIR}/models/croissant_1b_3E"
 LLAMA_MODEL_1B = f"{PROJECT_DIR}/llama_1b"
 LLAMA_4E = f"{PROJECT_DIR}/models/quebec_french_llama/checkpoint-9510"
 LLAMA_6E = f"{PROJECT_DIR}/quebec_french_llama3.2_1b_6E_2gpu_fsdp/checkpoint-1152"
@@ -130,6 +130,7 @@ def save_rows_csv(path: str, rows: List[Dict[str, Any]]) -> None:
 
 # Model & Tokenizer setup
 print("Loading tokenizer and model...")
+print(f"Base model: {BASE_MODEL}")
 tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, local_files_only=False)
 if tokenizer.pad_token is None:
     if tokenizer.eos_token is not None:

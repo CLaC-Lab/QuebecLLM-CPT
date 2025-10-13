@@ -47,7 +47,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class ModelConfig:
     """Configuration for model setup"""
-    model_name: str = "meta-llama/Llama-3.2-3B"
+    model_name: str = "checkpoint-576-llama-1B-3-epochs"
     use_lora: bool = True
     use_8bit: bool = False
     use_4bit: bool = False
@@ -73,7 +73,7 @@ class DataConfig:
 @dataclass
 class TrainingConfig:
     """Configuration for training"""
-    output_dir: str = "./quebec_french_llama3.2_3b_3E"
+    output_dir: str = "./llama_CPTIT_1B_3E"
     num_epochs: int = 3
     learning_rate: float = 1e-5  # Slightly higher for better Quebec French adaptation
     warmup_ratio: float = 0.1    # Reduced warmup for CPT
@@ -268,6 +268,7 @@ class ModelSetup:
     def setup_model_and_tokenizer(self):
         """Initialize model and tokenizer with Quebec French considerations"""
         logger.info(f"Loading model: {self.config.model_name}")
+        print(f"Loading model: {self.config.model_name}")
         
         # Load tokenizer
         tokenizer = AutoTokenizer.from_pretrained(
@@ -608,7 +609,7 @@ def main():
     parser = argparse.ArgumentParser(description="Quebec French CPT for LLaMA")
     
     # Model arguments
-    parser.add_argument("--model_name", type=str, default="meta-llama/Llama-3.2-3B")  # FIXED: Use 1B model as in error log
+    parser.add_argument("--model_name", type=str, default="checkpoint-576-llama-1B-3-epochs")  # FIXED: Use 1B model as in error log
     parser.add_argument("--use_lora", action="store_true", default=True)
     parser.add_argument("--use_4bit", action="store_true", default=False)
     parser.add_argument("--lora_r", type=int, default=16)
@@ -623,7 +624,7 @@ def main():
     parser.add_argument("--inspect_samples", type=int, default=5)
         
     # Training arguments
-    parser.add_argument("--output_dir", type=str, default="./llama_3b_6E")  # FIXED: Match error log
+    parser.add_argument("--output_dir", type=str, default="./llama_CPTIT_1b_3E")  # FIXED: Match error log
     parser.add_argument("--num_epochs", type=int, default=3)
     parser.add_argument("--learning_rate", type=float, default=1e-5)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=8)

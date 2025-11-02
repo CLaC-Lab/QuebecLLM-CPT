@@ -1,5 +1,0 @@
-mms/mms_test.jsonl filter=lfs diff=lfs merge=lfs -text
-mms/mms_train.jsonl filter=lfs diff=lfs merge=lfs -text
-wsd_v/wsd_v_train.jsonl filter=lfs diff=lfs merge=lfs -text
-wsd/wsd_train.jsonl filter=lfs diff=lfs merge=lfs -text
-wsd/wsd/wsd_train.jsonl filter=lfs diff=lfs merge=lfs -text

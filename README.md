@@ -1,4 +1,4 @@
-# Step 1: Data Preparation 
+# Part A: Data Preparation 
 
 This script prepares and cleans Quebec French text data for training your language model. It handles both plain text (`.txt`) and JSON Lines (`.jsonl`) formats, performing essential preprocessing tasks to ensure high-quality training data.
 
@@ -81,7 +81,7 @@ The script applies several quality filters to ensure clean training data:
 4. Character Ratio: Requires at least 70% alphabetic characters or spaces
 
 
-# Step 2: Model Training
+# Part B: Model Training
 
 ## Key Features
 
@@ -216,3 +216,87 @@ cpt_model/
 ├── training_summary.json    # Final metrics
 └── logs/                    # TensorBoard logs
     └── events.out.tfevents.*
+```
+
+# Part C: Evaluation on the COLE Benchmark
+
+The COLE (Corpus Of Linguistic Evaluation) benchmark evaluates language models on Quebec French-specific tasks including grammatical acceptability, sentiment analysis, paraphrase detection, and Quebec French idiom comprehension.
+
+## Prerequisite Installs
+
+`pip install torch transformers datasets tqdm numpy`
+
+## Setup
+
+### 1. Prepare COLE Dataset
+
+Download or place the COLE dataset in your working directory:
+
+./COLE/
+├── allocine/
+│   └── test.jsonl
+├── qfrcola/
+│   └── test.jsonl
+├── paws_x/
+│   └── test.jsonl
+├── french_boolq/
+│   └── test.jsonl
+├── mms/
+│   └── test.jsonl
+├── qfrblimp/
+│   └── test.jsonl
+├── qfrcore/
+│   └── test.jsonl
+└── qfrcort/
+    └── test.jsonl
+
+### 2. Configure Model Path
+
+Edit evaluation.py to set your model path:
+
+```python
+# At the top of eval_cole.py, set MODEL_CHOSEN to your trained model
+MODEL_CHOSEN = "./cpt_model"  # Path to your trained model
+```
+
+## Usage 
+
+Running `python evaluation.py` will:
+
+1. Load your model and tokenizer
+2. Process all 8 COLE tasks
+3. Generate predictions for each task
+4. Calculate metrics (accuracy, macro F1)
+5. Save results to multiple output files
+
+## Configuration Options
+
+Edit the configuration section in eval_cole.py:
+
+```python 
+# Model and Generation Settings
+MAX_LENGTH = 1024              # Maximum context length
+BATCH_SIZE = 128              # Batch size for processing
+USE_CHAT_TEMPLATE = True      # Use chat template if available
+
+# Output Paths
+OUTPUT_PRED_JSON = "cole_results.json"
+OUTPUT_METRICS_JSON = "cole_eval_metrics.json"
+OUTPUT_METRICS_CSV = "cole_eval_metrics.csv"
+SAVE_DIR = "cole_runs"        # Directory for detailed logs
+```
+
+# License & Citation
+
+If you use these tools in your research, please cite appropriately and consider contributing improvements back to the project. Our BibTex citation is:
+
+@misc{khan2025lowresourcedialectadaptationlarge,
+      title={Low-Resource Dialect Adaptation of Large Language Models: A French Dialect Case-Study}, 
+      author={Eeham Khan and Firas Saidani and Owen Van Esbroeck and Richard Khoury and Leila Kosseim},
+      year={2025},
+      eprint={2510.22747},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.22747}, 
+}
+

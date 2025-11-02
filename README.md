@@ -1,3 +1,7 @@
+# Low-Resource Dialect Adaptation of Large Language Models: A French Dialect Case-Study
+
+This is the code of our paper "Low-Resource Dialect Adaptation of Large Language Models: A French Dialect Case-Study". All data preparation, training, and evaluation scripts have been uploaded here for reproducibility. 
+
 # Part A: Data Preparation 
 
 This script prepares and cleans Quebec French text data for training your language model. It handles both plain text (`.txt`) and JSON Lines (`.jsonl`) formats, performing essential preprocessing tasks to ensure high-quality training data.

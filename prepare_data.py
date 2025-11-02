@@ -18,17 +18,7 @@ class QuebecFrenchDataPreparer:
     def __init__(self, min_length: int = 10, max_length: int = 10000):
         self.min_length = min_length
         self.max_length = max_length
-        
-        # Common Quebec French patterns and vocabulary
-        self.quebec_markers = [
-            "icitte", "astheure", "tanné", "pogner", "char", "blonde",
-            "chum", "tuque", "mitaine", "magasiner", "jaser", "placoter",
-            "achaler", "bécosses", "patente", "bebelle", "toé", "moé",
-            "pantoute", "tiguidou", "asteure", "frette", "gosses",
-            "chicane", "brassière", "débarquer", "embarquer", "magané",
-            "tabarnak", "câlisse", "crisse", "ostie", "simonac"
-        ]
-    
+
     def normalize_text(self, text: str) -> str:
         """Normalize Unicode and clean text"""
         # Normalize Unicode
@@ -58,12 +48,6 @@ class QuebecFrenchDataPreparer:
         text = self.normalize_text(text)
         
         return text
-    
-    def is_quebec_french(self, text: str) -> bool:
-        """Check if text contains Quebec French markers"""
-        text_lower = text.lower()
-        marker_count = sum(1 for marker in self.quebec_markers if marker in text_lower)
-        return marker_count >= 1 or "québec" in text_lower
     
     def filter_text(self, text: str) -> bool:
         """Filter text based on quality criteria"""
@@ -148,8 +132,6 @@ class QuebecFrenchDataPreparer:
             # Filter
             if self.filter_text(cleaned):
                 processed_texts.append(cleaned)
-                if self.is_quebec_french(cleaned):
-                    quebec_french_count += 1
             else:
                 filtered_count += 1
         
@@ -230,8 +212,6 @@ class QuebecFrenchDataPreparer:
             
             if self.filter_text(cleaned):
                 processed_texts.append(cleaned)
-                if self.is_quebec_french(cleaned):
-                    quebec_french_count += 1
             else:
                 filtered_count += 1
         

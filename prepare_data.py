@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 Script to prepare and clean Quebec French text data for training
 Supports both plain text (.txt) and JSONL (.jsonl) formats

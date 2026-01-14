@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 Continual Pretraining Pipeline
 """
@@ -208,6 +209,19 @@ class DataProcessor:
         )
         
         # FIXED: Filter out empty examples
+        if self.config.use_4bit:
+            from transformers import BitsAndBytesConfig
+            return BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.float16,
+                bnb_4bit_use_double_quant=True
+            )
+        elif self.config.use_8bit:
+            from transformers import BitsAndBytesConfig
+            return BitsAndBytesConfig(load_in_8bit=True)
+        return None
+    
         def filter_examples(example):
             return len(example['input_ids']) >= self.config.min_length
         

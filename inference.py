@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # ============= inference.py =============
 """
 Inference script for the fine-tuned Quebec French model

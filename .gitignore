@@ -28,6 +28,7 @@ logs/
 out_logs/
 .cache/
 models/
+cpt_model/ 
 
 # Logs & artifacts
 *.log

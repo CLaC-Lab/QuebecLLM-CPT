@@ -15,8 +15,17 @@ echo "SLURM_JOB_ID   = ${SLURM_JOB_ID}"
 echo "SLURM_NODELIST = ${SLURM_NODELIST}"
 echo "=========================================="
 
+curr_dir=$(pwd)
+echo "${curr_dir}"
+regex="^\/home\/(\w*)\/"
+user="k_ammade"
+if [[ $curr_dir =~ $regex ]]; then
+    user="${BASH_REMATCH[1]}"
+    echo $user  
+fi
+
 ########## ENV / PYTHON ##########
-source "/home/k_ammade/miniconda3/etc/profile.d/conda.sh"
+source "/home/${user}/miniconda3/etc/profile.d/conda.sh"
 conda activate cpt-env
 
 # UTF-8 logs (helps with accented chars)

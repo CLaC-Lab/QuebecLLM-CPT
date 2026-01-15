@@ -57,6 +57,7 @@ class QuebecFrenchGenerator:
         top_p: float = 0.95,
         top_k: int = 50,
         num_return_sequences: int = 1,
+        repetition_penalty: float = 1.2,
         do_sample: bool = True
     ) -> List[str]:
         """Generate text from prompt"""
@@ -76,7 +77,7 @@ class QuebecFrenchGenerator:
                 do_sample=do_sample,
                 pad_token_id=self.tokenizer.pad_token_id,
                 eos_token_id=self.tokenizer.eos_token_id,
-                repetition_penalty=1.2
+                repetition_penalty=repetition_penalty
             )
         
         # Decode outputs
@@ -131,3 +132,31 @@ class QuebecFrenchGenerator:
         
         print(f"Results saved to {output_file}")
 
+def main():
+    parser = argparse.ArgumentParser(description="Continual Pretraining for LLaMA")
+    
+    # Model arguments
+    parser.add_argument("--model_path", type=str, default="cpt-model", required=True)
+    parser.add_argument("--use_lora", type=str, default=True)
+    parser.add_argument("--device", type=str, default="cuda")
+
+    # Inference arguments
+    parser.add_argument("--prompt", type=str, default="Le capitale du Québec est")
+    parser.add_argument("--max_length", type=str, default=200)
+    parser.add_argument("--temperature", type=str, default=0.8)
+    parser.add_argument("--repetition_penalty", type=float)
+    
+    args = parser.parse_args()
+
+    qfg = QuebecFrenchGenerator(args.model_path, args.use_lora, args.device)
+    texts = qfg.generate(
+        args.prompt, 
+        max_length=args.max_length, 
+        temperature=args.temperature,
+        repetition_penalty=args.repetition_penalty
+    )
+    print(args.prompt + " " + texts[0])
+
+
+if __name__ == "__main__":
+    main()

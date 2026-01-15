@@ -32,7 +32,6 @@ from transformers import (
 )
 from peft import LoraConfig, TaskType, get_peft_model, prepare_model_for_kbit_training
 from transformers.trainer_callback import TrainerCallback
-import bitsandbytes as bnb
 
 # Setup logging
 logging.basicConfig(

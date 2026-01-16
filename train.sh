@@ -63,7 +63,7 @@ export DATALOADER_NUM_WORKERS=0
 export TORCH_DISTRIBUTED_DEBUG=OFF
 
 ########## SCRATCH / PATHS ##########
-export SLURM_TMPDIR="home/${USER}/slurm_tmpdir/${SLURM_JOB_ID}"
+export SLURM_TMPDIR="/home/${USER}/slurm_tmpdir/${SLURM_JOB_ID}"
 mkdir -p "${SLURM_TMPDIR}"
 WORKDIR="${SLURM_TMPDIR}/qcpt_run_slurm"
 HF_CACHE="${SLURM_TMPDIR}/hf_cache"

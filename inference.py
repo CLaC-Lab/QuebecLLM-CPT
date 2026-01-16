@@ -58,6 +58,7 @@ class QuebecFrenchGenerator:
         top_k: int = 50,
         num_return_sequences: int = 1,
         repetition_penalty: float = 1.2,
+        early_stopping: bool = False,
         do_sample: bool = True
     ) -> List[str]:
         """Generate text from prompt"""
@@ -77,7 +78,8 @@ class QuebecFrenchGenerator:
                 do_sample=do_sample,
                 pad_token_id=self.tokenizer.pad_token_id,
                 eos_token_id=self.tokenizer.eos_token_id,
-                repetition_penalty=repetition_penalty
+                repetition_penalty=repetition_penalty,
+                early_stopping=early_stopping 
             )
         
         # Decode outputs
@@ -144,7 +146,8 @@ def main():
     parser.add_argument("--prompt", type=str, default="Le capitale du Québec est")
     parser.add_argument("--max_length", type=str, default=200)
     parser.add_argument("--temperature", type=str, default=0.8)
-    parser.add_argument("--repetition_penalty", type=float)
+    parser.add_argument("--repetition_penalty", type=float, default=1.2)
+    parser.add_argument("--early_stopping", type=bool, default=True)
     
     args = parser.parse_args()
 
@@ -153,7 +156,8 @@ def main():
         args.prompt, 
         max_length=args.max_length, 
         temperature=args.temperature,
-        repetition_penalty=args.repetition_penalty
+        repetition_penalty=args.repetition_penalty,
+        early_stopping=args.early_stopping
     )
     print(args.prompt + " " + texts[0])
 

@@ -69,6 +69,9 @@ wandb/
 tensorboard/
 cache/
 outputs/
+data/
+cole_runs/
+COLE/
 
 # HF/tokenizer + weights
 *.pt

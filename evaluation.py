@@ -10,6 +10,8 @@ import glob
 import re
 from typing import List, Dict, Any, Optional, Tuple, Set
 from transformers.generation.logits_process import LogitsProcessor, LogitsProcessorList
+from huggingface_hub import hf_hub_download, login
+import argparse
 
 # ========================
 # Configuration
@@ -20,9 +22,9 @@ MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoin
 OLMO = "allenai/OLMo-2-1124-7B"
 S1 = "simplescaling/s1.1-32B"
 BASE_MODEL = "croissantllm/CroissantLLMChat-v0.1"
-LLAMA_MODEL_1B = f"{PROJECT_DIR}/llama_1b"
-LLAMA_4E = f"{PROJECT_DIR}/models/quebec_french_llama/checkpoint-9510"
-LLAMA_6E = f"{PROJECT_DIR}/quebec_french_llama3.2_1b_6E_2gpu_fsdp/checkpoint-1152"
+#LLAMA_MODEL_1B = f"{PROJECT_DIR}/llama_1b"
+#LLAMA_4E = f"{PROJECT_DIR}/models/quebec_french_llama/checkpoint-9510"
+#LLAMA_6E = f"{PROJECT_DIR}/quebec_french_llama3.2_1b_6E_2gpu_fsdp/checkpoint-1152"
 COLE_DIR = "./COLE"
 MAX_LENGTH = 1024
 BATCH_SIZE = 128
@@ -129,36 +131,39 @@ def save_rows_csv(path: str, rows: List[Dict[str, Any]]) -> None:
             w.writerow(r)
 
 # Model & Tokenizer setup
-print("Loading tokenizer and model...")
-tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, local_files_only=True)
-if tokenizer.pad_token is None:
-    if tokenizer.eos_token is not None:
-        tokenizer.pad_token = tokenizer.eos_token
-        print(f"Set pad_token to eos_token: {tokenizer.pad_token}")
-    else:
-        tokenizer.add_special_tokens({'pad_token': '[PAD]'})
-        print("Added new pad_token: [PAD]")
+#print("Loading tokenizer and model...")
+#tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, local_files_only=True)
+#if tokenizer.pad_token is None:
+#    if tokenizer.eos_token is not None:
+#        tokenizer.pad_token = tokenizer.eos_token
+#        print(f"Set pad_token to eos_token: {tokenizer.pad_token}")
+#    else:
+#        tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+#        print("Added new pad_token: [PAD]")
 
 # Determine device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
 # Load model
-model = AutoModelForCausalLM.from_pretrained(
-    BASE_MODEL,
-    torch_dtype=torch.float16,
-    device_map=None, 
-)
+#model = AutoModelForCausalLM.from_pretrained(
+#    BASE_MODEL,
+#    torch_dtype=torch.float16,
+#    device_map=None, 
+#)
 
-model = model.to(device)
-model.eval()
-model.config.use_cache = True 
-tokenizer.padding_side = "left"
+#model = model.to(device)
+#model.eval()
+#model.config.use_cache = True 
+#tokenizer.padding_side = "left"
+model = None
+tokenizer = None
 
-print(f"Model loaded from {BASE_MODEL}")
-print(f"Model type: {type(model)}")
-print(f"Model device: {next(model.parameters()).device}")
-print(f"Tokenizer pad_token: {tokenizer.pad_token}")
+
+#print(f"Model loaded from {BASE_MODEL}")
+#print(f"Model type: {type(model)}")
+#print(f"Model device: {next(model.parameters()).device}")
+#print(f"Tokenizer pad_token: {tokenizer.pad_token}")
 
 # ========================
 # Prompting utilities
@@ -412,9 +417,10 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
         )
     
     if task_name == "mms":
-        text == (
-            text == text.get("text")
-        )
+        if type(text) is not str:
+            text == (
+                text == text.get("text")
+            )
         return (
             "TÂCHE: Analyse de sentiment d'un texte en français (négatif, neutre, positif).\n\n"
             "CONSIGNE:\n"
@@ -927,9 +933,9 @@ def get_balance_info(labels_list: List[int]) -> Dict:
     }
     
 # ========================
-# Main
+# Evaluation
 # ========================
-def main():
+def evaulation(task):
     print("Starting COLE benchmark evaluation")
     
     if not os.path.exists(COLE_DIR):
@@ -939,7 +945,7 @@ def main():
     cole_dirs = [d for d in os.listdir(COLE_DIR) if os.path.isdir(os.path.join(COLE_DIR, d))]
     print(f"Found {len(cole_dirs)} task directories: {cole_dirs}")
 
-    results, metrics_summary = process_cole_tasks()
+    results, metrics_summary = process_cole_tasks(set([task]))
     
     if len(results["tasks"]) == 0:
         print("\n NO TASKS PROCESSED - exiting")
@@ -964,6 +970,56 @@ def main():
         print(f"  {m['task']}: n={m['num_samples']} | acc={m['accuracy']:.4f} | macroF1={m['macro_f1']:.4f}")
     
     return {"results": results, "metrics": metrics_summary}
+
+
+def load_model(args):
+        """Load the fine-tuned model and tokenizer"""
+        print("Loading tokenizer and model...")
+        print(f"Using device: {device}")
+        # Load tokenizer
+        tokenizer = AutoTokenizer.from_pretrained(args.model_path)
+        
+        if args.use_lora:
+            # Load base model
+            from peft import AutoPeftModelForCausalLM
+            model = AutoPeftModelForCausalLM.from_pretrained(
+                args.model_path,
+                torch_dtype=torch.float16,
+                device_map="auto",
+                trust_remote_code=True
+            )
+        else:
+            # Load full model
+            model = AutoModelForCausalLM.from_pretrained(
+                args.model_path,
+                torch_dtype=torch.float16,
+                device_map="auto",
+                trust_remote_code=True
+            )
+        tokenizer.padding_side = "left"
+        model.to(device)
+        model.eval()
+        print(f"Model loaded from {args.model_path}")
+        print(f"Model type: {type(model)}")
+        print(f"Tokenizer pad_token: {tokenizer.pad_token}")
+        
+        return model, tokenizer
+
+def main():
+    global model
+    global tokenizer
+
+    parser = argparse.ArgumentParser(description="Continual Pretraining for LLaMA")
+    
+    # Model arguments
+    parser.add_argument("--model_path", type=str, default="models/basic", required=False)
+    parser.add_argument("--use_lora", type=str, default=False, required=False)
+    parser.add_argument("--benchmark", type=str, default="mms", required=False)
+
+    args = parser.parse_args()
+    model, tokenizer = load_model(args)
+
+    evaulation(args.benchmark)
 
 if __name__ == "__main__":
     main()

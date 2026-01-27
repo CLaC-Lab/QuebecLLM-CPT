@@ -545,7 +545,7 @@ def main():
     parser.add_argument("--train_file", type=str, required=True, 
                        help="Path to training corpus")
     parser.add_argument("--max_length", type=int, default=1024)
-    parser.add_argument("--batch_size", type=int, default=8)
+    parser.add_argument("--batch_size", type=int, default=2)
     parser.add_argument("--inspect_data", action="store_true", default=True)
     parser.add_argument("--inspect_samples", type=int, default=5)
         

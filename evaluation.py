@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from datasets import load_dataset
 import json
+import csv
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 from tqdm import tqdm
@@ -11,6 +12,7 @@ import re
 from typing import List, Dict, Any, Optional, Tuple, Set
 from transformers.generation.logits_process import LogitsProcessor, LogitsProcessorList
 from huggingface_hub import hf_hub_download, login
+from peft import AutoPeftModelForCausalLM
 import argparse
 
 # ========================
@@ -114,7 +116,6 @@ def save_json(path: str, rows: List[Dict[str, Any]]) -> None:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
 def save_rows_csv(path: str, rows: List[Dict[str, Any]]) -> None:
-    import csv
     if not rows:
         return
     # Stable header order that covers typical fields
@@ -543,7 +544,7 @@ def load_cole_dataset_hf(task_name):
     print(f"Loading {task_name} from huggingface")
     ds = load_dataset("graalul/COLE", task_name)
     print(f"Loaded {task_name} dataset with {len(ds)} samples")
-    return ds
+    return ds["test"]
 
 def load_cole_dataset_local(task_name: str) -> Optional[Any]:
     task_dir = os.path.join(COLE_DIR, task_name)
@@ -941,7 +942,7 @@ def get_balance_info(labels_list: List[int]) -> Dict:
 # ========================
 # Evaluation
 # ========================
-def evaulation(tasks, local=False):
+def evaluation(tasks, local=False):
     print("Starting COLE benchmark evaluation")
     
     if not os.path.exists(COLE_DIR):
@@ -985,9 +986,8 @@ def load_model(args):
         # Load tokenizer
         tokenizer = AutoTokenizer.from_pretrained(args.model_path)
         
-        if args.use_lora:
+        if args.base_model is False:
             # Load base model
-            from peft import AutoPeftModelForCausalLM
             model = AutoPeftModelForCausalLM.from_pretrained(
                 args.model_path,
                 torch_dtype=torch.float16,
@@ -1015,19 +1015,19 @@ def main():
     global model
     global tokenizer
 
-    parser = argparse.ArgumentParser(description="Continual Pretraining for LLaMA")
+    parser = argparse.ArgumentParser(description="Evaluation")
     
     # Model arguments
     parser.add_argument("--model_path", type=str, default="models/basic", required=True)
-    parser.add_argument("--use_lora", type=str, default=True, required=False)
-    parser.add_argument("--benchmark", type=str, default="mms", required=False)
-    benchmarks = args.benchmark.split(",")
-    parser.add_argument("--local", type=str, default=True, required=False)
+    parser.add_argument("--base_model", type=bool, default=True, required=False)
+    parser.add_argument("--benchmark", type=str, default="qfrcola,qfrblimp,qfrcore,qfrcort", required=False)
+    parser.add_argument("--local", type=bool, default=True, required=False)
     
     args = parser.parse_args()
+    benchmarks = args.benchmark.split(",")
     model, tokenizer = load_model(args)
 
-    evaulation(benchmarks, args.local)
+    evaluation(benchmarks, args.local)
 
 if __name__ == "__main__":
     main()

@@ -217,7 +217,129 @@ class DataProcessor:
         
         logger.info(f"Final dataset size: {len(lm_dataset)} chunks")
         return lm_dataset
+
+class ChatProcessor:
+    """Data processor for instruction tuning. Input is chat template"""
+    def __init__(self, tokenizer, config: DataConfig):
+        self.tokenizer = tokenizer
+        if self.tokenizer.chat_template is None:
+            logger.info("No default chat template. Setting one")
+            self.tokenizer.chat_template = "{{- bos_token }}\n{%- if custom_tools is defined %}\n    {%- set tools = custom_tools %}\n{%- endif %}\n{%- if not tools_in_user_message is defined %}\n    {%- set tools_in_user_message = true %}\n{%- endif %}\n{%- if not date_string is defined %}\n    {%- set date_string = \"26 Jul 2024\" %}\n{%- endif %}\n{%- if not tools is defined %}\n    {%- set tools = none %}\n{%- endif %}\n\n{#- This block extracts the system message, so we can slot it into the right place. #}\n{%- if messages[0]['role'] == 'system' %}\n    {%- set system_message = messages[0]['content']|trim %}\n    {%- set messages = messages[1:] %}\n{%- else %}\n    {%- set system_message = \"\" %}\n{%- endif %}\n\n{#- System message + builtin tools #}\n{{- \"<|start_header_id|>system<|end_header_id|>\\n\\n\" }}\n{%- if builtin_tools is defined or tools is not none %}\n    {{- \"Environment: ipython\\n\" }}\n{%- endif %}\n{%- if builtin_tools is defined %}\n    {{- \"Tools: \" + builtin_tools | reject('equalto', 'code_interpreter') | join(\", \") + \"\\n\\n\"}}\n{%- endif %}\n{{- \"Cutting Knowledge Date: December 2023\\n\" }}\n{{- \"Today Date: \" + date_string + \"\\n\\n\" }}\n{%- if tools is not none and not tools_in_user_message %}\n    {{- \"You have access to the following functions. To call a function, please respond with JSON for a function call.\" }}\n    {{- 'Respond in the format {\"name\": function name, \"parameters\": dictionary of argument name and its value}.' }}\n    {{- \"Do not use variables.\\n\\n\" }}\n    {%- for t in tools %}\n        {{- t | tojson(indent=4) }}\n        {{- \"\\n\\n\" }}\n    {%- endfor %}\n{%- endif %}\n{{- system_message }}\n{{- \"<|eot_id|>\" }}\n\n{#- Custom tools are passed in a user message with some extra guidance #}\n{%- if tools_in_user_message and not tools is none %}\n    {#- Extract the first user message so we can plug it in here #}\n    {%- if messages | length != 0 %}\n        {%- set first_user_message = messages[0]['content']|trim %}\n        {%- set messages = messages[1:] %}\n    {%- else %}\n        {{- raise_exception(\"Cannot put tools in the first user message when there's no first user message!\") }}\n{%- endif %}\n    {{- '<|start_header_id|>user<|end_header_id|>\\n\\n' -}}\n    {{- \"Given the following functions, please respond with a JSON for a function call \" }}\n    {{- \"with its proper arguments that best answers the given prompt.\\n\\n\" }}\n    {{- 'Respond in the format {\"name\": function name, \"parameters\": dictionary of argument name and its value}.' }}\n    {{- \"Do not use variables.\\n\\n\" }}\n    {%- for t in tools %}\n        {{- t | tojson(indent=4) }}\n        {{- \"\\n\\n\" }}\n    {%- endfor %}\n    {{- first_user_message + \"<|eot_id|>\"}}\n{%- endif %}\n\n{%- for message in messages %}\n    {%- if not (message.role == 'ipython' or message.role == 'tool' or 'tool_calls' in message) %}\n        {{- '<|start_header_id|>' + message['role'] + '<|end_header_id|>\\n\\n'+ message['content'] | trim + '<|eot_id|>' }}\n    {%- elif 'tool_calls' in message %}\n        {%- if not message.tool_calls|length == 1 %}\n            {{- raise_exception(\"This model only supports single tool-calls at once!\") }}\n        {%- endif %}\n        {%- set tool_call = message.tool_calls[0].function %}\n        {%- if builtin_tools is defined and tool_call.name in builtin_tools %}\n            {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}\n            {{- \"<|python_tag|>\" + tool_call.name + \".call(\" }}\n            {%- for arg_name, arg_val in tool_call.arguments | items %}\n                {{- arg_name + '=\"' + arg_val + '\"' }}\n                {%- if not loop.last %}\n                    {{- \", \" }}\n                {%- endif %}\n                {%- endfor %}\n            {{- \")\" }}\n        {%- else  %}\n            {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}\n            {{- '{\"name\": \"' + tool_call.name + '\", ' }}\n            {{- '\"parameters\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- \"}\" }}\n        {%- endif %}\n        {%- if builtin_tools is defined %}\n            {#- This means we're in ipython mode #}\n            {{- \"<|eom_id|>\" }}\n        {%- else %}\n            {{- \"<|eot_id|>\" }}\n        {%- endif %}\n    {%- elif message.role == \"tool\" or message.role == \"ipython\" %}\n        {{- \"<|start_header_id|>ipython<|end_header_id|>\\n\\n\" }}\n        {%- if message.content is mapping or message.content is iterable %}\n            {{- message.content | tojson }}\n        {%- else %}\n            {{- message.content }}\n        {%- endif %}\n        {{- \"<|eot_id|>\" }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' }}\n{%- endif %}\n"
+        self.config = config
+
+    def load_text_data(self, file_path: str) -> List[str]:
+        """Load and lightly clean text data"""
+        logger.info(f"Loading data from {file_path}")
+        
+        with open(file_path, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+        
+        texts = []
+        for line in lines:
+            if not line:
+                continue
+            chat_obj = json.loads(line)
+            chat_input = self.tokenizer.apply_chat_template(chat_obj, tokenize=False, add_generation_prompt=True)
+            texts.append(chat_input)
+        
+        logger.info(f"Loaded {len(lines)} examples")
+        return texts
     
+    def group_texts(self, examples):
+        """
+        Concatenate tokens within the batch and chunk into fixed-length blocks.
+        If stride > 0 and < max_length, use a sliding window (overlap).
+        """
+        block = self.config.max_length
+        stride = self.config.stride
+
+        # sanity checks
+        if stride is not None and stride >= block:
+            raise ValueError(f"stride ({stride}) must be < max_length ({block})")
+
+        # concatenate all sequences in the batch
+        concatenated = {k: sum(examples[k], []) for k in examples.keys()}
+        total_len = len(concatenated["input_ids"])
+
+        if total_len < block:
+            # not enough to form a single block from this batch
+            return {k: [] for k in concatenated.keys()}
+
+        # choose stepping: non-overlap or sliding window
+        if stride and stride > 0:
+            step = block - stride        
+            starts = range(0, total_len - block + 1, step)
+            result = {k: [concatenated[k][i:i+block] for i in starts]
+                    for k in concatenated.keys()}
+        else:
+            # non-overlapping blocks
+            cut = (total_len // block) * block
+            result = {k: [concatenated[k][i:i+block] for i in range(0, cut, block)]
+                    for k in concatenated.keys()}
+
+        # causal LM labels = inputs
+        result["labels"] = [ids[:] for ids in result["input_ids"]]
+        
+        return result
+
+    def tokenize_function(self, examples):
+        """
+        Tokenize without truncation, and append EOS to each document so that
+        cross-document boundaries are not learned as intra-document text.
+        """
+        tok = self.tokenizer(
+            examples["text"],
+            add_special_tokens=False,  
+            padding=False,
+            truncation=False          
+        )
+        eos_id = self.tokenizer.eos_token_id
+        # append EOS to every sample
+        tok["input_ids"]      = [ids + [eos_id] for ids in tok["input_ids"]]
+        tok["attention_mask"] = [am  + [1]      for am  in tok["attention_mask"]]
+        return tok
+    
+    def create_dataset(self, texts: List[str]) -> Dataset:
+        """Create HuggingFace dataset from texts"""
+        return Dataset.from_dict({"text": texts})
+    
+    def prepare_dataset(self, train_texts: List[str]) -> Dataset:
+        """Prepare dataset with improved processing"""
+        train_dataset = self.create_dataset(train_texts)
+        logger.info(f"Created dataset with {len(train_dataset)} text segments")
+        
+        # Step 1: Tokenize texts
+        logger.info("Tokenizing text...")
+        tokenized_dataset = train_dataset.map(
+            self.tokenize_function,
+            batched=True,
+            batch_size=self.config.tokenizer_batch_size,
+            num_proc=self.config.preprocessing_num_workers,
+            remove_columns=train_dataset.column_names,
+            desc="Tokenizing text"
+        )
+        
+        # Step 2: Group texts into chunks
+        logger.info("Grouping texts into chunks...")
+        lm_dataset = tokenized_dataset.map(
+            self.group_texts,
+            batched=True,
+            batch_size=self.config.tokenizer_batch_size,
+            num_proc=self.config.preprocessing_num_workers,
+            desc="Grouping texts"
+        )
+        
+        def filter_examples(example):
+            return len(example['input_ids']) >= self.config.min_length
+        
+        lm_dataset = lm_dataset.filter(
+            filter_examples,
+            desc="Filtering short examples"
+        )
+        
+        logger.info(f"Final dataset size: {len(lm_dataset)} chunks")
+        return lm_dataset
+
 class ModelSetup:
     """Handles model initialization and configuration"""
     
@@ -521,6 +643,179 @@ class ContinualPretrainingTrainer:
         
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
+
+class InstructionTuningTrainer:
+    """Trainer for instruction tuning"""
+    def __init__(
+        self,
+        model_config: ModelConfig,
+        data_config: DataConfig,
+        training_config: TrainingConfig
+    ):
+        self.model_config = model_config
+        self.data_config = data_config
+        self.training_config = training_config
+        print("Instruction Tuning")
+        set_seed(training_config.seed)
+        
+        # Check if FSDP is enabled
+        use_fsdp = training_config.fsdp is not None
+        
+        # Setup model and tokenizer
+        model_setup = ModelSetup(model_config)
+        self.model, self.tokenizer = model_setup.setup_model_and_tokenizer(use_fsdp=use_fsdp)
+        
+        # Setup data processor
+        self.data_processor = ChatProcessor(self.tokenizer, data_config)
+    
+    def inspect_data(self, train_dataset: Dataset, num_samples: int = 3):
+        """Inspect training data"""
+        logger.info("=" * 80)
+        logger.info("DATA INSPECTION")
+        logger.info("=" * 80)
+        
+        logger.info(f"Dataset info:")
+        logger.info(f"  - Training chunks: {len(train_dataset)}")
+        logger.info(f"  - Features: {train_dataset.features}")
+        
+        if len(train_dataset) == 0:
+            logger.error("EMPTY DATASET ERROR")
+            raise ValueError("Empty dataset: no training chunks created")
+        
+        total_tokens = 0
+        
+        for i in range(min(num_samples, len(train_dataset))):
+            sample = train_dataset[i]
+            
+            logger.info(f"\n--- SAMPLE {i+1} ---")
+            logger.info(f"Input length: {len(sample['input_ids'])} tokens")
+            
+            # FIXED: Verify all samples have consistent length
+            if len(sample['input_ids']) != self.data_config.max_length:
+                logger.error(f"INCONSISTENT LENGTH DETECTED: {len(sample['input_ids'])}, expected: {self.data_config.max_length}")
+                raise ValueError(f"Dataset contains inconsistent sequence lengths")
+            
+            # Decode to check content
+            decoded_text = self.tokenizer.decode(sample['input_ids'], skip_special_tokens=True)
+            logger.info(f"Text preview: '{decoded_text[:200]}...'")
+            
+            total_tokens += len(sample['input_ids'])
+        
+        # Summary statistics
+        avg_length = total_tokens / min(num_samples, len(train_dataset))
+        logger.info(f"\nSummary:")
+        logger.info(f"  - Average chunk length: {avg_length:.1f} tokens")
+        logger.info(f"  - Expected chunk length: {self.data_config.max_length} tokens")
+        logger.info("=" * 80)
+    
+    def train(self, inspect_data: bool = True, inspect_samples: int = 3):
+        """Train model"""
+        # Load data
+        train_texts = self.data_processor.load_text_data(self.data_config.train_file)
+        logger.info(f"Loaded {len(train_texts)} text segments")
+        
+        # Prepare training dataset
+        train_dataset = self.data_processor.prepare_dataset(train_texts)
+        logger.info(f"Prepared {len(train_dataset)} training chunks")
+        
+        # FIXED: Enhanced training arguments with better data handling and FSDP support
+        training_args = TrainingArguments(
+            output_dir=self.training_config.output_dir,
+            num_train_epochs=self.training_config.num_epochs,
+            per_device_train_batch_size=self.data_config.batch_size,
+            gradient_accumulation_steps=self.training_config.gradient_accumulation_steps,
+            learning_rate=self.training_config.learning_rate,
+            warmup_ratio=self.training_config.warmup_ratio,
+            weight_decay=self.training_config.weight_decay,
+            fp16=self.training_config.fp16,
+            logging_steps=self.training_config.logging_steps,
+            save_steps=self.training_config.save_steps,
+            eval_strategy="no",
+            save_strategy="steps",
+            save_total_limit=self.training_config.save_total_limit,
+            push_to_hub=self.training_config.push_to_hub,
+            hub_model_id=self.training_config.hub_model_id,
+            report_to=["tensorboard"],
+            logging_dir=f"{self.training_config.output_dir}/logs",
+            seed=self.training_config.seed,
+            dataloader_num_workers=2,
+            remove_unused_columns=False,
+            dataloader_pin_memory=False,
+            optim="adamw_torch",
+            max_grad_norm=1.0,
+            logging_first_step=True,
+            lr_scheduler_type="cosine",
+            #save_safetensors=True,
+            load_best_model_at_end=False,
+            # FIXED: Add data loading configurations
+            dataloader_drop_last=True,
+            ignore_data_skip=True,
+            # FIXED: FSDP config from environment variable (new method)
+            # Don't set fsdp or fsdp_transformer_layer_cls_to_wrap here
+            # They should be set via FSDP_CONFIG environment variable
+        )
+        
+        # Data collator
+        data_collator = DataCollatorForLanguageModeling(
+            tokenizer=self.tokenizer,
+            mlm=False,
+            pad_to_multiple_of=None, 
+            return_tensors="pt"
+        )
+        
+        # Initialize trainer
+        trainer = Trainer(
+            model=self.model,
+            args=training_args,
+            train_dataset=train_dataset,
+            data_collator=data_collator,
+            callbacks=[PerplexityCallback()]
+        )
+        
+        # Inspect data if requested
+        if inspect_data:
+            self.inspect_data(train_dataset, inspect_samples)
+        
+        # Training verification
+        logger.info("Starting continual pretraining...")
+        total_params = sum(p.numel() for p in self.model.parameters())
+        trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+        logger.info(f"Total parameters: {total_params:,}")
+        logger.info(f"Trainable parameters: {trainable_params:,}")
+        logger.info(f"Training efficiency: {100 * trainable_params / total_params:.2f}%")
+        
+        # Start training
+        train_result = trainer.train()
+        
+        # Save model
+        logger.info("Saving model...")
+        trainer.save_model()
+        self.tokenizer.save_pretrained(self.training_config.output_dir)
+        
+        # Save training metrics
+        metrics = train_result.metrics
+        trainer.log_metrics("train", metrics)
+        trainer.save_metrics("train", metrics)
+        
+        return trainer, metrics
+    
+    def generate_sample(self, prompt: str, max_length: int = 100):
+        """Generate text sample"""
+        inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
+        
+        with torch.no_grad():
+            outputs = self.model.generate(
+                **inputs,
+                max_new_tokens=max_length,
+                num_return_sequences=1,
+                temperature=0.7,
+                do_sample=True,
+                top_p=0.95,
+                pad_token_id=self.tokenizer.pad_token_id,
+                repetition_penalty=1.1
+            )   
+        
+        return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
     
 def save_config(config_dict: Dict, output_dir: str):
     """Save configuration to JSON file"""
@@ -564,6 +859,9 @@ def main():
     parser.add_argument("--fsdp_transformer_layer_cls_to_wrap", type=str, default="LlamaDecoderLayer",
                         help="Transformer layer class to wrap for FSDP auto_wrap")
     
+    # CPT arguments
+    parser.add_argument("--it", action='store_true')
+    
     args = parser.parse_args()
     
     # Create configurations
@@ -602,7 +900,7 @@ def main():
     save_config(config_dict, args.output_dir)
     
     # Initialize trainer
-    trainer = ContinualPretrainingTrainer(model_config, data_config, training_config)
+    trainer = ContinualPretrainingTrainer(model_config, data_config, training_config) if args.it is False else InstructionTuningTrainer(model_config, data_config, training_config)
     
     trainer_obj, train_metrics = trainer.train(
          inspect_data=args.inspect_data, 

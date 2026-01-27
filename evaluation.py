@@ -539,6 +539,12 @@ def compute_macro_f1(y_true: List[int], y_pred: List[int], labels: List[int]) ->
 # ========================
 # Data loading
 # ========================
+def load_cole_dataset_hf(task_name):
+    print(f"Loading {task_name} from huggingface")
+    ds = load_dataset("graalul/COLE", task_name)
+    print(f"Loaded {task_name} dataset with {len(ds)} samples")
+    return ds
+
 def load_cole_dataset_local(task_name: str) -> Optional[Any]:
     task_dir = os.path.join(COLE_DIR, task_name)
     if not os.path.exists(task_dir):
@@ -693,7 +699,7 @@ def extract_truths(dataset, task_name: str, task_type: str, label_set: List[int]
 # ========================
 # Task processing 
 # ========================
-def process_cole_tasks(include_tasks: Optional[Set[str]] = None) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
+def process_cole_tasks(include_tasks: Optional[Set[str]] = None, local=True) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
     results: Dict[str, Any] = {
         "model_url": BASE_MODEL,
         "tasks": []
@@ -707,7 +713,7 @@ def process_cole_tasks(include_tasks: Optional[Set[str]] = None) -> Tuple[Dict[s
             continue
         
         print(f"\nProcessing {task_name}...")
-        dataset = load_cole_dataset_local(task_name)
+        dataset = load_cole_dataset_local(task_name) if local is True else load_cole_dataset_hf(task_name)
         if dataset is None:
             print(f"Skipping {task_name} - could not load dataset")
             continue
@@ -935,7 +941,7 @@ def get_balance_info(labels_list: List[int]) -> Dict:
 # ========================
 # Evaluation
 # ========================
-def evaulation(task):
+def evaulation(tasks, local=False):
     print("Starting COLE benchmark evaluation")
     
     if not os.path.exists(COLE_DIR):
@@ -945,7 +951,7 @@ def evaulation(task):
     cole_dirs = [d for d in os.listdir(COLE_DIR) if os.path.isdir(os.path.join(COLE_DIR, d))]
     print(f"Found {len(cole_dirs)} task directories: {cole_dirs}")
 
-    results, metrics_summary = process_cole_tasks(set([task]))
+    results, metrics_summary = process_cole_tasks(set(tasks), local)
     
     if len(results["tasks"]) == 0:
         print("\n NO TASKS PROCESSED - exiting")
@@ -1012,14 +1018,16 @@ def main():
     parser = argparse.ArgumentParser(description="Continual Pretraining for LLaMA")
     
     # Model arguments
-    parser.add_argument("--model_path", type=str, default="models/basic", required=False)
-    parser.add_argument("--use_lora", type=str, default=False, required=False)
+    parser.add_argument("--model_path", type=str, default="models/basic", required=True)
+    parser.add_argument("--use_lora", type=str, default=True, required=False)
     parser.add_argument("--benchmark", type=str, default="mms", required=False)
-
+    benchmarks = args.benchmark.split(",")
+    parser.add_argument("--local", type=str, default=True, required=False)
+    
     args = parser.parse_args()
     model, tokenizer = load_model(args)
 
-    evaulation(args.benchmark)
+    evaulation(benchmarks, args.local)
 
 if __name__ == "__main__":
     main()

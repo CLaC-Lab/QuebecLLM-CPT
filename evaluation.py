@@ -19,8 +19,8 @@ import argparse
 # Configuration
 # ========================
 PROJECT_DIR = "/home/k_ammade/Projects/CPT_scratch"
-MODEL_PATH_3E = f"{PROJECT_DIR}/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
-MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
+#MODEL_PATH_3E = f"{PROJECT_DIR}/models/quebec_croissant_chat_ALL_DATA/checkpoint-2094"
+#MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
 OLMO = "allenai/OLMo-2-1124-7B"
 S1 = "simplescaling/s1.1-32B"
 BASE_MODEL = "croissantllm/CroissantLLMChat-v0.1"
@@ -609,7 +609,7 @@ def predict_classification_with_llm_mc(texts, choices_list, labels_list, task_na
     max_choice_idx = max(len(choices) - 1 for choices in choices_list)
     digit_chars = tuple(str(i) for i in range(max_choice_idx + 1))
     restrict_ids = digit_token_ids(tokenizer, digit_chars)
-    
+
     for text, choices in tqdm(zip(texts, choices_list), total=len(texts), desc=f"Predicting {task_name}"):
         try:
             # Pass choices to build_prompt
@@ -950,8 +950,9 @@ def evaluation(tasks, local=False):
         return None
     
     cole_dirs = [d for d in os.listdir(COLE_DIR) if os.path.isdir(os.path.join(COLE_DIR, d))]
-    print(f"Found {len(cole_dirs)} task directories: {cole_dirs}")
-
+    print(f"Found {len(cole_dirs)} task directories: {cole_dirs}")  
+    print(set(tasks))
+    print(tasks)
     results, metrics_summary = process_cole_tasks(set(tasks), local)
     
     if len(results["tasks"]) == 0:
@@ -961,14 +962,14 @@ def evaluation(tasks, local=False):
     # Validate and save predictions
     validate_output_format(results)
     
-    with open(OUTPUT_PRED_JSON, 'w', encoding='utf-8') as f:
+    with open(f"{SAVE_DIR}/{OUTPUT_PRED_JSON}", 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\n✓ Predictions saved to {OUTPUT_PRED_JSON}")
     
     # Save metrics
-    with open(OUTPUT_METRICS_JSON, 'w', encoding='utf-8') as f:
+    with open(f"{SAVE_DIR}/{OUTPUT_METRICS_JSON}", 'w', encoding='utf-8') as f:
         json.dump({"metrics": metrics_summary}, f, ensure_ascii=False, indent=2)
-    save_metrics_csv(metrics_summary, OUTPUT_METRICS_CSV)
+    save_metrics_csv(metrics_summary, f"{SAVE_DIR}/{OUTPUT_METRICS_CSV}")
     print(f"✓ Metrics saved to {OUTPUT_METRICS_JSON} and {OUTPUT_METRICS_CSV}")
     
     # Print summary
@@ -1003,8 +1004,12 @@ def load_model(args):
                 trust_remote_code=True
             )
         tokenizer.padding_side = "left"
+        if tokenizer.chat_template is None:
+            print("No default chat template. Setting one")
+            tokenizer.chat_template = "{{- bos_token }}\n{%- if custom_tools is defined %}\n    {%- set tools = custom_tools %}\n{%- endif %}\n{%- if not tools_in_user_message is defined %}\n    {%- set tools_in_user_message = true %}\n{%- endif %}\n{%- if not date_string is defined %}\n    {%- set date_string = \"26 Jul 2024\" %}\n{%- endif %}\n{%- if not tools is defined %}\n    {%- set tools = none %}\n{%- endif %}\n\n{#- This block extracts the system message, so we can slot it into the right place. #}\n{%- if messages[0]['role'] == 'system' %}\n    {%- set system_message = messages[0]['content']|trim %}\n    {%- set messages = messages[1:] %}\n{%- else %}\n    {%- set system_message = \"\" %}\n{%- endif %}\n\n{#- System message + builtin tools #}\n{{- \"<|start_header_id|>system<|end_header_id|>\\n\\n\" }}\n{%- if builtin_tools is defined or tools is not none %}\n    {{- \"Environment: ipython\\n\" }}\n{%- endif %}\n{%- if builtin_tools is defined %}\n    {{- \"Tools: \" + builtin_tools | reject('equalto', 'code_interpreter') | join(\", \") + \"\\n\\n\"}}\n{%- endif %}\n{{- \"Cutting Knowledge Date: December 2023\\n\" }}\n{{- \"Today Date: \" + date_string + \"\\n\\n\" }}\n{%- if tools is not none and not tools_in_user_message %}\n    {{- \"You have access to the following functions. To call a function, please respond with JSON for a function call.\" }}\n    {{- 'Respond in the format {\"name\": function name, \"parameters\": dictionary of argument name and its value}.' }}\n    {{- \"Do not use variables.\\n\\n\" }}\n    {%- for t in tools %}\n        {{- t | tojson(indent=4) }}\n        {{- \"\\n\\n\" }}\n    {%- endfor %}\n{%- endif %}\n{{- system_message }}\n{{- \"<|eot_id|>\" }}\n\n{#- Custom tools are passed in a user message with some extra guidance #}\n{%- if tools_in_user_message and not tools is none %}\n    {#- Extract the first user message so we can plug it in here #}\n    {%- if messages | length != 0 %}\n        {%- set first_user_message = messages[0]['content']|trim %}\n        {%- set messages = messages[1:] %}\n    {%- else %}\n        {{- raise_exception(\"Cannot put tools in the first user message when there's no first user message!\") }}\n{%- endif %}\n    {{- '<|start_header_id|>user<|end_header_id|>\\n\\n' -}}\n    {{- \"Given the following functions, please respond with a JSON for a function call \" }}\n    {{- \"with its proper arguments that best answers the given prompt.\\n\\n\" }}\n    {{- 'Respond in the format {\"name\": function name, \"parameters\": dictionary of argument name and its value}.' }}\n    {{- \"Do not use variables.\\n\\n\" }}\n    {%- for t in tools %}\n        {{- t | tojson(indent=4) }}\n        {{- \"\\n\\n\" }}\n    {%- endfor %}\n    {{- first_user_message + \"<|eot_id|>\"}}\n{%- endif %}\n\n{%- for message in messages %}\n    {%- if not (message.role == 'ipython' or message.role == 'tool' or 'tool_calls' in message) %}\n        {{- '<|start_header_id|>' + message['role'] + '<|end_header_id|>\\n\\n'+ message['content'] | trim + '<|eot_id|>' }}\n    {%- elif 'tool_calls' in message %}\n        {%- if not message.tool_calls|length == 1 %}\n            {{- raise_exception(\"This model only supports single tool-calls at once!\") }}\n        {%- endif %}\n        {%- set tool_call = message.tool_calls[0].function %}\n        {%- if builtin_tools is defined and tool_call.name in builtin_tools %}\n            {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}\n            {{- \"<|python_tag|>\" + tool_call.name + \".call(\" }}\n            {%- for arg_name, arg_val in tool_call.arguments | items %}\n                {{- arg_name + '=\"' + arg_val + '\"' }}\n                {%- if not loop.last %}\n                    {{- \", \" }}\n                {%- endif %}\n                {%- endfor %}\n            {{- \")\" }}\n        {%- else  %}\n            {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}\n            {{- '{\"name\": \"' + tool_call.name + '\", ' }}\n            {{- '\"parameters\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- \"}\" }}\n        {%- endif %}\n        {%- if builtin_tools is defined %}\n            {#- This means we're in ipython mode #}\n            {{- \"<|eom_id|>\" }}\n        {%- else %}\n            {{- \"<|eot_id|>\" }}\n        {%- endif %}\n    {%- elif message.role == \"tool\" or message.role == \"ipython\" %}\n        {{- \"<|start_header_id|>ipython<|end_header_id|>\\n\\n\" }}\n        {%- if message.content is mapping or message.content is iterable %}\n            {{- message.content | tojson }}\n        {%- else %}\n            {{- message.content }}\n        {%- endif %}\n        {{- \"<|eot_id|>\" }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' }}\n{%- endif %}\n"
         model.to(device)
         model.eval()
+        print(f"Model save dir {SAVE_DIR}")
         print(f"Model loaded from {args.model_path}")
         print(f"Model type: {type(model)}")
         print(f"Tokenizer pad_token: {tokenizer.pad_token}")
@@ -1018,12 +1023,18 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluation")
     
     # Model arguments
-    parser.add_argument("--model_path", type=str, default="models/basic", required=True)
-    parser.add_argument("--base_model", type=bool, default=True, required=False)
+    parser.add_argument("--model_path", type=str, default="models/basic", required=False)
+    parser.add_argument("--base_model", type=bool, default=False, required=False)
     parser.add_argument("--benchmark", type=str, default="qfrcola,qfrblimp,qfrcore,qfrcort", required=False)
     parser.add_argument("--local", type=bool, default=True, required=False)
     
     args = parser.parse_args()
+
+    global SAVE_DIR
+    model_type = "-base" if args.base_model is True else ""
+    SAVE_DIR = SAVE_DIR + "/" + args.model_path.split("/")[-1] + model_type
+    print(args.model_path.split("/"))
+    os.makedirs(SAVE_DIR, exist_ok=True)
     benchmarks = args.benchmark.split(",")
     model, tokenizer = load_model(args)
 

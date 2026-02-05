@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass, field, asdict
 from datetime import datetime
+
 import unicodedata
 
 import numpy as np
@@ -242,7 +243,7 @@ class ChatProcessor:
             chat_input = self.tokenizer.apply_chat_template(chat_obj, tokenize=False, add_generation_prompt=True)
             texts.append(chat_input)
         
-        logger.info(f"Loaded {len(lines)} examples")
+        logger.info(f"Loaded {len(lines)} instruction examples")
         return texts
     
     def group_texts(self, examples):
@@ -450,13 +451,29 @@ class ModelSetup:
 
 class PerplexityCallback(TrainerCallback):
     """Callback for tracking perplexity"""
-    
+    def __init__(self):
+        super().__init__()
+        self.log_arr = []
+
     def on_log(self, args, state, control, logs=None, **kwargs):
         if logs is not None:
             if "loss" in logs:
                 perplexity = np.exp(logs["loss"])
-                logs["perplexity"] = perplexity
+                logs["perplexity"] = float(perplexity)
+                self.log_arr.append(logs)
 
+    def on_train_end(self, args, state, control, **kwargs):
+        print(self.log_arr)
+        data = {
+            "epoch": [item["epoch"] for item in self.log_arr],
+            "loss": [item["loss"] for item in self.log_arr],
+            "perplexity": [item["perplexity"] for item in self.log_arr],
+            "learning_rate": [item["learning_rate"] for item in self.log_arr],
+            "grad_norm": [item["grad_norm"] for item in self.log_arr]
+        }
+        with open(f"{args.output_dir}/logs/train_log.json", "w") as f_open: 
+            f_open.write(json.dumps(data))
+        
 
 class ContinualPretrainingTrainer:
     """Trainer for continual pretraining"""
@@ -680,7 +697,7 @@ class InstructionTuningTrainer:
         
         if len(train_dataset) == 0:
             logger.error("EMPTY DATASET ERROR")
-            raise ValueError("Empty dataset: no training chunks created")
+            raise ValueError("Empty dataset: no trainingcs chunks created")
         
         total_tokens = 0
         
@@ -712,7 +729,7 @@ class InstructionTuningTrainer:
         """Train model"""
         # Load data
         train_texts = self.data_processor.load_text_data(self.data_config.train_file)
-        logger.info(f"Loaded {len(train_texts)} text segments")
+        logger.info(f"Loaded {len(train_texts)} instruction segments")
         
         # Prepare training dataset
         train_dataset = self.data_processor.prepare_dataset(train_texts)
@@ -777,7 +794,7 @@ class InstructionTuningTrainer:
             self.inspect_data(train_dataset, inspect_samples)
         
         # Training verification
-        logger.info("Starting continual pretraining...")
+        logger.info("Starting instruction tuning...")
         total_params = sum(p.numel() for p in self.model.parameters())
         trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
         logger.info(f"Total parameters: {total_params:,}")
@@ -845,10 +862,10 @@ def main():
     parser.add_argument("--inspect_samples", type=int, default=5)
         
     # Training arguments
-    parser.add_argument("--output_dir", type=str, default="./cpt_model")
+    parser.add_argument("--output_name", type=str, default="meta_llama")
     parser.add_argument("--stride", type=int, default=128,
                     help="Sliding-window overlap in tokens; 0 means no overlap")
-    parser.add_argument("--num_epochs", type=int, default=3)
+    parser.add_argument("--num_epochs", type=int, default=666666)
     parser.add_argument("--learning_rate", type=float, default=1e-5)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=8)
     parser.add_argument("--seed", type=int, default=42)
@@ -863,6 +880,8 @@ def main():
     parser.add_argument("--it", action='store_true')
     
     args = parser.parse_args()
+
+    output_dir = f"./models/{args.output_name}-{args.num_epochs}E"
     
     # Create configurations
     model_config = ModelConfig(
@@ -881,7 +900,7 @@ def main():
     )
     
     training_config = TrainingConfig(
-        output_dir=args.output_dir,
+        output_dir=output_dir,
         num_epochs=args.num_epochs,
         learning_rate=args.learning_rate,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
@@ -897,7 +916,7 @@ def main():
         "training": asdict(training_config),
         "version": "1.1_FIXED"
     }
-    save_config(config_dict, args.output_dir)
+    save_config(config_dict, output_dir)
     
     # Initialize trainer
     trainer = ContinualPretrainingTrainer(model_config, data_config, training_config) if args.it is False else InstructionTuningTrainer(model_config, data_config, training_config)
@@ -918,7 +937,7 @@ def main():
         "fixed_version": "1.1"
     }
     
-    summary_path = Path(args.output_dir) / "training_summary.json"
+    summary_path = Path(output_dir) / "training_summary.json"
     with open(summary_path, 'w') as f:
         json.dump(summary, f, indent=2)
 

@@ -103,7 +103,7 @@ srun -u torchrun --standalone --nnodes=1 --nproc_per_node=${SLURM_GPUS_PER_NODE:
   --train_file "${WORKDIR}/train.txt" \
   --max_length 1024 \
   --batch_size "${PER_DEVICE_BS}" \
-  --output_dir "${curr_dir}/models/quebec_french_llama3.2_1b_6E_fsdp" \
+  --output_name "quebec_french_llama3.2_1b_fsdp" \
   --num_epochs 6 \
   --learning_rate 1e-5 \
   --gradient_accumulation_steps "${GAS}" \

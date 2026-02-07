@@ -15,6 +15,10 @@ from huggingface_hub import hf_hub_download, login
 from peft import AutoPeftModelForCausalLM
 import argparse
 
+#import transformers
+#transformers.logging.set_verbosity_info()
+
+
 # ========================
 # Configuration
 # ========================
@@ -23,14 +27,14 @@ PROJECT_DIR = "/home/k_ammade/Projects/CPT_scratch"
 #MODEL_PATH_6E = f"{PROJECT_DIR}/quebec_croissant_chat_ALL_DATA_6EPOCHS/checkpoint-8376"
 OLMO = "allenai/OLMo-2-1124-7B"
 S1 = "simplescaling/s1.1-32B"
-BASE_MODEL = "croissantllm/CroissantLLMChat-v0.1"
+BASE_MODEL = "meta-llama/Llama-3.2-1B"
 #LLAMA_MODEL_1B = f"{PROJECT_DIR}/llama_1b"
 #LLAMA_4E = f"{PROJECT_DIR}/models/quebec_french_llama/checkpoint-9510"
 #LLAMA_6E = f"{PROJECT_DIR}/quebec_french_llama3.2_1b_6E_2gpu_fsdp/checkpoint-1152"
 COLE_DIR = "./COLE"
 MAX_LENGTH = 1024
 BATCH_SIZE = 128
-USE_CHAT_TEMPLATE = True 
+USE_CHAT_TEMPLATE = True
 OUTPUT_PRED_JSON = "cole_results.json"
 OUTPUT_METRICS_JSON = "cole_eval_metrics.json"
 OUTPUT_METRICS_CSV = "cole_eval_metrics.csv"
@@ -65,27 +69,27 @@ TASKS_CONFIG: Dict[str, Dict[str, Any]] = {
     "allocine": {
         "text_column": "review",
         "task_type": "binary",
-        "labels": [0, 1]  
+        "labels": [0, 1]
     },
     "qfrcola": {
         "text_column": "sentence",
         "task_type": "binary",
-        "labels": [0, 1] 
+        "labels": [0, 1]
     },
     "paws_x": {
         "text_columns": ["sentence1", "sentence2"],
         "task_type": "binary",
-        "labels": [0, 1] 
+        "labels": [0, 1]
     },
     "french_boolq": {
         "text_columns": ["question", "passage"],
         "task_type": "binary",
-        "labels": [0, 1] 
+        "labels": [0, 1]
     },
     "mms": {
         "text_column": "text",
         "task_type": "sentiment",
-        "labels": [0, 1, 2] 
+        "labels": [0, 1, 2]
     },
     "qfrblimp": {
         "text_columns": ["sentence_a", "sentence_b"],
@@ -95,13 +99,13 @@ TASKS_CONFIG: Dict[str, Dict[str, Any]] = {
     "qfrcore": {
         "text_column": "expression",
         "task_type": "multiple_choice",
-        "choices_column": "choices", 
+        "choices_column": "choices",
         "labels": list(range(10))
     },
     "qfrcort": {
         "text_column": "terme",
         "task_type": "multiple_choice",
-        "choices_column": "choices", 
+        "choices_column": "choices",
         "labels": list(range(10))
     },
 }
@@ -124,7 +128,7 @@ def save_rows_csv(path: str, rows: List[Dict[str, Any]]) -> None:
         "parsed_label", "gold_label", "label_set", "label_column_used",
         "parse_error"
     ]
-    
+
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
@@ -150,12 +154,12 @@ print(f"Using device: {device}")
 #model = AutoModelForCausalLM.from_pretrained(
 #    BASE_MODEL,
 #    torch_dtype=torch.float16,
-#    device_map=None, 
+#    device_map=None,
 #)
 
 #model = model.to(device)
 #model.eval()
-#model.config.use_cache = True 
+#model.config.use_cache = True
 #tokenizer.padding_side = "left"
 model = None
 tokenizer = None
@@ -207,14 +211,14 @@ def digit_token_ids(tokenizer, digits=("0","1")):
 def parse_llm_classification_mc(response: str, num_choices: int) -> int:
     """Parse MC response - expects single digit 0 to num_choices-1"""
     text = response.strip()
-    
+
     # Try to find first digit
     for char in text:
         if char.isdigit():
             val = int(char)
             if 0 <= val < num_choices:
                 return val
-    
+
     # Default to -1 if parsing fails
     return -1
 
@@ -223,7 +227,7 @@ def parse_llm_classification(response: str, valid_labels: List[int], task_type: 
     Strategy: prefer first explicit integer in the response; otherwise map common strings.
     """
     text = response.strip().lower()
-    
+
     # 1) Try to find an integer in the response
     m = INT_PATTERN.search(text)
     if m is not None:
@@ -232,8 +236,9 @@ def parse_llm_classification(response: str, valid_labels: List[int], task_type: 
             if val in valid_labels:
                 return val
         except Exception:
+            print("Error")
             pass
-    
+
     # 2) Map common label strings -> ints depending on task
     str_map_common = {
         # binary
@@ -249,15 +254,15 @@ def parse_llm_classification(response: str, valid_labels: List[int], task_type: 
         # acceptability
         "acceptable": 1, "unacceptable": 0,
     }
-    
+
     for k, v in str_map_common.items():
         if k in text and v in valid_labels:
             return v
-    
+
     # Default to first label if parsing fails
     return valid_labels[0]
 
-def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_list: List[int], 
+def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_list: List[int],
                  choices: Optional[List[str]] = None) -> str:
     """
     Construit des instructions très détaillées en FR pour les tâches QFR.
@@ -272,20 +277,20 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
         "- Ordre des mots et contraintes syntaxiques usuelles du français écrit standard (Québec).\n"
         "- Tolérance zéro pour les fautes manifestes; ignorer la plausibilité sémantique et le style."
     )
-    
+
     # Format de sortie hyper strict
     FORMAT_SORTIE_BIN = (
         "FORMAT DE SORTIE:\n"
         "- Réponds **uniquement** par un seul chiffre, sans rien d'autre: «0» ou «1».\n"
         "- Aucun texte avant/après, aucune explication, aucun espace, aucune ponctuation, aucun guillemet."
     )
-    
+
     FORMAT_SORTIE_MC = (
         "FORMAT DE SORTIE:\n"
         "- Réponds **uniquement** par le numéro **entier** de l'option correcte (0, 1, 2, …), "
         "sans aucun autre caractère ni commentaire."
     )
-    
+
     # =========================
     # qfrcola : acceptabilité binaire d'une phrase
     # 0 = inacceptable/incorrecte ; 1 = acceptable/correcte
@@ -303,7 +308,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             f"PHRASE:\n{text}\n\n"
             "Réponse (0 ou 1) :"
         )
-    
+
     # =========================
     # qfrblimp : deux versions ; choisir celle qui est grammaticale
     # 0 = «Texte 1» correct ; 1 = «Texte 2» correct
@@ -325,7 +330,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             f"{text}\n\n"
             "Réponse (0 ou 1) :"
         )
-    
+
     # =========================
     # qfrcore / qfrcort : QCM (indices 0..N-1) - FIXED VERSION WITH CHOICES
     # =========================
@@ -339,7 +344,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             f"{options_block}\n\n"
             "Réponse (chiffre seulement):"
         )
-    
+
     # Fallback for MC without choices (shouldn't happen with fix)
     if task_name in {"qfrcore", "qfrcort"} or (task_type == "multiple_choice" and task_name in {"qfrcore", "qfrcort"}):
         return (
@@ -350,7 +355,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             "[OPTIONS NON FOURNIES - ERREUR]\n\n"
             "Réponse :"
         )
-        
+
     if task_name == "wsd":
         premise = (
             text.get("premise")
@@ -372,7 +377,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             f"HYPOTHÈSE: {[hypothesis]}\n\n"
             "Réponse (0 ou 1) :"
         )
-        
+
     if task_name == "french_boolq":
         question = (
             text.get("question")
@@ -394,7 +399,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             f"QUESTION:\n{question}\n\n"
             "Réponse (0 ou 1) :"
         )
-        
+
     if task_name == "paws_x":
         sentence1 = (
             text.get("sentence1")
@@ -416,7 +421,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             f"PHRASE 2: {sentence2}\n\n"
             "Réponse (0 ou 1) :"
         )
-    
+
     if task_name == "mms":
         if type(text) is not str:
             text == (
@@ -435,7 +440,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             f"TEXTE:\n{text}\n\n"
             "Réponse (0, 1 ou 2) :"
         )
-    
+
 # Heuristic label-column detection
 def guess_label_column(task_name: str, feature_names: List[str]) -> Optional[str]:
     candidates = TASK_LABEL_COLUMN_HINTS.get(task_name, []) + [
@@ -444,7 +449,7 @@ def guess_label_column(task_name: str, feature_names: List[str]) -> Optional[str
         "paraphrase", "acceptable", "acceptability", "is_duplicate", "gold",
         "answer_idx", "sense_id", "is_impossible", "has_answer", "answerable", "choices"
     ]
-    
+
     for c in candidates:
         if c in feature_names:
             return c
@@ -455,11 +460,11 @@ def guess_label_column(task_name: str, feature_names: List[str]) -> Optional[str
 def normalize_truth(val: Any, task_type: str, valid_labels: List[int]) -> Optional[int]:
     if val is None:
         return None
-    
+
     # booleans
     if isinstance(val, (bool, np.bool_)):
         return int(val) if 1 in valid_labels else (0 if 0 in valid_labels else None)
-    
+
     # numeric (int-like string)
     if isinstance(val, (int, np.integer)):
         return int(val)
@@ -471,44 +476,44 @@ def normalize_truth(val: Any, task_type: str, valid_labels: List[int]) -> Option
         # direct digits
         if s.isdigit() or (s.startswith("-") and s[1:].isdigit()):
             return int(s)
-        
+
         # special QA words
         if task_type == "binary":
             if s in {"yes", "true", "vrai", "oui", "answerable"}:
                 return 1 if 1 in valid_labels else valid_labels[-1]
             if s in {"no", "false", "faux", "non", "not answerable", "unanswerable"}:
                 return 0 if 0 in valid_labels else valid_labels[0]
-        
+
         # NLI
         if task_type == "nli":
             mapping = {"entailment": 0, "neutral": 1, "contradiction": 2}
             if s in mapping:
                 return mapping[s]
-        
+
         # sentiment
         if task_type in {"sentiment", "classification"}:
             mapping = {"negative": 0, "neutral": 1, "positive": 2}
             if s in mapping:
                 return mapping[s]
-        
+
         # paraphrase-like
         if s in {"paraphrase", "duplicate", "same"}:
             return 1
         if s in {"not paraphrase", "non-paraphrase", "different"}:
             return 0
-        
+
         # acceptability
         if s in {"acceptable"}:
             return 1
         if s in {"unacceptable"}:
             return 0
-        
+
         # options
         if s in {"option1", "option 1", "translation1"}:
             return 1
         if s in {"option2", "option 2", "translation2"}:
             return 2
-    
+
     return None
 
 # ========================
@@ -529,12 +534,12 @@ def compute_macro_f1(y_true: List[int], y_pred: List[int], labels: List[int]) ->
         tp = sum(1 for t, p in zip(y_true, y_pred) if t == l and p == l)
         fp = sum(1 for t, p in zip(y_true, y_pred) if t != l and p == l)
         fn = sum(1 for t, p in zip(y_true, y_pred) if t == l and p != l)
-        
+
         precision = tp / (tp + fp + eps)
         recall = tp / (tp + fn + eps)
         f1 = 2 * precision * recall / (precision + recall + eps)
         f1s.append(f1)
-    
+
     return float(np.mean(f1s)) if f1s else 0.0
 
 # ========================
@@ -551,15 +556,15 @@ def load_cole_dataset_local(task_name: str) -> Optional[Any]:
     if not os.path.exists(task_dir):
         print(f"Directory {task_dir} does not exist")
         return None
-    
+
     json_files = glob.glob(os.path.join(task_dir, "*.json*"))
     if not json_files:
         print(f"No JSON files found in {task_dir}")
         return None
-    
+
     test_files = [f for f in json_files if 'test' in os.path.basename(f).lower()]
     json_file = test_files[0] if test_files else json_files[0]
-    
+
     print(f"Loading {task_name} from {json_file}")
     dataset = load_dataset("json", data_files=json_file, split="train")
     print(f"Loaded {task_name} dataset with {len(dataset)} samples")
@@ -579,7 +584,7 @@ def generate_response(prompt: str, max_new_tokens: int = 10, restrict_to_ids=Non
     lp = None
     if restrict_to_ids:
         class AllowedTokensProcessor(LogitsProcessor):
-            def __init__(self, allowed_ids): 
+            def __init__(self, allowed_ids):
                 self.allowed = allowed_ids
             def __call__(self, input_ids, scores):
                 # FIXED: Use scores.device as the authoritative device for all tensors
@@ -600,11 +605,12 @@ def generate_response(prompt: str, max_new_tokens: int = 10, restrict_to_ids=Non
             logits_processor=lp
         )
     gen_only = out[0][enc["input_ids"].shape[1]:]
-    return tokenizer.decode(gen_only, skip_special_tokens=True)
+    output_text = tokenizer.decode(gen_only, skip_special_tokens=True)
+    return output_text
 
 def predict_classification_with_llm_mc(texts, choices_list, labels_list, task_name):
     predictions, prompts, raw_responses = [], [], []
-    
+
     # Restrict to digit tokens for MC (0-9)
     max_choice_idx = max(len(choices) - 1 for choices in choices_list)
     digit_chars = tuple(str(i) for i in range(max_choice_idx + 1))
@@ -614,21 +620,23 @@ def predict_classification_with_llm_mc(texts, choices_list, labels_list, task_na
         try:
             # Pass choices to build_prompt
             prompt = build_prompt(task_name, "multiple_choice", text, labels_list, choices=choices)
-            
+
             # Generate with restricted tokens
             resp = generate_response(prompt, max_new_tokens=1, restrict_to_ids=restrict_ids)
-            
+
             # Parse response - for MC, we expect a digit
             pred = parse_llm_classification_mc(resp, len(choices))
-            
+            #print(prompt)
+            #print(resp)
+
         except Exception as e:
             resp = f"ERROR: {e}"
             pred = 0
-            
+
         predictions.append(pred)
         prompts.append(prompt)
         raw_responses.append(resp)
-    
+
     return predictions, prompts, raw_responses
 
 def predict_classification_with_llm(texts, labels_list, task_type="binary", task_name=None):
@@ -639,12 +647,16 @@ def predict_classification_with_llm(texts, labels_list, task_type="binary", task
 
     for i in tqdm(range(0, len(texts), BATCH_SIZE), desc="Predicting"):
         for text in texts[i:i+BATCH_SIZE]:
-            prompt, resp, pred = "", "", labels_list[0]  # <-- initialize
+            prompt, resp, pred = "", "", labels_list[1]  # <-- initialize
             try:
                 prompt = build_prompt(task_name, task_type, text, labels_list)
                 max_new = 1 if (task_type == "binary" and len(labels_list) == 2) else 4
                 resp = generate_response(prompt, max_new_tokens=max_new, restrict_to_ids=restrict_ids)
                 pred = parse_llm_classification(resp, labels_list, task_type)
+
+                #print(prompt)
+                #print(resp)
+
             except Exception as e:
                 resp = f"ERROR: {e}"
                 # pred already defaulted above
@@ -658,11 +670,11 @@ def predict_classification_with_llm(texts, labels_list, task_type="binary", task
 def evaluate_predictions(task_name: str, y_true: List[int], y_pred: List[int], label_set: List[int]) -> Dict[str, Any]:
     y_true = [int(x) for x in y_true]
     y_pred = [int(x) for x in y_pred]
-    
+
     acc = float(np.mean(np.array(y_true) == np.array(y_pred))) if y_true else 0.0
     macro_f1 = compute_macro_f1(y_true, y_pred, label_set) if y_true else 0.0
     cm = compute_confusion_matrix(y_true, y_pred, label_set)
-    
+
     return {
         "task": task_name,
         "num_samples": len(y_true),
@@ -674,12 +686,12 @@ def evaluate_predictions(task_name: str, y_true: List[int], y_pred: List[int], l
 
 def extract_truths(dataset, task_name: str, task_type: str, label_set: List[int]) -> Tuple[Optional[List[int]], Optional[str]]:
     features = list(dataset.features.keys())
-    
+
     label_col = guess_label_column(task_name, features)
     if label_col is None:
         print(f"  Warning: Could not detect label column for {task_name}.")
         return None, None
-    
+
     vals = dataset[label_col]
     y: List[int] = []
     for v in vals:
@@ -694,47 +706,47 @@ def extract_truths(dataset, task_name: str, task_type: str, label_set: List[int]
         if nv is None:
             nv = label_set[0]
         y.append(nv)
-    
+
     return y, label_col
 
 # ========================
-# Task processing 
+# Task processing
 # ========================
 def process_cole_tasks(include_tasks: Optional[Set[str]] = None, local=True) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
     results: Dict[str, Any] = {
         "model_url": BASE_MODEL,
         "tasks": []
     }
-    
+
     metrics_summary: List[Dict[str, Any]] = []
-    all_rows: List[Dict[str, Any]] = [] 
-    
+    all_rows: List[Dict[str, Any]] = []
+
     for task_name, config in TASKS_CONFIG.items():
         if include_tasks is not None and task_name not in include_tasks:
             continue
-        
+
         print(f"\nProcessing {task_name}...")
         dataset = load_cole_dataset_local(task_name) if local is True else load_cole_dataset_hf(task_name)
         if dataset is None:
             print(f"Skipping {task_name} - could not load dataset")
             continue
-        
+
         # Debug: Check dataset structure for MC tasks
         if config["task_type"] == "multiple_choice":
             print(f"  Dataset columns: {list(dataset.features.keys())}")
             print(f"  First example keys: {dataset[0].keys() if len(dataset) > 0 else 'empty dataset'}")
-        
+
         try:
             predictions: List[int] = []
             prompts: List[str] = []
             raw_responses: List[str] = []
             texts: List[str] = []
-            
+
             # Handle multiple choice tasks specially
             if config["task_type"] == "multiple_choice":
                 # Extract the choices from dataset
                 choices_list = None
-                
+
                 # Try configured column first
                 if "choices_column" in config and config["choices_column"] in dataset.features:
                     choices_list = dataset[config["choices_column"]]
@@ -758,13 +770,13 @@ def process_cole_tasks(include_tasks: Optional[Set[str]] = None, local=True) -> 
                     else:
                         print(f"  Warning: No choices column found for {task_name}")
                         continue
-                
+
                 # Get base texts
                 text_col = config["text_column"]
                 if text_col in dataset.features:
                     base_texts = dataset[text_col]
                     texts = base_texts  # Store for logging
-                    
+
                     # Get predictions with choices
                     predictions, prompts, raw_responses = predict_classification_with_llm_mc(
                         base_texts, choices_list, config["labels"], task_name
@@ -772,7 +784,7 @@ def process_cole_tasks(include_tasks: Optional[Set[str]] = None, local=True) -> 
                 else:
                     print(f"  Warning: Column '{text_col}' not found")
                     continue
-                    
+
             # Build input texts and get predictions for non-MC tasks
             elif "text_column" in config:
                 if config["text_column"] in dataset.features:
@@ -803,13 +815,13 @@ def process_cole_tasks(include_tasks: Optional[Set[str]] = None, local=True) -> 
             else:
                 print("  Warning: No text columns config; skipping")
                 continue
-            
+
             results["tasks"].append({task_name: {"predictions": predictions}})
             print(f"✓ Completed {task_name} with {len(predictions)} predictions")
-            
+
             # Ground truth + column used
             y_true, label_col_used = extract_truths(dataset, task_name, config["task_type"], config["labels"])
-            
+
             # Check and print label balance
             if y_true is not None:
                 balance_info = get_balance_info(y_true)
@@ -818,18 +830,18 @@ def process_cole_tasks(include_tasks: Optional[Set[str]] = None, local=True) -> 
                 print(f"    Frequencies: {balance_info['frequencies']}")
                 print(f"    Balanced (±10%): {balance_info['is_balanced_10pct']}")
                 print(f"    Balanced (±5%): {balance_info['is_balanced_5pct']}")
-            
+
             # Build per-example rows
             task_rows: List[Dict[str, Any]] = []
             n = len(predictions)
             for idx in range(n):
                 gold = (int(y_true[idx]) if (y_true is not None and idx < len(y_true)) else None)
                 parse_error = None
-                
+
                 # If parsed label not in label_set, note it (shouldn't happen because parse enforces)
                 if predictions[idx] not in config["labels"]:
                     parse_error = f"Parsed {predictions[idx]} not in label_set {config['labels']}"
-                
+
                 row = {
                     "task": task_name,
                     "index": idx,
@@ -844,36 +856,37 @@ def process_cole_tasks(include_tasks: Optional[Set[str]] = None, local=True) -> 
                 }
                 task_rows.append(row)
                 all_rows.append(row)
-            
+
             # Save per-task logs
             per_task_json = os.path.join(SAVE_DIR, f"{task_name}_examples.json")
             per_task_csv = os.path.join(SAVE_DIR, f"{task_name}_examples.csv")
             save_json(per_task_json, task_rows)
             save_rows_csv(per_task_csv, task_rows)
             print(f"  → Saved per-example logs to {per_task_json} and {per_task_csv}")
-            
+
             # Evaluate if possible
             if y_true is not None and len(y_true) == len(predictions):
                 metrics = evaluate_predictions(task_name, y_true, predictions, config["labels"])
                 metrics_summary.append(metrics)
                 print(f"  -> accuracy={metrics['accuracy']:.4f}, macro_f1={metrics['macro_f1']:.4f}")
+                print(f"Confusion Matrix: {metrics["confusion_matrix"]}")
             else:
                 if y_true is None:
                     print("  (No ground-truth labels detected; metrics skipped)")
                 else:
                     print(f"  (Label/Prediction length mismatch: {len(y_true)} vs {len(predictions)})")
-        
+
         except Exception as e:
             print(f"  Error processing {task_name}: {e}")
             import traceback
             traceback.print_exc()
             continue
-    
+
     # Save a combined JSON across all tasks for convenience
     combined_path = os.path.join(SAVE_DIR, "all_examples.json")
     save_json(combined_path, all_rows)
     print(f"\n✓ Combined per-example JSON saved to {combined_path}")
-    
+
     return results, metrics_summary
 
 # ========================
@@ -883,14 +896,14 @@ def validate_output_format(results: Dict[str, Any]) -> bool:
     required_fields = ["model_url", "tasks"]
     for field in required_fields:
         assert field in results, f"Missing required field: {field}"
-    
+
     assert isinstance(results["tasks"], list), "Tasks should be a list"
     for task in results["tasks"]:
         assert isinstance(task, dict), "Each task should be a dictionary"
         for task_name, task_data in task.items():
             assert "predictions" in task_data, f"Missing predictions for {task_name}"
             assert isinstance(task_data["predictions"], list), "Predictions should be a list"
-    
+
     print("✓ Output format validation passed!")
     return True
 
@@ -898,7 +911,7 @@ def save_metrics_csv(metrics_list: List[Dict[str, Any]], path: str) -> None:
     import csv
     # Flatten confusion matrix as JSON string to keep it simple
     fieldnames = ["task", "num_samples", "labels", "accuracy", "macro_f1", "confusion_matrix"]
-    
+
     with open(path, "w", newline='', encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
@@ -911,13 +924,13 @@ def save_metrics_csv(metrics_list: List[Dict[str, Any]], path: str) -> None:
 def check_label_balance(labels_list: List[int], tolerance: float = 0.1) -> bool:
     """Check if classes are reasonably balanced."""
     from collections import Counter
-    
+
     counts = Counter(labels_list)
     total = len(labels_list)
-    
+
     # Calculate expected frequency for perfect balance
     expected_freq = 1.0 / len(counts)
-    
+
     # Check if each class is within tolerance of expected frequency
     for count in counts.values():
         actual_freq = count / total
@@ -931,52 +944,52 @@ def get_balance_info(labels_list: List[int]) -> Dict:
     from collections import Counter
     counts = Counter(labels_list)
     total = len(labels_list)
-    
+
     return {
         'counts': dict(counts),
         'frequencies': {k: v/total for k, v in counts.items()},
         'is_balanced_10pct': check_label_balance(labels_list, 0.1),
         'is_balanced_5pct': check_label_balance(labels_list, 0.05)
     }
-    
+
 # ========================
 # Evaluation
 # ========================
 def evaluation(tasks, local=False):
     print("Starting COLE benchmark evaluation")
-    
+
     if not os.path.exists(COLE_DIR):
         print("COLE directory not found. Please ensure COLE dataset is in the current directory.")
         return None
-    
+
     cole_dirs = [d for d in os.listdir(COLE_DIR) if os.path.isdir(os.path.join(COLE_DIR, d))]
-    print(f"Found {len(cole_dirs)} task directories: {cole_dirs}")  
+    print(f"Found {len(cole_dirs)} task directories: {cole_dirs}")
     print(set(tasks))
     print(tasks)
     results, metrics_summary = process_cole_tasks(set(tasks), local)
-    
+
     if len(results["tasks"]) == 0:
         print("\n NO TASKS PROCESSED - exiting")
         return None
-    
+
     # Validate and save predictions
     validate_output_format(results)
-    
+
     with open(f"{SAVE_DIR}/{OUTPUT_PRED_JSON}", 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\n✓ Predictions saved to {OUTPUT_PRED_JSON}")
-    
+
     # Save metrics
     with open(f"{SAVE_DIR}/{OUTPUT_METRICS_JSON}", 'w', encoding='utf-8') as f:
         json.dump({"metrics": metrics_summary}, f, ensure_ascii=False, indent=2)
     save_metrics_csv(metrics_summary, f"{SAVE_DIR}/{OUTPUT_METRICS_CSV}")
     print(f"✓ Metrics saved to {OUTPUT_METRICS_JSON} and {OUTPUT_METRICS_CSV}")
-    
+
     # Print summary
     print("\nSummary:")
     for m in metrics_summary:
         print(f"  {m['task']}: n={m['num_samples']} | acc={m['accuracy']:.4f} | macroF1={m['macro_f1']:.4f}")
-    
+
     return {"results": results, "metrics": metrics_summary}
 
 
@@ -985,8 +998,8 @@ def load_model(args):
         print("Loading tokenizer and model...")
         print(f"Using device: {device}")
         # Load tokenizer
-        tokenizer = AutoTokenizer.from_pretrained(args.model_path)
-        
+        tokenizer = AutoTokenizer.from_pretrained(args.model_path, fix_mistral_regex=True)
+
         if args.base_model is False:
             # Load base model
             model = AutoPeftModelForCausalLM.from_pretrained(
@@ -1006,14 +1019,19 @@ def load_model(args):
         tokenizer.padding_side = "left"
         if tokenizer.chat_template is None:
             print("No default chat template. Setting one")
-            tokenizer.chat_template = "{{- bos_token }}\n{%- if custom_tools is defined %}\n    {%- set tools = custom_tools %}\n{%- endif %}\n{%- if not tools_in_user_message is defined %}\n    {%- set tools_in_user_message = true %}\n{%- endif %}\n{%- if not date_string is defined %}\n    {%- set date_string = \"26 Jul 2024\" %}\n{%- endif %}\n{%- if not tools is defined %}\n    {%- set tools = none %}\n{%- endif %}\n\n{#- This block extracts the system message, so we can slot it into the right place. #}\n{%- if messages[0]['role'] == 'system' %}\n    {%- set system_message = messages[0]['content']|trim %}\n    {%- set messages = messages[1:] %}\n{%- else %}\n    {%- set system_message = \"\" %}\n{%- endif %}\n\n{#- System message + builtin tools #}\n{{- \"<|start_header_id|>system<|end_header_id|>\\n\\n\" }}\n{%- if builtin_tools is defined or tools is not none %}\n    {{- \"Environment: ipython\\n\" }}\n{%- endif %}\n{%- if builtin_tools is defined %}\n    {{- \"Tools: \" + builtin_tools | reject('equalto', 'code_interpreter') | join(\", \") + \"\\n\\n\"}}\n{%- endif %}\n{{- \"Cutting Knowledge Date: December 2023\\n\" }}\n{{- \"Today Date: \" + date_string + \"\\n\\n\" }}\n{%- if tools is not none and not tools_in_user_message %}\n    {{- \"You have access to the following functions. To call a function, please respond with JSON for a function call.\" }}\n    {{- 'Respond in the format {\"name\": function name, \"parameters\": dictionary of argument name and its value}.' }}\n    {{- \"Do not use variables.\\n\\n\" }}\n    {%- for t in tools %}\n        {{- t | tojson(indent=4) }}\n        {{- \"\\n\\n\" }}\n    {%- endfor %}\n{%- endif %}\n{{- system_message }}\n{{- \"<|eot_id|>\" }}\n\n{#- Custom tools are passed in a user message with some extra guidance #}\n{%- if tools_in_user_message and not tools is none %}\n    {#- Extract the first user message so we can plug it in here #}\n    {%- if messages | length != 0 %}\n        {%- set first_user_message = messages[0]['content']|trim %}\n        {%- set messages = messages[1:] %}\n    {%- else %}\n        {{- raise_exception(\"Cannot put tools in the first user message when there's no first user message!\") }}\n{%- endif %}\n    {{- '<|start_header_id|>user<|end_header_id|>\\n\\n' -}}\n    {{- \"Given the following functions, please respond with a JSON for a function call \" }}\n    {{- \"with its proper arguments that best answers the given prompt.\\n\\n\" }}\n    {{- 'Respond in the format {\"name\": function name, \"parameters\": dictionary of argument name and its value}.' }}\n    {{- \"Do not use variables.\\n\\n\" }}\n    {%- for t in tools %}\n        {{- t | tojson(indent=4) }}\n        {{- \"\\n\\n\" }}\n    {%- endfor %}\n    {{- first_user_message + \"<|eot_id|>\"}}\n{%- endif %}\n\n{%- for message in messages %}\n    {%- if not (message.role == 'ipython' or message.role == 'tool' or 'tool_calls' in message) %}\n        {{- '<|start_header_id|>' + message['role'] + '<|end_header_id|>\\n\\n'+ message['content'] | trim + '<|eot_id|>' }}\n    {%- elif 'tool_calls' in message %}\n        {%- if not message.tool_calls|length == 1 %}\n            {{- raise_exception(\"This model only supports single tool-calls at once!\") }}\n        {%- endif %}\n        {%- set tool_call = message.tool_calls[0].function %}\n        {%- if builtin_tools is defined and tool_call.name in builtin_tools %}\n            {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}\n            {{- \"<|python_tag|>\" + tool_call.name + \".call(\" }}\n            {%- for arg_name, arg_val in tool_call.arguments | items %}\n                {{- arg_name + '=\"' + arg_val + '\"' }}\n                {%- if not loop.last %}\n                    {{- \", \" }}\n                {%- endif %}\n                {%- endfor %}\n            {{- \")\" }}\n        {%- else  %}\n            {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}\n            {{- '{\"name\": \"' + tool_call.name + '\", ' }}\n            {{- '\"parameters\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- \"}\" }}\n        {%- endif %}\n        {%- if builtin_tools is defined %}\n            {#- This means we're in ipython mode #}\n            {{- \"<|eom_id|>\" }}\n        {%- else %}\n            {{- \"<|eot_id|>\" }}\n        {%- endif %}\n    {%- elif message.role == \"tool\" or message.role == \"ipython\" %}\n        {{- \"<|start_header_id|>ipython<|end_header_id|>\\n\\n\" }}\n        {%- if message.content is mapping or message.content is iterable %}\n            {{- message.content | tojson }}\n        {%- else %}\n            {{- message.content }}\n        {%- endif %}\n        {{- \"<|eot_id|>\" }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' }}\n{%- endif %}\n"
+            with open("./default_chat_template.txt", "r") as f_open:
+                chat_template = f_open.read()
+            tokenizer.chat_template = chat_template
+        else:
+            print("Loaded chat template")
+
         model.to(device)
         model.eval()
         print(f"Model save dir {SAVE_DIR}")
         print(f"Model loaded from {args.model_path}")
         print(f"Model type: {type(model)}")
         print(f"Tokenizer pad_token: {tokenizer.pad_token}")
-        
+
         return model, tokenizer
 
 def main():
@@ -1021,18 +1039,19 @@ def main():
     global tokenizer
 
     parser = argparse.ArgumentParser(description="Evaluation")
-    
+
     # Model arguments
     parser.add_argument("--model_path", type=str, default="models/basic", required=False)
-    parser.add_argument("--base_model", type=bool, default=False, required=False)
-    parser.add_argument("--benchmark", type=str, default="qfrcola,qfrblimp,qfrcore,qfrcort", required=False)
+    parser.add_argument("--base_model", action='store_true')
+    parser.add_argument("--benchmark", type=str, default="qfrcola,qfrblimp,qfrcore,qfrcort,allocine,paws_x,french_boolq,mms", required=False)
     parser.add_argument("--local", type=bool, default=True, required=False)
-    
     args = parser.parse_args()
 
     global SAVE_DIR
+    model_name = args.model_path if not args.model_path.endswith("/") else args.model_path[:-1]
+    print(model_name)
     model_type = "-base" if args.base_model is True else ""
-    SAVE_DIR = SAVE_DIR + "/" + args.model_path.split("/")[-1] + model_type
+    SAVE_DIR = SAVE_DIR + "/" + model_name.split("/")[-1] + model_type
     print(args.model_path.split("/"))
     os.makedirs(SAVE_DIR, exist_ok=True)
     benchmarks = args.benchmark.split(",")

@@ -6,7 +6,7 @@ import seaborn as sn
 import pandas as pd
 
 def main():
-    save_dir = "./cole_runs/cpt_model/"
+    save_dir = "./cole_runs/cpt_model-base/"
    
     with open(save_dir + "cole_eval_metrics.json", "r") as f_open:
         data = json.loads(f_open.read())

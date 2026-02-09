@@ -27,6 +27,9 @@ class QuebecFrenchGenerator:
         # Load tokenizer
         tokenizer = AutoTokenizer.from_pretrained(self.model_path)
         if tokenizer.chat_template is None:
+            print("No default chat template. Setting one")
+            with open("./default_chat_template.txt", "r") as f_open:
+                chat_template = f_open.read()
             tokenizer.chat_template = chat_template
         if self.use_lora:
             # Load base model

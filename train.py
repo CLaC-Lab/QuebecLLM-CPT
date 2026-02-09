@@ -921,7 +921,10 @@ def main():
 
     args = parser.parse_args()
 
+    replay = True if args.replay_file is not None else False
     output_dir = f"./models/{args.output_name}-{args.num_epochs}E"
+    if replay:
+        output_dir = output_dir + "-replay"
 
     # Create configurations
     model_config = ModelConfig(

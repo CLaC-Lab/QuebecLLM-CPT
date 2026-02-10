@@ -65,7 +65,7 @@ class DataConfig:
     max_length: int = 1024
     stride: int = 512
     batch_size: int = 8
-    preprocessing_num_workers: int = 4
+    preprocessing_num_workers: int = 1
     tokenizer_batch_size: int = 1000
     min_length: int = 50
     replay_file: str = "replay.txt"
@@ -97,6 +97,7 @@ class DataProcessor:
 
     def __init__(self, tokenizer, config: DataConfig):
         self.tokenizer = tokenizer
+
         self.config = config
 
     def load_text_data(self, file_path: str) -> List[str]:
@@ -107,7 +108,7 @@ class DataProcessor:
             lines = f.readlines()
 
         texts = []
-        for line in lines:
+        for line in tqdm(lines, desc=f"Loading text"):
             line = line.strip()
 
             if not line:
@@ -135,14 +136,14 @@ class DataProcessor:
         """
         tok = self.tokenizer(
             examples["text"],
-            add_special_tokens=False,
+            #add_special_tokens=False,
             padding=False,
             truncation=False
         )
-        eos_id = self.tokenizer.eos_token_id
+        #eos_id = self.tokenizer.eos_token_id
         # append EOS to every sample
-        tok["input_ids"]      = [ids + [eos_id] for ids in tok["input_ids"]]
-        tok["attention_mask"] = [am  + [1]      for am  in tok["attention_mask"]]
+        #tok["input_ids"]      = [ids + [eos_id] for ids in tok["input_ids"]]
+        #tok["attention_mask"] = [am  + [1]      for am  in tok["attention_mask"]]
         return tok
 
 
@@ -244,7 +245,7 @@ class ChatProcessor:
 
         texts = []
         replay_texts = []
-        for line in lines:
+        for line in tqdm(lines, desc=f"Loading text"):
             if not line:
                 continue
             chat_obj = json.loads(line)
@@ -330,7 +331,7 @@ class ChatProcessor:
             examples["text"],
             add_special_tokens=False,
             padding=False,
-            truncation=False
+            truncation=False,
         )
         eos_id = self.tokenizer.eos_token_id
         # append EOS to every sample
@@ -407,7 +408,9 @@ class ModelSetup:
         # Load tokenizer
         tokenizer = AutoTokenizer.from_pretrained(
             self.config.model_name,
-            trust_remote_code=True
+            trust_remote_code=True, 
+            add_eos_token=True, 
+            use_fast=True
         )
 
         # Add pad token if not present
@@ -898,9 +901,11 @@ def main():
     parser.add_argument("--batch_size", type=int, default=2)
     parser.add_argument("--inspect_data", action="store_true", default=True)
     parser.add_argument("--inspect_samples", type=int, default=5)
+    parser.add_argument("--preprocessing_num_workers", type=int, default=1)
+    
 
     # Training arguments
-    parser.add_argument("--output_name", type=str, default="gpt2")
+    parser.add_argument("--output_name", type=str, default=None)
     parser.add_argument("--stride", type=int, default=128,
                     help="Sliding-window overlap in tokens; 0 means no overlap")
     parser.add_argument("--num_epochs", type=int, default=3)
@@ -921,10 +926,11 @@ def main():
 
     args = parser.parse_args()
 
+    name = args.model_name.split("/")[-1] if not args.model_name.endswith("/") else args.model_name[:-1].split("/")[-1]
     replay = True if args.replay_file is not None else False
-    output_dir = f"./models/{args.output_name}-{args.num_epochs}E"
+    output_dir = f"./models/{name}-{args.num_epochs}E"
     if replay:
-        output_dir = output_dir + "-replay"
+        output_dir = output_dir + f"-replay-{args.replay_percent}"
 
     # Create configurations
     model_config = ModelConfig(
@@ -940,6 +946,7 @@ def main():
         max_length=args.max_length,
         batch_size=args.batch_size,
         stride=args.stride,
+        preprocessing_num_workers=args.preprocessing_num_workers,
         replay_file=args.replay_file,
         replay_percent=args.replay_percent
     )

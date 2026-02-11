@@ -4,6 +4,7 @@ Continual Pretraining Pipeline
 """
 
 import os
+import hashlib
 import json
 import torch
 import random
@@ -184,10 +185,14 @@ class DataProcessor:
 
         return result
 
-
     def prepare_dataset(self, train_texts: List[str]) -> Dataset:
         """Prepare dataset with improved processing"""
+        # Load data
+        train_texts = self.data_processor.load_text_data(self.data_config.train_file)
+        logger.info(f"Loaded {len(train_texts)} instruction segments")
+        
         train_dataset = self.create_dataset(train_texts)
+        del train_texts
         logger.info(f"Created dataset with {len(train_dataset)} text segments")
 
         # Step 1: Tokenize texts
@@ -200,6 +205,7 @@ class DataProcessor:
             remove_columns=train_dataset.column_names,
             desc="Tokenizing text"
         )
+        del train_dataset
 
         # Step 2: Group texts into chunks
         logger.info("Grouping texts into chunks...")
@@ -210,6 +216,7 @@ class DataProcessor:
             num_proc=self.config.preprocessing_num_workers,
             desc="Grouping texts"
         )
+        del tokenized_dataset
 
         def filter_examples(example):
             return len(example['input_ids']) >= self.config.min_length
@@ -343,10 +350,15 @@ class ChatProcessor:
         """Create HuggingFace dataset from texts"""
         return Dataset.from_dict({"text": texts})
 
-    def prepare_dataset(self, train_texts: List[str]) -> Dataset:
+    def prepare_dataset(self, train_file: str) -> Dataset:
         """Prepare dataset with improved processing"""
+        # Load data
+        train_texts = self.data_processor.load_text_data(self.data_config.train_file)
+        logger.info(f"Loaded {len(train_texts)} instruction segments")
+
         train_dataset = self.create_dataset(train_texts)
         logger.info(f"Created dataset with {len(train_dataset)} text segments")
+        del train_texts
 
         # Step 1: Tokenize texts
         logger.info("Tokenizing text...")
@@ -358,6 +370,7 @@ class ChatProcessor:
             remove_columns=train_dataset.column_names,
             desc="Tokenizing text"
         )
+        del train_dataset
 
         # Step 2: Group texts into chunks
         logger.info("Grouping texts into chunks...")
@@ -368,6 +381,7 @@ class ChatProcessor:
             num_proc=self.config.preprocessing_num_workers,
             desc="Grouping texts"
         )
+        del tokenized_dataset
 
         def filter_examples(example):
             return len(example['input_ids']) >= self.config.min_length
@@ -595,12 +609,18 @@ class ContinualPretrainingTrainer:
     def train(self, inspect_data: bool = True, inspect_samples: int = 3):
         """Train model"""
         # Load data
-        train_texts = self.data_processor.load_text_data(self.data_config.train_file)
-        logger.info(f"Loaded {len(train_texts)} text segments")
+        hash = hashlib.md5(open(self.data_config.train_file,'r'))
+        train_dataset = None
+        if os.file.exists(f"./data/tokens/{hash}.bin"):
+            train_dataset = load_dataset(f"./data/tokens/{hash}.bin")
+        
+        else:
 
-        # Prepare training dataset
-        train_dataset = self.data_processor.prepare_dataset(train_texts)
-        logger.info(f"Prepared {len(train_dataset)} training chunks")
+            # Prepare training dataset
+            train_dataset = self.data_processor.prepare_dataset(self.data_config.train_file)
+            logger.info(f"Prepared {len(train_dataset)} training chunks")
+
+            train_dataset.save_to_disk(f"./data/tokens/{hash}.bin")
 
         # FIXED: Enhanced training arguments with better data handling and FSDP support
         training_args = TrainingArguments(
@@ -768,12 +788,9 @@ class InstructionTuningTrainer:
 
     def train(self, inspect_data: bool = True, inspect_samples: int = 3):
         """Train model"""
-        # Load data
-        train_texts = self.data_processor.load_text_data(self.data_config.train_file)
-        logger.info(f"Loaded {len(train_texts)} instruction segments")
 
         # Prepare training dataset
-        train_dataset = self.data_processor.prepare_dataset(train_texts)
+        train_dataset = self.data_processor.prepare_dataset(self.data_config.train_file)
         logger.info(f"Prepared {len(train_dataset)} training chunks")
 
         # FIXED: Enhanced training arguments with better data handling and FSDP support

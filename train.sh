@@ -1,11 +1,10 @@
 #!/bin/bash
 #SBATCH -J qcpt-llama1b-6E-fsdp
-#SBATCH -p phys
-#SBATCH --gres=gpu:2
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=64G
-#SBATCH --time=72:00:00
-#SBATCH -o %x.%j.out
+#SBATCH -o %x.out
+#SBATCH --mem=50000M
+#SBATCH --gpus=h100:1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=24:00:00
 # #SBATCH -w virya2  # optional pin to 8-GPU host (but we only use 2 here)
 
 set -euo pipefail
@@ -24,9 +23,13 @@ if [[ $curr_dir =~ $regex ]]; then
     echo $user  
 fi
 
+num_epochs=3
+model_name="meta-llama"
+
+module load gcc arrow/22.0.0 cudacore/.12.9.1 python/3.13
 ########## ENV / PYTHON ##########
-source "/home/${user}/miniconda3/etc/profile.d/conda.sh"
-conda activate cpt-env
+#source "/home/${user}/miniconda3/etc/profile.d/conda.sh"
+#conda activate cpt-env
 
 # UTF-8 logs (helps with accented chars)
 export LANG=C.UTF-8
@@ -76,7 +79,7 @@ echo "[INFO] GPU:"; nvidia-smi --query-gpu=name,memory.total --format=csv
 
 CORPUS_SRC="${curr_dir}/data/ALL_DATA/train.txt"
 CODEDIR="${curr_dir}"
-OUTDIR="${curr_dir}/quebec_french_llama3.2_1b_6E_2gpu_fsdp"
+OUTDIR="${curr_dir}/models/${model_name}-${num_epoch}E"
 mkdir -p "${OUTDIR}"
 cp -v "${CORPUS_SRC}" "${WORKDIR}/train.txt"
 
@@ -96,26 +99,26 @@ set +e
 PER_DEVICE_BS=16
 GAS=16   # effective global batch ~ PER_DEVICE_BS * n_gpus * GAS
 
-srun -u torchrun --standalone --nnodes=1 --nproc_per_node=${SLURM_GPUS_PER_NODE:-2} \
+srun -u python -m torch.distributed.run --standalone --nnodes=1 \
   train.py \
   --model_name "meta-llama/Llama-3.2-1B" \
   --use_lora \
   --train_file "${WORKDIR}/train.txt" \
   --max_length 1024 \
   --batch_size "${PER_DEVICE_BS}" \
-  --output_name "quebec_french_llama3.2_1b_fsdp" \
-  --num_epochs 6 \
+  --output_name "${model_name}" \
+  --num_epochs "${num_epochs}"  \
   --learning_rate 1e-5 \
   --gradient_accumulation_steps "${GAS}" \
-  --fsdp "full_shard auto_wrap" \
-  --fsdp_transformer_layer_cls_to_wrap "LlamaDecoderLayer" 
+  #--fsdp "full_shard auto_wrap" \
+  #--fsdp_transformer_layer_cls_to_wrap "LlamaDecoderLayer" 
 STATUS=$?
 set -e
 
 echo "[INFO] Training exit status: ${STATUS}"
 
-if [ -d "${WORKDIR}/quebec_french_llama3.2_1b_6E_fsdp" ]; then
-  rsync -avh "${WORKDIR}/quebec_french_llama3.2_1b_6E_fsdp/" "${OUTDIR}/"
+if [ -d "${WORKDIR}/${model_name}" ]; then
+  rsync -avh "${WORKDIR}/${model_name}/" "${OUTDIR}/"
 else
   echo "[WARN] Output dir not found; nothing to copy."
 fi

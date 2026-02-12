@@ -65,7 +65,7 @@ class DataConfig:
     train_file: str = "train.txt"
     max_length: int = 1024
     stride: int = 512
-    batch_size: int = 8
+    batch_size: int = 16
     preprocessing_num_workers: int = 1
     tokenizer_batch_size: int = 1000
     min_length: int = 50
@@ -137,7 +137,7 @@ class DataProcessor:
         """
         tok = self.tokenizer(
             examples["text"],
-            #add_special_tokens=False,
+            add_special_tokens=False,
             padding=False,
             truncation=False
         )
@@ -185,10 +185,10 @@ class DataProcessor:
 
         return result
 
-    def prepare_dataset(self, train_texts: List[str]) -> Dataset:
+    def prepare_dataset(self, train_file: str) -> Dataset:
         """Prepare dataset with improved processing"""
         # Load data
-        train_texts = self.data_processor.load_text_data(self.data_config.train_file)
+        train_texts = self.load_text_data(train_file)
         logger.info(f"Loaded {len(train_texts)} instruction segments")
         
         train_dataset = self.create_dataset(train_texts)
@@ -336,7 +336,7 @@ class ChatProcessor:
         """
         tok = self.tokenizer(
             examples["text"],
-            add_special_tokens=False,
+            #add_special_tokens=False,
             padding=False,
             truncation=False,
         )
@@ -353,7 +353,7 @@ class ChatProcessor:
     def prepare_dataset(self, train_file: str) -> Dataset:
         """Prepare dataset with improved processing"""
         # Load data
-        train_texts = self.data_processor.load_text_data(self.data_config.train_file)
+        train_texts = self.load_text_data(train_file)
         logger.info(f"Loaded {len(train_texts)} instruction segments")
 
         train_dataset = self.create_dataset(train_texts)
@@ -609,10 +609,12 @@ class ContinualPretrainingTrainer:
     def train(self, inspect_data: bool = True, inspect_samples: int = 3):
         """Train model"""
         # Load data
-        hash = hashlib.md5(open(self.data_config.train_file,'r'))
+
+        bad_hash = os.path.getsize(self.data_config.train_file)
         train_dataset = None
-        if os.file.exists(f"./data/tokens/{hash}.bin"):
-            train_dataset = load_dataset(f"./data/tokens/{hash}.bin")
+        if os.path.exists(f"./data/tokens/{bad_hash}"):
+            logger.info(f"Loading tokenized data")
+            train_dataset = load_dataset(f"./data/tokens/{bad_hash}")
         
         else:
 
@@ -620,7 +622,7 @@ class ContinualPretrainingTrainer:
             train_dataset = self.data_processor.prepare_dataset(self.data_config.train_file)
             logger.info(f"Prepared {len(train_dataset)} training chunks")
 
-            train_dataset.save_to_disk(f"./data/tokens/{hash}.bin")
+            train_dataset.save_to_disk(f"./data/tokens/{bad_hash}")
 
         # FIXED: Enhanced training arguments with better data handling and FSDP support
         training_args = TrainingArguments(
@@ -649,7 +651,7 @@ class ContinualPretrainingTrainer:
             max_grad_norm=1.0,
             logging_first_step=True,
             lr_scheduler_type="cosine",
-            save_safetensors=True,
+            #save_safetensors=True,
             load_best_model_at_end=False,
             # FIXED: Add data loading configurations
             dataloader_drop_last=True,
@@ -915,10 +917,10 @@ def main():
     parser.add_argument("--train_file", type=str, required=True,
                        help="Path to training corpus")
     parser.add_argument("--max_length", type=int, default=1024)
-    parser.add_argument("--batch_size", type=int, default=2)
+    parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--inspect_data", action="store_true", default=True)
     parser.add_argument("--inspect_samples", type=int, default=5)
-    parser.add_argument("--preprocessing_num_workers", type=int, default=1)
+    parser.add_argument("--preprocessing_num_workers", type=int, default=None)
     
 
     # Training arguments

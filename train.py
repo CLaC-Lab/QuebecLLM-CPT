@@ -19,7 +19,7 @@ import unicodedata
 
 import numpy as np
 from tqdm import tqdm
-from datasets import Dataset, DatasetDict, load_dataset
+from datasets import Dataset, DatasetDict, load_from_disk
 from torch.utils.data import DataLoader
 from torch.nn.utils import clip_grad_norm_
 from torch.cuda.amp import autocast, GradScaler
@@ -614,7 +614,7 @@ class ContinualPretrainingTrainer:
         train_dataset = None
         if os.path.exists(f"./data/tokens/{bad_hash}"):
             logger.info(f"Loading tokenized data")
-            train_dataset = load_dataset(f"./data/tokens/{bad_hash}")
+            train_dataset = load_from_disk(f"./data/tokens/{bad_hash}")
         
         else:
 

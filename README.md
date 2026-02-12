@@ -4,7 +4,7 @@ This is the code of our paper "Low-Resource Dialect Adaptation of Large Language
 
 # Part A: Data Preparation 
 
-This script prepares and cleans Quebec French text data for training your language model. It handles both plain text (`.txt`) and JSON Lines (`.jsonl`) formats, performing essential preprocessing tasks to ensure high-quality training data.
+This script (`prepare_data.py`) prepares and cleans Quebec French text data for training your language model. It handles both plain text (`.txt`) and JSON Lines (`.jsonl`) formats, performing essential preprocessing tasks to ensure high-quality training data.
 
 ---
 
@@ -256,13 +256,6 @@ Download or place the COLE dataset in your working directory:
 
 ### 2. Configure Model Path
 
-Edit evaluation.py to set your model path:
-
-```python
-# At the top of eval_cole.py, set MODEL_CHOSEN to your trained model
-MODEL_CHOSEN = "./cpt_model"  # Path to your trained model
-```
-
 ## Usage 
 
 Running `python evaluation.py` will:
@@ -272,6 +265,17 @@ Running `python evaluation.py` will:
 3. Generate predictions for each task
 4. Calculate metrics (accuracy, macro F1)
 5. Save results to multiple output files
+
+Alternatively, you may use the following arguments
+
+| Argument | Type | Default | Description |
+|----------|------|---------|-------------|
+| `--model_path` | str | Required | Path to model |
+| `--base_model` | bool | False | Calculate metrics for base model |
+| `--benchmark` | str | `qfrcola,qfrblimp,qfrcore,qfrcort,allocine,paws_x,french_boolq,mms` | Comma-seperated list of benchmarks |
+| `--hf` | bool | True | Load COLE from Huggingface |
+
+Example Usage: `python evaluation.py --model_path 'your_model/' --benchmark qfrcola,qfrblimp`
 
 ## Configuration Options
 

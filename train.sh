@@ -5,6 +5,7 @@
 #SBATCH --gpus=h100:1
 #SBATCH --cpus-per-task=1
 #SBATCH --time=24:00:00
+#SBATCH -o %x.%j.out
 # #SBATCH -w virya2  # optional pin to 8-GPU host (but we only use 2 here)
 
 set -euo pipefail

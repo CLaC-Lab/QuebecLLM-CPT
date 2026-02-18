@@ -926,8 +926,8 @@ def load_model(args):
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
-        if args.base_model is False:
-            # Load base model
+        if args.base_model is False or os.path.exists(args.model_path + "/adapter_config.json"):
+            print("Load peft model")
             model = AutoPeftModelForCausalLM.from_pretrained(
                 args.model_path,
                 torch_dtype=torch.float16,
@@ -935,7 +935,7 @@ def load_model(args):
                 trust_remote_code=True
             )
         else:
-            # Load full model
+            print("Load base model")
             model = AutoModelForCausalLM.from_pretrained(
                 args.model_path,
                 torch_dtype=torch.float16,

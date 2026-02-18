@@ -967,10 +967,10 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluation")
 
     # Model arguments
-    parser.add_argument("--model_path", type=str, default="models/basic", required=False)
+    parser.add_argument("--model_path", type=str, default="./cpt_model", required=False)
     parser.add_argument("--base_model", action='store_true')
     parser.add_argument("--benchmark", type=str, default="qfrcola,qfrblimp,qfrcore,qfrcort,allocine,paws_x,french_boolq,mms", required=False)
-    parser.add_argument("--local", type=bool, default=True, required=False)
+    parser.add_argument("--hf", action='store_true')
     args = parser.parse_args()
 
     global SAVE_DIR
@@ -983,7 +983,7 @@ def main():
     benchmarks = args.benchmark.split(",")
     model, tokenizer = load_model(args)
 
-    evaluation(benchmarks, args.local)
+    evaluation(benchmarks, not args.hf)
 
 if __name__ == "__main__":
     main()

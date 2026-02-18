@@ -114,6 +114,9 @@ TASKS_CONFIG: Dict[str, Dict[str, Any]] = {
 SAVE_DIR = "cole_runs"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
+# load prompt texts
+eval_prompts = json.load(open("./eval_prompts.json","r"))
+
 def save_json(path: str, rows: List[Dict[str, Any]]) -> None:
     with open(path, "w", encoding="utf-8") as f:
         for r in rows:
@@ -135,27 +138,10 @@ def save_rows_csv(path: str, rows: List[Dict[str, Any]]) -> None:
         for r in rows:
             w.writerow(r)
 
-# Model & Tokenizer setup
-#print("Loading tokenizer and model...")
-#tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, local_files_only=True)
-#if tokenizer.pad_token is None:
-#    if tokenizer.eos_token is not None:
-#        tokenizer.pad_token = tokenizer.eos_token
-#        print(f"Set pad_token to eos_token: {tokenizer.pad_token}")
-#    else:
-#        tokenizer.add_special_tokens({'pad_token': '[PAD]'})
-#        print("Added new pad_token: [PAD]")
 
 # Determine device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
-
-# Load model
-#model = AutoModelForCausalLM.from_pretrained(
-#    BASE_MODEL,
-#    torch_dtype=torch.float16,
-#    device_map=None,
-#)
 
 #model = model.to(device)
 #model.eval()
@@ -163,12 +149,6 @@ print(f"Using device: {device}")
 #tokenizer.padding_side = "left"
 model = None
 tokenizer = None
-
-
-#print(f"Model loaded from {BASE_MODEL}")
-#print(f"Model type: {type(model)}")
-#print(f"Model device: {next(model.parameters()).device}")
-#print(f"Tokenizer pad_token: {tokenizer.pad_token}")
 
 # ========================
 # Prompting utilities
@@ -268,45 +248,26 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
     Construit des instructions très détaillées en FR pour les tâches QFR.
     """
     # Règles communes, réutilisées dans plusieurs tâches
-    REGLES_GRAM = (
-        "- Accords (genre/nombre/personne) et conjugaison.\n"
-        "- Place des clitiques/pronoms (p. ex. « ne … pas », « le/la/les/l' », « y », « en »).\n"
-        "- Prépositions et constructions figées (p. ex. « à », « de », « en », « contre » vs « au »).\n"
-        "- Accord du participe passé selon l'auxiliaire et les COD/COI.\n"
-        "- Orthographe et diacritiques (accents, traits d'union, élisions), morphologie lexicale.\n"
-        "- Ordre des mots et contraintes syntaxiques usuelles du français écrit standard (Québec).\n"
-        "- Tolérance zéro pour les fautes manifestes; ignorer la plausibilité sémantique et le style."
-    )
+    REGLES_GRAM = "".join(eval_prompts["REGLES_GRAM"])
+    FORMAT_SORTIE_BIN = "".join(eval_prompts["FORMAT_SORTIE_BIN"])
+    FORMAT_SORTIE_MC = "".join(eval_prompts["FORMAT_SORTIE_BIN"])
 
-    # Format de sortie hyper strict
-    FORMAT_SORTIE_BIN = (
-        "FORMAT DE SORTIE:\n"
-        "- Réponds **uniquement** par un seul chiffre, sans rien d'autre: «0» ou «1».\n"
-        "- Aucun texte avant/après, aucune explication, aucun espace, aucune ponctuation, aucun guillemet."
-    )
 
-    FORMAT_SORTIE_MC = (
-        "FORMAT DE SORTIE:\n"
-        "- Réponds **uniquement** par le numéro **entier** de l'option correcte (0, 1, 2, …), "
-        "sans aucun autre caractère ni commentaire."
-    )
-
-    # =========================
-    # qfrcola : acceptabilité binaire d'une phrase
-    # 0 = inacceptable/incorrecte ; 1 = acceptable/correcte
-    # =========================
-    if task_name == "qfrcola" or (task_type == "binary" and task_name in {"qfrcola"}):
+    if task_name == "allocine":
         return (
-            "TÂCHE: Jugement d'acceptabilité grammaticale (français – norme écrite, Québec).\n\n"
-            "CONSIGNE:\n"
-            "- Déterminer si la phrase ci-dessous est acceptable du point de vue de la grammaire "
-            "et de l'orthographe standards, indépendamment du style ou de la plausibilité sémantique.\n\n"
-            "CODAGE DES RÉPONSES:\n"
-            "- 0 = phrase inacceptable/incorrecte.\n"
-            "- 1 = phrase acceptable/correcte.\n\n"
-            + FORMAT_SORTIE_BIN + "\n\n"
+            "".join(eval_prompts["allocine"]) +
+            #+ FORMAT_SORTIE_BIN + "\n\n"
             f"PHRASE:\n{text}\n\n"
             "Réponse (0 ou 1) :"
+        )
+
+    if task_name == "qfrcola" or (task_type == "binary" and task_name in {"qfrcola"}):
+        return (
+            "".join(eval_prompts["qfrcola"])
+            #+ FORMAT_SORTIE_BIN 
+            + "\n\n"
+            f"PHRASE:\n{text}\n\n"
+            #"Réponse (0 ou 1) :"
         )
 
     # =========================
@@ -315,18 +276,9 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
     # =========================
     if task_name == "qfrblimp" or (task_type == "binary" and task_name in {"qfrblimp"}):
         return (
-            "TÂCHE: Choix de la phrase grammaticale parmi deux versions (français – norme écrite, Québec).\n\n"
-            "ENTRÉE:\n"
-            "- Deux versions d'une même phrase sont données sous les étiquettes «Texte 1» et «Texte 2».\n\n"
-            "CONSIGNE:\n"
-            "- Choisir **la version grammaticalement correcte** au sens strict de la norme écrite.\n"
-            "- S'il arrive que les deux versions semblent acceptables, choisis celle qui respecte le mieux "
-            "la norme (la plus idiomatique et sans faute). Si les deux sont inacceptables, choisis celle "
-            "qui comporte le **moins** d'écarts par rapport à la norme.\n\n"
-            "CODAGE DES RÉPONSES:\n"
-            "- 0 = «Texte 1» est correct.\n"
-            "- 1 = «Texte 2» est correct.\n\n"
-            + FORMAT_SORTIE_BIN + "\n\n"
+            "".join(eval_prompts["qfrblimp"])
+            #+ FORMAT_SORTIE_BIN 
+            + "\n\n"
             f"{text}\n\n"
             "Réponse (0 ou 1) :"
         )
@@ -364,14 +316,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             hypothesis.get("hypothesis")
         )
         return (
-            "TÂCHE: Déterminer si une phrase en français a du sens sur le plan sémantique (acceptabilité).\n\n"
-            "CONSIGNE:\n"
-            "- Une seule phrase est fournie ci-dessous.\n"
-            "- Indique si elle FAIT SENS (acceptable) ou NE FAIT PAS SENS (inacceptable) d’un point de vue sémantique.\n"
-            "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n"
-            "CODAGE DES RÉPONSES (binaire):\n"
-            "- 0 = La phrase fait sens (acceptable).\n"
-            "- 1 = La phrase ne fait pas sens (inacceptable).\n\n"
+            "".join(eval_prompts["wsd"])
             + FORMAT_SORTIE_BIN + "\n\n"
             f"PREMISE: {[premise]}\n\n"
             f"HYPOTHÈSE: {[hypothesis]}\n\n"
@@ -386,14 +331,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             text.get("passage")
         )
         return (
-            "TÂCHE: Répondre à une question par oui ou non en se basant sur un passage donné (français).\n\n"
-            "CONSIGNE:\n"
-            "- Lis attentivement le passage fourni.\n"
-            "- Ensuite, réponds à la question par «oui» ou «non» selon ce que le passage indique.\n"
-            "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n"
-            "CODAGE DES RÉPONSES (binaire):\n"
-            "- 0 = Non (la réponse est fausse).\n"
-            "- 1 = Oui (la réponse est vraie).\n\n"
+            "".join(eval_prompts["french_boolq"])
             + FORMAT_SORTIE_BIN + "\n\n"
             f"PASSAGE:\n{passage}\n\n"
             f"QUESTION:\n{question}\n\n"
@@ -408,14 +346,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
             text.get("sentence2")
         )
         return (
-            "TÂCHE: Déterminer si deux phrases en français sont des paraphrases l'une de l'autre.\n\n"
-            "CONSIGNE:\n"
-            "- Deux phrases sont fournies ci-dessous.\n"
-            "- Indique si elles veulent dire la même chose (paraphrases) ou pas.\n"
-            "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n"
-            "CODAGE DES RÉPONSES (binaire):\n"
-            "- 0 = Les phrases ne sont pas des paraphrases (différentes).\n"
-            "- 1 = Les phrases sont des paraphrases (même sens).\n\n"
+            "".join(eval_prompts["paws_x"])
             + FORMAT_SORTIE_BIN + "\n\n"
             f"PHRASE 1: {sentence1}\n\n"
             f"PHRASE 2: {sentence2}\n\n"
@@ -428,14 +359,7 @@ def build_prompt(task_name: Optional[str], task_type: str, text: str, labels_lis
                 text == text.get("text")
             )
         return (
-            "TÂCHE: Analyse de sentiment d'un texte en français (négatif, neutre, positif).\n\n"
-            "CONSIGNE:\n"
-            "- Lis attentivement le texte fourni.\n"
-            "- Détermine si le sentiment exprimé est négatif, neutre ou positif.\n\n"
-            "CODAGE DES RÉPONSES:\n"
-            "- 0 = Négatif\n"
-            "- 1 = Neutre\n"
-            "- 2 = Positif\n\n"
+            "".join(eval_prompts["mms"])
             + FORMAT_SORTIE_BIN + "\n\n"
             f"TEXTE:\n{text}\n\n"
             "Réponse (0, 1 ou 2) :"
@@ -999,6 +923,8 @@ def load_model(args):
         print(f"Using device: {device}")
         # Load tokenizer
         tokenizer = AutoTokenizer.from_pretrained(args.model_path, fix_mistral_regex=True)
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
 
         if args.base_model is False:
             # Load base model

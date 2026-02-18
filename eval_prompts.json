@@ -1,0 +1,91 @@
+{
+    "REGLES_GRAM": [
+        "- Accords (genre/nombre/personne) et conjugaison.\n",
+        "- Place des clitiques/pronoms (p. ex. « ne … pas », « le/la/les/l' », « y », « en »).\n",
+        "- Prépositions et constructions figées (p. ex. « à », « de », « en », « contre » vs « au »).\n",
+        "- Accord du participe passé selon l'auxiliaire et les COD/COI.\n",
+        "- Orthographe et diacritiques (accents, traits d'union, élisions), morphologie lexicale.\n",
+        "- Ordre des mots et contraintes syntaxiques usuelles du français écrit standard (Québec).\n",
+        "- Tolérance zéro pour les fautes manifestes; ignorer la plausibilité sémantique et le style."
+    ],
+    "FORMAT_SORTIE_BIN":[
+        "FORMAT DE SORTIE:\n",
+        "- Réponds **uniquement** par un seul chiffre, sans rien d'autre: «0» ou «1».\n",
+        "- Aucun texte avant/après, aucune explication, aucun espace, aucune ponctuation, aucun guillemet."
+    ],
+    "FORMAT_SORTIE_MC": [
+        "FORMAT DE SORTIE:\n",
+        "- Réponds **uniquement** par le numéro **entier** de l'option correcte (0, 1, 2, …), ",
+        "sans aucun autre caractère ni commentaire."
+    ],
+    "allocine": [
+        "TÂCHE: analyse des sentiments\n\n",
+        "CONSIGNE:\n",
+        "- Déterminer si le texte ci-dessous est positif ou négatif ",
+        "CODAGE DES RÉPONSES:\n",
+        "- 0 = texte positif.\n",
+        "- 1 = texte négatif.\n\n"
+    ],
+    "qfrcola": [
+        "TÂCHE: Jugement d'acceptabilité grammaticale (français – norme écrite, Québec).\n\n",
+        "CONSIGNE:\n",
+        "- Déterminer si la phrase ci-dessous est acceptable du point de vue de la grammaire ",
+        "et de l'orthographe standards, indépendamment du style ou de la plausibilité sémantique.\n\n",
+        "CODAGE DES RÉPONSES:\n",
+        "- 0 = phrase inacceptable/incorrecte.\n",
+        "- 1 = phrase acceptable/correcte.\n\n"
+    ],
+    "qfrblimp": [
+        "TÂCHE: Choix de la phrase grammaticale parmi deux versions (français – norme écrite, Québec).\n\n",
+        "ENTRÉE:\n",
+        "- Deux versions d'une même phrase sont données sous les étiquettes «Texte 1» et «Texte 2».\n\n",
+        "CONSIGNE:\n",
+        "- Choisir **la version grammaticalement correcte** au sens strict de la norme écrite.\n",
+        "- S'il arrive que les deux versions semblent acceptables, choisis celle qui respecte le mieux ",
+        "la norme (la plus idiomatique et sans faute). Si les deux sont inacceptables, choisis celle ",
+        "qui comporte le **moins** d'écarts par rapport à la norme.\n\n",
+        "CODAGE DES RÉPONSES:\n",
+        "- 0 = «Texte 1» est correct.\n",
+        "- 1 = «Texte 2» est correct.\n\n"
+    ],
+    "french_boolq": [
+        "TÂCHE: Répondre à une question par oui ou non en se basant sur un passage donné (français).\n\n",
+        "CONSIGNE:\n",
+        "- Lis attentivement le passage fourni.\n",
+        "- Ensuite, réponds à la question par «oui» ou «non» selon ce que le passage indique.\n",
+        "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n",
+        "CODAGE DES RÉPONSES (binaire):\n",
+        "- 0 = Non (la réponse est fausse).\n",
+        "- 1 = Oui (la réponse est vraie).\n\n"
+    ],
+    "paws_x": [
+        "TÂCHE: Déterminer si deux phrases en français sont des paraphrases l'une de l'autre.\n\n",
+        "CONSIGNE:\n",
+        "- Deux phrases sont fournies ci-dessous.\n",
+        "- Indique si elles veulent dire la même chose (paraphrases) ou pas.\n",
+        "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n",
+        "CODAGE DES RÉPONSES (binaire):\n",
+        "- 0 = Les phrases ne sont pas des paraphrases (différentes).\n",
+        "- 1 = Les phrases sont des paraphrases (même sens).\n\n"
+    ],
+    "mms": [
+        "TÂCHE: Analyse de sentiment d'un texte en français (négatif, neutre, positif).\n\n",
+        "CONSIGNE:\n",
+        "- Lis attentivement le texte fourni.\n",
+        "- Détermine si le sentiment exprimé est négatif, neutre ou positif.\n\n",
+        "CODAGE DES RÉPONSES:\n",
+        "- 0 = Négatif\n",
+        "- 1 = Neutre\n",
+        "- 2 = Positif\n\n"
+    ],
+    "wsd": [
+        "TÂCHE: Déterminer si une phrase en français a du sens sur le plan sémantique (acceptabilité).\n\n",
+        "CONSIGNE:\n",
+        "- Une seule phrase est fournie ci-dessous.\n",
+        "- Indique si elle FAIT SENS (acceptable) ou NE FAIT PAS SENS (inacceptable) d’un point de vue sémantique.\n",
+        "- Ignore les fautes mineures d’orthographe/ponctuation si le sens reste clair.\n\n",
+        "CODAGE DES RÉPONSES (binaire):\n",
+        "- 0 = La phrase fait sens (acceptable).\n",      
+        "- 1 = La phrase ne fait pas sens (inacceptable).\n\n"
+    ]
+}

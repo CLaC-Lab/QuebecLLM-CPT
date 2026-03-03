@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -J qcpt-llama1b-6E-fsdp
+#SBATCH -J slurmtrain
 #SBATCH -o %x.out
-#SBATCH --mem=50000M
+#SBATCH --mem=30000M
 #SBATCH --gpus=h100:1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=24:00:00
+#SBATCH --time=4:00:00
 #SBATCH -o %x.%j.out
 # #SBATCH -w virya2  # optional pin to 8-GPU host (but we only use 2 here)
 
@@ -24,8 +24,8 @@ if [[ $curr_dir =~ $regex ]]; then
     echo $user  
 fi
 
-num_epochs=3
-model_name="meta-llama"
+num_epochs=6
+model_name="Llama-3.1-8B"
 
 module load gcc arrow/22.0.0 cudacore/.12.9.1 python/3.13
 ########## ENV / PYTHON ##########
@@ -37,6 +37,7 @@ export LANG=C.UTF-8
 export LC_ALL=C.UTF-8
 export PYTHONUTF8=1
 export PYTHONIOENCODING=UTF-8
+#export HF_HUB_CACHE="/home/${user}/scratch/.cache/"
 
 which python
 python -V
@@ -67,7 +68,7 @@ export DATALOADER_NUM_WORKERS=0
 export TORCH_DISTRIBUTED_DEBUG=OFF
 
 ########## SCRATCH / PATHS ##########
-export SLURM_TMPDIR="/home/${USER}/slurm_tmpdir/${SLURM_JOB_ID}"
+export SLURM_TMPDIR="/home/${USER}/scratch/slurm_tmpdir/${SLURM_JOB_ID}"
 mkdir -p "${SLURM_TMPDIR}"
 WORKDIR="${SLURM_TMPDIR}/qcpt_run_slurm"
 HF_CACHE="${SLURM_TMPDIR}/hf_cache"
@@ -78,17 +79,18 @@ export HF_DATASETS_CACHE="${HF_CACHE}"
 echo "[INFO] Node: $(hostname)"
 echo "[INFO] GPU:"; nvidia-smi --query-gpu=name,memory.total --format=csv
 
-CORPUS_SRC="${curr_dir}/data/ALL_DATA/train.txt"
+CORPUS_SRC="${curr_dir}/data/ALL_DATA/train.jsonl"
 CODEDIR="${curr_dir}"
-OUTDIR="${curr_dir}/models/${model_name}-${num_epoch}E"
+OUTDIR="${curr_dir}/models/${model_name}-${num_epochs}E"
+echo "Running ${OUTDIR}"
 mkdir -p "${OUTDIR}"
-cp -v "${CORPUS_SRC}" "${WORKDIR}/train.txt"
+#cp -v "${CORPUS_SRC}" "${WORKDIR}/train.txt"
 
 # Preflight HF access
 python - <<'PY'
 import os
 from huggingface_hub import hf_hub_download
-p = hf_hub_download("meta-llama/Llama-3.2-1B", "config.json", token=os.getenv("HUGGING_FACE_HUB_TOKEN"))
+p = hf_hub_download("croissantllm/CroissantLLMChat-v0.1", "config.json", token=os.getenv("HUGGING_FACE_HUB_TOKEN"))
 print("[Preflight] OK:", p)
 PY
 
@@ -100,17 +102,20 @@ set +e
 PER_DEVICE_BS=16
 GAS=16   # effective global batch ~ PER_DEVICE_BS * n_gpus * GAS
 
+
+ #--model_name "croissantllm/CroissantLLMChat-v0.1" \
 srun -u python -m torch.distributed.run --standalone --nnodes=1 \
   train.py \
-  --model_name "meta-llama/Llama-3.2-1B" \
+  --model_name "meta-llama/Llama-3.1-8B" \
   --use_lora \
-  --train_file "${WORKDIR}/train.txt" \
+  --train_file "/home/ovanesb/scratch/data/ALL_DATA/train.jsonl" \
   --max_length 1024 \
   --batch_size "${PER_DEVICE_BS}" \
   --output_name "${model_name}" \
   --num_epochs "${num_epochs}"  \
   --learning_rate 1e-5 \
   --gradient_accumulation_steps "${GAS}" \
+  --it
   #--fsdp "full_shard auto_wrap" \
   #--fsdp_transformer_layer_cls_to_wrap "LlamaDecoderLayer" 
 STATUS=$?

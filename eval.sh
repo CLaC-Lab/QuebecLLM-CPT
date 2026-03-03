@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -J qcpt-llama1b-6E-fsdp
+#SBATCH -J sleval
 #SBATCH -o %x.out
-#SBATCH --mem=50000M
+#SBATCH --mem=10000M
 #SBATCH --gpus=h100:1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=24:00:00
+#SBATCH --time=16:00:00
 #SBATCH -o %x.%j.out
 # #SBATCH -w virya2  # optional pin to 8-GPU host (but we only use 2 here)
 
@@ -62,7 +62,7 @@ export NCCL_P2P_DISABLE=0
 export NCCL_ASYNC_ERROR_HANDLING=1
 
 ########## SCRATCH / PATHS ##########
-export SLURM_TMPDIR="/home/${USER}/slurm_tmpdir/${SLURM_JOB_ID}"
+export SLURM_TMPDIR="/home/${USER}/scratch/slurm_tmpdir/${SLURM_JOB_ID}"
 mkdir -p "${SLURM_TMPDIR}"
 WORKDIR="${SLURM_TMPDIR}/qcpt_run_slurm"
 HF_CACHE="${SLURM_TMPDIR}/hf_cache"
@@ -89,8 +89,7 @@ PY
 
 srun -u python -m torch.distributed.run --standalone --nnodes=1 \
   evaluation.py \
-  --model_path "meta-llama/Llama-3.2-1B" \
-  --hf
+  --model_path "/home/ovanesb/scratch/help2/QC-Llama-3.1-8B_6e_CPT"
 STATUS=$?
 #set -e
 

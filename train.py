@@ -947,7 +947,7 @@ def main():
 
     name = args.model_name.split("/")[-1] if not args.model_name.endswith("/") else args.model_name[:-1].split("/")[-1]
     replay = True if args.replay_file is not None else False
-    output_dir = f"./models/{name}-{args.num_epochs}E"
+    output_dir = f"/home/ovanesb/scratch/models/{name}-{args.num_epochs}E"
     if replay:
         output_dir = output_dir + f"-replay-{args.replay_percent}"
 

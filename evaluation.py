@@ -111,8 +111,9 @@ TASKS_CONFIG: Dict[str, Dict[str, Any]] = {
 }
 
 # Save location for per-example logs
-SAVE_DIR = "cole_runs"
-os.makedirs(SAVE_DIR, exist_ok=True)
+BASE_SAVE_DIR = "cole_runs"
+SAVE_DIR = ""
+os.makedirs(BASE_SAVE_DIR, exist_ok=True)
 
 # load prompt texts
 eval_prompts = json.load(open("./eval_prompts.json","r"))
@@ -917,19 +918,19 @@ def evaluation(tasks, local=False):
     return {"results": results, "metrics": metrics_summary}
 
 
-def load_model(args):
+def load_model(model_path, base_model=False):
         """Load the fine-tuned model and tokenizer"""
         print("Loading tokenizer and model...")
         print(f"Using device: {device}")
         # Load tokenizer
-        tokenizer = AutoTokenizer.from_pretrained(args.model_path, fix_mistral_regex=True)
+        tokenizer = AutoTokenizer.from_pretrained(model_path, fix_mistral_regex=True)
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
-        if args.base_model is False or os.path.exists(args.model_path + "/adapter_config.json"):
+        if base_model is False or os.path.exists(model_path + "/adapter_config.json"):
             print("Load peft model")
             model = AutoPeftModelForCausalLM.from_pretrained(
-                args.model_path,
+                model_path,
                 torch_dtype=torch.float16,
                 device_map="auto",
                 trust_remote_code=True
@@ -937,7 +938,7 @@ def load_model(args):
         else:
             print("Load base model")
             model = AutoModelForCausalLM.from_pretrained(
-                args.model_path,
+                model_path,
                 torch_dtype=torch.float16,
                 device_map="auto",
                 trust_remote_code=True
@@ -954,7 +955,7 @@ def load_model(args):
         model.to(device)
         model.eval()
         print(f"Model save dir {SAVE_DIR}")
-        print(f"Model loaded from {args.model_path}")
+        print(f"Model loaded from {model_path}")
         print(f"Model type: {type(model)}")
         print(f"Tokenizer pad_token: {tokenizer.pad_token}")
 
@@ -968,22 +969,35 @@ def main():
 
     # Model arguments
     parser.add_argument("--model_path", type=str, default="./cpt_model", required=False)
+    parser.add_argument("--dir", action='store_true')
     parser.add_argument("--base_model", action='store_true')
     parser.add_argument("--benchmark", type=str, default="qfrcola,qfrblimp,qfrcore,qfrcort,allocine,paws_x,french_boolq,mms", required=False)
     parser.add_argument("--hf", action='store_true')
     args = parser.parse_args()
 
     global SAVE_DIR
-    model_name = args.model_path if not args.model_path.endswith("/") else args.model_path[:-1]
-    print(model_name)
-    model_type = "-base" if args.base_model is True else ""
-    SAVE_DIR = SAVE_DIR + "/" + model_name.split("/")[-1] + model_type
-    print(args.model_path.split("/"))
-    os.makedirs(SAVE_DIR, exist_ok=True)
-    benchmarks = args.benchmark.split(",")
-    model, tokenizer = load_model(args)
+    if args.dir is True:
+        models = [ f.path for f in os.scandir(args.model_path) if f.is_dir() ]
+        for model in models:
+            model_name = model if not model.endswith("/") else model[:-1]
+            print(model_name)
+            model_type = "-base" if args.base_model is True else ""
+            SAVE_DIR = BASE_SAVE_DIR + "/" + model_name.split("/")[-1] + model_type
+            os.makedirs(SAVE_DIR, exist_ok=True)
+            benchmarks = args.benchmark.split(",")
+            model, tokenizer = load_model(model, args.base_model)
+            evaluation(benchmarks, not args.hf)
 
-    evaluation(benchmarks, not args.hf)
+    else:
+        model_name = args.model_path if not args.model_path.endswith("/") else args.model_path[:-1]
+        print(model_name)
+        model_type = "-base" if args.base_model is True else ""
+        SAVE_DIR = BASE_SAVE_DIR + "/" + model_name.split("/")[-1] + model_type
+        print(args.model_path.split("/"))
+        os.makedirs(SAVE_DIR, exist_ok=True)
+        benchmarks = args.benchmark.split(",")
+        model, tokenizer = load_model(args.model_path, args.base_model)
+        evaluation(benchmarks, not args.hf)
 
 if __name__ == "__main__":
     main()
